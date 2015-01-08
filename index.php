@@ -19,7 +19,7 @@ and open the template in the editor.
         echo "jajajajaj jsjjs\n";
         echo "<br>";
         echo "dededed";
-        echo "spændende test";
+        echo "spændende test1";
         ?>
     </body>
 </html>
