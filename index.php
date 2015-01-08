@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        echo "Det bliver fetch";
         echo "Nu bliver dette PUSHET";
       echo "Jeg pusher dette";
         echo "jajajajaj jsjjs\n";
