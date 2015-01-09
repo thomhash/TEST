@@ -10,16 +10,19 @@ and open the template in the editor.
         <title></title>          
     </head>
     <body>
-        <?php
-        echo "Thomas ændring";
-        echo "Hej Thomas igen lort lort lort";
-        echo "Det bliver fetch";
-        echo "Nu bliver dette PUSHET";
-      echo "Jeg pusher dette";
-        echo "jajajajaj jsjjs\n";
-        echo "<br>";
-        echo "dededed";
-        echo "spændende test1";
+    <center> <h1> Velkommen til www.webshopgenerator.dk </h1> 
+</center>
+    <h2>
+    Indhold: 
+    <li><a href="opretvare.php">Opret vare</a></li> 
+    <li><a href="">Vis varekatalog</a></li> 
+      </h2>  
+      
+            
+            
+         <?php
+        echo "PHP";
+
         ?>
     </body>
 </html>
