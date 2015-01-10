@@ -53,7 +53,6 @@ if ($conn->connect_error) {
 } 
 
 
-
 $sqlin = "INSERT INTO maerke (id_maerke, maerke_navn) VALUES ('1', 'Adidas')";
 
 if ($conn->query($sqlin) === TRUE) {
