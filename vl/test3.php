@@ -1,4 +1,5 @@
 <?php
+echo "hej";
 require_once 'login.php';
 $db_server = mysql_connect($db_hostname, $db_username, $db_password);
 

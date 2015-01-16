@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 else{
-    //echo "Forbindelsen er god";
+    echo "Forbindelsen er god";
 }
 
 
@@ -53,21 +53,22 @@ function get_vareid ($gruppe_nr, $sidetal){
 
 
 // Hent oplysninger til katalog i variant, ud fra vare-id (kun vis=1)
-function get_info_catalog ($vare_id){
+function get_info_catalog (){
     require 'login.php';
     $db_server = new mysqli($db_hostname, $db_username, $db_password);
     $db_server->connect($db_hostname, $db_username, $db_password, $db_database);
     
-    $sql = "SELECT navn , variant.`pris` , variant.`billede`, variant.`idvare`
+    $sql = "SELECT variant.`idvare`, variant.`billede`
             FROM `vare` 
             INNER JOIN `variant` 
             ON vare.`id_vare` = variant.`fidvare`
-            WHERE `id_vare` = $vare_id AND variant.`vis`=1";
+            WHERE `id_vare` = 1 AND variant.`vis`=1";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
-        
-    mysqli_close($db_server);
+       
+    echo "Vi er i den sidste funktion";
+    
     return $row;
     
     

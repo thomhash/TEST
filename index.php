@@ -22,7 +22,6 @@ and open the template in the editor.
             
          <?php
         echo "PHP";
-
         ?>
     </body>
 </html>
