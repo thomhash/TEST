@@ -8,26 +8,43 @@
 <h1> Opret vare </h1> 
 <hr>
    Opret nyt maerke 
-    <form action="index.php" method="get">
+    <form action="opretmaerke.php" method="POST">
 Maerke:<br>
-<input type="text" name="maerke">
+<input type="text" name="maerke"><br>
+id:<br> 
+<input type="text" name="id_maerke">
 <br>
 <input type="submit">
 </form>
 <hr> 
 
-Opret nyt maerke 
-    <form action="index.php" method="get">
-Maerke:<br>
-<input type="text" name="varenavn">
+  Opret ny farve
+    <form action="opretfarve.php" method="POST">
+Farve:<br>
+<input type="text" name="farve">
+<br>
+<input type="submit">
+</form>
+
+Opret ny stoerelse
+    <form action="opretstorelse.php" method="POST">
+Stoerelse:<br>
+<input type="text" name="stoerelse">
 <br>
 <input type="submit">
 </form>
 <hr> 
-Opret ny størelse
-    <form action="index.php" method="get">
-Størelse:<br>
-<input type="text" name="stoerelse">
+
+Opret ny vare
+    <form action="opretvarep.php" method="POST ">
+Navn:<br>
+<input type="text" name="navn">
+<br>
+Beskrivelse:<br>
+<input type="text" name="beskrivelse">
+<br>
+Priotet:<br>
+<input type="number" name="priotet" min="1" max="3">
 <br>
 <input type="submit">
 </form>
@@ -35,10 +52,7 @@ Størelse:<br>
    
    
     <?php
-
-        
-        
-        
+      
 
 $servername = "localhost";
 $username = "root";
@@ -53,7 +67,7 @@ if ($conn->connect_error) {
 } 
 
 
-
+/* 
 $sqlin = "INSERT INTO maerke (id_maerke, maerke_navn) VALUES ('1', 'Adidas')";
 
 if ($conn->query($sqlin) === TRUE) {
@@ -62,9 +76,7 @@ if ($conn->query($sqlin) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-
-
-
+*/
 
 
 $sql = "SELECT * FROM `maerke`";
