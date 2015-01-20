@@ -1,9 +1,9 @@
 <?php
-echo "hej";
+
 require_once 'login.php';
-$db_server = new mysqli($db_hostname, $db_username, $db_password);
-$db_server->connect($db_hostname, $db_username, $db_password, $db_database);
-mysqli_close($db_server);
+//$db_server = new mysqli($db_hostname, $db_username, $db_password);
+//$db_server->connect($db_hostname, $db_username, $db_password, $db_database);
+//mysqli_close($db_server);
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -34,7 +34,7 @@ function get_vareid ($gruppe_nr, $sidetal){
 
     $sql = "SELECT  id_vare 
     FROM 
-    `gruppe`  AS `gruppenavn` INNER JOIN 
+    `gruppe`  AS `gruppe` INNER JOIN 
     `vare_har_gruppe` AS X INNER JOIN 
     `vare`  AS V  
     ON `id_varegruppe` = X.`gruppe_idvaregruppe` AND X.`vare_idvare` = V.`id_vare` 
@@ -97,7 +97,7 @@ echo " $pris";*/
 
 
 
-echo "hej";
+
 
 
 
