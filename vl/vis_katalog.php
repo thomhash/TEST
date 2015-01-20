@@ -101,15 +101,15 @@
      </figure>
     
      <figure>
-        <img src='..\billeder\nike_shock_green.jpg'>
+         <?php echo $billede[2]; ?>
         <figcaption>  
             <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[2]; ?>  
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[2]; ?>
                     </td>
                 </tr>
             </table>
@@ -117,15 +117,15 @@
      </figure>
     
      <figure>
-        <img src='..\billeder\puma_street_sko_green.jpg'>
+            <?php echo $billede[3]; ?>
         <figcaption> 
          <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[3]; ?>   
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[3]; ?>
                     </td>
                 </tr>
             </table>
@@ -133,60 +133,60 @@
      </figure>
     
     <figure>
-        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
+        <?php echo $billede[4]; ?>
         <figcaption> 
          <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[4]; ?>   
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[4]; ?>
                     </td>
                 </tr>
             </table>
         </figcaption>
      </figure>
     <figure>
-        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
+        <?php echo $billede[5]; ?>
         <figcaption>  
             <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[5]; ?>
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[5]; ?> 
                     </td>
                 </tr>
             </table>
         </figcaption>
      </figure>
     <figure>
-        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
+        <?php echo $billede[6]; ?>
         <figcaption>  
             <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[6]; ?>  
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[6]; ?>
                     </td>
                 </tr>
             </table>
         </figcaption>
      </figure>
     <figure>
-        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
+        <?php echo $billede[7]; ?>
         <figcaption>  
             <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[7]; ?> 
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[7]; ?>
                     </td>
                 </tr>
             </table>
