@@ -5,6 +5,10 @@ require '../dl/varer.php';
 //$gruppenr = 2;
 //$side =1;
 
+
+
+
+
 //funktion der henter varer(array,)der skal vises ud fra et gruppe nr samt hvilkent side man er på
 function hent_vare_katalog($gruppenr, $side){
     //Hent vare id's ud fra gruppenr og side
