@@ -1,4 +1,17 @@
 <?php
+include 'dl\login.php';
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "webshop";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,10 +25,9 @@
 Maerke:<br>
 <input type="text" name="maerke"><br>
 id:<br> 
-<input type="text" name="id_maerke">
-<br>
 <input type="submit">
-</form>
+</form><br> 
+ Nuværende mærker:   
 <hr> 
 
   Opret ny farve
@@ -24,15 +36,26 @@ Farve:<br>
 <input type="text" name="farve">
 <br>
 <input type="submit">
-</form>
+    </form><br> 
+ Nuværende varver:
 
 Opret ny stoerelse
     <form action="opretstorelse.php" method="POST">
+        
+<hr>
 Stoerelse:<br>
 <input type="text" name="stoerelse">
 <br>
 <input type="submit">
-</form>
+</form><br> 
+Nuværende størelse<br> 
+<hr> 
+Gruppe:<br>
+<input type="text" name="gruppe">
+<br>
+<input type="submit">
+</form><br> 
+Nuværende grupper<br> 
 <hr> 
 
 Opret ny vare
@@ -49,22 +72,55 @@ Priotet:<br>
 <input type="submit">
 </form>
 <hr> 
-   
+<br>
+Opret variant<br>
+<form></form>
+Pris <br> 
+<input type="text" name="pris"><br>
+mærke <br>
+     <select name="cars">
+     <?php 
+    
+$sql = "SELECT * FROM `maerke`";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       ?><option value="<?php $row["id_maerke"]?>"><?php echo $row["maerke"]; ?></option><?php
+    }
+} else {
+    echo "0 results";
+}
+?>
+<br>
+     <select name="cars">
+<br>   
+farve <br>
+     <select name="cars">
+     <?php 
+    
+$sql = "SELECT * FROM `maerke`";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       ?><option value="<?php $row["id_maerke"]?>"><?php echo $row["maerke"]; ?></option><?php
+    }
+} else {
+    echo "0 results";
+}
+?>
+<input type="submit">
+<br>
+
+
+<br>
+
    
     <?php
-      
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "webshop";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 
 /* 
@@ -79,13 +135,13 @@ if ($conn->query($sqlin) === TRUE) {
 */
 
 
-$sql = "SELECT * FROM `maerke`";
-$result = $conn->query($sql);
+$sqls = "SELECT * FROM `maerke`";
+$results = $conn->query($sqls);
 
-if ($result->num_rows > 0) {
+if ($results->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Id: " . $row["id_maerke"]. " - Vare: " . $row["maerke_navn"]."<br>";
+    while($rows = $results->fetch_assoc()) {
+        echo "Id: " . $rows["id_maerke"]. " - Vare: " . $rows["maerke"]."<br>";
     }
 } else {
     echo "0 results";

@@ -14,7 +14,7 @@ $marke = $_POST['maerke'];
 $idmarke = $_POST['id_maerke'];
 
 
-$sqlin = "INSERT INTO maerke (id_maerke, maerke_navn) VALUES ('$idmarke', '$marke')";
+$sqlin = "INSERT INTO maerke ( maerke) VALUES ('$marke')";
 
 if ($conn->query($sqlin) === TRUE) {
     echo "New record created successfully";

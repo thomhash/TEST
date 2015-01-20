@@ -14,7 +14,7 @@ $farve = $_POST['farve'];
 
 
 
-$sqlin = "INSERT INTO varefarve (id_varefarve, varefarve) VALUES ('', '$farve')";
+$sqlin = "INSERT INTO varefarve (varefarve) VALUES ($farve')";
 
 if ($conn->query($sqlin) === TRUE) {
     echo "New record created successfully";
