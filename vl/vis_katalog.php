@@ -6,11 +6,30 @@
 
 <body>
     <?php
+    require '../fl/opretkatalog.php';
+    //Test variable
+   $gruppenr = 2;
+   $side =1;
+   
+   $info_vare= hent_vare_katalog($gruppenr, $side);
+   
+    
+    
+    
     
     $raekke_nr=0;
+    $navn;
     $pris;
+    $billede;
     
     
+    for ($x = 0; $x <= 23; $x++) {
+    $navn[$x]="";
+    $pris[$x]="";
+    $billede[$x]="";
+}
+    
+    /*
     $array_en_raekke=[];
     
         $array_en_raekke[0][0] = "Nike shock";
@@ -23,12 +42,14 @@
         $array_en_raekke[1][2] = '..\billeder\nike_shock_red.jpg';
         $array_en_raekke[1][3] = 1; 
         
-                
-        foreach ($array_en_raekke as $value) {
+                */
+        foreach ($info_vare as $value) {
           //  foreach ($innerArray as $value) {
                 // Hvis navn er laengere end 1
-                  if (strlen($array_en_raekke[$raekke_nr][0])>0 ){
-                    $pris[$raekke_nr] = "Pris: " .$array_en_raekke[$raekke_nr][1];
+                  if (strlen($info_vare[$raekke_nr][0])>0 ){
+                    $navn[$raekke_nr] = $info_vare[$raekke_nr][0];
+                    $pris[$raekke_nr] = "Pris: " .$info_vare[$raekke_nr][1];
+                    $billede[$raekke_nr] = '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">';
                     
                    
                     
@@ -48,15 +69,15 @@
 
    
     <figure>
-        <img src='<?php echo $array_en_raekke[0][2]; ?>'>
+        <?php echo $billede[0]; ?>
         <figcaption>
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[0];?>   
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[0]; ?> 
                     </td>
                 </tr>
             </table>
@@ -64,15 +85,15 @@
      </figure>
     
     <figure>
-        <img src='..\billeder\nike_shock_red.jpg'>
+        <?php echo $billede[1]; ?>
         <figcaption>  
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
-                 <?php echo $array_en_raekke[0][0];?>   
+                        <?php echo $navn[1];?>   
                     </td>
                     <td align = "right">
-                 <?php echo $pris[0]; ?> 
+                        <?php echo $pris[1];?>  
                     </td>
                 </tr>
             </table>
@@ -82,7 +103,7 @@
      <figure>
         <img src='..\billeder\nike_shock_green.jpg'>
         <figcaption>  
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
@@ -98,7 +119,7 @@
      <figure>
         <img src='..\billeder\puma_street_sko_green.jpg'>
         <figcaption> 
-         <table width= 250px>   
+         <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
@@ -114,7 +135,7 @@
     <figure>
         <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
         <figcaption> 
-         <table width= 250px>   
+         <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
@@ -129,7 +150,7 @@
     <figure>
         <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
         <figcaption>  
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
@@ -144,7 +165,7 @@
     <figure>
         <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
         <figcaption>  
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
@@ -159,7 +180,7 @@
     <figure>
         <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
         <figcaption>  
-            <table width= 250px>   
+            <table>   
                 <tr>
                     <td>
                  <?php echo $array_en_raekke[0][0];?>   
