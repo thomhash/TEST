@@ -14,7 +14,7 @@ function hent_vare_katalog($gruppenr, $side){
     //Hent vare id's ud fra gruppenr og side
     $id_array=get_vareid($gruppenr,$side);
     // 2 dimensionelt array der indeholder nav, pris, billede , og variant id for produkter der skal vises
-    $vis_vare;
+    $vis_vare=[];
 
     $raekke_nr = 0;
     // Loekke der løber alle id's igennem som lige er blevet hentet
