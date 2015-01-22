@@ -67,33 +67,6 @@ function get_info_catalog ($vare_id){
     
     
 }
-// Dette er go kode
-/*
-$result = $db_server->query("SELECT id_vare FROM vare order by prioritet limit 5");
-for ($prio_array = array (); $row = $result->fetch_assoc(); $prio_array[] = $row);
-print_r($prio_array);*/
-
-
-
-
-/*
-if($navn) {
-	while($row = mysqli_fetch_assoc($navn)) {
-		echo $row['txt'] . '<br>';	
-	}
-}*/
-
-// Til variant
-/*$pris = $db_server->query("SELECT `pris` FROM `variant` where idvare = 1")->fetch_object()->pris;
-echo " $pris";*/
-
-
-
-
-
-
-
-
 
 
 ?>
