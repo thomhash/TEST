@@ -8,13 +8,13 @@
     <?php
     require '../fl/opretkatalog.php';
     //Test variable
-   $gruppenr = 2;
+   $gruppenr = 1;
    $side =1;
    
    $info_vare= hent_vare_katalog($gruppenr, $side);
        
     
-    $raekke_nr=0;
+   $raekke_nr=0;
    // Loekke der laver html figurer for hvert billede som skal vises i kataloget
         foreach ($info_vare as $value) {
           

@@ -5,6 +5,22 @@ function hent_maerker(){
    // print_r($id_array);
    return $id_array;
 }
+function hent_varefarve(){
+   $id_array=get_varefarve();
+   // print_r($id_array);
+   return $id_array;
+}
+function hent_stoerrelser(){
+   $id_array=get_stoerrelser();
+   // print_r($id_array);
+   return $id_array;
+}
+function hent_grupper(){
+   $id_array=get_grupper();
+   // print_r($id_array);
+   return $id_array;
+}
+
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
