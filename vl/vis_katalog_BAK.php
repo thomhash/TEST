@@ -41,6 +41,17 @@
         $raekke_nr++;
       }
       
+        // Hvis navn er laengere end 1
+                 /* if (strlen($info_vare[$raekke_nr][0])>0 ){
+                    $navn[$raekke_nr] = $info_vare[$raekke_nr][0];
+                    $pris[$raekke_nr] = "Pris: " .$info_vare[$raekke_nr][1];
+                    $billede[$raekke_nr] = '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">';
+                            
+                    } */
+            
+            
+        $raekke_nr++;
+      }
       
             
 

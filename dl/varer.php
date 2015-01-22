@@ -1,6 +1,7 @@
 <?php
 
 require_once 'login.php';
+require_once '..\parametre.php';
 //$db_server = new mysqli($db_hostname, $db_username, $db_password);
 //$db_server->connect($db_hostname, $db_username, $db_password, $db_database);
 //mysqli_close($db_server);
@@ -23,13 +24,13 @@ else{
 function get_vareid ($gruppe_nr, $sidetal){
 
     require 'login.php';
-    $db_server = new mysqli($db_hostname, $db_username, $db_password);
-    $db_server->connect($db_hostname, $db_username, $db_password, $db_database);
     $id_per_side_start=0;
-    $id_per_side_slut = (($sidetal*12)-1);
+    $id_per_side_slut = (($sidetal* \antal_vare_per_sider()));
+    
     
     if($sidetal>1){        
-        $id_per_side_start = ($sidetal-1) * 12;
+        $id_per_side_start = ($sidetal-1) * \antal_vare_per_sider();
+        
     }    
 
     $sql = "SELECT  id_vare 

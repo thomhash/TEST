@@ -5,11 +5,17 @@
 </head>
 
 <body>
+    
+    
+    
+    
     <?php
     require '../fl/opretkatalog.php';
+    require 'tekst.php';
     //Test variable
-   $gruppenr = 1;
-   $side =1;
+   $gruppenr = $_GET['gruppe'];
+   $side = $_GET['page'];
+   
    
    $info_vare= hent_vare_katalog($gruppenr, $side);
        
@@ -27,7 +33,7 @@
                               echo $info_vare[$raekke_nr][0];
                               echo '</td>
                                     <td align = "right">';
-                                        echo "Pris: " .$info_vare[$raekke_nr][1];
+                                        echo \pris() .$info_vare[$raekke_nr][1];
                              echo  "</td>
                         </tr>
                     </table>
