@@ -25,7 +25,7 @@ function get_vareid ($gruppe_nr, $sidetal){
 
     require 'login.php';
     $id_per_side_start=0;
-    $id_per_side_slut = (($sidetal* \antal_vare_per_sider()));
+    $id_per_side_slut = antal_vare_per_sider();
     
     
     if($sidetal>1){        
@@ -66,6 +66,28 @@ function get_info_catalog ($vare_id){
     return $row;
     
     
+}
+
+
+function get_number_of_pages ($gruppe_nr){
+
+    require 'login.php';
+    
+    $sql = "SELECT  id_vare 
+    FROM 
+    `gruppe`  AS `gruppe` INNER JOIN 
+    `vare_har_gruppe` AS X INNER JOIN 
+    `vare`  AS V  
+    ON `id_varegruppe` = X.`f_id_varegruppe` AND X.`f_id_vare` = V.`id_vare` 
+    WHERE `id_varegruppe` = $gruppe_nr ";
+        
+    $result= mysqli_query($db_server, $sql);
+    $row_cnt= mysqli_num_rows($result);
+    $sider =ceil ($row_cnt/antal_vare_per_sider());
+    
+    
+    mysqli_close($db_server);
+     return $sider;
 }
 
 
