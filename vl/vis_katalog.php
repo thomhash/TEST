@@ -12,7 +12,7 @@
     <?php
     require '../fl/opretkatalog.php';
     require 'tekst.php';
-    //Test variable
+    //variable sendt fra hovedsiden
    $gruppenr = $_GET['gruppe'];
    $side = $_GET['page'];
    
@@ -25,7 +25,7 @@
         foreach ($info_vare as $value) {
           
          echo "<figure>";
-           echo '<a href="vis_enkelt_vare.php">' ;
+           echo '<a href="vis_enkelt_vare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;
              echo '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">'; 
                 echo '</a>';
            echo "<figcaption>

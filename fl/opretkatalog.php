@@ -42,9 +42,12 @@ function hent_antal_sider($gruppenr){
 }
 
 
+function get_variant_info($id_variant){
+    $info = \get_variant($id_variant);
+    
+    return $info;
+}
 
-$test = get_variant(3);
-print_r($test);
 
 
 ?>

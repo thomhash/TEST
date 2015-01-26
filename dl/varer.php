@@ -90,6 +90,7 @@ function get_number_of_pages ($gruppe_nr){
      return $sider;
 }
 
+// Henter navn, beskrivelse , pris , billede og antal til en given variant
 function get_variant ($variant_id){
     require 'login.php';
     
@@ -98,14 +99,14 @@ function get_variant ($variant_id){
             `variant`
             INNER JOIN `vare` 
             ON vare.`id_vare` = variant.`f_id_vare`
-            WHERE `id_variant`=3 ";
+            WHERE `id_variant`= $variant_id ";
     
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
     
      mysqli_close($db_server);
-     return $info;
+     return $row;
     
     
 }

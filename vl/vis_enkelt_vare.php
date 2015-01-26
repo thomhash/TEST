@@ -9,22 +9,17 @@
 
 <body> 
     <div id="enkelt">
-        
-        
-    <figure>
-        <img src ="..\billeder\billede.jpg">
-        <figcaption>
-            Lorem ipsum dolor sit amet, torquent dolor, urna lacus mauris 
-            aliquam ac a, bibendum suspendisse metus magna felis nonummy eget, 
-            tincidunt sit pellentesque, velit massa enim dui tincidunt elit. Consequat est curabitur in, 
-            vitae sem, rutrum semper duis elit in, mauris rhoncus, lacus arcu sequi donec sed ornare. 
-            Suspendisse erat, non viverra vestibulum sodales id pellentesque, semper massa vitae duis quam, odio nunc integer sit. 
-            
-            
-        </figcaption>
-    </figure>   
+    <?php require '../fl/opretkatalog.php';
     
+         $id = $_GET['id'];  
+         $info_array= get_variant_info($id);
+    ?>    
+        
     
+        <img src ="..\billeder\<?php echo $info_array[0][3]; ?> ">
+        <p>
+        <?php echo $info_array[0][1]; ?>
+        </p>
     
         
         
