@@ -3,39 +3,27 @@
     require_once 'parametre.php';
 ?>
 
-/*
-
-#container {
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-}
-
-#container img {
-   
-    //height: 300px;
-    width: 250px;
-    border: 1px solid black;
-    margin: 5px;
-    float: left;
-} */
 
 
- figure {
+
+
+
+ #katalog figure {
 width: <?php echo varer_vandret(); ?>%; 
     border: none; //1px solid blue;
     margin: 10px;
+   
     float: left;
 }
 
- figure img {
+ #katalog figure img {
 width: 100%; height: <?php echo hoejde_billeder(); ?>px;
     border: 1px solid red;
     //margin: 5px;
     //float: left;
 }
 
-figure  {
+#katalog figure  {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
   	-moz-transition: all 1s ease; /* Firefox */
   	-o-transition: all 1s ease; /* IE 9 */
@@ -43,7 +31,7 @@ figure  {
   	transition: all 1s ease;
 }
 
-figure:hover  {
+#katalog figure:hover  {
     -webkit-transform:scale(1.25); /* Safari and Chrome */
     -moz-transform:scale(1.25); /* Firefox */
     -ms-transform:scale(1.25); /* IE 9 */
@@ -59,12 +47,34 @@ figure figcaption table{
     
 }
 
-
-p.sider {
+/* ligger tallene i bunden af siden */
+p.sider { 
     
  margin-top: 100%;
              
         }
+        
+        
+        
+#enkelt figure {
+width: 600px; 
+    border: 1px solid blue;
+    margin: 3%;
+   
+    float: left;
+}
+
+#enkelt figure img {
+width: 400px; //height: 50px;
+    border: 1px solid red;
+    
+}
+
+#enkelt {
+font-size: 16px;
+
+}
+
 
 
 

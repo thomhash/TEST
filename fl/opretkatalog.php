@@ -42,4 +42,9 @@ function hent_antal_sider($gruppenr){
 }
 
 
+
+$test = get_variant(3);
+print_r($test);
+
+
 ?>

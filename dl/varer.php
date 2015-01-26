@@ -90,5 +90,25 @@ function get_number_of_pages ($gruppe_nr){
      return $sider;
 }
 
+function get_variant ($variant_id){
+    require 'login.php';
+    
+    $sql = "Select vare.`navn`, vare.`beskrivelse`, pris, billede, antal 
+            FROM            
+            `variant`
+            INNER JOIN `vare` 
+            ON vare.`id_vare` = variant.`f_id_vare`
+            WHERE `id_variant`=3 ";
+    
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+    
+     mysqli_close($db_server);
+     return $info;
+    
+    
+}
+
 
 ?>

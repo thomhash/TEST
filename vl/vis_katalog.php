@@ -6,7 +6,7 @@
 
 <body>
     
-    
+    <div id="katalog">
     
     
     <?php
@@ -71,8 +71,10 @@ echo '<br>'
 
 ?>
    
+        
+ 
     
-  
+    </div>
 </body>
 
 </html>
