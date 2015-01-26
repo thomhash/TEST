@@ -3,8 +3,7 @@ require '../dl/varer.php';
 
 function get_maerker(){
     require 'login.php';
-    
-    
+      
   
     $sql = "SELECT id_maerke, maerke
             FROM `maerke`";

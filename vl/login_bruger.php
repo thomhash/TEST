@@ -7,7 +7,7 @@
  */
 ?>
 <h3>Log in</h3>
-<form action="../fl/login_tjek.php" method="POST">
+<form action="../fl/login_check.php" method="POST">
     Brugernavn<br>
     <input type="text" name="brugernavn"><br>
     Password:<br>
