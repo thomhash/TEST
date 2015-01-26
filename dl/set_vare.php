@@ -147,7 +147,7 @@ function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_priorite
     }
 }
 
-function opret_variant($variant_vare,$variant_stoerelse,$variant_vare,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal)
+function opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal)
 {
       $servername = "localhost";
     $username = "root";
@@ -161,7 +161,7 @@ function opret_variant($variant_vare,$variant_stoerelse,$variant_vare,$variant_b
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sqlin = "INSERT INTO `webshop`.`variant` (`id_variant`, `pris`, `f_id_stoeelse`, `f_id_varefarve`, `f_id_vare`, `vis`, `billede`, `antal`) VALUES (NULL, '999', '2', '3', '6', '1', 'test.jpg', '2');";
+    $sqlin = "INSERT INTO `webshop`.`variant` (`id_variant`, `pris`, `f_id_stoeelse`, `f_id_varefarve`, `f_id_vare`, `vis`, `billede`, `antal`) VALUES (NULL, '$variant_pris', '$variant_stoerelse', '$variant_farve', '$variant_farve', '$variant_vis', '$variant_billede', '$variant_antal');";
 
     if ($conn->query($sqlin) === TRUE) {
         echo "New record created successfully";

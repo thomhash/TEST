@@ -159,7 +159,7 @@ Nuværende grupper:
             ?>
         </select>
         <br>Farve:<br>
-        <select name="variant_vare">
+        <select name="variant_farve">
             <?php
             $hent = hent_varefarve();
             foreach ($hent as list($a, $b)) {

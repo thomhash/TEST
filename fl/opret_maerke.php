@@ -32,14 +32,14 @@ if (empty($_POST['vare_navn']) == false) {
 if (empty($_POST['variant_pris']) == false) {
    $variant_vare = $_POST['variant_vare'];
    $variant_stoerelse = $_POST['variant_stoerelse'];
-   $variant_vare = $_POST['variant_vare'];
+   $variant_farve = $_POST['variant_farve'];
    $variant_billede = $_POST['variant_billede'];
    $variant_pris = $_POST['variant_pris'];
    $variant_vis = $_POST['variant_vis'];
    $variant_antal = $_POST['variant_antal'];
    
    
-   opret_variant($variant_vare,$variant_stoerelse,$variant_vare,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal);
+   opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal);
 }
 
 
