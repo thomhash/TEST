@@ -61,7 +61,7 @@ Nuværende grupper<br>
 Opret ny vare
     <form action="opretvarep.php" method="POST ">
 Navn:<br>
-<input type="text" name="navn">
+<input type="text" name="varenavn">
 <br>
 Beskrivelse:<br>
 <input type="text" name="beskrivelse">

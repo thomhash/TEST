@@ -57,4 +57,18 @@ function get_varefarve(){
      
 }
 
+ function get_vare(){
+    require 'login.php';
+  
+    $sql = "SELECT id_vare, navn
+            FROM `vare`";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+     
+}
+
 ?>

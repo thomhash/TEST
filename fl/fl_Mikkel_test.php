@@ -20,6 +20,11 @@ function hent_grupper(){
    // print_r($id_array);
    return $id_array;
 }
+function hent_vare(){
+   $id_array=get_vare();
+   // print_r($id_array);
+   return $id_array;
+}
 
 
 /* 
