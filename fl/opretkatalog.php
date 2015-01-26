@@ -35,5 +35,16 @@ return $vis_vare;
 
 }
 
+function hent_antal_sider($gruppenr){
+    $sider = \get_number_of_pages($gruppenr);
+    
+    return $sider;
+}
+
+
+
+$test = get_variant(3);
+print_r($test);
+
 
 ?>
