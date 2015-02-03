@@ -90,15 +90,17 @@ function get_number_of_pages ($gruppe_nr){
      return $sider;
 }
 
-// Henter navn, beskrivelse , pris , billede og antal til en given variant
+// Henter navn, beskrivelse , pris , billede, antal, størrelse og farve til en given variant
 function get_variant ($variant_id){
     require 'login.php';
     
-    $sql = "Select vare.`navn`, vare.`beskrivelse`, pris, billede, antal 
+    $sql = "Select vare.`navn`, vare.`beskrivelse`, pris, billede, antal, stoerrelse.`stoerrelse`, varefarve.`id_varefarve`   
             FROM            
             `variant`
-            INNER JOIN `vare` 
-            ON vare.`id_vare` = variant.`f_id_vare`
+            INNER JOIN `vare`
+            INNER JOIN `stoerrelse`
+            INNER JOIN `varefarve`
+            ON vare.`id_vare` = variant.`f_id_vare` AND stoerrelse.`id_stoerrelse`=variant.`f_id_stoerrelse` AND varefarve.`id_varefarve`= variant.`f_id_varefarve`
             WHERE `id_variant`= $variant_id ";
     
     
@@ -108,6 +110,63 @@ function get_variant ($variant_id){
      mysqli_close($db_server);
      return $row;
     
+    
+}
+
+
+
+
+// Hent størrelser i given farve udfra et vare id
+function get_stoerrelser($vare_id, $farve){
+    require 'login.php';
+    $sql = "SELECT stoerrelse.`stoerrelse` , variant.`id_variant`
+            FROM            
+            `vare`
+            INNER JOIN `stoerrelse` 
+            INNER JOIN `variant` 
+            INNER JOIN `varefarve` 
+            ON stoerrelse.`id_stoerrelse` = variant.`f_id_stoerrelse` AND variant.`f_id_vare`= vare.`id_vare` AND varefarve.`id_varefarve`=variant.`f_id_varefarve`
+            WHERE vare.`id_vare`= $vare_id AND varefarve.`id_varefarve`= $farve";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+    
+     mysqli_close($db_server);
+     return $row;
+    
+}
+
+function get_vare_id($variant_id){
+    require 'login.php';
+    $sql = "SELECT vare.`id_vare`
+            FROM            
+            `vare`
+            INNER JOIN `variant` 
+            ON variant.`f_id_vare` = vare.`id_vare`
+            WHERE variant.`id_variant`= $variant_id";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+    
+     mysqli_close($db_server);
+     return $row;
+    
+}
+
+function get_farver($vare_id, $farve_id){
+    require 'login.php';
+    $sql = "SELECT variant.`id_variant`, variant.`billede`
+            FROM            
+            `variant`
+            INNER JOIN `vare` 
+            ON variant.`f_id_vare` = vare.`id_vare`
+            WHERE variant.`id_variant`= $variant_id";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+    
+     mysqli_close($db_server);
+     return $row;
     
 }
 
