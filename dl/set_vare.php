@@ -149,7 +149,7 @@ function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_priorite
 
 function opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal)
 {
-      $servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "webshop";

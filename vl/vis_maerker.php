@@ -1,7 +1,53 @@
 <?php
 require '../fl/fl_Mikkel_test.php';
+session_start();
+include '../fl/krav_admin.php';
 ?>
+<link rel="stylesheet" type="text/css" href="..\styles.php">
+
+<div id="top"> Det er smart <div>
+     
+<div id="content">
+    <div id="overskrift">
+        Her er overskriften til hjemmesiden <br>
+          Her er overskriften til hjemmesiden <br>
+            Her er overskriften til hjemmesiden <br>
+              Her er overskriften til hjemmesiden <br>
+                Her er overskriften til hjemmesiden <br>
+                  Her er overskriften til hjemmesiden <br>
+                  
+        Det er smart 
+        </div>
+    
+    
+    <div id="venstre">
+        
+
+    
+        Her er det rigtige indhold<br>
+        </div> 
+    <div id="indhold">
+        <form action="../fl/log_out.php" method="POST">
+    <input type="submit" value="Log ud">
+</form>
+<hr>
+<h3> Mulighedder: </h3> <br> 
+<href>
+    Opret nyt mærke <br>
+    Opret ny farve <br>
+    Opret ny størelse <br>
+    Opret ny gruppe <br>
+    Opret ny vare <br>
+    Opret ny variant <br>
+    <br>
+    Tjek lagerstatus  <br>
+    Tilføj vare til lager <br>
+    <br>
+    Tjek ordre <br>
+    Tjek historik  <br>
+</href>
 <!--Opret nyt mærke -->
+<hr>
 <hr>
 <h3> Opret nyt maerke</h3>
 
@@ -14,10 +60,10 @@ require '../fl/fl_Mikkel_test.php';
 Nuværende mærker:
 <form> 
     <select>
-        <?php
-        $hent = hent_maerker();
-        foreach ($hent as list($a, $b)) {
-            ?>
+<?php
+$hent = hent_maerker();
+foreach ($hent as list($a, $b)) {
+    ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
             <?php
         }
@@ -37,10 +83,10 @@ Nuværende mærker:
 Nuværende farver:
 <form> 
     <select>
-        <?php
-        $hent = hent_varefarve();
-        foreach ($hent as list($a, $b)) {
-            ?>
+<?php
+$hent = hent_varefarve();
+foreach ($hent as list($a, $b)) {
+    ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
             <?php
         }
@@ -60,10 +106,10 @@ Nuværende farver:
 Nuværende Størelser:
 <form> 
     <select>
-        <?php
-        $hent = hent_stoerrelser();
-        foreach ($hent as list($a, $b)) {
-            ?>
+<?php
+$hent = hent_stoerrelser();
+foreach ($hent as list($a, $b)) {
+    ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
             <?php
         }
@@ -77,15 +123,15 @@ Nuværende Størelser:
     Gruppe:<br>
 
     <input type="text" name="gruppe"><br>
-       
+
     Undergruppe <br>
     <select name="undergruppe">
-          <option value="DET VIRKER">Ingen</option>
-        <?php
-        $hent = hent_grupper();
-        foreach ($hent as list($a, $b)) {
-                       ?>
-            <option value="<?php echo $a;?>"><?php echo $b;?></option>
+        <option value="DET VIRKER">Ingen</option>
+<?php
+$hent = hent_grupper();
+foreach ($hent as list($a, $b)) {
+    ?>
+            <option value="<?php echo $a; ?>"><?php echo $b; ?></option>
             <?php
         }
         ?>
@@ -94,12 +140,12 @@ Nuværende Størelser:
     <input type="submit" value="Send">
 </form>
 Nuværende grupper:
- <form> 
+<form> 
     <select>
-        <?php
-        $hent = hent_grupper();
-        foreach ($hent as list($a, $b)) {
-            ?>
+<?php
+$hent = hent_grupper();
+foreach ($hent as list($a, $b)) {
+    ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
             <?php
         }
@@ -116,11 +162,11 @@ Nuværende grupper:
     <input type="number" name="vare_prioritet"><br>
     Mærke:<br>
     <select name="maerke_til_vare">
-        <?php
-        $hent = hent_maerker();
-        foreach ($hent as list($a, $b)) {
-            ?>
-            <option value="<?php echo $a?>"><?php echo $b ?></option>
+<?php
+$hent = hent_maerker();
+foreach ($hent as list($a, $b)) {
+    ?>
+            <option value="<?php echo $a ?>"><?php echo $b ?></option>
             <?php
         }
         ?>
@@ -138,10 +184,10 @@ Nuværende grupper:
 
     <form> 
         <select name="variant_vare">
-            <?php
-            $hent = hent_vare();
-            foreach ($hent as list($a, $b)) {
-                ?>
+<?php
+$hent = hent_vare();
+foreach ($hent as list($a, $b)) {
+    ?>
                 <option value="<?php echo $a ?>"><?php echo $b ?></option>
                 <?php
             }
@@ -169,24 +215,28 @@ Nuværende grupper:
             }
             ?>
         </select>
-       
+
         <br>Vis:<br>
         <select name="variant_vis">
             <option value="1">Ja</option>
             <option value="0">Nej</option>
 
         </select>
-         <br>Billede:<br>
+        <br>Billede:<br>
         <input type="text" name="variant_billede"><br>
         <br>Pris:<br>
         <input type="text" name="variant_pris"><br>
         <br>number:<br>
         <input type="number" name="variant_antal"><br>
-    
+
         <input type="submit">
 
     </form>
     <hr>
+     
+    
+        </div>
+    </div>
 <?php
 /*
  * To change this license header, choose License Headers in Project Properties.

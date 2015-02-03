@@ -2,8 +2,60 @@
     header("Content-type: text/css; charset: UTF-8");
     require_once 'parametre.php';
 ?>
+#container
+{
+width: 85%;
+
+}
+
+body{
+background-color: #D8D8D8;
 
 
+}
+#content
+{
+background-color: blue;
+margin-left: 7%;
+margin-right: 7%;
+margin-top: 3.5%;
+border: 2px solid blue;
+height: 1000px;
+
+}
+#top
+{
+   
+background-color: black;
+height: 5%;
+font-color: white;
+
+}
+#venstre 
+{
+background-color: CFCACA;
+width: 24%;
+float: left;
+height: 700px;
+margin-left: 1px;
+
+
+}
+#overskrift 
+{
+background-color: #E6E6E6;
+margin-bottom: 3px;
+height: 200px;
+}
+
+#indhold 
+{
+background-color: #A4A4A4;
+width: 74%;
+float: right;
+height: 700px;
+
+}
 
 
 
