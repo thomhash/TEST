@@ -47,6 +47,13 @@ function get_variant_info($id_variant){
     
     return $info;
 }
+//test
+function hent_stoerrelser($id_variant, $farve_id){
+    $id= \get_vare_id($id_variant);
+    $stoerrelser= get_stoerrelser($id[0][0], $farve_id);
+    
+    return $stoerrelser;
+}
 
 
 
