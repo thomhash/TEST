@@ -26,6 +26,12 @@ function get_vare_prioritet_f($id_variant){
    // print_r($id_array);
    return $id_array;
 }
+function get_vare_info_kurv($id_variant){
+   
+   $id_array=get_vare_info_kurv_d($id_variant);
+   // print_r($id_array);
+   return $id_array;
+}
 
 
 /* 
