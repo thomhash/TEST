@@ -11,7 +11,7 @@ function hent_varefarve(){
    return $id_array;
 }
 function hent_stoerrelser(){
-   $id_array=get_stoerrelser();
+   $id_array=get_alle_stoerrelser();
    // print_r($id_array);
    return $id_array;
 }
@@ -22,6 +22,12 @@ function hent_grupper(){
 }
 function hent_vare(){
    $id_array=get_vare();
+   // print_r($id_array);
+   return $id_array;
+}
+
+function hent_billede(){
+   $id_array=get_billede();
    // print_r($id_array);
    return $id_array;
 }

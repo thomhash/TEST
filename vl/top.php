@@ -9,4 +9,38 @@
 <link rel="stylesheet" type="text/css" href="..\styles.php">
 <h3><center>
 <a href="test.php">Om os - </a> <a href="s_login.php">Log in - </a> <a href="indkøbskurv.php">Indkøbskurv </a>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+ 
+<style> 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Indkøbskurv</div>
+<div id="panel">
+    Vare1 
+    Vare2 
+</div>
+</head>
+<body>
+
+
 </h3>

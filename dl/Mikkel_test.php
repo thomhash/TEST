@@ -5,7 +5,7 @@ function get_maerker(){
     require 'login.php';
       
   
-    $sql = "SELECT id_maerke, maerke
+    $sql = "SELECT id_maerke, maerke_navn
             FROM `maerke`";
     
     $result= mysqli_query($db_server, $sql);       
@@ -16,10 +16,10 @@ function get_maerker(){
      
 }
 
-function get_stoerrelser(){
+function get_alle_stoerrelser(){
     require 'login.php';
   
-    $sql = "SELECT id_stoerrelse, stoerrelse
+    $sql = "SELECT id_stoerrelse, stoerrelse_beskrivelse
             FROM `stoerrelse`";
     
     $result= mysqli_query($db_server, $sql);       
@@ -56,6 +56,20 @@ function get_varefarve(){
      
 }
 
+function get_grupper_til_vare(){
+    require 'login.php';
+  
+    $sql = "SELECT id_varegruppe, gruppe, overgruppe
+            FROM `gruppe`";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+     
+}
+
  function get_vare(){
     require 'login.php';
   
@@ -69,5 +83,21 @@ function get_varefarve(){
     return $row;
      
 }
+
+ function get_billede(){
+    require 'login.php';
+  
+    $sql = "SELECT id_billede, url
+            FROM `billede`";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+     
+}
+
+
 
 ?>

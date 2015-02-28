@@ -18,7 +18,7 @@ function opret_stoerelse($stoerrelse) { {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`stoerrelse` (`id_stoerrelse`, `stoerrelse`) VALUES (NULL, '$stoerrelse');";
+        $sqlin = "INSERT INTO `webshop`.`stoerrelse` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
 
         if ($conn->query($sqlin) === TRUE) {
             echo "New record created successfully";
@@ -76,7 +76,28 @@ function opret_gruppe($gruppe,$overgruppe) { {
     }
 }
 
+function opret_gruppe_uu($gruppe) { {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "webshop";
 
+// Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sqlin = "INSERT INTO `webshop`.`gruppe` (`gruppe`) VALUES ('$gruppe');";
+
+        if ($conn->query($sqlin) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
 
 function opret_maerke($marke) {
 
@@ -92,7 +113,7 @@ function opret_maerke($marke) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sqlin = "INSERT INTO maerke ( maerke) VALUES ('$marke')";
+    $sqlin = "INSERT INTO maerke ( maerke_navn) VALUES ('$marke')";
 
     if ($conn->query($sqlin) === TRUE) {
         echo "New record created successfully";
@@ -145,7 +166,33 @@ function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_priorite
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+     
 }
+
+function tilfoj_gruppe($id_vare,$id_gruppe){
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "webshop";
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sqlin = "INSERT INTO `webshop`.`vare_har_gruppe` (`id_vare_har_gruppe`, `f_id_vare`, `f_id_varegruppe`) VALUES (NULL, '$id_vare', '$id_gruppe');";
+
+    if ($conn->query($sqlin) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+     
+}
+
 
 function opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal)
 {
@@ -161,10 +208,55 @@ function opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sqlin = "INSERT INTO `webshop`.`variant` (`id_variant`, `pris`, `f_id_stoeelse`, `f_id_varefarve`, `f_id_vare`, `vis`, `billede`, `antal`) VALUES (NULL, '$variant_pris', '$variant_stoerelse', '$variant_farve', '$variant_farve', '$variant_vis', '$variant_billede', '$variant_antal');";
+    $sqlin = "INSERT INTO `webshop`.`variant` (`id_variant`, `pris`, `f_id_stoerrelse`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES (NULL, '$variant_pris', '$variant_stoerelse', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
 
     if ($conn->query($sqlin) === TRUE) {
         echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+function opret_billede($url)
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "webshop";
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sqlin = "INSERT INTO `webshop`.`billede` (`id_billede`, `url`) VALUES (NULL, '$url');";
+
+    if ($conn->query($sqlin) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+function forbind_vare_med_gruppe($gruppe,$vare){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "webshop";
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sqlin = "INSERT INTO `webshop`.`vare_har_gruppe` (`id_vare_har_gruppe`, `f_id_vare`, `f_id_varegruppe`) VALUES (NULL, '$vare', '$gruppe');";
+
+    if ($conn->query($sqlin) === TRUE) {
+        echo "New record created successfully; FEDT!";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

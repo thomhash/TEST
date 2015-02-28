@@ -14,19 +14,25 @@ if (empty($_POST['stoerelse']) == false) {
    $stoerelse = $_POST['stoerelse'];
    opret_stoerelse($stoerelse);
 }
-
+/*
 if (empty($_POST['gruppe']) == false) {
    $gruppe = $_POST['gruppe'];
    $undergruppe = $_POST['undergruppe'];
-   opret_gruppe($gruppe,$undergruppe);
+   if ($undergruppe == "0"){
+       opret_gruppe_uu($gruppe);
+   } 
+   else{
+   opret_gruppe($gruppe,$undergruppe);}
 }
-
+*/
 if (empty($_POST['vare_navn']) == false) {
    $vare_navn = $_POST['vare_navn'];
    $vare_beskrivelse = $_POST['vare_beskrivelse'];
    $maerke_til_vare = $_POST['maerke_til_vare'];
    $vare_prioritet = $_POST['vare_prioritet'];
-   opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet);
+   $vare_gruppe = $_POST['gruppe_til_vare'];
+   
+   opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe);
 }
 
 if (empty($_POST['variant_pris']) == false) {
@@ -37,6 +43,8 @@ if (empty($_POST['variant_pris']) == false) {
    $variant_pris = $_POST['variant_pris'];
    $variant_vis = $_POST['variant_vis'];
    $variant_antal = $_POST['variant_antal'];
+   
+   
    
    
    opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal);

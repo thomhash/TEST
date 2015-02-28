@@ -20,7 +20,7 @@ margin-left: 7%;
 margin-right: 7%;
 margin-top: 3.5%;
 border: 2px solid blue;
-height: 1000px;
+height: 2710px;
 
 }
 #top
@@ -36,7 +36,7 @@ font-color: white;
 background-color: CFCACA;
 width: 24%;
 float: left;
-height: 700px;
+height: 2500px;
 margin-left: 1px;
 
 
@@ -53,7 +53,7 @@ height: 200px;
 background-color: #A4A4A4;
 width: 74%;
 float: right;
-height: 700px;
+height: 2500px;
 
 }
 
