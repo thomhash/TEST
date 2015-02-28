@@ -1,0 +1,114 @@
+/*
+
+#container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+#container img {
+   
+    //height: 300px;
+    width: 250px;
+    border: 1px solid black;
+    margin: 5px;
+    float: left;
+} */
+
+
+figure {
+    width: 20%;
+    border: none; //1px solid blue;
+    margin: 10px;
+    float: left;
+}
+
+figure img {
+    width: 100%; height: 250px;
+    border: 1px solid red;
+    //margin: 5px;
+    //float: left;
+}
+
+figure  {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+  	-moz-transition: all 1s ease; /* Firefox */
+  	-o-transition: all 1s ease; /* IE 9 */
+  	-ms-transition: all 1s ease; /* Opera */
+  	transition: all 1s ease;
+}
+
+figure:hover  {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+}
+
+
+
+
+figure figcaption table{
+    width: 100%;
+    
+}
+
+
+p.sider {
+    
+ margin-top: 100%;
+             
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#outer{
+  height:400px; width:400px; border: 5px solid orange;
+}
+#outer img{
+    
+  width:15%; border:5px solid blue; margin:2%; float:left;
+}
+#outer #bd{
+  clear:left;
+}*/
+/*
+#outer  figcaption  {
+  width: 15% ; border:5px solid red; margin:3%; color: blue; 
+  
+}*/
+
+
+
+
+
+
+
+
+
+/*.container {
+    width: 300px;
+    //height: 120px;
+}
+
+/* resize images */
+//.container img {
+  //  width: 100%;
+  //  height: auto;
+//} 
