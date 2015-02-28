@@ -9,7 +9,7 @@ $tjek = login_tjek($brugernavn,$kode);
 if ($tjek == 0)
 {
     //echo "Du er ikke logget ind";
-    $_SESSION["logget_ind"] = "nej";
+    $_SESSION["logget_ind_admin"] = "nej";
     $_SESSION["login_besked"] = "Forkert brugernavn eller kode";
     header("location:../vl/s_login.php");
     
