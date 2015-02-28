@@ -99,7 +99,7 @@
 
     <div id="dropdown" action='../fl/indkoebskurv.php'>        
         
-        <form method="post">
+        <form method="post" action="../fl/tilfoj_kurv.php">
           Størrelse: 
           
          

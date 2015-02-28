@@ -4,7 +4,7 @@ session_start();
 $vare_id = $_POST['variant_id']; 
 $vare_antal_tilfoj = $_POST['variant_antal']; 
 if (isset($_POST['slet_vare'])){
-    
+    $_SESSION["kurv"][$vare_id] = 0;
 };
 $vare_antal_nu = 0;
 if(isset($_SESSION['kurv'][$vare_id])){
