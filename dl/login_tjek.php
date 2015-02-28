@@ -17,4 +17,3 @@ AND `adgangskode` = '$kode';";
     // $logget = $row[1];
     return $tal;
 }
-
