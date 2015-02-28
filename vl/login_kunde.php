@@ -1,37 +1,20 @@
-
-<html>
-    
-    
-<head>
-	<title>HTML5 Login</title>
-	<link rel="stylesheet" href="..\login_user_normalize.css">
-	<link rel="stylesheet" href="..\login_user.css">
-</head>
-<body>
-    <?php
+<?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 ?>
-<section class="loginform cf">
-		<form name="login" action="../fl/login_kunde.php" method="post" accept-charset="utf-8">
-			<ul>
-				<li>
-					<label for="usermail">Email</label>
-					<input type="email" name="brugernavn" placeholder="yourname@email.com" required>
-                                        <br>
-				</li>
-                                
-				<li>
-					<label for="password">Password</label>
-					<input type="password" name="kode" placeholder="password" required></li>
-				<li>
-					<input type="submit" value="Login">
-				</li>
-			</ul>
-		</form>
-	</section>
+
+<h3>Log in</h3>
+<form action="../fl/login_check.php" method="POST">
+    Brugernavn:<br>
+    <input type="text" name="brugernavn"><br>
+    Password:<br>
+    <input type="password" name="kode"><br>
+    <br>
+    <input type="submit" value="LOG IN">
+   
+</form>
 
 <?php
 if (isset($_SESSION["login_besked"])){
@@ -39,5 +22,3 @@ if (isset($_SESSION["login_besked"])){
 }
 
 ?>
-    </body>
-</html>

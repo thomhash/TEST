@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION["logget_ind_admin"] != "ja"){
+if ($_SESSION["logget_ind"] != "ja"){
 $_SESSION["login_besked"] = "OBS: Denne side du prøver at tilgå kræver login";    
 header("location:login_bruger.php");
 }

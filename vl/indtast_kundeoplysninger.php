@@ -7,13 +7,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <?php
-    
-    
-    ?>
-    
-    
-    
 	<section class="loginform cf">
 		<form name="login" action="vis_menu.php" onsubmit="return checkForm(this);">
 			<ul>
@@ -70,6 +63,6 @@
 		</form>
 	</section>
     
-<script type="text/javascript" src="opretkunde.js"></script>
+<script type="text/javascript" src="opretbruger.js"></script>
 </body>
 </html>

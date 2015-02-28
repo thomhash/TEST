@@ -8,11 +8,11 @@
 </head>
 <body>
 	<section class="loginform cf">
-            <form name="login" action="indtast_kundeoplysninger.php" onsubmit="return checkForm(this);">
+		<form name="login" action="..\fl\opret_kunde_fl.php" onsubmit="return checkForm(this);">
 			<ul>
 				<li>
 					<label>E-mail</label>
-					<input type="email" name="email" placeholder="yourname@email.com" required>
+                                        <input type="email" name="email" placeholder="yourname@email.com" autofocus="autofocus" required>
                                         <br>
 				</li>
                                 
@@ -27,12 +27,12 @@
                                         <br>
                                 </li>
 				<li>
-					<input type="submit" value="Opret">
+					<input type="submit" value="Login">
 				</li>
 			</ul>
 		</form>
 	</section>
     
-<script type="text/javascript" src="opretkunde.js"></script>
+<script type="text/javascript" src="opretbruger.js"></script>
 </body>
 </html>
