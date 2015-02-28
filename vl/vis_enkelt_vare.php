@@ -30,7 +30,7 @@
        <div class="container1">
           <?php 
                      
-            $test= hent_farve_varianter($id, ($info_array[0][6]));
+            $farve_varianter= hent_farve_varianter($id, ($info_array[0][6]));
                    
                    ?>
     
@@ -39,14 +39,14 @@
                
                  <?php 
                  $billede_nr=0;
-                  if (!empty($farver)) {
-                 foreach ($test as $key => $value) {
+                  if (!empty($farve_varianter)) {
+                 foreach ($farve_varianter as $key => $value) {
                       if ($billede_nr>0 && $billede_nr % 4 ==0){
                         echo '</div>';
                           
                         echo '<div class="image">';
-                        echo '<a href="vis_enkelt_vare.php?id=' .$test[$billede_nr][0]  .'">';
-                        echo    '<img src="..\billeder\\' .$test[$billede_nr][1] .'">';
+                        echo '<a href="vis_enkelt_vare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                        echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
                         echo '</a>';
                         
                        echo '<div id="controls">';
@@ -58,8 +58,8 @@
                       }
                        
                       else{
-                         echo '<a href="vis_enkelt_vare.php?id=' .$test[$billede_nr][0]  .'">';
-                         echo    '<img src="..\billeder\\' .$test[$billede_nr][1] .'">';
+                         echo '<a href="vis_enkelt_vare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                         echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
                          echo '</a>';
                      
                     
