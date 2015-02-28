@@ -1,5 +1,5 @@
 <?php
-
+// det er smart! 
 function login_tjek($brugernavn,$kode)
 {
 require 'login.php';
