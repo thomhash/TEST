@@ -63,6 +63,7 @@ function hent_farve_varianter($id_variant, $farve_id){
     $smaa_billeder;
      
     $raekke_nr = 0;
+    if (!empty($farver)) {
         foreach ($farver as $key => $value)           
         {   
             
@@ -73,11 +74,12 @@ function hent_farve_varianter($id_variant, $farve_id){
             
             
         }
+    
         
           
         
         return $smaa_billeder;
-    
+    }
 }
 
 

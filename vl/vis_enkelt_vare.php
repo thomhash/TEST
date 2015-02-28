@@ -39,7 +39,7 @@
                
                  <?php 
                  $billede_nr=0;
-                 
+                  if (!empty($farver)) {
                  foreach ($test as $key => $value) {
                       if ($billede_nr>0 && $billede_nr % 4 ==0){
                         echo '</div>';
@@ -68,10 +68,11 @@
 
                          
                       }
+                  }
                  echo '</div>';
                  
                  
-                 
+                  
                  ?>
             
                  
