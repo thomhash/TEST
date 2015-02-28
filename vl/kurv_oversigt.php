@@ -1,6 +1,6 @@
 
  <?php require '../fl/get_vare.php';
-          require 'tekst.php';
+        
     
         
       //   $id = $_GET['id'];  
