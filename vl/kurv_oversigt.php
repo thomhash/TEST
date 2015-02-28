@@ -1,13 +1,32 @@
 
- <?php require '../fl/opretkatalog.php';
+ <?php require '../fl/get_vare.php';
           require 'tekst.php';
     
+        
       //   $id = $_GET['id'];  
      //    $info_array= get_variant_info($id);
 
          $vare[2]=1;
          $vare[5]=4;
+         $vare[11]=17;
+         $info_array;
          print_r($vare);
+   //      foreach ($vare as &$value) {
+  //      echo $value;
+//}
+?>
+<br>
+<?php
+    foreach($vare as $id=>$antal){
+        $info_array[]= get_vare_info_kurv($id);
+        
+    }
+    foreach($info_array as $id=>$antal){
+        echo $info_array;
+        
+    }
+   // print_r($info_array)
+    
 ?>
 <header>
     
