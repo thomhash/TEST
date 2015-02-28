@@ -70,7 +70,7 @@ width: <?php echo varer_vandret(); ?>%;
 
  #katalog figure img {
 width: 100%; height: <?php echo hoejde_billeder(); ?>px;
-    border: 1px solid red;
+   // border: 1px solid red;
     //margin: 5px;
     //float: left;
 }
@@ -108,12 +108,12 @@ p.sider {
         
         
         
-#top img{
+#topbillede img{
 width: 100%;
 }
 #billeder {
 width: 35%; //height: 50px;
-    border: 1px solid blue;
+   // border: 1px solid blue;
     float: left;
     
 }
@@ -136,7 +136,7 @@ width: 100%;
 margin-left: 20px;
 margin-top: 2%;
 width: 50%;
-border: 1px solid orange;
+//border: 1px solid orange;
 float: left;
 }
 
@@ -181,9 +181,9 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 
 
-// Små billeder i vis enkeltvare
+// Små billeder i vis enkeltvare, 4 stks.
 
-#container{
+#container1{
     
     height: 100px;
     width: 100%;
@@ -198,24 +198,13 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 .image img{
 height: 100px;
-width: 24%;
+width: 25%;
 }
 
 .active {
     display:block;
 }
-.one {
-    background-color:none;
-    
-}
-.two {
-    background-color:none;
-    
-}
-.three {
-    background-color:none;
-    
-}
+
 
 .next, .prev {
     position: relative;

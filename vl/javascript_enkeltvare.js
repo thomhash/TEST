@@ -22,3 +22,8 @@ $(document).on('click', '.next', function() {
     
     console.log($('.image').first());
 });
+
+
+document.getElementById("Stoerrelser").addEventListener('change', function () {
+    window.location = this.value;
+}, false); 

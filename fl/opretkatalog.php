@@ -55,6 +55,31 @@ function hent_stoerrelser($id_variant, $farve_id){
     return $stoerrelser;
 }
 
+function hent_farve_varianter($id_variant, $farve_id){
+    
+    $vare_id=get_vare_id($id_variant); 
+     
+    $farver= get_farver($vare_id[0][0], $farve_id);     
+    $smaa_billeder;
+     
+    $raekke_nr = 0;
+        foreach ($farver as $key => $value)           
+        {   
+            
+            $temp= get_farver_billeder($vare_id[0][0], $farver[$raekke_nr][0]);
+            $smaa_billeder[$raekke_nr][0]= $temp [0][0];
+            $smaa_billeder[$raekke_nr][1]= $temp [0][1];
+            $raekke_nr++;
+            
+            
+        }
+        
+          
+        
+        return $smaa_billeder;
+    
+}
+
 
 
 ?>

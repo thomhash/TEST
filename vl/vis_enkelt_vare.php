@@ -16,33 +16,21 @@
     
          $id = $_GET['id'];  
          $info_array= get_variant_info($id);
+         
     ?>  
      
    <div id="billeder"> 
         
         <h1> <?php echo $info_array[0][0]   ?> </h1>
-      <div id="top"> 
+      <div id="topbillede"> 
         <img src ="..\billeder\<?php echo $info_array[0][3]; ?> ">
       </div> 
         
        
-       <div class="container">
+       <div class="container1">
           <?php 
-           $test;
-           $test[0][1]= "nike_shock_green.jpg";
-           $test[0][0]= 1;
-           $test[1][1]= "nike_shock_blue.jpg";
-           $test[1][0]= 2;
-           $test[2][1]= "nike_shock_black.jpg";
-           $test[2][0]= 3;
-           $test[3][1]= "nike_shock_red.jpg";
-           $test[3][0]= 4;
-           $test[4][1]= "puma_street_sko_black.jpg";
-           $test[4][0]= 5;
-           $test[5][1]= "puma_street_sko_green.jpg";
-           $test[5][0]= 6;
-           $test[6][1]= "adidas_supernova_yellow.jpg";
-           $test[6][0]= 7;
+                     
+            $test= hent_farve_varianter($id, ($info_array[0][6]));
                    
                    ?>
     
@@ -60,6 +48,11 @@
                         echo '<a href="vis_enkelt_vare.php?id=' .$test[$billede_nr][0]  .'">';
                         echo    '<img src="..\billeder\\' .$test[$billede_nr][1] .'">';
                         echo '</a>';
+                        
+                       echo '<div id="controls">';
+                       echo     '<img src="http://annhowardesign.com/images/arrowright.jpg" class="next" alt="Next"/>'; 
+                       echo     '<img src="http://annhowardesign.com/images/arrowleft.jpg" class="prev" alt="Previous"/>'; 
+                       echo  '</div>';
                         
                            $billede_nr++;
                       }
@@ -80,33 +73,14 @@
                  
                  
                  ?>
+            
                  
                  
-              <!--   <a href="vis_katalog.php?page=1 & gruppe=2 ">
-                    
-                </a>
-             </div>
-            <div class="image">
-                
-                
-                 <a href="vis_katalog.php?page=3 & gruppe=4 ">
-                    
-                </a>
-            </div>
-             <div class="image">
-              <a href="vis_katalog.php?page=5 & gruppe=6 ">
-                    
-                  </a>
-                  </div> //-->
-             
         </div>
            
            
            
-           <div id="controls">
-           <img src="http://annhowardesign.com/images/arrowright.jpg" class="next" alt="Next"/> 
-           <img src="http://annhowardesign.com/images/arrowleft.jpg" class="prev" alt="Previous"/> 
-    </div>
+           
     </div>
          
          
@@ -128,7 +102,7 @@
           Størrelse: 
           
          
-            <select name="Stoerrelser">
+            <select id="Stoerrelser">
                 
                 
                  <?php 
@@ -140,12 +114,14 @@
                       // if statement der sætter den vare man er inde på som selected 
                         if($size[$raekke_nr][0]== $info_array[0][5]){
                             
+                             
                             echo '<option value="' .$size[$raekke_nr][1] .'" selected>' .$size[$raekke_nr][0] .'</option>';
                             
                             $raekke_nr++;
                         }
                         else {
-                            echo '<option value="' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
+                                
+                            echo '<option value="' .'vis_enkelt_vare.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
                              $raekke_nr++;
                               }
                              
