@@ -1,21 +1,27 @@
 body, nav, ul, li, a  {margin: 0; padding: 0;}
 body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 a {text-decoration: none;}
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 10px auto;
+.container_menu {
+    //width: 50%;   
+    //max-width: 900px;
+   // bottom: 0;
+    width: 100%;
+    //border: 2px solid orangered;
+    
 }
 .toggleMenu {
     display:  none;
     background: #666;
     padding: 10px 15px;
     color: #fff;
+    
 }
 .nav {
     list-style: none;
      *zoom: 1;
      background:#175e4c;
+     
+     
 }
 .nav:before,
 .nav:after {

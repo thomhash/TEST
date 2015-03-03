@@ -16,11 +16,15 @@ background-color: #D8D8D8;
 #content
 {
 background-color: blue;
-margin-left: 7%;
-margin-right: 7%;
+
 margin-top: 3.5%;
+
+margin-left: auto;
+margin-right: auto;
 border: 2px solid blue;
 height: 2710px;
+width: 500px;
+min-width: 75%;
 
 }
 #top
@@ -29,6 +33,7 @@ height: 2710px;
 background-color: black;
 height: 5%;
 font-color: white;
+width: 100%;
 
 }
 #venstre 
@@ -44,16 +49,18 @@ margin-left: 1px;
 #overskrift 
 {
 background-color: #E6E6E6;
-margin-bottom: 3px;
+margin-bottom: 0px;
 height: 200px;
+
 }
 
 #indhold 
 {
 background-color: #A4A4A4;
-width: 74%;
+width: 75%;
+
 float: right;
-height: 2500px;
+height: 90%;
 
 }
 
@@ -62,7 +69,7 @@ height: 2500px;
 
  #katalog figure {
 width: <?php echo varer_vandret(); ?>%; 
-    border: none; //1px solid blue;
+    border: 1px solid blue;
     margin: 10px;
    
     float: left;

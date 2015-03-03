@@ -1,5 +1,5 @@
 <?php
-require '..\dl\menu.php';
+require 'dl\menu.php';
 
 function hent_grupper()
     {

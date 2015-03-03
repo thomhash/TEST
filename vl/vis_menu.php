@@ -3,10 +3,13 @@
 <head>
 	<title>Dropdowns</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css_menu.css">
+	<link rel="stylesheet" type="text/css" href="vl/css_menu.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       
+      
 </head>
 <body>
-<div class="container">
+<div class="container_menu">
 	
 <a class="toggleMenu" href="#">Menu</a>
 <ul class="nav">
@@ -23,7 +26,7 @@
 
 <?php
 
-require '..\fl\opret_menu.php';
+require 'fl\opret_menu.php';
 $main_raekkenr = 0;
 $grupper = hent_grupper();
 
@@ -65,7 +68,7 @@ function vis_undergruppe1($undergruppe_1){
 function vis_undergruppe2($undergruppe_2)
 { $raekkenr=0;
     foreach ($undergruppe_2 as $value) {
-        echo "<li>" .'<a href="vis_katalog.php?page=1 & gruppe='.$undergruppe_2[$raekkenr][0].'">'.$undergruppe_2[$raekkenr][1] .'</a>' .'</li>';
+        echo "<li>" .'<a href="frame_katalog.php?page=1 & gruppe='.$undergruppe_2[$raekkenr][0].'">'.$undergruppe_2[$raekkenr][1] .'</a>' .'</li>';
         
         $raekkenr++;
     }
@@ -77,7 +80,7 @@ function href($subarray, $id, $navn){
     
     if (empty($subarray)) {
         
-        echo "<li>" .'<a href="vis_katalog.php?page=1 & gruppe='.$id.'">'.$navn .'</a>' .'</li>';
+        echo "<li>" .'<a href="frame_katalog.php?page=1 & gruppe='.$id.'">'.$navn .'</a>' .'</li>';
     }
     else {
         echo "<li>" .'<a href="#">'.$navn .'</a>';
@@ -93,7 +96,7 @@ function href($subarray, $id, $navn){
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="javascript_menu.js"></script>
+<script type="text/javascript" src="vl/javascript_menu.js"></script>
 </body>
 </html>
 

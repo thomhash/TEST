@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="..\styles.php">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body>
@@ -10,11 +11,11 @@
     
     
     <?php
-    require '../fl/opretkatalog.php';
+    require 'fl/opretkatalog.php';
     require 'tekst.php';
     //variable sendt fra hovedsiden
-   $gruppenr = $_GET['gruppe'];
-   $side = $_GET['page'];
+   //$gruppenr = $_GET['gruppe'];
+   //$side = $_GET['page'];
    
    
    $info_vare= hent_vare_katalog($gruppenr, $side);
@@ -25,8 +26,8 @@
         foreach ($info_vare as $value) {
           
          echo "<figure>";
-           echo '<a href="vis_enkelt_vare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;
-             echo '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">'; 
+           echo '<a href="frame_vis_enkeltvare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;
+             echo '<img src="billeder\\' .$info_vare[$raekke_nr][2] .'">'; 
                 echo '</a>';
            echo "<figcaption>
                     <table>   
@@ -56,10 +57,10 @@ echo '<br>'
       for ($x = 1; $x <= $sider; $x++) {
           
           if($x==$side){
-             echo '<a href="vis_katalog.php?page=' .$x .'& gruppe=' .$gruppenr .'"><b>' .$x .'</b></a>';
+             echo '<a href="frame_katalog.php?page=' .$x .'& gruppe=' .$gruppenr .'"><b>' .$x .'</b></a>';
           }
           else{
-            echo '<a href="vis_katalog.php?page=' .$x .'& gruppe=' .$gruppenr .'">' .$x .'</a>';
+            echo '<a href="frame_katalog.php?page=' .$x .'& gruppe=' .$gruppenr .'">' .$x .'</a>';
           }  
           //echo  $x;
           echo "&nbsp;";

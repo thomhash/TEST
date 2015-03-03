@@ -1,6 +1,6 @@
 <?php
 
-require '../dl/varer.php';
+require_once 'dl/varer.php';
 //Test variable
 //$gruppenr = 2;
 //$side =1;
@@ -43,7 +43,8 @@ function hent_antal_sider($gruppenr){
 
 
 function get_variant_info($id_variant){
-    $info = \get_variant($id_variant);
+    
+    $info = get_variant($id_variant);
     
     return $info;
 }
