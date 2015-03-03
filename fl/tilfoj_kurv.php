@@ -9,6 +9,7 @@ if (isset($_POST['slet_vare'])){
 
 if (isset($_POST['plus'])){
     echo "DEter fedt!";
+    echo $vare_id;
     
 }
 $vare_antal_nu = 0;

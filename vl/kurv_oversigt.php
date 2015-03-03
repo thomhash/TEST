@@ -71,7 +71,7 @@
             <th> <?php echo $info_array[$raekkenr][1]; ?></th>
             <th>
                
-        <form name="ret" action="../fl/tilfoj_kurv.php?variant_id=<?php$subarray[0][5]?>" method="POST">
+        <form name="ret" action="../fl/tilfoj_kurv.php?variant_id='<?php echo $subarray[0][0] ?>'" method="POST">
             
             <input name="plus" type="submit" value="1"> 
                  
