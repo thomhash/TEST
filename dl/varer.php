@@ -14,12 +14,6 @@ else{
     //echo "Forbindelsen er god";
 }
 
-
-
-
-
-
-
 //Hent vareid's udfra gruppeid og hvilken side man er på (array)
 function get_vareid ($gruppe_nr, $sidetal){
 

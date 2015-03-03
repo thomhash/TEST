@@ -61,6 +61,7 @@
         $subarray=$info_array[$raekkenr][0];
         
                      foreach($subarray as $id2){
+                         if ($info_array[$raekkenr][1]>0){
                //  echo $info_array[$raekkenr][1];     
             // echo $subarray[0][0];
     ?>
@@ -68,25 +69,21 @@
                      
             <th> <?php echo $subarray[0][4]; ?></th>  
             <th> <?php echo $info_array[$raekkenr][1]*$subarray[0][4]; ?></th>
+            
             <th> <?php echo $info_array[$raekkenr][1]; ?></th>
             <th>
-               
-        <form name="ret" action="../fl/tilfoj_kurv.php?variant_id='<?php echo $subarray[0][0] ?>'" method="POST">
+           
+                <form name="ret" action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
             
-            <input name="plus" type="submit" value="1"> 
+            <input name="rediger" type="submit" value="1"> 
                  
-            <input type="button" name="t" value="-1"> 
+            <input name="rediger" type="submit"  value="-1"> 
                 
-            <input type="submit" name="t" value="Slet"> 
+            <input name="rediger" type="submit" value="Slet"> 
         </form>
         <form action="../fl/ret_kurv.php" method="get">
         
-        <div id="buttons">
-            <input type="submit" class="f" name="next" value="Slet">
-            <input type="submit" class="f" name="prev" value="-">
-            <input type="submit" class="f" name="prev" value="+">
-            <div style="clear:both"></div><!-- Need this to have the buttons actually inside div#buttons -->
-        </div>
+        
     </form>     
                 </th>
            
@@ -95,6 +92,7 @@
      <?php   
         }
         $raekkenr ++;
+                     }
     }
     ?>
       

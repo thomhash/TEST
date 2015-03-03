@@ -1,17 +1,40 @@
 <?php
 session_start();
 
-$vare_id = $_POST['variant_id']; 
-$vare_antal_tilfoj = $_POST['variant_antal']; 
+if (isset($_POST['variant_id'])){
+    $vare_id = $_POST['variant_id']; 
+   
+}
+
+if (isset($_POST['variant_antal'])){
+    $vare_antal_tilfoj = $_POST['variant_antal']; 
+  
+}
+
+if (isset($_GET['variant_id'])){
+    $vare_id = $_GET['variant_id']; 
+   
+}
+
+if (isset($_GET['variant_antal'])){
+    $vare_antal_tilfoj = $_GET['variant_antal']; 
+  
+}
+
+
 if (isset($_POST['slet_vare'])){
     
 }
 
-if (isset($_POST['plus'])){
-    echo "DEter fedt!";
+if (isset($_POST['rediger'])){
+    echo "Du har lagt f varianti kurven:";
     echo $vare_id;
+    echo "DEter fedt!";
+    
+    $vare_antal_tilfoj = $_POST['rediger'];
     
 }
+
 $vare_antal_nu = 0;
 if(isset($_SESSION['kurv'][$vare_id])){
     $vare_antal_nu = $_SESSION["kurv"][$vare_id];
