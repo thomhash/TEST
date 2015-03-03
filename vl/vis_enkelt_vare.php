@@ -4,18 +4,19 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="..\styles.php">
+    <link rel="stylesheet" type="text/css" href="styles.php">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 
 <body> 
  <div id="enkelt">
-    <?php require '../fl/opretkatalog.php';
-          require 'tekst.php';
-    
-         $id = $_GET['id'];  
+    <?php require'fl/opretkatalog.php';
+          require 'vl/tekst.php';
+          
+         //$id = $_GET['id'];  
          $info_array= get_variant_info($id);
+         
          
     ?>  
      
@@ -23,7 +24,7 @@
         
         <h1> <?php echo $info_array[0][0]   ?> </h1>
       <div id="topbillede"> 
-        <img src ="..\billeder\<?php echo $info_array[0][3]; ?> ">
+        <img src ="billeder\<?php echo $info_array[0][3]; ?> ">
       </div> 
         
        
@@ -46,7 +47,7 @@
                           
                         echo '<div class="image">';
                         echo '<a href="vis_enkelt_vare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
-                        echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
+                        echo    '<img src="billeder\\' .$farve_varianter[$billede_nr][1] .'">';
                         echo '</a>';
                         
                        echo '<div id="controls">';
@@ -59,7 +60,7 @@
                        
                       else{
                          echo '<a href="vis_enkelt_vare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
-                         echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
+                         echo    '<img src="billeder\\' .$farve_varianter[$billede_nr][1] .'">';
                          echo '</a>';
                      
                     
@@ -97,7 +98,7 @@
         
         
 
-    <div id="dropdown" action='../fl/indkoebskurv.php'>        
+    <div id="dropdown" action='fl/indkoebskurv.php'>        
         
         <form method="post">
           Størrelse: 
@@ -187,7 +188,7 @@
     </div>
     
     
-    <script src="javascript_enkeltvare.js"></script>
+    <script src="vl/javascript_enkeltvare.js"></script>
 </body>
 
 

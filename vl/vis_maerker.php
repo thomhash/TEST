@@ -107,7 +107,7 @@ Nuværende Størelser:
 <form> 
     <select>
 <?php
-$hent = hent_stoerrelser();
+$hent = hent_stoerrelser_alle();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
@@ -128,7 +128,7 @@ foreach ($hent as list($a, $b)) {
     <select name="undergruppe">
         <option value="0">Ingen</option>
 <?php
-$hent = hent_grupper();
+$hent = hent_alle_grupper();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php echo $a; ?>"><?php echo $b; ?></option>
@@ -143,7 +143,7 @@ Nuværende grupper:
 <form> 
     <select>
 <?php
-$hent = hent_grupper();
+$hent = hent_alle_grupper();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
@@ -175,7 +175,7 @@ foreach ($hent as list($a, $b)) {
     <select name="gruppe_til_vare">
         <option value="DET VIRKER">Ingen</option>
 <?php
-$hent = hent_grupper();
+$hent = hent_alle_grupper();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php echo $a; ?>"><?php echo $b; ?></option>
@@ -223,7 +223,7 @@ foreach ($hent as list($a, $b)) {
     <select name="gruppe_til_vare">
     <?php
     
-$hent = hent_grupper();
+$hent = hent_alle_grupper();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php echo $a ?>"><?php echo $b ?></option>
@@ -256,7 +256,7 @@ foreach ($hent as list($a, $b)) {
         <br>Størelse<br>
         <select name="variant_stoerelse">
             <?php
-            $hent = hent_stoerrelser();
+            $hent = hent_stoerrelser_alle();
             foreach ($hent as list($a, $b)) {
                 ?>
                 <option value="<?php echo $a ?>"><?php echo $b ?></option>

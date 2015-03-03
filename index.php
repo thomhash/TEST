@@ -1,33 +1,57 @@
-<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="styles.php">
+
+<head>
+  
+    
+</head>
+<body>
 <?php
+require 'fl/fl_Mikkel_test.php';
 session_start();
 
-
-echo $_SESSION["logget_ind"];
 ?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>          
-    </head>
-    <body>
-    <center> <h1> Velkommen til www.webshopgenerator.dk </h1> 
-</center>
-    <h2>
-    Indhold: 
-    <li><a href="opretvare.php">Opret vare</a></li> 
-    <li><a href="">Vis varekatalog</a></li> 
-      </h2>  
-      
-            
-            
-         <?php
-        echo "PHP";
+
+
+<div id="top"> 
+    
+    <?php
+    include 'vl\top.php';
+    ?>
+     <div>
+  
+<div id="content">
+    <div id="overskrift">
+       <?php
+        include 'vl\overskrift.php';
         ?>
-    </body>
+        </div>
+    <div id="menu">
+       <?php
+        include 'vl\vis_menu.php';
+        ?>
+        </div>
+   
+    <div id="venstre">
+     <?php
+        include 'vl\venstre.php';
+        ?>
+        </div> 
+    <div id="indhold">
+        <?php
+        include 'vl\indhold.php';
+        ?>    
+        </div>
+    </div>
+         
+         
+</body>  
+
 </html>
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>

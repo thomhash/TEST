@@ -1,8 +1,8 @@
 <?php 
-require '../dl/varer.php';
+require 'dl/varer.php';
 
 function get_maerker(){
-    require 'login.php';
+    require 'dl/login.php';
       
   
     $sql = "SELECT id_maerke, maerke_navn
