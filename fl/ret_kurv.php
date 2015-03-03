@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-$vare_id = $_POST['variant_id']; 
-$vare_antal_tilfoj = $_POST['variant_antal']; 
-if (isset($_POST['slet_vare'])){
-    
-}
 
 if (isset($_POST['plus'])){
+    echo "DEter fedt!";
+    
+}
+if (isset($_POST['minus'])){
     echo "DEter fedt!";
     
 }

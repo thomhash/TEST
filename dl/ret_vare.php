@@ -1,21 +1,19 @@
 <?php
+require 'login.php';
 function ret_beskrivelse($beskrivelse,$id)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "webshop";
+    require 'login.php';
     $num = $id[0][0];
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    
 // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($db_server->connect_error) {
+        die("Connection failed: " . $db_server->connect_error);
     }
     // echo $id[0][0];
     $sqlin = "update vare set beskrivelse='$beskrivelse' where id_vare='$num'";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
         
     } else {
@@ -25,21 +23,18 @@ function ret_beskrivelse($beskrivelse,$id)
 
 function ret_prioritet_d($prioritet,$id)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "webshop";
-    $num = $id[0][0];
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    require 'login.php';
+    
+   
 // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($db_server->connect_error) {
+        die("Connection failed: " . $db_server->connect_error);
     }
+    $num = $id[0][0];
     // echo $id[0][0];
     $sqlin = "update vare set prioritet='$prioritet' where id_vare='$num'";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
         
     } else {
@@ -49,50 +44,39 @@ function ret_prioritet_d($prioritet,$id)
 
 function ret_pris_d($pris,$id)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "webshop";
+    require 'login.php';
     $num = $id[0][0];
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($db_server->connect_error) {
+        die("Connection failed: " . $db_server->connect_error);
     }
     // echo $id[0][0];
     $sqlin = "update variant set pris='$pris' where id_variant='$num'";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
         
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $db_server->error;
     }
 }
 
 function ret_vis_rediger_id_vare_d($vis,$id)
 {
-    
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "webshop";
+    require 'login.php';
     $num = $id[0][0];
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-    if ($conn->connect_error) {
+    if ($db_server->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     // echo $id[0][0];
     $sqlin = "update variant set vis='$vis' where f_id_vare='$num'";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
         
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $db_server->error;
     }
 }
 
@@ -100,12 +84,10 @@ function ret_vis_rediger_id_vare_d($vis,$id)
 
 function ret_vis_d($vis,$id)
 {
+    require 'login.php';
     echo $vis;
     echo $id;
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "webshop";
+
     $num = $id[0][0];
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -120,7 +102,7 @@ function ret_vis_d($vis,$id)
         echo "New record created successfully";
         
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $db_server->error;
     }
 }
 
