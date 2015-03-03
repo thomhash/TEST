@@ -27,24 +27,18 @@ require '..\fl\opret_menu.php';
 $main_raekkenr = 0;
 $grupper = hent_grupper();
 
-foreach ($grupper as $value) {    
-    
-    //if (!empty($grupper[$main_raekkenr][2])) {href($grupper[$main_raekkenr][2],$grupper[$main_raekkenr][0], $grupper[$main_raekkenr][1]);}
-    //else {  href(null,$grupper[$main_raekkenr][0],$grupper[$main_raekkenr][1]); }
-    href($grupper[$main_raekkenr][2],$grupper[$main_raekkenr][0], $grupper[$main_raekkenr][1]);
-   // echo "<li>" .'<a href="#">'.$grupper[$main_raekkenr][1] .'</a>';
 
+
+foreach ($grupper as $value) {    
+       href($grupper[$main_raekkenr][2],$grupper[$main_raekkenr][0], $grupper[$main_raekkenr][1]);
         if (!empty($grupper[$main_raekkenr][2])) {
             $undergruppe1= $grupper[$main_raekkenr][2];
-            
-            echo "<ul>";
+             echo "<ul>";
             vis_undergruppe1($undergruppe1);
             echo "</ul>";
                         
         }
     
-    
-
     echo "</li>";
     $main_raekkenr++;
 }
@@ -56,8 +50,7 @@ function vis_undergruppe1($undergruppe_1){
       foreach ($undergruppe_1 as $value) {
                 
           href($undergruppe_1[$raekkenr][3], $undergruppe_1[$raekkenr][0], $undergruppe_1[$raekkenr][1]);
-                //echo "<li>" .'<a href="#">' .$undergruppe_1[$raekkenr][1] .'</a>';
-                    
+                  
                     if (!empty($undergruppe_1[$raekkenr][3])) {
                         $undergruppe2=$undergruppe_1[$raekkenr][3];
                             echo "<ul>";
@@ -66,25 +59,16 @@ function vis_undergruppe1($undergruppe_1){
                         }
        echo "</li>";              
     $raekkenr++;
-    }
-    
-    
-    
+    }         
 }
-
 
 function vis_undergruppe2($undergruppe_2)
 { $raekkenr=0;
     foreach ($undergruppe_2 as $value) {
-        
-        //<a href="vis_katalog.php?page=1 & gruppe=1">T-shirt</a> <br>
         echo "<li>" .'<a href="vis_katalog.php?page=1 & gruppe='.$undergruppe_2[$raekkenr][0].'">'.$undergruppe_2[$raekkenr][1] .'</a>' .'</li>';
         
         $raekkenr++;
     }
-    
-    
-
 }
 
 

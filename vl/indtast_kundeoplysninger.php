@@ -7,8 +7,28 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+    <?php header('Content-type: text/html; charset=utf-8'); 
+    
+    $mailadr=$_GET["mail"];?>
+    
+   
 	<section class="loginform cf">
-		<form name="login" action="vis_menu.php" onsubmit="return checkForm(this);">
+		<form name="login" action="..\fl\opret_kunde_fl.php" onsubmit="return checkForm(this);">
+                    
+                     <?php   
+                     
+                     
+ // Hvis er sat til 1 er bruger lige blevet oprettet
+ 
+    if (isset($_GET["oprettet"])){
+        $findes=$_GET["oprettet"];
+        $mail =$_GET["mail"];
+         echo "Tillykke med din nye bruger!";
+         
+         }
+         
+    ?>
+                    <br> <br> <b>Indtast kundeoplysninger</b>
 			<ul>
 				<li>
 					<label >Fornavn</label>
@@ -28,7 +48,7 @@
                                 
 				<li>
 					<label>Adresse</label>
-					<input type="text" name="Adresse" required>
+					<input type="text" name="adresse" required>
                                         <br>
                                 </li>
                                 <li>
@@ -43,10 +63,11 @@
                                 </li>
                                 <br>
                                 <label for="nyhed">Tilmeld vores nyhedsbrev</label>
-					<input type="checkbox" name="nyhedbrev" id="nyhed">
+					<input type="checkbox" name="nyhedsbrev" id="nyhed" value="1">
                                         <br>
                                 
 				<li>
+                                    <input type="hidden" name="mailadr" value="<?php echo $mailadr;?>">
 					<input type="submit" value="Login">
                                         
 				</li>

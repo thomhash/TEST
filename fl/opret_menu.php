@@ -4,15 +4,10 @@ require '..\dl\menu.php';
 function hent_grupper()
     {
 
-
 $hovede_grupper=  get_over_grupper();
 $undergrupper = get_undergrupper();
 
-
 $raekke_main=0;
-
-
-
 
 if(count($undergrupper) > 0){
     
@@ -24,9 +19,6 @@ if(count($undergrupper) > 0){
     
      foreach($undergrupper as $value){
          
-         
-        
-         
         if($undergrupper[$raekke1][2]==$hovede_grupper[$raekke_main][0]){
             
             $array1[$array1_raekke1][0]=$undergrupper[$raekke1][0];
@@ -37,15 +29,13 @@ if(count($undergrupper) > 0){
             $array1_raekke1++;
             
                    } 
-         
-       
+               
             $raekke1++;
         
     }       
     
              if(count($array1) > 0){
-                 
-                 
+                                  
                  $arrayTemp_raekke=0;
                     
                      foreach ($array1 as $value){
@@ -60,16 +50,12 @@ if(count($undergrupper) > 0){
                                 $arrayTemp[$temp_raekke][0]=$undergrupper[$array1_raekke2][0];
                                 $arrayTemp[$temp_raekke][1]=$undergrupper[$array1_raekke2][1];
                                 $arrayTemp[$temp_raekke][2]=$undergrupper[$array1_raekke2][2];
-                                
-                                
+                                                                
                                 $temp_raekke++;
                                 
                               } 
                               
-                              
-                             
                               $array1_raekke2++;
-                          
                         
                         } 
                                                         
@@ -85,14 +71,19 @@ if(count($undergrupper) > 0){
     
     $raekke_main++; 
     
-    
         }
 
     }
+    // Hvis der ingen under grupper findes i databasen sætter [2] til null saa der ikke kastet et offdefined offset i fl
+        else    {   
+                    foreach ($hovede_grupper as $value){
+                        $hovede_grupper[$raekke_main][2]=null;
+                        $raekke_main++;
+                    }
+                }
+    
 
     return $hovede_grupper;
-
-
 }
 
 

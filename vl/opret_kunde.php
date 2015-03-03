@@ -7,6 +7,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+    
+    
+    <?php
+    header('Content-type: text/html; charset=utf-8');
+    
+ // Hvis er sat til 1 eksistere mail allerede og man bliver sendt tilbage til burgeroprettelsesskærmen, med
+ // en besked og den allerede findes
+    if (isset($_GET["findes"])){
+        $findes=$_GET["findes"];
+         echo' <script language="javascript" type="text/javascript">
+                   alert("Fejl: Denne e-mail bliver allerede brugt!");
+               </script>';
+            }
+    ?>
 	<section class="loginform cf">
 		<form name="login" action="..\fl\opret_kunde_fl.php" onsubmit="return checkForm(this);">
 			<ul>
