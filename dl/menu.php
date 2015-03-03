@@ -5,7 +5,8 @@ require 'login.php';
 
  $sql = "SELECT `id_varegruppe`, `gruppe`
             FROM `gruppe`
-            WHERE `overgruppe` is null";
+            WHERE `overgruppe` is null
+            ORDER BY `gruppe`";
     
     $result= mysqli_query($db_server, $sql);       
     $hovede_grupper= mysqli_fetch_all($result);
@@ -22,7 +23,8 @@ function get_undergrupper(){
 
  $sql = "SELECT `id_varegruppe`, `gruppe`, `overgruppe`
             FROM `gruppe`
-            WHERE `overgruppe` is not null";
+            WHERE `overgruppe` is not null
+            ORDER BY `gruppe`";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
