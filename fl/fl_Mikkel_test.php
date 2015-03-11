@@ -1,4 +1,5 @@
 <?php
+// rettet fra require 'dl/Mikkel_test.php';
 require 'dl/Mikkel_test.php';
 function hent_maerker(){
    $id_array=get_maerker();

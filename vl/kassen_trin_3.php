@@ -1,5 +1,22 @@
+<?php
+$mail =$_GET["email"];  
+?>
+<head>
+	
+	<link rel="stylesheet" href="..\login_user_normalize.css">
+	<link rel="stylesheet" href="..\login_user.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<html>
+    <body>
+        <h1> <b>Godkend ordre:</h1>
 
- <?php require '../fl/get_vare.php';
+        <h2> Sendes til: </h2> <br>
+        
+By: <br>
+
+Vej
+	 <?php require '../fl/get_vare.php';
       session_start();
 
       $vare = $_SESSION["kurv"];   
@@ -24,7 +41,7 @@
 </header>
 <html>
     <body>
-        <h1>Din indkøbskurv:</h1>
+ 
 <table border="1">
      <tr>
     
@@ -34,7 +51,7 @@
     <th>Total</th>
 
     <th>Antal</th>
-       <th>Juster</th>
+       
     
   </tr>
     <tr>    
@@ -68,22 +85,7 @@
             ?></th>
             
             <th> <?php echo $info_array[$raekkenr][1]; ?></th>
-            <th>
-           
-                <form name="ret" action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
             
-            <input name="rediger" type="submit" value="1" > 
-                 
-            <input name="rediger" type="submit"  value="-1"> 
-                
-            <input name="rediger" type="submit" value="Slet" src="www.google.com" > 
-            
-        </form>
-        <form action="../fl/ret_kurv.php" method="get">
-        
-        
-    </form>     
-                </th>
            
             </tr>
         
@@ -104,17 +106,12 @@ Total:
 echo $total; 
 echo $antal_total;
 ?>
-<br><br>
-<a href="kassen_trin_1.php"> Gå til kassen </a>
-<br><br>
-Handel videre
-</body>
 
-<head>
-     <style>
-        .f {
-            float: right;
-        }
-    </style>
-</head>
-</html>
+<br>
+<form><br>
+    <a href="betingelser.html">Læs forretningsbetingelserne </a><br><br>
+    <input type="checkbox" required="true" name="test" value="Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne"> 
+    Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne
+    <br><br>
+<input type="submit" value="Godkend">
+</form>

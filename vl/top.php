@@ -28,12 +28,8 @@
 </style>
 </head>
 <body>
- 
-<div id="flip">Indkøbskurv</div>
-<div id="panel">
-    Vare1 
-    Vare2 
-</div>
+ <?php include 'lille_kurv.php'; ?>
+
 </head>
 <body>
 

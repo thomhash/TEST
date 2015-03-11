@@ -1,4 +1,5 @@
 <?php 
+// rettet fra require 'dl/varer.php';
 require 'dl/varer.php';
 
 function get_maerker(){

@@ -1,4 +1,4 @@
-?php
+<?php
 
 require_once 'dl/login.php';
 require_once 'parametre.php';
