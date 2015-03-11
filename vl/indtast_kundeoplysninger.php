@@ -2,18 +2,18 @@
 <html>
 <head>
 	<title>Indtast oplysninger</title>
-	<link rel="stylesheet" href="..\login_user_normalize.css">
-	<link rel="stylesheet" href="..\login_user.css">
+	
+	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <?php header('Content-type: text/html; charset=utf-8'); 
+    <?php  
     
     $mailadr=$_GET["mail"];?>
     
    
 	<section class="loginform cf">
-		<form name="login" action="..\fl\opret_kunde_fl.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/opret_kunde_fl.php" onsubmit="return checkForm(this);">
                     
                      <?php   
                      
@@ -73,7 +73,7 @@
 				</li>
                                 <br>
                                 <br>
-                                <a href="..\index.php">Skip denne del</a>
+                                <a href="frame_login.php">Skip denne del</a>
                                 <br>
                                 <br>
                                  

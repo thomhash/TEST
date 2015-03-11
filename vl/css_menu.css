@@ -1,7 +1,7 @@
-body, nav, ul, li, a  {margin: 0; padding: 0;}
-body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+#container_menu, nav, ul, li, a  {margin: 0; padding: 0;}
+#menu {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 a {text-decoration: none;}
-.container_menu {
+#container_menu {
     //width: 50%;   
     //max-width: 900px;
    // bottom: 0;
@@ -13,6 +13,7 @@ a {text-decoration: none;}
     display:  none;
     background: #666;
     padding: 10px 15px;
+    width: 40px;
     color: #fff;
     
 }

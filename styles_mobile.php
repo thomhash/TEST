@@ -1,66 +1,41 @@
 #container
 {
-width: 85%;
+width: 100%;
 
 }
 <?php
-header("Content-type: text/css; charset: UTF-8");
      require_once 'parametre.php';
 ?>
-body{
-background-color: #D8D8D8;
 
 
-}
-#content
-{
-
-
-margin-top: 3.5%;
-
-margin-left: auto;
-margin-right: auto;
-border: none;
-height: 2710px;
-width: 1000px;
-min-width: 75%;
-
-}
 #top
 {
    
-background-color: black;
+background-color: white;
 height: 5%;
 font-color: white;
 width: 100%;
 
 }
-#venstre 
-{
-background-color: CFCACA;
-width: 24%;
-float: left;
-height: 2500px;
-margin-left: 1px;
 
 
-}
 #overskrift 
 {
-background-color: #E6E6E6;
+background-color: red;
 margin-bottom: 0px;
-margin-top: 1px;
-height: 200px;
+margin-top: 1px;x   
+height: 150px;
+width: 100%;
 
 }
 
 #indhold 
 {
-background-color: #A4A4A4;
-width: 75%;
 
-float: right;
-height: 90%;
+width: 100%;
+position: relative;
+   
+
 
 }
 
@@ -91,11 +66,11 @@ width: 100%; height: <?php echo hoejde_billeder(); ?>px;
 }
 
 #katalog figure:hover  {
-    -webkit-transform:scale(1.1); /* Safari and Chrome */
-    -moz-transform:scale(1.1); /* Firefox */
-    -ms-transform:scale(1.1); /* IE 9 */
-    -o-transform:scale(1.1); /* Opera */
-     transform:scale(1.1);
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
 }
 
 
@@ -119,8 +94,8 @@ p.sider {
 width: 100%;
 }
 #billeder {
-width: 35%; //height: 50px;
-   // border: 1px solid blue;
+width: 100%; //height: 50px;
+  
     float: left;
     
 }
@@ -140,11 +115,11 @@ width: 100%;
 
 
 #dropdown{
-margin-left: 20px;
-margin-top: 2%;
-width: 50%;
+
+width: 100%;
 //border: 1px solid orange;
-float: left;
+float:left;
+
 }
 
 

@@ -66,7 +66,7 @@ function vis_undergruppe1($undergruppe_1){
 function vis_undergruppe2($undergruppe_2)
 { $raekkenr=0;
     foreach ($undergruppe_2 as $value) {
-        echo "<li>" .'<a href="frame_viskatalog.php?page=1 & gruppe='.$undergruppe_2[$raekkenr][0].'">'.$undergruppe_2[$raekkenr][1] .'</a>' .'</li>';
+        echo "<li>" .'<a href="frame_viskatalog_mobile.php?page=1 & gruppe='.$undergruppe_2[$raekkenr][0].'">'.$undergruppe_2[$raekkenr][1] .'</a>' .'</li>';
         
         $raekkenr++;
     }
@@ -78,7 +78,7 @@ function href($subarray, $id, $navn){
     
     if (empty($subarray)) {
         
-        echo "<li>" .'<a href="frame_viskatalog.php?page=1 & gruppe='.$id.'">'.$navn .'</a>' .'</li>';
+        echo "<li>" .'<a href="frame_viskatalog_mobile.php?page=1 & gruppe='.$id.'">'.$navn .'</a>' .'</li>';
     }
     else {
         echo "<li>" .'<a href="#" onClick="return false;">'.$navn .'</a>';
