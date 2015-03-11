@@ -1,47 +1,44 @@
+
 <html>
 
 <head>
-   
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
 </head>
 <body>
 <?php
-require 'fl/fl_Mikkel_test.php';
 
-session_start();
-
-$id = $_GET['id'];  
 
 ?>
-<link rel="stylesheet" type="text/css" href="styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     
     <?php
-    include 'vl\top.php';
+    include 'top.php';
     ?>
      <div>
   
 <div id="content">
     <div id="overskrift">
        <?php
-        include 'vl\overskrift.php';
+        include 'overskrift.php';
         ?>
         </div>
     <div id="menu">
        <?php
-        include 'vl\vis_menu.php';
+        include 'vis_menu.php';
         ?>
         </div>
    
     <div id="venstre">
      <?php
-        include 'vl\venstre.php';
+        include 'venstre.php';
         ?>
         </div> 
     <div id="indhold">
         <?php
-        include 'vl\vis_enkelt_vare.php';
+        include 'indhold.php';
         ?>    
         </div>
     </div>

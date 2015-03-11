@@ -107,7 +107,7 @@ Nuværende Størelser:
 <form> 
     <select>
 <?php
-$hent = hent_stoerrelser_alle();
+$hent = hent_stoerrelser();
 foreach ($hent as list($a, $b)) {
     ?>
             <option value="<?php $a ?>"><?php echo $b ?></option>
@@ -256,7 +256,7 @@ foreach ($hent as list($a, $b)) {
         <br>Størelse<br>
         <select name="variant_stoerelse">
             <?php
-            $hent = hent_stoerrelser_alle();
+            $hent = hent_stoerrelser();
             foreach ($hent as list($a, $b)) {
                 ?>
                 <option value="<?php echo $a ?>"><?php echo $b ?></option>

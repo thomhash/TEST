@@ -10,7 +10,7 @@
 
 
 ?>
-<link rel="stylesheet" type="text/css" href="..\styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     
@@ -38,7 +38,7 @@
         </div> 
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'vis_enkelt_vare.php';
         ?>    
         </div>
     </div>

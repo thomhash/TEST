@@ -1,5 +1,5 @@
 <?php
-require 'dl/Mikkel_test.php';
+require '../dl/Mikkel_test.php';
 function hent_maerker(){
    $id_array=get_maerker();
    // print_r($id_array);
@@ -10,7 +10,7 @@ function hent_varefarve(){
    // print_r($id_array);
    return $id_array;
 }
-function hent_stoerrelser_alle(){
+function hent_stoerrelser(){
    $id_array=get_alle_stoerrelser();
    // print_r($id_array);
    return $id_array;

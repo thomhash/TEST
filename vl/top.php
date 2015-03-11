@@ -7,9 +7,8 @@
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="..\styles.php">
 <h3><center>
-<a href="test.php">Om os - </a> <a href="s_login.php">Log in - </a> <a href="indkøbskurv.php">Indkøbskurv </a>
+<a href="test.php">Om os - </a> <a href="frame_login.php">Log in - </a> <a href="indkøbskurv.php">Indkøbskurv </a>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
  

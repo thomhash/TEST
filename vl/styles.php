@@ -4,9 +4,10 @@ width: 85%;
 
 }
 <?php
-header("Content-type: text/css; charset: UTF-8");
-     require_once 'parametre.php';
+    header("Content-type: text/css; charset: UTF-8");
+    require_once 'parametre.php';
 ?>
+
 body{
 background-color: #D8D8D8;
 
@@ -91,11 +92,11 @@ width: 100%; height: <?php echo hoejde_billeder(); ?>px;
 }
 
 #katalog figure:hover  {
-    -webkit-transform:scale(1.1); /* Safari and Chrome */
-    -moz-transform:scale(1.1); /* Firefox */
-    -ms-transform:scale(1.1); /* IE 9 */
-    -o-transform:scale(1.1); /* Opera */
-     transform:scale(1.1);
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
 }
 
 

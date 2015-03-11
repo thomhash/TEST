@@ -1,24 +1,56 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Kunde</title>
+	
+	<link rel="stylesheet" href="..\login_user.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    
+    
 
-?>
-
-<h3>Log in</h3>
-<form action="../fl/login_check.php" method="POST">
-    Brugernavn:<br>
-    <input type="text" name="brugernavn"><br>
-    Password:<br>
-    <input type="password" name="kode"><br>
-    <br>
-    <input type="submit" value="LOG IN">
-   
-</form>
-
-<?php
-if (isset($_SESSION["login_besked"])){
-    echo ($_SESSION["login_besked"]);
-}
-
-?>
+	<section class="loginform cf">
+		<form name="login" action="..\fl\login_kunde_fl.php" onsubmit="return checkForm(this);">
+			<ul>
+				<li>
+					<label>E-mail</label>
+                                        <input type="email" name="mail" placeholder="yourname@email.com" autofocus="autofocus" required>
+                                        <br>
+				</li>
+                                
+				<li>
+					<label>Kode</label>
+					<input type="password" name="pass" placeholder="password" required>
+                                        <br>
+                                </li>
+                                
+				<li>
+					<input type="submit" value="Login">
+				</li>
+			</ul>
+		</form>
+            <a href="frame_login.php?opretbruger=1" style="text-align:center;display:block;font-size:10px;">Opret en ny bruger</a>
+	</section>
+        
+<script type="text/javascript" src="opretbruger.js"></script>
+    <?php
+    
+    
+    
+ // Hvis er sat til 1 eksistere mail allerede og man bliver sendt tilbage til burgeroprettelsesskærmen, med
+ // en besked og den allerede findes
+    if (isset($_GET["forkert_mail"])){
+        $em=$_GET["forkert_mail"];
+         echo' <script language="javascript" type="text/javascript">
+                   alert("Fejl: Mailen'.$em .' er ikke oprettet som bruger");
+               </script>';
+            }
+     if (isset($_GET["forkert_kode"])){
+         echo' <script language="javascript" type="text/javascript">
+                   alert("Fejl: Forkert kode!");
+               </script>';
+            }
+    ?>
+</body>
+</html>

@@ -7,10 +7,11 @@
 <body>
 <?php
 
-
+ $gruppenr = $_GET['gruppe'];
+   $side = $_GET['page'];
 
 ?>
-<link rel="stylesheet" type="text/css" href="..\styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     
@@ -30,17 +31,18 @@
         include 'vis_menu.php';
         ?>
         </div>
-   
     <div id="venstre">
      <?php
-        include 'venstre.php';
+        include 'vis_filter.php';
         ?>
-        </div> 
+        </div>
+     
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'vis_katalog.php';
         ?>    
         </div>
+   
     </div>
          
          

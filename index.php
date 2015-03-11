@@ -1,57 +1,30 @@
-<html>
-<link rel="stylesheet" type="text/css" href="styles.php">
-
-<head>
-  
-    
-</head>
-<body>
 <?php
-require 'fl/fl_Mikkel_test.php';
-session_start();
+ob_start();
+//header("Location:vl/frame_frontpage.php");
+//die();
 
-?>
+    $aMobileUA = array(
+        '/iphone/i' => 'iPhone', 
+        '/ipod/i' => 'iPod', 
+        '/ipad/i' => 'iPad', 
+        '/android/i' => 'Android', 
+        '/blackberry/i' => 'BlackBerry', 
+        '/webos/i' => 'Mobile'
+    );
 
-
-<div id="top"> 
-    
-    <?php
-    include 'vl\top.php';
-    ?>
-     <div>
-  
-<div id="content">
-    <div id="overskrift">
-       <?php
-        include 'vl\overskrift.php';
-        ?>
-        </div>
-    <div id="menu">
-       <?php
-        include 'vl\vis_menu.php';
-        ?>
-        </div>
+    //Return true if Mobile User Agent is detected
+    foreach($aMobileUA as $sMobileKey => $sMobileOS){
+        if(preg_match($sMobileKey, $_SERVER['HTTP_USER_AGENT'])){
+            echo "Dette er mobile browser";
+            header("Location:vl/frame_frontpage_mobile.php");
+            die();
+            ob_flush();
+        }
+        
+    }
    
-    <div id="venstre">
-     <?php
-        include 'vl\venstre.php';
-        ?>
-        </div> 
-    <div id="indhold">
-        <?php
-        include 'vl\indhold.php';
-        ?>    
-        </div>
-    </div>
-         
-         
-</body>  
-
-</html>
-<?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    header("Location:vl/frame_frontpage.php");
+    die();
+    ob_flush();
+      
 ?>
