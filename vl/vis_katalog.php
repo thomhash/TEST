@@ -12,6 +12,7 @@
     
     <?php
     require '../fl/opretkatalog.php';
+    require '../fl/tjek_mobile_browser.php';
     require 'tekst.php';
     $maerke=0;
     $stoerrelser=0;
@@ -51,7 +52,8 @@
         foreach ($info_vare as $value) {
           
          echo "<figure>";
-           echo '<a href="frame_visenkeltvare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;
+         if(mobile_browser()==true){ echo '<a href="frame_visenkeltvare_mobile.php?id=' .$info_vare[$raekke_nr][3] .'">' ;   }
+           else {echo '<a href="frame_visenkeltvare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;}
              echo '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">'; 
                 echo '</a>';
            echo "<figcaption>
@@ -82,10 +84,12 @@ echo '<br>'
       for ($x = 1; $x <= $sider; $x++) {
           
           if($x==$side){
-             echo '<a href="frame_viskatalog.php?page=' .$x .'& gruppe=' .$gruppenr .'"><b>' .$x .'</b></a>';
+              if(mobile_browser()==true){echo '<a href="frame_viskatalog_mobile.php?page=' .$x .'& gruppe=' .$gruppenr .'"><b>' .$x .'</b></a>';}
+                 else{echo '<a href="frame_viskatalog.php?page=' .$x .'& gruppe=' .$gruppenr .'"><b>' .$x .'</b></a>';}
           }
           else{
-            echo '<a href="frame_viskatalog.php?page=' .$x .'& gruppe=' .$gruppenr .'">' .$x .'</a>';
+              if(mobile_browser()==true){echo '<a href="frame_viskatalog_mobile.php?page=' .$x .'& gruppe=' .$gruppenr .'">' .$x .'</a>';}
+                else{echo '<a href="frame_viskatalog.php?page=' .$x .'& gruppe=' .$gruppenr .'">' .$x .'</a>';}
           }  
           //echo  $x;
           echo "&nbsp;";

@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="..\styles.php">
+    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
@@ -100,10 +100,8 @@
     <div id="dropdown" action='../fl/indkoebskurv.php'>        
         
         <form method="post">
-          Størrelse: 
-          
-         
-            <select id="Stoerrelser">
+          Størrelse:
+          <select id="Stoerrelser">
                 
                 
                  <?php 

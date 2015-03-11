@@ -17,7 +17,7 @@ function varer_vandret()
     }
 //hoejde af billede i px
 function hoejde_billeder()
-    {   $hoejde = 250;
+    {   $hoejde = 125;
         return $hoejde;
     }    
 

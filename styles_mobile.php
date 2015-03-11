@@ -4,7 +4,6 @@ width: 100%;
 
 }
 <?php
-header("Content-type: text/css; charset: UTF-8");
      require_once 'parametre.php';
 ?>
 
@@ -12,7 +11,7 @@ header("Content-type: text/css; charset: UTF-8");
 #top
 {
    
-background-color: black;
+background-color: white;
 height: 5%;
 font-color: white;
 width: 100%;
@@ -32,12 +31,11 @@ width: 100%;
 
 #indhold 
 {
-background-color: #A4A4A4;
+
 width: 100%;
 position: relative;
-    
+   
 
-height: 1000px;
 
 }
 
@@ -96,8 +94,8 @@ p.sider {
 width: 100%;
 }
 #billeder {
-width: 35%; //height: 50px;
-   // border: 1px solid blue;
+width: 100%; //height: 50px;
+  
     float: left;
     
 }
@@ -117,11 +115,11 @@ width: 100%;
 
 
 #dropdown{
-margin-left: 20px;
-margin-top: 2%;
-width: 50%;
+
+width: 100%;
 //border: 1px solid orange;
-float: left;
+float:left;
+
 }
 
 
