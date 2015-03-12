@@ -120,7 +120,7 @@
                         }
                         else {
                                 
-                            echo '<option value="' .'vis_enkelt_vare.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
+                            echo '<option value="' .'frame_visenkeltvare.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
                              $raekke_nr++;
                               }
                              
