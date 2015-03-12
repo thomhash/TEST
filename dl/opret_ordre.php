@@ -2,7 +2,7 @@
 
 function opret_ordre0($id_kunde,$afsendt,$tidbestilt) { {
 require 'login.php';
-     
+$last_id =0;     
 // Check connection
         if ($db_server->connect_error) {
             die("Connection failed: " . $db_server>connect_error);
@@ -27,6 +27,30 @@ require 'login.php';
         }
 
         $sqlin = "INSERT INTO `webshop`.`ordre` (`f_id_kunde`, `afsendt`, `tid_bestilt`) VALUES ('$id_kunde', NULL, NULL);";
+        
+        
+        if ($db_server->query($sqlin) === TRUE) {
+            $last_id = $db_server->insert_id; 
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $db_server->error;
+        }
+        
+        
+        //echo $last_id;
+    }
+    return $last_id;
+}
+
+function opret_ordre_har_vare($id_ordre,$antal,$variant) { {
+require 'login.php';
+     
+// Check connection
+        if ($db_server->connect_error) {
+            die("Connection failed: " . $db_server>connect_error);
+        }
+
+        $sqlin = "INSERT INTO `webshop`.`ordre_har_vare` (`f_id_ordre`, `f_id_variant`, `antal`) VALUES ('$id_ordre', '$variant', '$antal');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";

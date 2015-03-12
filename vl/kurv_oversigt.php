@@ -1,6 +1,7 @@
 
  <?php require '../fl/get_vare.php';
       session_start();
+      session_start();
 
       $vare = $_SESSION["kurv"];   
       $total =0;

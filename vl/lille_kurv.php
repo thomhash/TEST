@@ -1,5 +1,7 @@
  <?php require '../fl/get_vare.php';
       session_start();
+if (isset($_SESSION["kurv"])){
+
 
       $vare = $_SESSION["kurv"];   
       $total =0;
@@ -36,9 +38,11 @@
     echo " vare(r) ";
     echo $total;
     echo " Kr. ";
+    
     ?>
 <form action="kurv_oversigt.php">
     <input type="submit" value="Vis kurv">
 </form>
-    
-
+  <?php  
+}
+?>  
