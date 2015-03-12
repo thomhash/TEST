@@ -97,9 +97,9 @@
         
         
 
-    <div id="dropdown" action='../fl/indkoebskurv.php'>        
+    <div id="dropdown">        
         
-        <form method="post">
+        <form method='post' action='../fl/tilfoj_kurv.php'>
           Størrelse:
           <select id="Stoerrelser">
                 
@@ -149,7 +149,7 @@
                             <td  align = "right" >
                             <p >
                                 Antal 
-                                <input type="number" name="Antal" value="1" min="1" max="<?php echo $info_array[0][4];?>" /> 
+                                <input type="number" name="variant_antal" value="1" min="1" max="<?php echo $info_array[0][4];?>" /> 
                             </p>
                            
                                  <?php 
@@ -163,6 +163,7 @@
                                 ?>
                            
                                 <p1>
+                                <input type="hidden" name="variant_id" value="<?php echo $id; ?>">   
                                 <input type="submit" name="koeb" value="Køb" id="koeb" /> 
                                 </p1>
                             </td>

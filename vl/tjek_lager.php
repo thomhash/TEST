@@ -62,4 +62,3 @@ foreach ($hent as list($a, $b, $c, $d, $e, $f, $g)) {
 }
 </script>
 
-onsubmit="return validateForm()"

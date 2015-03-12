@@ -19,6 +19,8 @@ function check_kunde_mail($mail) {
      return $row;
 
     }
+ 
+ 
     
 function set_kunde($mail , $hash_kode){
     require 'login.php';

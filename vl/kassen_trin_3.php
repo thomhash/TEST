@@ -1,4 +1,5 @@
 <?php
+require '../fl/get_kunde.php';
 $mail =$_GET["email"];  
 ?>
 <head>
@@ -12,6 +13,11 @@ $mail =$_GET["email"];
         <h1> <b>Godkend ordre:</h1>
 
         <h2> Sendes til: </h2> <br>
+   <?php
+   $info_kunde= hent_kunde($mail);
+    
+     print_r($info_kunde)
+   ?>
         
 By: <br>
 
@@ -108,10 +114,13 @@ echo $antal_total;
 ?>
 
 <br>
-<form><br>
+
+     <form action="..\fl\opret_bestilling.php">
     <a href="betingelser.html">Læs forretningsbetingelserne </a><br><br>
     <input type="checkbox" required="true" name="test" value="Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne"> 
     Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne
     <br><br>
+    <input type="hidden" name="email" value = "<?php echo $mail;?>">
+    
 <input type="submit" value="Godkend">
 </form>

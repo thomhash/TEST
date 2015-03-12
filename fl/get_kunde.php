@@ -1,8 +1,8 @@
 <?php
 
 require '../dl/get_kunde.php';
-function hent_kunde(){
-   $id_array=get_kunde();
+function hent_kunde($id){
+   $id_array=get_kunde_info_id($id);
    // print_r($id_array);
    return $id_array;
 }

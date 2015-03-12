@@ -5,6 +5,7 @@
       $vare = $_SESSION["kurv"];   
       $total =0;
       $antal_total =0;
+      $fragt = 50;
 
 ?>
 <br>
@@ -97,12 +98,23 @@
             </table>
            
             <br>       
-            Fragt:    
+            Fragt: 
+      <?php 
+      if ($antal_total > 0)
+      {
+          $fragt = 50;
+      }
+      else{
+          $fragt = 0;
+      }
+     echo $fragt;  
+     
+     ?>
             <br>    <br>
 Total:
 <?php 
-echo $total; 
-echo $antal_total;
+echo $total+$fragt;
+
 ?>
 <br><br>
 <a href="kassen_trin_1.php"> Gå til kassen </a>

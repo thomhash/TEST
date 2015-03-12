@@ -57,6 +57,8 @@ echo "Antal vare i kurven:";
  echo $antal_vare_2;  
 
 print_r($_SESSION["kurv"]);
+
+header('Location:../vl/kurv_oversigt.php');
 //session_destroy();
 /* 
 foreach($_SESSION as $key => $value) {

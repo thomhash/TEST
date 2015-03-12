@@ -24,7 +24,7 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
     
    
 	<section class="loginform cf">
-		<form name="login" action="..\fl\opret_kunde_fl.php" onsubmit="return checkForm(this);">
+		<form name="login" action="..\fl\opret_kunde_fl_kob.php" onsubmit="return checkForm(this);">
                     
                      <?php   
                      

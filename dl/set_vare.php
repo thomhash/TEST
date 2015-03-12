@@ -25,7 +25,7 @@ require 'login.php';
 
 function opret_farve($varefarve) { {
 
-    
+  require 'login.php';  
 // Check connection
         if ($db_server->connect_error) {
             die("Connection failed: " . $db_server->connect_error);
@@ -60,7 +60,7 @@ function opret_gruppe($gruppe,$overgruppe) { {
 function opret_gruppe_uu($gruppe) { {
       
 // Check connection
-        if ($conn->connect_error) {
+        if ($db_server->connect_error) {
             die("Connection failed: " . $db_server->connect_error);
         }
 
@@ -84,7 +84,7 @@ require 'login.php';
 
     $sqlin = "INSERT INTO maerke ( maerke_navn) VALUES ('$marke')";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $db_server->error;
@@ -155,7 +155,7 @@ require 'login.php';
 
     $sqlin = "INSERT INTO `webshop`.`variant` (`id_variant`, `pris`, `f_id_stoerrelse`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES (NULL, '$variant_pris', '$variant_stoerelse', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $db_server->error;

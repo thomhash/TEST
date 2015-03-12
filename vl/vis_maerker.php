@@ -1,7 +1,7 @@
 <?php
 require '../fl/fl_Mikkel_test.php';
 session_start();
-include '../fl/krav_admin.php';
+// include '../fl/krav_admin.php';
 ?>
 <link rel="stylesheet" type="text/css" href="..\styles.php">
 
