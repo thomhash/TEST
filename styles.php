@@ -4,44 +4,48 @@ width: 85%;
 
 }
 <?php
-header("Content-type: text/css; charset: UTF-8");
+
      require_once 'parametre.php';
 ?>
 body{
-background-color: #D8D8D8;
-
+background-color: white;
+height: 100%;
 
 }
 #content
 {
-
-
+-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+ 
 margin-top: 3.5%;
 
 margin-left: auto;
 margin-right: auto;
-border: none;
+border: none; // 5px solid red;
 height: 2710px;
 width: 1000px;
 min-width: 75%;
 
 }
+
 #top
 {
    
-background-color: black;
+background-color: white;
 height: 5%;
 font-color: white;
 width: 100%;
 
 }
 #venstre 
-{
+{position: relative;
 background-color: CFCACA;
 width: 24%;
 float: left;
-height: 2500px;
 margin-left: 1px;
+height: 91.07%;
+
 
 
 }
@@ -51,16 +55,20 @@ background-color: #E6E6E6;
 margin-bottom: 0px;
 margin-top: 1px;
 height: 200px;
+width 100%
 
 }
-
+#overskrift_img img{
+width: 100%;
+height: 100%;
+}
 #indhold 
 {
 background-color: #A4A4A4;
 width: 75%;
 
 float: right;
-height: 90%;
+height: 91.07%;
 
 }
 
@@ -204,7 +212,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
 
 .image img{
-height: 100px;
+height: 70px;
 width: 25%;
 }
 

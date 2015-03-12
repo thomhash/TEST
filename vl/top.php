@@ -4,11 +4,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+require_once '../fl/tjek_mobile_browser.php';
 ?>
 
 <h3><center>
-<a href="test.php">Om os - </a> <a href="frame_login.php">Log in - </a> <a href="indkøbskurv.php">Indkøbskurv </a>
+        <a href="frame_om_os.php">Om os - </a> <a href="<?php if(mobile_browser()==true){echo "frame_login_mobile.php";}
+        else{echo "frame_login.php";}?>">Log in - </a> <a href="indkøbskurv.php">Indkøbskurv </a>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
  
@@ -27,7 +28,7 @@
 </style>
 </head>
 <body>
- <?php include 'lille_kurv.php'; ?>
+ <?php //include 'lille_kurv.php'; ?>
 
 </head>
 <body>

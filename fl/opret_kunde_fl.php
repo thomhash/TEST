@@ -1,6 +1,6 @@
 <?php
 ob_start();
-header('Content-type: text/html; charset=utf-8');
+require_once 'tjek_mobile_browser.php';
 
 if (isset($_GET["email"])){
 opret_kunde();
@@ -25,15 +25,18 @@ $same_mail=check_kunde_mail($mail ,$kode);
   // Kodet bliver hashet og indsat i db sammen med mail   
      $hash_kode=password_hash($kode, PASSWORD_DEFAULT);
      set_kunde($mail, $hash_kode);
-     
-     header('Location:../vl/frame_login.php?kundeoplysninger=1 & mail=' .$mail);
-     ob_flush();
+     if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?kundeoplysninger=1 & mail=' .$mail);
+     ob_flush();}
+     else{header('Location:../vl/frame_login.php?kundeoplysninger=1 & mail=' .$mail);
+     ob_flush();}
      
  }
  else{
      //Sender tilbages til oprettelseskarmen med en fejlbesked om at mail allerede eksisterer
-     header('Location:../vl/frame_login.php?findes=1');
-     ob_flush();
+     if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?findes=1');
+     ob_flush();}
+     else{header('Location:../vl/frame_login.php?findes=1');
+     ob_flush();}
      
  }
  

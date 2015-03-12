@@ -2,7 +2,7 @@
 <html>
 
 <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
     
 </head>
 <body>
@@ -23,7 +23,7 @@ $kundeoplysninger=$_GET["kundeoplysninger"];
 
 
 ?>
-<link rel="stylesheet" type="text/css" href="../styles.php">
+<link rel="stylesheet" type="text/css" href="../styles_mobile.php">
 
 <div id="top"> 
     
@@ -32,23 +32,15 @@ $kundeoplysninger=$_GET["kundeoplysninger"];
     ?>
      <div>
   
-<div id="content">
-    <div id="overskrift">
-       <?php
-        include 'overskrift.php';
-        ?>
-        </div>
+
+    
     <div id="menu">
        <?php
-        include 'vis_menu.php';
+        include 'vis_menu_mobile.php';
         ?>
         </div>
    
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
+  
     <div id="indhold">
         <?php
         if($kundeoplysninger==1){ include 'indtast_kundeoplysninger.php'; }
@@ -56,7 +48,6 @@ $kundeoplysninger=$_GET["kundeoplysninger"];
                      else {include 'login_kunde.php';}}
         ?>    
         </div>
-    </div>
          
          
 </body>  

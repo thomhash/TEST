@@ -1,9 +1,7 @@
-<h1> Velkommen til www.sko.dk
-<?php
+<div id="overskrift_img">
+<a href="frame_frontpage.php">
+             <img src="..\billeder\overskrift.jpg">
+                 </a>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+</div>
 
