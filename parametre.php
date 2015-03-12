@@ -9,7 +9,7 @@ function antal_vare_per_sider()
     }
 // Hvor mange vare skal vises vandret    
 function varer_vandret()
-    {   $antal_vandret = 2  ;
+    {   $antal_vandret = 3  ;
         
         $bredde= 90/$antal_vandret;
         return $bredde;
@@ -17,7 +17,7 @@ function varer_vandret()
     }
 //hoejde af billede i px
 function hoejde_billeder()
-    {   $hoejde = 125;
+    {   $hoejde = 250;
         return $hoejde;
     }    
 

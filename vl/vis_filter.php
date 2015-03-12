@@ -27,17 +27,17 @@
                 <input type="hidden" name="gruppe" value="<?php echo $gruppenr; ?>" checked/>
                 <input type="hidden" name="page" value="<?php echo $side; ?>" checked/>
                 <legend>Mærke</legend>
-                        <?php if(empty ($alle_maerker)){echo "Der er ingen mærker i denne gruppe";}
+                        <?php if(empty ($alle_maerker)){echo "ingen mærker";}
                             else {foreach ($alle_maerker as $value) {
                             echo '<input type="checkbox" name="maerke[]" value="'.$value.'" />'.$value;
                             }}?> <br><br>
                 <legend>Størrelser</legend>            
-                         <?php  if(empty ($alle_stoerrelser)){echo "Der er ingen størrelser i denne gruppe";}
+                         <?php  if(empty ($alle_stoerrelser)){echo "størrelser";}
                             else {foreach ($alle_stoerrelser as $value) {
                             echo '<input type="checkbox" name="stoerrelser[]" value="'.$value.'" />'.$value;
                             }}?><br><br>
                 <legend>Farver</legend>            
-                         <?php if(empty ($alle_farver)){echo "Der er ingen farver i denne gruppe";}  
+                         <?php if(empty ($alle_farver)){echo "ingen farver";}  
                             else {foreach ($alle_farver as $value) {
                             echo '<input type="checkbox" name="farver[]" value="'.$value.'" />'.$value;
                             }}?><br><br>

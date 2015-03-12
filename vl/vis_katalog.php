@@ -12,7 +12,7 @@
     
     <?php
     require '../fl/opretkatalog.php';
-    require '../fl/tjek_mobile_browser.php';
+    require_once '../fl/tjek_mobile_browser.php';
     require 'tekst.php';
     $maerke=0;
     $stoerrelser=0;

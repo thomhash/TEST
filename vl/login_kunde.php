@@ -5,6 +5,7 @@
 	
 	<link rel="stylesheet" href="..\login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <?php require_once '../fl/tjek_mobile_browser.php'; ?>
 </head>
 <body>
     
@@ -30,7 +31,7 @@
 				</li>
 			</ul>
 		</form>
-            <a href="frame_login.php?opretbruger=1" style="text-align:center;display:block;font-size:10px;">Opret en ny bruger</a>
+            <a href="<?php if(mobile_browser()==true){ echo "frame_login_mobile.php?opretbruger=1"; } else {echo "frame_login.php?opretbruger=1"; } ?>" style="text-align:center;display:block;font-size:10px;">Opret en ny bruger</a>
 	</section>
         
 <script type="text/javascript" src="opretbruger.js"></script>

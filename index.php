@@ -1,7 +1,7 @@
 <?php
 ob_start();
 
-require 'fl/tjek_mobile_browser.php';
+require_once 'fl/tjek_mobile_browser.php';
 if(mobile_browser()==true){
     
     header("Location:vl/frame_frontpage_mobile.php");

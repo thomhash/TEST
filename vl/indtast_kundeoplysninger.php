@@ -4,11 +4,11 @@
 	<title>Indtast oplysninger</title>
 	
 	<link rel="stylesheet" href="../login_user.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        
 </head>
 <body>
     <?php  
-    
+    require_once '../fl/tjek_mobile_browser.php';
     $mailadr=$_GET["mail"];?>
     
    
@@ -73,7 +73,8 @@
 				</li>
                                 <br>
                                 <br>
-                                <a href="frame_login.php">Skip denne del</a>
+                                <a href="<?php if(mobile_browser()==true){echo "frame_login_mobile.php";} 
+                                else{echo "frame_login.php";}?>">Skip denne del</a>
                                 <br>
                                 <br>
                                  
