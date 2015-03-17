@@ -42,7 +42,7 @@ function opret_farve($varefarve) { {
 }
 
 function opret_gruppe($gruppe,$overgruppe) { {
-     
+     require 'login.php'; 
         if ($db_server->connect_error) {
             die("Connection failed: " . $db_server->connect_error);
         }
@@ -58,7 +58,7 @@ function opret_gruppe($gruppe,$overgruppe) { {
 }
 
 function opret_gruppe_uu($gruppe) { {
-      
+      require 'login.php';  
 // Check connection
         if ($db_server->connect_error) {
             die("Connection failed: " . $db_server->connect_error);

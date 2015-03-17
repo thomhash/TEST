@@ -14,17 +14,17 @@ if (empty($_POST['stoerelse']) == false) {
    $stoerelse = $_POST['stoerelse'];
    opret_stoerelse($stoerelse);
 }
-/*
+
 if (empty($_POST['gruppe']) == false) {
    $gruppe = $_POST['gruppe'];
-   $undergruppe = $_POST['undergruppe'];
-   if ($undergruppe == "0"){
+   $overgruppe = $_POST['overgruppe'];
+   if ($overgruppe == "0"){
        opret_gruppe_uu($gruppe);
    } 
    else{
-   opret_gruppe($gruppe,$undergruppe);}
+   opret_gruppe($gruppe,$overgruppe);}
 }
-*/
+
 if (empty($_POST['vare_navn']) == false) {
    $vare_navn = $_POST['vare_navn'];
    $vare_beskrivelse = $_POST['vare_beskrivelse'];

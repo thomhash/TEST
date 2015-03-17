@@ -1,8 +1,14 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+    
+</head> 
+
 <?php
 require '../fl/fl_Mikkel_test.php';
 session_start();
-include '../fl/krav_admin.php';
+// include '../fl/krav_admin.php';
 ?>
+
 <link rel="stylesheet" type="text/css" href="..\styles.php">
 
 <div id="top"> Det er smart <div>
@@ -124,8 +130,8 @@ foreach ($hent as list($a, $b)) {
 
     <input type="text" name="gruppe"><br>
 
-    Undergruppe <br>
-    <select name="undergruppe">
+    Overgruppe <br>
+    <select name="overgruppe">
         <option value="0">Ingen</option>
 <?php
 $hent = hent_alle_grupper();
