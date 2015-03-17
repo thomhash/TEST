@@ -1,56 +1,60 @@
 <?php
 require '../dl/opret_ordre.php';
+require '../dl/get_kunde.php';
+require '../dl/get_lager.php';
+require '../dl/get_vare.php';
 session_start();
+
 function opret_ordre(){
   $mail =$_GET["email"]; 
-  $afsendt = "nej";
-  $tidbestilt = "nej";
+  
+  
+  $id_ordre = opret_ordre_d($mail);
+  $vare = $_SESSION["kurv"]; 
+  
+  foreach($vare as $id=>$antal){
+      if ($antal>0){
+         
+      $pris = get_pris_fra_variant_id($id)[0];
+      
+      opret_ordre_har_vare($id_ordre,$antal,$id,$pris[0]);
+      
+      }
+     }
    
-    $id_ordre = opret_ordre_d($mail,$afsendt,$tidbestilt);
+    $kundeinfo = get_kunde_info_id($mail);
+    echo $kundeinfo[0][1];
+    print_r($kundeinfo);
+   
     
-     $vare = $_SESSION["kurv"]; 
-     
-     foreach($vare as $id=>$antal){
-     opret_ordre_har_vare($id_ordre,$antal,$id);
-   
-    }
 
-//header('Location:..\index.php');     
+    opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5]);   
+ 
+      
      // skal bruges -->     header('Location:../vl/kassen_trin_4.php');
      
  }
- opret_ordre();
- //opret_ordre_harvare();
- get_ordre();
  
- function opret_ordre_harvare(){
-     
-    
-    
-     set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-     //header('Location:..\index.php');     
-     
-     
+ if (tjek_lager() == true)
+ {
+     opret_ordre();
+     header('Location:../vl/kassen_trin_4.php');
  }
-  function opret_faktura(){
-     require '../dl/opret_kunde_dl.php';
-     $fornavn = $_GET['fornavn'];
-     $efternavn = $_GET['efternavn'];
-     $tlf = $_GET['tlf'];
-     $adresse = $_GET['adresse'];
-     $postnr = $_GET['postnr'];
-     $by = $_GET['by'];
-     $nyhed = null;
-     
-     // Hvis nyhedsboxen er tjekket af sættes vaerdien til 1
-    if (isset($_GET["nyhedsbrev"])){
-        $nyhed=$_GET["nyhedsbrev"];
-        }
-     
-     $mail = $_GET['mailadr'];   
-     
-     set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-     //header('Location:..\index.php');     
-     
-     
+ else 
+ {
+     header('Location:../vl/kassen_trin_3.php?');
+ }
+
+ function tjek_lager()
+ {
+     $ok = true;
+     foreach($vare as $id=>$antal){
+     $lager=get_lager_variant($id);
+     if ($lager<$antal)
+     {
+        $ok = false;
+     }
+     }
+   
+     return $ok;
  }

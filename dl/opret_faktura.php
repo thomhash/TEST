@@ -1,7 +1,7 @@
 <?php
 
 
-function opret_faktura($id_kunde,$afsendt,$f_id_ordre_f,$f_id_medarbejder,$f_id_virksomhed) { {
+function opret_fakturak($id_kunde,$afsendt,$f_id_ordre_f,$f_id_medarbejder,$f_id_virksomhed) { {
 require 'login.php';
      
 // Check connection

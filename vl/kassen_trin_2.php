@@ -1,5 +1,9 @@
 <?php
 $mail =$_GET["mail"];   
+require '../fl/get_kunde.php';
+ $kunde_id = get_kunde_id_fra_mail($mail);
+ 
+
 ?>
 <head>
 	

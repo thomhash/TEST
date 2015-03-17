@@ -172,7 +172,7 @@ function opret_billede($url)
 
     $sqlin = "INSERT INTO `webshop`.`billede` (`id_billede`, `url`) VALUES (NULL, '$url');";
 
-    if ($conn->query($sqlin) === TRUE) {
+    if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $db_server->error;

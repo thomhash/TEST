@@ -121,6 +121,19 @@ function get_id_vare_fra_variant($id){
     
 }
 
+function get_pris_fra_variant_id($id){
+    require 'login.php';
+
+    $sql = "SELECT pris FROM `variant` Where variant.id_variant =$id";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+    
+}
+
 
 
 

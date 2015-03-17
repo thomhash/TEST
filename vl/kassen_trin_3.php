@@ -1,6 +1,9 @@
 <?php
 require '../fl/get_kunde.php';
-$mail =$_GET["email"];  
+$mail =$_GET["email"]; 
+$kunde_id = get_kunde_id_fra_mail($mail)[0];
+echo $mail;
+echo $kunde_id[0];
 ?>
 <head>
 	
@@ -14,14 +17,22 @@ $mail =$_GET["email"];
 
         <h2> Sendes til: </h2> <br>
    <?php
-   $info_kunde= hent_kunde($mail);
+   $info_kunde = hent_kunde($kunde_id[0])[0];
+   
+   echo $info_kunde[1];
+   ?> <br> <?php
+    echo $info_kunde[2];
+    ?> <br> <?php
     
-     print_r($info_kunde)
+    echo $info_kunde[3];
+    ?> <br> <?php
+    echo $info_kunde[4];
+    ?> <br> <?php
+    echo $info_kunde[5];
+   ?> <br> <?php
+     
    ?>
-        
-By: <br>
 
-Vej
 	 <?php require '../fl/get_vare.php';
       session_start();
 
@@ -75,7 +86,7 @@ Vej
     ?>
          <th> <?php 
          
-         echo '<a href="../vl/vis_enkeltvare.php?id=' .$subarray[0][0] .'">' ;
+        
              echo '<img src="../billeder\\' .$subarray[0][5] .'">'; 
                 
          
@@ -83,7 +94,7 @@ Vej
          ?>
              <br>
              <?php
-         echo $subarray[0][2]; echo $subarray[0][6]; echo'</a>';?></th> 
+         echo $subarray[0][2]; echo $subarray[0][6]; ?></th> 
                      
             <th> <?php echo $subarray[0][4]; ?></th>  
             <th> <?php echo $info_array[$raekkenr][1]*$subarray[0][4]; 
@@ -120,7 +131,7 @@ echo $antal_total;
     <input type="checkbox" required="true" name="test" value="Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne"> 
     Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne
     <br><br>
-    <input type="hidden" name="email" value = "<?php echo $mail;?>">
+    <input type="hidden" name="email" value = "<?php echo $kunde_id[0];?>">
     
 <input type="submit" value="Godkend">
 </form>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+require '../fl/get_lager.php';
+
+$vare_antal_nu =0;
 
 if (isset($_POST['variant_id'])){
     $vare_id = $_POST['variant_id']; 
@@ -35,13 +38,43 @@ if (isset($_POST['rediger'])){
     
 }
 
-$vare_antal_nu = 0;
+
 if(isset($_SESSION['kurv'][$vare_id])){
     $vare_antal_nu = $_SESSION["kurv"][$vare_id];
     echo "hej";
     
+    
 }
-$_SESSION["kurv"][$vare_id] = $vare_antal_tilfoj+$vare_antal_nu;
+tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
+
+function tjek_lager($id_variant,$antal)
+{
+    $lager_for_id = hent_lager_id($id_variant)[0];
+    echo "lager";
+    echo $lager_for_id[0];
+    if($lager_for_id[0] >= $antal){
+        $_SESSION["kurv"][$id_variant] = $antal;
+        header('Location:../vl/kurv_oversigt.php');
+    }
+    else
+    {
+        
+        header('Location:../vl/kurv_oversigt.php?lager=nej');
+        ?> 
+
+
+<script>
+function myFunction() {
+    alert("I am an alert box!");
+}
+</script>
+
+<?php
+    }
+}
+
+
+
 
 
 $antal_vare=0;
@@ -58,7 +91,7 @@ echo "Antal vare i kurven:";
 
 print_r($_SESSION["kurv"]);
 
-header('Location:../vl/kurv_oversigt.php');
+
 //session_destroy();
 /* 
 foreach($_SESSION as $key => $value) {
