@@ -16,9 +16,10 @@
 <div id="top"> 
     
     <?php
-    include 'top.php';
+    include 'top_mobile.php';
     ?>
-     <div>
+     </div>
+  
   
 
     

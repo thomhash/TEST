@@ -8,24 +8,48 @@ width: 100%;
 ?>
 
 
-#top
+#icons
 {
-   
+display: inline-block;   
 background-color: white;
-height: 5%;
+height: 50px;
+
 font-color: white;
-width: 100%;
+
+margin-right:0%;
+width: 32%;
+ 
+margin-top:0px;
+  
+
+
 
 }
+#icons img{
+height: 50px;
+width:45px;
 
+ display: inline-block;
+   
+  
+ 
+ 
 
-#overskrift 
-{
-background-color: red;
-margin-bottom: 0px;
-margin-top: 1px;x   
-height: 150px;
+ 
+}
+#overskrift_img{
+display: inline-block;
+width:65%;
+ 
+}
+
+#overskrift_img img{
 width: 100%;
+height: 50px;
+
+margin-top:0px;
+
+
 
 }
 

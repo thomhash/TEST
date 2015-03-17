@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
 session_start();
 
 if (isset($_POST['variant_id'])){
@@ -59,6 +59,8 @@ echo "Antal vare i kurven:";
 print_r($_SESSION["kurv"]);
 
 header('Location:../vl/kurv_oversigt.php');
+ob_flush();
+die();
 //session_destroy();
 /* 
 foreach($_SESSION as $key => $value) {

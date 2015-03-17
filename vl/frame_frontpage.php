@@ -3,14 +3,16 @@
 
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    
+    <link rel="stylesheet" type="text/css" href="../styles.php"> 
+<link rel="stylesheet" type="text/css" href="../login_user.css">
 </head>
 <body>
 <?php
 
 
 ?>
-<link rel="stylesheet" type="text/css" href="../styles.php">
+ 
+
 
 <div id="top"> 
     
