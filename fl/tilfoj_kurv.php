@@ -48,26 +48,23 @@ if(isset($_SESSION['kurv'][$vare_id])){
 tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
 
 function tjek_lager($id_variant,$antal)
-{
+{    ob_start();
     $lager_for_id = hent_lager_id($id_variant)[0];
     echo "lager";
     echo $lager_for_id[0];
     if($lager_for_id[0] >= $antal){
         $_SESSION["kurv"][$id_variant] = $antal;
-        header('Location:../vl/kurv_oversigt.php');
+        header('Location:../vl/frame_indkoebskurv.php');
+        ob_flush();
     }
     else
     {
         
-        header('Location:../vl/kurv_oversigt.php?lager=nej');
+        header('Location:../vl/frame_indkoebskurv.php?lager=nej');
+        ob_flush();
         ?> 
 
 
-<script>
-function myFunction() {
-    alert("I am an alert box!");
-}
-</script>
 
 <?php
     }
@@ -91,7 +88,7 @@ echo "Antal vare i kurven:";
 
 print_r($_SESSION["kurv"]);
 
-header('Location:../vl/kurv_oversigt.php');
+header('Location:../vl/frame_indkoebskurv.php');
 ob_flush();
 die();
 //session_destroy();

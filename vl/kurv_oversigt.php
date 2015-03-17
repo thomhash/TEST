@@ -32,7 +32,7 @@ foreach ($vare as $id => $antal) {
 <br><br>
 
 <header>
-    <link rel="stylesheet" type="text/css" href="..\kurv_style.css">
+    <link rel="stylesheet" type="text/css" href="../kurv_style.css">
 </header>
 <html>
     <body>
@@ -61,7 +61,7 @@ foreach ($info_array as $id => $antal) {
             $antal_total += $info_array[$raekkenr][1];
             ?>
                             <th> <?php
-                            echo '<a href="../vl/vis_enkeltvare.php?id=' . $subarray[0][0] . '">';
+                            echo '<a href="../vl/frame_visenkeltvare.php?id=' . $subarray[0][0] . '">';
                             echo '<img src="../billeder\\' . $subarray[0][5] . '">';
 
 

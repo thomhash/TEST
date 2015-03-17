@@ -5,7 +5,7 @@ require_once '../fl/tjek_mobile_browser.php';
 
 <div id="icons" align="right" >
            
-            <a href="kurv_oversigt.php">
+    <a href="frame_indkoebskurv.php">
                 <img src="..\billeder\shoppingcart.png">
                 </a> 
             
