@@ -117,6 +117,10 @@ echo $kunde_id[0];
            
             <br>       
             Fragt:    
+            <?php
+    echo hent_fragtpris($total);
+    // echo "Fragtpirs: "+ hent_alm_fragtpris(); + " kr. gratis fragt ved køb for over: " + hent_gratis_fragtpris() + "kr.";
+    ?>
             <br>    <br>
 Total:
 <?php 
