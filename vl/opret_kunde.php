@@ -12,7 +12,7 @@
     
    
 	<section class="loginform cf">
-		<form name="login" action="../fl/opret_kunde_fl.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/opret_kunde_fl.php" method="POST" onsubmit="return checkForm(this);">
 			<ul>
 				<li>
 					<label>E-mail</label>

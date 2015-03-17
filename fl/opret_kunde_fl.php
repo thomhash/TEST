@@ -2,7 +2,7 @@
 ob_start();
 require_once 'tjek_mobile_browser.php';
 
-if (isset($_GET["email"])){
+if (isset($_POST["email"])){
 opret_kunde();
 }
 
@@ -15,8 +15,9 @@ indtast_kundeoplysninger();
 
 function opret_kunde(){
     require '../dl/opret_kunde_dl.php';
-$mail = $_GET['email'];  
-$kode = $_GET['pwd1'];
+$mail = $_POST['email'];  
+$kode = $_POST['pwd1'];
+
 
 $same_mail=check_kunde_mail($mail);
 

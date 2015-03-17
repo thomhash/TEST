@@ -13,7 +13,7 @@
     
    
 	<section class="loginform cf">
-		<form name="login" action="../fl/opret_kunde_fl.php" onsubmit="return checkForm(this);">
+            <form name="login" action="../fl/opret_kunde_fl.php"   onsubmit="return checkForm(this);">
                     
                      <?php   
                      
