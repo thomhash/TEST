@@ -18,7 +18,7 @@ function opret_kunde(){
 $mail = $_GET['email'];  
 $kode = $_GET['pwd1'];
 
-$same_mail=check_kunde_mail($mail ,$kode);
+$same_mail=check_kunde_mail($mail);
 
  if (empty($same_mail)) {
      $options = ['cost' => 12,];

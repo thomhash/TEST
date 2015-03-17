@@ -14,16 +14,12 @@
     <div id="top"> 
     
     <?php
-    include 'top.php';
+    include 'top_mobile.php';
     ?>
      </div>
   
 
-    <div id="overskrift">
-       <?php
-        include 'overskrift.php';
-        ?>
-        </div>
+   
     
     <div id="menu">
        <?php

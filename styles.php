@@ -18,7 +18,7 @@ height: 100%;
 -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
  
-margin-top: 3.5%;
+margin-top: 0px;
 
 margin-left: auto;
 margin-right: auto;
@@ -29,14 +29,26 @@ min-width: 75%;
 
 }
 
-#top
+#icons
 {
    
 background-color: white;
-height: 5%;
+height: 50px;
 font-color: white;
-width: 100%;
+margin-right:12.5%;
 
+
+
+
+
+}
+#icons img{
+height: 50px;
+ display: inline-block; 
+ 
+ left:50%;
+
+ 
 }
 #venstre 
 {position: relative;
@@ -46,7 +58,9 @@ float: left;
 margin-left: 1px;
 height: 91.07%;
 
-
+}
+#venstre .loginform{
+position:relative;
 
 }
 #overskrift 
@@ -57,10 +71,12 @@ margin-top: 1px;
 height: 200px;
 width 100%
 
+
 }
 #overskrift_img img{
 width: 100%;
 height: 100%;
+
 }
 #indhold 
 {

@@ -12,7 +12,7 @@ require '../fl/get_kunde.php';
 <h1>Kundeoplysninger</h2>
 Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
 <form name="pris_form" action="" method="POST" class="loginform cf">
-    <input type="input" name="ny_pris" value="">
+    <input type="input" name="ny_pris" placeholder="yourname@email.com" value="">
      
     <input type="hidden" name="rediger" value="pris_form"><br>
     <input type="submit" name="submit" value="Hent" >
