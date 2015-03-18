@@ -3,6 +3,8 @@ require '../dl/opret_ordre.php';
 require '../dl/get_kunde.php';
 require '../dl/get_lager.php';
 require '../dl/get_vare.php';
+
+
 session_start();
 
 function opret_ordre(){
@@ -18,7 +20,9 @@ function opret_ordre(){
       $pris = get_pris_fra_variant_id($id)[0];
       
       opret_ordre_har_vare($id_ordre,$antal,$id,$pris[0]);
+      ret_lager(-$antal,$id);
       
+      kurv_tom();
       }
      }
    
@@ -38,6 +42,7 @@ function opret_ordre(){
  if (tjek_lager() == true)
  {
      opret_ordre();
+     kurv_tom();
      header('Location:../vl/kassen_trin_4.php');
  }
  else 
@@ -57,4 +62,17 @@ function opret_ordre(){
      }
    
      return $ok;
+ }
+ 
+ function ret_lager($antal,$id){
+     
+   $antal_nu = get_lager_variant($id);
+   $ny_lager = $antal+$antal_nu[0][0];
+   edit_lager($ny_lager,$id);
+ }
+ function kurv_tom(){
+     
+   $antal_nu = get_lager_variant($id);
+   $ny_lager = $antal+$antal_nu[0][0];
+   edit_lager($ny_lager,$id);
  }

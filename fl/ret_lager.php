@@ -2,7 +2,7 @@
 require '../dl/ret_lager.php';
 require '../dl/get_lager.php';
 
-echo "det er smart";
+
    $antal = $_POST['antal'];
    $id = $_POST['id'];
    $antal_nu = get_lager_variant($id);
