@@ -12,12 +12,11 @@ $raekke_main=0;
 if(count($undergrupper) > 0){
     
     foreach ($hovede_grupper as $value) {
-        $raekke1=0;
         $array1=[];
         $array1_raekke1=0;
         
     
-     foreach($undergrupper as $value){
+     foreach($undergrupper as $raekke1 => $value){
          
         if($undergrupper[$raekke1][2]==$hovede_grupper[$raekke_main][0]){
             
@@ -30,10 +29,9 @@ if(count($undergrupper) > 0){
             
                    } 
                
-            $raekke1++;
-        
+                   
     }       
-    
+   
              if(count($array1) > 0){
                                   
                  $arrayTemp_raekke=0;
