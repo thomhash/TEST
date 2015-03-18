@@ -1,19 +1,5 @@
 <?php
 
-function get_kunde_id_d($id){
-    require 'login.php';
-      
-  
-    $sql = "Select id_kunde from kunde where kunde_id.kunde =$id";
-    
-    $result= mysqli_query($db_server, $sql);       
-    $row= mysqli_fetch_all($result);
-        
-    mysqli_close($db_server);
-    return $row;
-     
-}
-
 function get_kunde_info_id($id){
     require 'login.php';
    
@@ -31,6 +17,19 @@ function get_kunde_id_fra_mail($email){
     require 'login.php';
    
     $sql = "SELECT id_kunde FROM `kunde` WHERE email = '$email'";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+     
+}
+
+function get_kurv_fra_id($id){
+    require 'login.php';
+   
+    $sql = "SELECT f_id_variant, antal FROM `kurv` WHERE f_id_kunde = '$id'";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);

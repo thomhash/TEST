@@ -41,7 +41,7 @@
      function opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){          
          echo "Opretter ny kunde";
          $id_kunde = opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-    header('Location:..\vl\kassen_trin_2.php?mail='.$mail);
+    header('Location:..\vl\frame_kassen_trin_2.php?mail='.$mail);
       }
       
       
@@ -51,5 +51,5 @@
     
               
      $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-   header('Location:..\vl\kassen_trin_2.php?mail='.$mail);
+   header('Location:..\vl\frame_kassen_trin_2.php?mail='.$mail);
       }

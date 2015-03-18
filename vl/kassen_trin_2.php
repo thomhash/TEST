@@ -25,7 +25,7 @@ require '../fl/get_kunde.php';
 
 <h1>Betaling </h2>
 
-<form action="..\vl\kassen_trin_3.php">
+<form action="..\vl\frame_kassen_trin_3.php">
 <input type="radio" name="betaling" value="postdanmark" checked>Visa 
 <br>
 <input type="radio" name="betaling" value="ups" checked>Bank overførsel

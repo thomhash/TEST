@@ -6,6 +6,11 @@ function hent_kunde($id){
    // print_r($id_array);
    return $id_array;
 }
+function hent_kunde_kurv($id){
+   $id_array=get_kurv_fra_mail($id);
+   // print_r($id_array);
+   return $id_array;
+}
 /* 
 /* 
  * To change this license header, choose License Headers in Project Properties.

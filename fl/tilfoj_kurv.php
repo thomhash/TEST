@@ -59,7 +59,7 @@ function tjek_lager($id_variant,$antal)
     }
     else
     {
-        
+       echo "test";
         header('Location:../vl/frame_indkoebskurv.php?lager=nej');
         ob_flush();
         ?> 
@@ -88,7 +88,7 @@ echo "Antal vare i kurven:";
 
 print_r($_SESSION["kurv"]);
 
-header('Location:../vl/frame_indkoebskurv.php');
+// header('Location:../vl/frame_indkoebskurv.php');
 ob_flush();
 die();
 //session_destroy();

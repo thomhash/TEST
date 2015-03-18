@@ -1,5 +1,7 @@
 <?php
 require '../fl/get_kunde.php';
+session_start();
+$logget_ind = "nej";
 ?>
 <head>
 	<title>Opret bruger</title>
@@ -10,6 +12,12 @@ require '../fl/get_kunde.php';
 <html>
     <center> 
 <h1>Kundeoplysninger</h2>
+<?php   if (isset($_GET["logget_ind"])){
+        $logget_ind = $_SESSION["logget_ind"];
+}
+
+   If ($logget_ind != "ja") {    
+?>
 Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
 <form name="pris_form" action="" method="POST" class="loginform cf">
     <input type="input" name="ny_pris" placeholder="yourname@email.com" value="">
@@ -18,6 +26,9 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
     <input type="submit" name="submit" value="Hent" >
 </form>
 <hr>
+<?php
+   }
+?>
 <body>
     <?php header('Content-type: text/html; charset=utf-8'); 
     
@@ -47,8 +58,8 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
         $by = NULL;;
          
           // if (isset($_SESSION["bruger_id"])){
-         if (1==1){
-         $id_kunde =1;    
+         if (isset($_SESSION["bruger_id"])){
+         $id_kunde =$_SESSION["bruger_id"][0];    
         $kunde=  hent_kunde($id_kunde)[0];
         $fornavn = $kunde[0];
         $efternavn = $kunde[1];
