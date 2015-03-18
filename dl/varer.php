@@ -104,15 +104,22 @@ function get_vareid_filter ($gruppe_nr, $sidetal, $maerker, $stoerrelser, $farve
 
 
 // Hent oplysninger til katalog i variant, ud fra vare-id (kun vis=1)
-function get_info_catalog ($vare_id){
+function get_info_catalog ($vare_id, $farver){
     require 'login.php';
+    $sql_where="";
+    if($farver!=0){
+        $sql_where.=" AND varefarve.`varefarve`= ".'"' .$farver[0] .'"';
+        }
+    else { $sql_where="AND variant.`vis`=1";}    
     
     $sql = "SELECT vare.`navn` , variant.`pris` , billede.`url`, variant.`id_variant`
             FROM `variant` 
             INNER JOIN `vare` 
             INNER JOIN `billede`
-            ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_billede`=billede.`id_billede` 
-            WHERE `id_vare` = $vare_id AND variant.`vis`=1";
+            INNER JOIN `varefarve`  
+            ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` 
+            WHERE `id_vare` = $vare_id $sql_where ";
+    
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);

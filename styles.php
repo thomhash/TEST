@@ -32,7 +32,7 @@ min-width: 75%;
 #icons
 {
    
-background-color: orange;
+
 height: 50px;
 font-color: white;
 margin-right:12.5%;

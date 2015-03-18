@@ -80,10 +80,9 @@ foreach ($info_array as $id => $antal) {
                             <th>
 
                         <form action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
-
-                            <input name="rediger" type="submit" value="1" > 
-
-                            <input name="rediger" type="submit"  value="-1"> 
+                             
+                            <input name="rediger" type="submit" value="+1" > 
+                             <input name="rediger"  type="submit"  value="-1"> 
 
                             <input name="rediger" type="submit" value="Slet" src="www.google.com" > 
 
