@@ -3,7 +3,7 @@
 <head>
 	<title>Login Kunde</title>
 	
-	<link rel="stylesheet" href="..\login_user.css">
+	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <?php require_once '../fl/tjek_mobile_browser.php'; ?>
 </head>
@@ -12,7 +12,7 @@
     
 
 	<section class="loginform cf">
-		<form name="login" action="..\fl\login_kunde_fl.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/login_kunde_fl.php" onsubmit="return checkForm(this);">
 			<ul>
 				<li>
 					<label>E-mail</label>

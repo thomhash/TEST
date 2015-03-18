@@ -54,7 +54,7 @@
          echo "<figure>";
          if(mobile_browser()==true){ echo '<a href="frame_visenkeltvare_mobile.php?id=' .$info_vare[$raekke_nr][3] .'">' ;   }
            else {echo '<a href="frame_visenkeltvare.php?id=' .$info_vare[$raekke_nr][3] .'">' ;}
-             echo '<img src="..\billeder\\' .$info_vare[$raekke_nr][2] .'">'; 
+             echo '<img src="../billeder//' .$info_vare[$raekke_nr][2] .'">'; 
                 echo '</a>';
            echo "<figcaption>
                     <table>   

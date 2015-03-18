@@ -8,19 +8,19 @@ require_once '../fl/tjek_mobile_browser.php';
 ?>
 <div id="overskrift_img";>
 <a href="frame_frontpage_mobile.php">
-             <img src="..\billeder\overskrift.jpg">
+             <img src="../billeder/overskrift.jpg">
                  </a>
 
 </div>
 <div id="icons" align="right" >
            
             <a href="kurv_oversigt.php">
-                <img src="..\billeder\shoppingcart.png">
+                <img src="../billeder/shoppingcart.png">
                 </a> 
             
             <a href="<?php if(mobile_browser()==true){echo "frame_login_mobile.php";}
                                 else{echo "frame_login.php";}?>">
-                <img src="..\billeder\account.png">
+                <img src="../billeder/account.png">
                 </a> 
             
             </div>

@@ -10,7 +10,7 @@
 
 
 ?>
-<link rel="stylesheet" type="text/css" href="..\styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     

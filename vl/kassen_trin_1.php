@@ -5,8 +5,8 @@ $logget_ind = "nej";
 ?>
 <head>
 	<title>Opret bruger</title>
-	<link rel="stylesheet" href="..\login_user_normalize.css">
-	<link rel="stylesheet" href="..\login_user.css">
+	<link rel="stylesheet" href="../login_user_normalize.css">
+	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <html>
@@ -36,7 +36,7 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
     
    
 	<section class="loginform cf">
-		<form name="login" action="..\fl\opret_kunde_kob.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/opret_kunde_kob.php" onsubmit="return checkForm(this);">
                     
                      <?php   
                      

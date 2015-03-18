@@ -3,7 +3,7 @@ require '../fl/fl_Mikkel_test.php';
 session_start();
 
 ?>
-<link rel="stylesheet" type="text/css" href="..\styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     

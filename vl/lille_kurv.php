@@ -40,9 +40,7 @@ if (isset($_SESSION["kurv"])){
     echo " Kr. ";
     
     ?>
-<form action="kurv_oversigt.php">
-    <input type="submit" value="Vis kurv">
-</form>
+
   <?php  
 }
 ?>  

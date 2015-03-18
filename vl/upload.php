@@ -1,7 +1,7 @@
 
 
 <?php
-$target_dir = "C:\Users\Mikkel\Documents\NetBeansProjects\TEST\billeder";
+$target_dir = "C:/Users/Mikkel/Documents/NetBeansProjects/TEST/billeder";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

@@ -61,7 +61,7 @@ $same_mail=check_kunde_mail($mail);
      $mail = $_GET['mailadr'];   
      
      set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-     //header('Location:..\index.php');     
+     //header('Location:../index.php');     
      
      
  }

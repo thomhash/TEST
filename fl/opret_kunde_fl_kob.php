@@ -37,7 +37,7 @@ $same_mail=check_kunde_mail($mail ,$kode);
      ob_flush();
      $bruger_id=check_kunde_mail($mail)[0][0];
                  
-     header('Location:..\vl\kassen_trin_2.php?mail=' .$bruger_id);
+     header('Location:../vl/kassen_trin_2.php?mail=' .$bruger_id);
          
     
     
@@ -45,7 +45,7 @@ $same_mail=check_kunde_mail($mail ,$kode);
 
   else if (!empty($same_mail) && $kob=="ja"){
      echo "bruger findes vi ændre dine oplysniger";
-     header('Location:..\vl\opret_kunde.php?findes=1');
+     header('Location:../vl/opret_kunde.php?findes=1');
      
  }
  
@@ -69,7 +69,7 @@ $same_mail=check_kunde_mail($mail ,$kode);
      $mail = $_GET['mailadr'];   
      
      set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-     //header('Location:..\index.php');     
+     //header('Location:../index.php');     
      
      
  }

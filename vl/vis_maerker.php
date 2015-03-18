@@ -9,7 +9,7 @@ session_start();
 // include '../fl/krav_admin.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="..\styles.php">
+<link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> Det er smart <div>
      

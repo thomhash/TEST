@@ -23,7 +23,7 @@
         
         <h1> <?php echo $info_array[0][0]   ?> </h1>
       <div id="topbillede"> 
-        <img src ="..\billeder\<?php echo $info_array[0][3]; ?> ">
+        <img src ="../billeder/<?php echo $info_array[0][3]; ?> ">
       </div> 
         
        
@@ -46,7 +46,7 @@
                           
                         echo '<div class="image">';
                         echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
-                        echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
+                        echo    '<img src="../billeder//' .$farve_varianter[$billede_nr][1] .'">';
                         echo '</a>';
                         
                        echo '<div id="controls">';
@@ -59,7 +59,7 @@
                        
                       else{
                          echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
-                         echo    '<img src="..\billeder\\' .$farve_varianter[$billede_nr][1] .'">';
+                         echo    '<img src="../billeder//' .$farve_varianter[$billede_nr][1] .'">';
                          echo '</a>';
                      
                     

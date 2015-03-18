@@ -62,7 +62,7 @@ foreach ($info_array as $id => $antal) {
             ?>
                             <th> <?php
                             echo '<a href="../vl/frame_visenkeltvare.php?id=' . $subarray[0][0] . '">';
-                            echo '<img src="../billeder\\' . $subarray[0][5] . '">';
+                            echo '<img src="../billeder//' . $subarray[0][5] . '">';
 
 
                             echo $subarray[0][1];

@@ -9,7 +9,7 @@
 
 <section class="loginform cf" align="center">
     <legend>Tilmeld vores nyhedsbrev</legend>
-		<form name="login" action="..\fl\login_kunde_fl.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/login_kunde_fl.php" onsubmit="return checkForm(this);">
 			<ul>
 				<li>
 					<label>E-mail</label>

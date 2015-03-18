@@ -7,8 +7,8 @@ echo $kunde_id[0];
 ?>
 <head>
 	
-	<link rel="stylesheet" href="..\login_user_normalize.css">
-	<link rel="stylesheet" href="..\login_user.css">
+	<link rel="stylesheet" href="../login_user_normalize.css">
+	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <html>
@@ -54,7 +54,7 @@ echo $kunde_id[0];
 <br><br>
 
 <header>
-    <link rel="stylesheet" type="text/css" href="..\kurv_style.css">
+    <link rel="stylesheet" type="text/css" href="../kurv_style.css">
 </header>
 <html>
     <body>
@@ -87,7 +87,7 @@ echo $kunde_id[0];
          <th> <?php 
          
         
-             echo '<img src="../billeder\\' .$subarray[0][5] .'">'; 
+             echo '<img src="../billeder//' .$subarray[0][5] .'">'; 
                 
          
          echo $subarray[0][1]; 
@@ -130,7 +130,7 @@ echo $antal_total;
 
 <br>
 
-     <form action="..\fl\opret_bestilling.php">
+     <form action="../fl/opret_bestilling.php">
     <a href="betingelser.html">Læs forretningsbetingelserne </a><br><br>
     <input type="checkbox" required="true" name="test" value="Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne"> 
     Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne
