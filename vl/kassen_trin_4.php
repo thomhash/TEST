@@ -8,14 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <html>
-    <br> <h1>Indtast kontooplysninger <h2>
-            
-              <form action="../fl/opret_bestilling.php">
-
-    <br><br>
-    <input type="hidden" name="email" value = "<?php echo $mail;?>">
-    
-<input type="submit" value="Betal">
-</form>
-		
+    <br> <h1>Bestilling bekræftet <h2>
+          <br><br><br><br>  
+            <a href="../index.php"> Gå til forside </a>
  

@@ -1,5 +1,6 @@
 <?php
 require '../fl/get_kunde.php';
+require '../fl/fragt_pris.php';
 $mail =$_GET["email"]; 
 $kunde_id = get_kunde_id_fra_mail($mail)[0];
 echo $mail;
@@ -124,8 +125,8 @@ echo $kunde_id[0];
             <br>    <br>
 Total:
 <?php 
-echo $total; 
-echo $antal_total;
+echo $total+hent_fragtpris($total); 
+
 ?>
 
 <br>
