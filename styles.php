@@ -23,7 +23,7 @@ margin-top: 0px;
 margin-left: auto;
 margin-right: auto;
 border: none; // 5px solid red;
-height: 2710px;
+height: 1300px;
 width: 1000px;
 min-width: 75%;
 
@@ -32,7 +32,7 @@ min-width: 75%;
 #icons
 {
    
-background-color: white;
+
 height: 50px;
 font-color: white;
 margin-right:12.5%;
@@ -53,10 +53,10 @@ height: 50px;
 #venstre 
 {position: relative;
 background-color: CFCACA;
-width: 24%;
+width: 25%;
 float: left;
-margin-left: 1px;
-height: 91.07%;
+
+height: 1061px;
 
 }
 #venstre .loginform{
@@ -84,7 +84,7 @@ background-color: #A4A4A4;
 width: 75%;
 
 float: right;
-height: 91.07%;
+height: 1061px;
 
 }
 

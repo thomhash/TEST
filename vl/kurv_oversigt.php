@@ -1,4 +1,4 @@
-
+<div id="kurv">
 <?php
 require '../fl/get_vare.php';
 require '../fl/fragt_pris.php';
@@ -64,7 +64,7 @@ foreach ($info_array as $id => $antal) {
                             echo '<a href="../vl/frame_visenkeltvare.php?id=' . $subarray[0][0] . '">';
                             echo '<img src="../billeder//' . $subarray[0][5] . '">';
 
-
+                            echo    "<br>";
                             echo $subarray[0][1];
                             ?>
                                 <br>
@@ -80,10 +80,9 @@ foreach ($info_array as $id => $antal) {
                             <th>
 
                         <form action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
-
-                            <input name="rediger" type="submit" value="1" > 
-
-                            <input name="rediger" type="submit"  value="-1"> 
+                             
+                            <input name="rediger" type="submit" value="+1" > 
+                             <input name="rediger"  type="submit"  value="-1"> 
 
                             <input name="rediger" type="submit" value="Slet" src="www.google.com" > 
 
@@ -125,7 +124,8 @@ if ($antal_total > 0) {
 
 <?php } ?>  
 <br><br>
-<a href="index.php"> Handel videre </a>
+<a href="../index.php"> Handel videre </a>
+</div>
 </body>
 
 <head>
