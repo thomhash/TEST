@@ -42,8 +42,5 @@ print_r($ordre);
 
 
 ?></table>
-<br>
-Begynd pakning <br><br>
-Begynd pakning <br>
 
 <br>

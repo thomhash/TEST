@@ -2,10 +2,11 @@
 require '../dl/opret_ordre.php';
 require '../dl/get_kunde.php';
 require '../dl/get_lager.php';
+require '../dl/ret_lager.php';
 require '../dl/get_vare.php';
-
-
 session_start();
+$vare = $_SESSION["kurv"]; 
+
 
 function opret_ordre(){
   $mail =$_GET["email"]; 
@@ -39,29 +40,38 @@ function opret_ordre(){
      
  }
  
- if (tjek_lager() == true)
+ if (tjek_lager($vare) == true)
  {
      opret_ordre();
      kurv_tom();
-     header('Location:../vl/kassen_trin_4.php');
+   // header('Location:../vl/kassen_trin_4.php');
  }
  else 
  {
      header('Location:../vl/kassen_trin_3.php?');
  }
 
- function tjek_lager()
+ function tjek_lager($vare)
  {
      $ok = true;
+     $test;
+        
      foreach($vare as $id=>$antal){
      $lager=get_lager_variant($id);
+     echo "lager"+print_r($lager)+"id:"+print_r($id)+"antal:"+print_r($antal);
      if ($lager<$antal)
      {
-        $ok = false;
+        $test[$id] = false;
      }
+     else{
+     $test[$id] = true;
+             
+     }
+     echo "test:";
+     print_r($test);
      }
    
-     return $ok;
+     return $test;
  }
  
  function ret_lager($antal,$id){
@@ -71,8 +81,6 @@ function opret_ordre(){
    edit_lager($ny_lager,$id);
  }
  function kurv_tom(){
-     
-   $antal_nu = get_lager_variant($id);
-   $ny_lager = $antal+$antal_nu[0][0];
-   edit_lager($ny_lager,$id);
+     unset($_SESSION["kurv"]);
+   
  }

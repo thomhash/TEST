@@ -1,26 +1,38 @@
+
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../styles.php"> 
+<link rel="stylesheet" type="text/css" href="../login_user.css">
+</head>
+<body>
 <?php
-require '../fl/get_vare_info.php';
-session_start();
+
 
 ?>
-<link rel="stylesheet" type="text/css" href="../styles.php">
+ 
+
 
 <div id="top"> 
     
     <?php
     include 'top.php';
     ?>
-    
-    <div>
-     
+     <div>
+  
 <div id="content">
     <div id="overskrift">
        <?php
         include 'overskrift.php';
         ?>
         </div>
-    
-    
+    <div id="menu">
+       <?php
+        include 'vis_menu.php';
+        ?>
+        </div>
+   
     <div id="venstre">
      <?php
         include 'venstre.php';
@@ -28,10 +40,15 @@ session_start();
         </div> 
     <div id="indhold">
         <?php
-        include 'login_bruger.php';
+        include 'kunde_side.php';
         ?>    
         </div>
     </div>
+         
+         
+</body>  
+
+</html>
 <?php
 /*
  * To change this license header, choose License Headers in Project Properties.

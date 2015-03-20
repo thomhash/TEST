@@ -17,7 +17,7 @@ function opret_kunde(){
     require '../dl/opret_kunde_dl.php';
 $mail = $_POST['email'];  
 $kode = $_POST['pwd1'];
-echo $email;
+
 
 $same_mail=check_kunde_mail($mail);
 

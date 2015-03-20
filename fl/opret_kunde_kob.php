@@ -1,6 +1,6 @@
 <?php
  require '../dl/opret_kunde_dl.php';
-
+session_start();
  
  
      $fornavn = $_GET['fornavn'];
@@ -19,12 +19,12 @@
     $same_mail=check_kunde_mail($mail);
     //print_r($same_mail);
     $er_bruger=check_kode($mail);
-    if (!empty($er_bruger)) {
+    if (!empty($er_bruger) && $_SESSION["logget_ind"] != "ja") {
              
         header('Location:../vl/frame_login.php?kob=1');
          ob_flush();
     }
-    else if (!empty($same_mail)) {
+    else if (!empty($same_mail) && $_SESSION["logget_ind"] == "ja") {
               
          ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
          echo "Mail findes så kunde rettes";

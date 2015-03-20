@@ -1,49 +1,40 @@
+<h1>Ordre oversigt: </h1>
+<a href="admin_menu.php">Menu</a><br>
+<br>
+<center>
+<h4> <a href="tjek_ordre.php?type=1">Ikke påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=2"> påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=3"> Behandlede ordre</a></h4>
+</center>
+
 <?php
 require '../fl/get_ordre.php';
+$type=1;
+
+if (isset($_GET["type"])){
+$type =$_GET["type"]; }
 
 $ordre = hent_ordre_ikke_begyndt();
 
-print_r($ordre);
-echo "-----------------------------------------";
-echo "<br>";
+if ($type==1){
+$ordre = hent_ordre_ikke_begyndt();
+}
+else if ($type==2){
+    $ordre = hent_ordre_begyndt();
+}
+else if ($type==3){
+    $ordre = hent_ordre_afsluttet();
+}
+
+
+
 $rnr = 0;
 $knr = 0;
 ?>
-<table style="width:100%">
-    <tr>
-        <td>Ordre</td>
 
-        <td>Kunde</td> 
-
-    </tr>
-    <tr>
-        <td>Eve</td>
-
-        <td>Kunde</td> 
-    </tr>
-    <tr>
-        <td>Navn</td>
-        <td>Størrelse</td> 
-        <td>Farve</td>
-        <td>Pris</td> 
-        <td>Antal</td>
-
-    </tr>
-    <tr>
-        <td>Navn</td>
-        <td>Størrelse</td> 
-        <td>Farve</td>
-        <td>Pris</td> 
-        <td>Antal</td>
-    </tr>
-</table>
 <table style="width:100%" border="2">
     <?php
     foreach ($ordre as $rn) {
         ?>
-    
         <tr>
-            <br>
             <td>Pak ordre</td>
             <td>Ordre id</td>
             <td>Kunde</td> 
@@ -51,18 +42,22 @@ $knr = 0;
         <?php
         foreach ($ordre[$rnr] as $rn) {
             if ($knr == 0) {
-                ?> <tr> <td>
-                <a href="tjek_ordre_id.php?id=?<?php$ordre[$rnr][0];?>"> Pak </a>
+                ?> <tr> 
+                    <td>
+                        <a href="tjek_ordre_id.php?id=<?php echo $ordre[$rnr][0]; ?>"> Pak </a>
                     </td>
-                    <td><?php
-                        echo ($ordre[$rnr][0]);
-                        ?></td><td><?php
-                        echo ($ordre[$rnr][1]);
-                        ?> </td></tr> <?php
-                }
+                    <td>
+                        <?php echo ($ordre[$rnr][0]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($ordre[$rnr][1]); ?> 
+                    </td>
+                </tr> 
+                <?php
+            }
 
-                if ($knr == 0) {
-                    ?>
+            if ($knr == 0) {
+                ?>
                 <tr>
                     <td>Variant id</td>
                     <td>Antal</td> 
@@ -70,7 +65,6 @@ $knr = 0;
                     <td>størrelse</td> 
                     <td>Farve</td>
                     <td>Mærke</td>
-                   
                 </tr>
                 <?php
                 $ind_rnr = 0;
@@ -93,6 +87,4 @@ $knr = 0;
         }
         $knr = 0;
         $rnr++;
-
-        echo "<br>";
     }
