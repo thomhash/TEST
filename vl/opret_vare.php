@@ -2,60 +2,32 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
     
 </head> 
-
 <?php
-require '../fl/fl_Mikkel_test.php';
+require '../fl/get_vare_info.php';
 session_start();
 // include '../fl/krav_admin.php';
 ?>
-
 <link rel="stylesheet" type="text/css" href="../styles.php">
+<h1>Opret vare: </h1>
+<a href="admin_menu.php">Menu</a><br>
 
-<div id="top"> Det er smart <div>
-     
-<div id="content">
-    <div id="overskrift">
-        Her er overskriften til hjemmesiden <br>
-          Her er overskriften til hjemmesiden <br>
-            Her er overskriften til hjemmesiden <br>
-              Her er overskriften til hjemmesiden <br>
-                Her er overskriften til hjemmesiden <br>
-                  Her er overskriften til hjemmesiden <br>
-                  
-        Det er smart 
-        </div>
-    
-    
-    <div id="venstre">
-        
-
-    
-        Her er det rigtige indhold<br>
-        </div> 
-    <div id="indhold">
-        <form action="../fl/log_out.php" method="POST">
-    <input type="submit" value="Log ud">
-</form>
-<hr>
-<h3> Mulighedder: </h3> <br> 
+ 
+<h3> Mulighedder: </h3> 
 <href>
-    Opret nyt mærke <br>
-    Opret ny farve <br>
-    Opret ny størelse <br>
-    Opret ny gruppe <br>
-    Opret ny vare <br>
-    Opret ny variant <br>
-    <br>
-    Tjek lagerstatus  <br>
-    Tilføj vare til lager <br>
-    <br>
-    Tjek ordre <br>
-    Tjek historik  <br>
+    
+    <a href="#mærke">Opret nyt mærke </a><br>
+    <a href="#farve">Opret ny farve </a><br>
+    <a href="#størelse">Opret ny størelse </a><br>
+    <a href="#gruppe">Opret ny gruppe </a><br>
+    <a href="#billede">Opret nyt billede </a><br>
+   <a href="#vare"> Opret ny vare</a> <br>
+   <a href="#variant">Opret ny variant </a><br>
+    
 </href>
 <!--Opret nyt mærke -->
+<br>
 <hr>
-<hr>
-<h3> Opret nyt maerke</h3>
+<h3> <a id="mærke">Opret nyt maerke</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Maerke:<br>
@@ -78,7 +50,7 @@ foreach ($hent as list($a, $b)) {
 </form>
 <hr>
 
-<h3>Opret ny farve</h3>
+<h3><a id="farve">Opret ny farve</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Farve:<br>
@@ -101,7 +73,7 @@ foreach ($hent as list($a, $b)) {
 </form>
 
 <hr>
-<h3> Opret ny størelse</h3>
+<h3> <a id="størelse">Opret ny størelse</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Størelse:<br>
@@ -123,7 +95,7 @@ foreach ($hent as list($a, $b)) {
     </select>
 </form>
 <hr>
-<h3> Opret ny gruppe</h3>
+<h3> <a id="gruppe">Opret ny gruppe</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Gruppe:<br>
@@ -161,7 +133,7 @@ foreach ($hent as list($a, $b)) {
 <hr>
 
 
-<h3> Forbind vare med grupper</h3>
+<h3> <a id="forbind">Forbind vare med grupper</a></h3>
 
 <form action="../fl/gruppe_tjek.php" method="POST">
     Vare:<br>
@@ -198,7 +170,7 @@ foreach ($hent as list($a, $b)) {
 
 
 
-<h3>Uplaode billede</h3>
+<h3><a id="billede">Uplaode billede</a></h3>
 <form action="../fl/uploade_billede.php" method="post" enctype="multipart/form-data">
     Vælg billede:<br> 
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
@@ -206,7 +178,7 @@ foreach ($hent as list($a, $b)) {
 </form>
 <hr>
 
-<h3>Opret ny vare</h3>
+<h3><a id="vare">Opret ny vare</h3>
 <form action="../fl/opret_maerke.php" method="POST">
     Vare navn:<br>
     <input type="text" name="vare_navn"><br>
@@ -243,7 +215,7 @@ foreach ($hent as list($a, $b)) {
 
 
 <hr>
-<h3>Opret ny variant</h3>
+<h3><a id="variant">Opret ny variant</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Vare:<br>

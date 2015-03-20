@@ -1,7 +1,8 @@
 <?php
-  session_start();  
-session_destroy();
-header("location:../vl/s_login.php");
+session_start();  
+$_SESSION["logget_ind"] = "nej";
+   $_SESSION["bruger_id"] = NULL; 
+header("location:../vl/frame_frontpage.php");
  //session_destroy(); 
  // header("location:../index.php");
 /* 

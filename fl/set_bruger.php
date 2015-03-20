@@ -3,7 +3,7 @@ require '../dl/get_kunde.php';
 //require '../fl/get_kunde.php';
 //require '../dl/get_kurv.php';
 session_start();
-set_bruger("test@test");
+
 
 function set_bruger($mail)
 {

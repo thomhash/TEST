@@ -7,6 +7,17 @@
 </head>
 <body>
 <?php
+
+session_start(); 
+if (isset($_SESSION["logget_ind"])){
+        
+if ($_SESSION["logget_ind"] == "ja"){
+   
+header("location:frame_kunde_menu.php");
+}
+}
+
+
 $opretbruger=0;
 $findes=0;
 $kundeoplysninger=0;

@@ -8,7 +8,9 @@ require '../fl/get_lager.php';
  */
 
 ?>
-<h4> Tjek lagerstatus </h4>
+<h1>Se lagerstatus: </h1>
+<a href="admin_menu.php">Menu</a><br>
+<br>
 <table border="1">
      <tr>
     

@@ -1,5 +1,5 @@
 <?php
-require '../dl/Mikkel_test.php';
+require '../dl/get_vare_info.php';
 function hent_maerker(){
    $id_array=get_maerker();
    // print_r($id_array);

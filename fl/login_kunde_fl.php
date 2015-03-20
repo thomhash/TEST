@@ -19,7 +19,7 @@ else {
         set_bruger($mail);
         if(mobile_browser()==true){header('Location:../vl/frame_frontpage_mobile.php?');
         ob_flush();}
-        else{header('Location:../vl/frame_frontpage.php?');
+        else{header('Location:../vl/frame_kunde_menu.php?');
             ob_flush();}
     } else {
         if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?forkert_kode=1');
