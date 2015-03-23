@@ -8,7 +8,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`stoerrelse` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
+        $sqlin = "INSERT INTO `stoerrelse` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";

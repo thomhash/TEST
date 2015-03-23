@@ -8,7 +8,7 @@ $last_id =0;
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`ordre_har_vare` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
+        $sqlin = "INSERT INTO `ordre_har_vare` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";
@@ -26,7 +26,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', NULL);";
+        $sqlin = "INSERT INTO `ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', NULL);";
         
         
         if ($db_server->query($sqlin) === TRUE) {
@@ -50,7 +50,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
        
-        $sqlin = "INSERT INTO `webshop`.`ordre_har_vare` (`f_id_ordre`, `f_id_variant`, `antal`, `pris`) VALUES ('$id_ordre', '$variant', '$antal', '$pris');";
+        $sqlin = "INSERT INTO `ordre_har_vare` (`f_id_ordre`, `f_id_variant`, `antal`, `pris`) VALUES ('$id_ordre', '$variant', '$antal', '$pris');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";
@@ -69,7 +69,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
        
-        $sqlin = "INSERT INTO `webshop`.`faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '18-01-1990', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
+        $sqlin = "INSERT INTO `faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '18-01-1990', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";

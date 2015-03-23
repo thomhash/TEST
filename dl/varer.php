@@ -97,7 +97,7 @@ function get_vareid_filter ($gruppe_nr, $sidetal, $maerker, $stoerrelser, $farve
     `gruppe`
     ON variant.`f_id_stoerrelse`=stoerrelse.`id_stoerrelse` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND vare.`id_vare`=variant.`f_id_vare`
     AND maerke.`id_maerke`=vare.`f_id_maerke` AND vare_har_gruppe.`f_id_vare`=vare.`id_vare` AND gruppe.`id_varegruppe`=vare_har_gruppe.`f_id_varegruppe`
-    WHERE `id_varegruppe` = $gruppe_nr AND variant.`pris`>=$pris_min AND variant.`pris`<=$pris_max ".$sql_where ." ORDER BY `prioritet` $sql_limit";
+    WHERE `id_varegruppe` = $gruppe_nr AND vare.`aktiv`=1 AND variant.`pris`>=$pris_min AND variant.`pris`<=$pris_max ".$sql_where ." ORDER BY `prioritet` $sql_limit";
         
     $result= mysqli_query($db_server, $sql);       
     
@@ -133,7 +133,7 @@ function get_info_catalog ($vare_id, $farver){
             INNER JOIN `billede`
             INNER JOIN `varefarve`  
             ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` 
-            WHERE `id_vare` = $vare_id $sql_where";
+            WHERE variant.`aktiv`=1 AND `id_vare` = $vare_id $sql_where";
     
     
     $result= mysqli_query($db_server, $sql);       

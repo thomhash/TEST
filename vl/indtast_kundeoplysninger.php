@@ -41,7 +41,7 @@
                                         <br>
 				</li>
                                 <li>
-					<label >Telefon nummer</label>
+					<label >Telefonnummer</label>
 					<input type="tel" name="tlf" required>
                                         <br>
 				</li>
@@ -52,7 +52,7 @@
                                         <br>
                                 </li>
                                 <li>
-					<label>Post nr</label>
+					<label>Post nr.</label>
 					<input type="number" name="postnr" required>
                                         <br>
                                 </li>

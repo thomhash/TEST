@@ -44,14 +44,30 @@ margin-right:12.5%;
 
 
 }
-#icons img{
+#icons #big{
 height: 50px;
  display: inline-block; 
  
  left:50%;
-
- 
 }
+
+.magnifying-glass{
+height:30px;
+padding: 0 5px 8px 0;
+}
+.header-search-box {
+    display:none;
+    width: 0px;
+  
+  
+  bottom:17px;
+  position:relative;
+    
+}
+
+
+
+
 #venstre 
 {position: relative;
 background-color: <?php echo venstre_farve();?>;
@@ -196,7 +212,7 @@ border-radius: 10px;
 box-shadow: 0 0 4px rgba(0,0,0, .75);
 /*style the text*/
 //color:#f3f3f3;
-font-size:30px;
+font-size:20px;
 }
 /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
 input#koeb:hover, input#koeb:focus{
@@ -247,16 +263,23 @@ width: 25%;
     left: 30%;
 }
 
+#search input{
+float:left;
+float:left;
+width:10%;
+height:40px;
+}
 
 
 
+#soeg img{
 
+width: <?php echo bredde_billeder(); ?>px; 
+height: <?php echo hoejde_billeder(); ?>px;
+   }
 
-
-
-
-
-
-
-
+#soeg{
+align::top;
+font-size: 40px;
+}
 
