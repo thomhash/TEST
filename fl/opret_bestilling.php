@@ -12,7 +12,7 @@ function opret_ordre(){
   $mail =$_GET["email"]; 
   
   
-  $id_ordre = opret_ordre_d($mail);
+  $id_ordre = opret_ordre_d($mail,date("Y m d H:i"));
   $vare = $_SESSION["kurv"]; 
   
   foreach($vare as $id=>$antal){
@@ -33,7 +33,7 @@ function opret_ordre(){
    
     
 
-    opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5]);   
+    opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
  
       
      // skal bruges -->     header('Location:../vl/kassen_trin_4.php');
@@ -83,4 +83,8 @@ function opret_ordre(){
  function kurv_tom(){
      unset($_SESSION["kurv"]);
    
+ }
+
+ function email_tekst(){
+     
  }

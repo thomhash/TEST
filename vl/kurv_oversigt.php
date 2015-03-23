@@ -84,7 +84,7 @@ foreach ($info_array as $id => $antal) {
                             <input name="rediger" type="submit" value="+1" > 
                              <input name="rediger"  type="submit"  value="-1"> 
 
-                            <input name="rediger" type="submit" value="Slet" src="www.google.com" > 
+                            <input name="rediger" type="submit" value="Slet"> 
 
                         
                         

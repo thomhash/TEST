@@ -14,37 +14,16 @@ if (isset($_POST['variant_antal'])){
   
 }
 
-if (isset($_GET['variant_id'])){
-    $vare_id = $_GET['variant_id']; 
-   
-}
-
-if (isset($_GET['variant_antal'])){
-    $vare_antal_tilfoj = $_GET['variant_antal']; 
-  
-}
-
-
-if (isset($_POST['slet_vare'])){
-    
-}
-
 if (isset($_POST['rediger'])){
-    echo "Du har lagt f varianti kurven:";
-    echo $vare_id;
-    echo "DEter fedt!";
-    
-    $vare_antal_tilfoj = $_POST['rediger'];
+  $antal_tilfoj = $_POST['rediger'];
     
 }
 
 
 if(isset($_SESSION['kurv'][$vare_id])){
     $vare_antal_nu = $_SESSION["kurv"][$vare_id];
-    echo "hej";
-    
-    
-}
+ }
+ 
 tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
 
 function tjek_lager($id_variant,$antal)
@@ -87,6 +66,12 @@ echo "Antal vare i kurven:";
  echo $antal_vare_2;  
 
 print_r($_SESSION["kurv"]);
+
+ if ($_POST['rediger']=="Slet"){
+    $_SESSION["kurv"][$vare_id] = 0;
+    
+    }
+
 
 // header('Location:../vl/frame_indkoebskurv.php');
 ob_flush();

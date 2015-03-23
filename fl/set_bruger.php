@@ -9,16 +9,14 @@ function set_bruger($mail)
 {
     
     $id_kunde = get_kunde_id_fra_mail($mail)[0];
-    
     $kurv = get_kurv_fra_id($id_kunde[0]);
-    print_r($kurv);
     $rn = 0;
     foreach ($kurv as $id) {
         $_SESSION["kurv"][$kurv[$rn][0]] = $kurv[$rn][1];
         $rn++; 
 }
  
-   $_SESSION["logget_ind"] = "ja";
+   $_SESSION["logget_ind_bruger"] = "ja";
    $_SESSION["bruger_id"] = $id_kunde; 
     
 }

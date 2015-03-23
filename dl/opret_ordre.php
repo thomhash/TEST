@@ -18,7 +18,7 @@ $last_id =0;
     }
 }
 
-function opret_ordre_d($id_kunde) { {
+function opret_ordre_d($id_kunde, $dato) { {
 require 'login.php';
      
 // Check connection
@@ -26,7 +26,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', NULL);";
+        $sqlin = "INSERT INTO `webshop`.`ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', '$dato');";
         
         
         if ($db_server->query($sqlin) === TRUE) {
@@ -60,7 +60,7 @@ require 'login.php';
     }
 }
 
-function opret_faktura($id_ordre,$fornavn,$efternavn,$adresse,$post_nr, $bynavn,$telefon) { {
+function opret_faktura($id_ordre,$fornavn,$efternavn,$adresse,$post_nr, $bynavn,$telefon,$dato) { {
     
 require 'login.php';
      
@@ -69,7 +69,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
        
-        $sqlin = "INSERT INTO `webshop`.`faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '18-01-1990', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
+        $sqlin = "INSERT INTO `webshop`.`faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '$dato', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";
