@@ -1,4 +1,6 @@
-
+<?php if(session_id() == '') {
+    session_start();
+}?>
 <html>
 
 <head>
@@ -8,14 +10,17 @@
 <body>
 <?php
 
-session_start(); 
+
+
 if (isset($_SESSION["logget_ind"])){
         
 if ($_SESSION["logget_ind"] == "ja"){
    
 header("location:frame_kunde_menu.php");
+
 }
 }
+echo "hej hej";
 
 
 $opretbruger=0;

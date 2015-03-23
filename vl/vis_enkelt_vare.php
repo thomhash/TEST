@@ -164,7 +164,7 @@
                            
                                 <p1>
                                 <input type="hidden" name="variant_id" value="<?php echo $id; ?>">   
-                                <input type="submit" name="koeb" value="Køb" id="koeb" /> 
+                                <input type="submit" name="koeb" value="Læg i kurv" id="koeb" /> 
                                 </p1>
                             </td>
                         </tr>

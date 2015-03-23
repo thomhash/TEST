@@ -8,7 +8,7 @@ $last_id =0;
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`ordre_har_vare` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
+        $sqlin = "INSERT INTO `ordre_har_vare` (`id_stoerrelse`, `stoerrelse_beskrivelse`) VALUES (NULL, '$stoerrelse');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";
@@ -50,7 +50,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
        
-        $sqlin = "INSERT INTO `webshop`.`ordre_har_vare` (`f_id_ordre`, `f_id_variant`, `antal`, `pris`) VALUES ('$id_ordre', '$variant', '$antal', '$pris');";
+        $sqlin = "INSERT INTO `ordre_har_vare` (`f_id_ordre`, `f_id_variant`, `antal`, `pris`) VALUES ('$id_ordre', '$variant', '$antal', '$pris');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";

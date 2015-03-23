@@ -19,7 +19,7 @@ height: 50px;
 font-color: white;
 
 margin-right:0%;
-width: 32%;
+width: 35%;
  
 margin-top:0px;
   
@@ -27,21 +27,40 @@ margin-top:0px;
 
 
 }
-#icons img{
+#icons #big{
 height: 50px;
 width:45px;
 
  display: inline-block;
-   
-  
- 
- 
+
+}
+
+.magnifying-glass{
+height:30px;
+//padding: 0 5px 8px 0;
+width:20px;
+height:20px;
+position:absolute;
+  right:7%;
 
  
 }
+.header-search-box {
+    display:none;
+   
+  
+  
+  margin-left:0px;
+  position:absolute;
+  right:14%;
+  
+    
+}
+
+
 #overskrift_img{
 display: inline-block;
-width:65%;
+width:60%;
  
 }
 
@@ -162,7 +181,7 @@ border-radius: 10px;
 box-shadow: 0 0 4px rgba(0,0,0, .75);
 /*style the text*/
 //color:#f3f3f3;
-font-size:30px;
+font-size:20px;
 }
 /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
 input#koeb:hover, input#koeb:focus{
@@ -214,7 +233,16 @@ width: 25%;
 }
 
 
+#soeg img{
 
+width: <?php echo bredde_billeder_mobile() ?>px; 
+height: <?php echo hoejde_billeder_mobile(); ?>px;
+   }
+
+#soeg{
+align::top;
+font-size: 40px;
+}
 
 
 
