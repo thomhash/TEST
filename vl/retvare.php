@@ -5,12 +5,16 @@ require '../fl/get_vare.php';
 $id = $_GET['id'];
  
  
-?><center><h2>
+?><h1>
 <?php
 $vare_navn= get_vare_navn_f($id);
 $variant_info = get_vare_info_f($id);
 echo $vare_navn[0][0];
 ?>
+</h1>      
+<a href="tjek_lager.php">Lager </a><br>
+<a href="admin_menu.php">Menu</a><br>
+<br>
 
         <hr>
 </center></h2>
@@ -19,7 +23,7 @@ echo $vare_navn[0][0];
      <?php
      echo "Antal på lager <br>";
      echo $variant_info[0][6];
-     echo "<br> størelse: <br>";
+     echo "<br> Variant: <br>";
      echo $variant_info[0][2];
      echo "<br>Farve: <br>";
      echo $variant_info[0][3];

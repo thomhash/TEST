@@ -26,7 +26,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
 
-        $sqlin = "INSERT INTO `webshop`.`ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', '$dato');";
+        $sqlin = "INSERT INTO `ordre` (`f_id_kunde`, `tid_bestilt`) VALUES ('$id_kunde', '$dato');";
         
         
         if ($db_server->query($sqlin) === TRUE) {
@@ -69,7 +69,7 @@ require 'login.php';
             die("Connection failed: " . $db_server>connect_error);
         }
        
-        $sqlin = "INSERT INTO `webshop`.`faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '$dato', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
+        $sqlin = "INSERT INTO `faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`) VALUES (NULL, '$dato', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon');";
 
         if ($db_server->query($sqlin) === TRUE) {
             echo "New record created successfully";

@@ -1,21 +1,27 @@
 <?php
 require '../dl/set_vare.php';
 
-if (empty($_POST['maerke']) == false) {
+if (($_POST['type_rediger']) == "maerke") {
     $marke = $_POST['maerke'];
     opret_maerke($marke);
 }
-if (empty($_POST['farve']) == false) {
+if (($_POST['type_rediger']) == "farve") {
    $farve = $_POST['farve'];
    opret_farve($farve);
 }
 
-if (empty($_POST['stoerelse']) == false) {
-   $stoerelse = $_POST['stoerelse'];
-   opret_stoerelse($stoerelse);
+if (($_POST['type_rediger']) == "type_beskrivelse") {
+   $type_beskrivelse = $_POST['type_beskrivelse'];
+   opret_type_beskrivelse($type_beskrivelse);
 }
 
-if (empty($_POST['gruppe']) == false) {
+if (($_POST['type_rediger']) == "type_variabel") {
+   $type_beskrivelse_id = $_POST['type_beskrivelse_id'];
+   $id_type_vaerdi = $_POST['type_vaerdi'];
+   opret_type($type_beskrivelse_id,$id_type_vaerdi);
+}
+
+if (($_POST['type_rediger']) == "gruppe") {
    $gruppe = $_POST['gruppe'];
    $overgruppe = $_POST['overgruppe'];
    if ($overgruppe == "0"){
@@ -25,30 +31,30 @@ if (empty($_POST['gruppe']) == false) {
    opret_gruppe($gruppe,$overgruppe);}
 }
 
-if (empty($_POST['vare_navn']) == false) {
+if (($_POST['type_rediger']) == "opret_ny_vare") {
    $vare_navn = $_POST['vare_navn'];
    $vare_beskrivelse = $_POST['vare_beskrivelse'];
    $maerke_til_vare = $_POST['maerke_til_vare'];
+   $id_type_beskrivelse = $_POST['type_beskrivelse'];
    $vare_prioritet = $_POST['vare_prioritet'];
    $vare_gruppe = $_POST['gruppe_til_vare'];
+   $aktiv=1;
    
-   opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe);
+   opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse);
 }
 
-if (empty($_POST['variant_pris']) == false) {
-   $variant_vare = $_POST['variant_vare'];
-   $variant_stoerelse = $_POST['variant_stoerelse'];
+if (($_POST['type_rediger']) == "opret_ny_variant") {
+   $variant_vare = $_POST['vare_id'];
+   $variant_type_id = $_POST['type_beskrivelse_id'];
    $variant_farve = $_POST['variant_farve'];
    $variant_billede = $_POST['variant_billede'];
    $variant_pris = $_POST['variant_pris'];
    $variant_vis = $_POST['variant_vis'];
    $variant_antal = $_POST['variant_antal'];
-   
-   
-   
-   
-   opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal);
+     
+   opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal);
 }
+
 
 
 // $stoerelse = $_POST['stoerelse'];

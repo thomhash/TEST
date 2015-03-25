@@ -100,6 +100,7 @@
     <div id="dropdown">        
         
         <form method='post' action='../fl/tilfoj_kurv.php'>
+        <input hidden="" name="rediger_fra" value="enkelt_vare" >    
           Størrelse:
           <select id="Stoerrelser">
                 

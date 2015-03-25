@@ -4,6 +4,8 @@ require '../dl/get_kunde.php';
 require '../dl/get_lager.php';
 require '../dl/ret_lager.php';
 require '../dl/get_vare.php';
+//require '../vl/send_faktura.php';
+require '../PHPMailer_5.2.4/send_mail.php';
 session_start();
 $vare = $_SESSION["kurv"]; 
 
@@ -23,8 +25,9 @@ function opret_ordre(){
       opret_ordre_har_vare($id_ordre,$antal,$id,$pris[0]);
       ret_lager(-$antal,$id);
       
-      kurv_tom();
+      
       }
+      kurv_tom();
      }
    
     $kundeinfo = get_kunde_info_id($mail);
@@ -35,7 +38,7 @@ function opret_ordre(){
 
     opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
  
-      
+    send_mail_f("Faktura", email_tekst($kundeinfo), $kundeinfo[0][6], $kundeinfo[0][0]);  
      // skal bruges -->     header('Location:../vl/kassen_trin_4.php');
      
  }
@@ -85,6 +88,9 @@ function opret_ordre(){
    
  }
 
- function email_tekst(){
+ function email_tekst($kundeinfo){
      
+     $tekst = "Kære " .$kundeinfo[0][0]. "<br> Tak for din bestilling. Varen bliver sendt hurtigst muligt.<br>";
+     
+     return $tekst;
  }

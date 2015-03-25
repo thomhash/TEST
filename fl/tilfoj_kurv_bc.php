@@ -4,41 +4,6 @@ require '../fl/get_lager.php';
 
 $vare_antal_nu =0;
 
-
-if (isset($_GET['rediger_fra'])){
-    echo "test";
-    if (($_POST['rediger_fra']) == "enkelt_vare")
-    {
-        
-    }
-    else if (($_POST['rediger_fra']) == "kurv")
-    {
-        if (($_POST['rediger'])=="slet")
-        {
-            slet($_POST['variant_id']);
-        }
-        else{
-            $tilfoj =($_POST['rediger']);
-            $vare_id = $_GET['variant_id'];
-            
-            if($tilfoj<0){
-                $_SESSION["kurv"][$id_variant] = $tilfoj+$_SESSION["kurv"][$id_variant];
-            }
-            else if ($tilfoj>0)
-            {
-                
-                tjek_lager($vare_id,$tilfoj+$vare_antal_nu);
-            }
-        }
-    }
-    
-}
-
-function slet($id){
-    
-}
-
-
 if (isset($_POST['variant_id'])){
     $vare_id = $_POST['variant_id']; 
    
@@ -58,11 +23,8 @@ if (isset($_POST['rediger'])){
 if(isset($_SESSION['kurv'][$vare_id])){
     $vare_antal_nu = $_SESSION["kurv"][$vare_id];
  }
-
-
-
-
-//tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
+ 
+tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
 
 function tjek_lager($id_variant,$antal)
 {    ob_start();
@@ -71,13 +33,13 @@ function tjek_lager($id_variant,$antal)
     echo $lager_for_id[0];
     if($lager_for_id[0] >= $antal){
         $_SESSION["kurv"][$id_variant] = $antal;
-        //header('Location:../vl/frame_indkoebskurv.php');
+        header('Location:../vl/frame_indkoebskurv.php');
         ob_flush();
     }
     else
     {
        echo "test";
-        //header('Location:../vl/frame_indkoebskurv.php?lager=nej');
+        header('Location:../vl/frame_indkoebskurv.php?lager=nej');
         ob_flush();
         ?> 
 
@@ -126,5 +88,3 @@ foreach($_SESSION as $key => $value) {
  * and open the template in the editor.
  */
 
-
- 

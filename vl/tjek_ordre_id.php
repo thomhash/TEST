@@ -17,7 +17,7 @@ print_r($ordre);
                     <td>Variant id</td>
                     <td>Antal</td> 
                     <td>Navn</td>
-                    <td>størrelse</td> 
+                    <td>Variant</td> 
                     <td>Farve</td>
                     <td>Mærke</td>
                 </tr>
@@ -43,7 +43,20 @@ print_r($ordre);
 
 ?></table>
 <br>
-Begynd pakning <br><br>
-Begynd pakning <br>
+
+<form action="../fl/set_pakning.php" method="POST">
+  
+    <input type="hidden" name="type_pak" value="start">
+    <input type="hidden" name="ordre_id" value="<?php echo $_GET['id']?>">
+    <input type="submit" value="Begynd pakning">
+</form>
+
+<form action="../fl/set_pakning.php" method="POST">
+   
+    <input type="hidden" name="type_pak" value="slut">
+   <input type="hidden" name="ordre_id" value="<?php echo $_GET['id']?>">
+    <input type="submit" value="Afslut pakning">
+</form>
+
 
 <br>

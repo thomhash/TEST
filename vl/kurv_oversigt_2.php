@@ -81,19 +81,11 @@ foreach ($info_array as $id => $antal) {
 
                         <form action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
                             <input hidden="" name="rediger_fra" value="kurv" > 
-                            <input hidden="" name="rediger" value="-1" > 
-                            <input type="submit" value="-"> 
-                        </form>
-                     <form action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
-                            <input hidden="" name="rediger_fra" value="kurv" > 
-                            <input hidden="" name="rediger" value="+1" > 
-                            <input type="submit" value="+"> 
-                        </form>
-                          <form action="../fl/tilfoj_kurv.php?variant_id=<?php echo $subarray[0][0] ?>" method="POST">
-                            <input hidden="" name="rediger_fra" value="kurv" > 
-                            <input hidden="" name="rediger" value="slet" > 
-                            <input type="submit" value="Slet"> 
-                        </form>
+                            <input name="rediger" type="submit" value="+1" > 
+                             <input name="rediger"  type="submit"  value="-1"> 
+
+                            <input name="rediger" type="submit" value="Slet"> 
+
                         
                         
 

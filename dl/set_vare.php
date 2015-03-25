@@ -56,6 +56,38 @@ function opret_gruppe($gruppe,$overgruppe) { {
         }
     }
 }
+function opret_type_beskrivelse($type_beskrivelse) { {
+     require 'login.php'; 
+        if ($db_server->connect_error) {
+            die("Connection failed: " . $db_server->connect_error);
+        }
+
+        $sqlin = "INSERT INTO `type_beskrivelse` (`type_tekst`) VALUES ('$type_beskrivelse');";
+
+        if ($db_server->query($sqlin) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $db_server->error;
+        }
+    }
+}
+
+function opret_type($id_type_beskrivelse,$type_vaerdi) { {
+     require 'login.php'; 
+        if ($db_server->connect_error) {
+            die("Connection failed: " . $db_server->connect_error);
+        }
+
+        $sqlin = "INSERT INTO `type` (`type_vaerdi`, `f_type_beskrivelse_id`) VALUES ('$type_vaerdi','$id_type_beskrivelse');";
+
+        if ($db_server->query($sqlin) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $db_server->error;
+        }
+    }
+}
+
 
 function opret_gruppe_uu($gruppe) { {
       require 'login.php';  
@@ -108,7 +140,8 @@ require 'login.php';
     }
 }
 
-function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet){
+function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse){
+        
 require 'login.php';
   
 // Check connection
@@ -116,7 +149,7 @@ require 'login.php';
         die("Connection failed: " . $db_server->connect_error);
     }
 
-    $sqlin = "INSERT INTO `vare` (`id_vare`, `f_id_maerke`, `beskrivelse`, `navn`, `prioritet`) VALUES (NULL, '$maerke_til_vare', '$vare_beskrivelse', '$vare_navn', '$vare_prioritet');";
+    $sqlin = "INSERT INTO `vare` (`id_vare`, `f_id_maerke`, `beskrivelse`, `navn`, `prioritet`,`aktiv`,`f_type_beskrivelse`) VALUES (NULL, '$maerke_til_vare', '$vare_beskrivelse', '$vare_navn', '$vare_prioritet','$aktiv','$id_type_beskrivelse');";
 
     if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
@@ -145,15 +178,16 @@ require 'login.php';
 }
 
 
-function opret_variant($variant_vare,$variant_stoerelse,$variant_farve,$variant_billede,$variant_pris,$variant_pris,$variant_vis,$variant_antal)
-{
+function opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal)
+        
+                {
 require 'login.php';
 // Check connection
     if ($db_server->connect_error) {
         die("Connection failed: " . $db_server->connect_error);
     }
 
-    $sqlin = "INSERT INTO `variant` (`id_variant`, `pris`, `f_id_stoerrelse`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES (NULL, '$variant_pris', '$variant_stoerelse', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
+    $sqlin = "INSERT INTO `variant` (`pris`, `f_id_type`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES ('$variant_pris', '$variant_type_id', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
 
     if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";

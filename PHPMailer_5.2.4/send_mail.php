@@ -1,10 +1,10 @@
 <?php
-echo "test2";
+require_once('PHPMailerAutoload.php');
+//require "PHPMailerAutoload.php";
 
-function send_mail($emne, $tekst, $email, $navn)
-{
-    require 'class.phpmailer.php';
-        echo "test3";
+//send_mail($emne, $tekst, $email, $navn);
+function send_mail_f($emne, $htmltekst, $email, $navn){
+
 $mail = new PHPMailer;
 
 $mail->IsSMTP();
@@ -12,16 +12,15 @@ $mail->SMTPAuth   = true;                  // enable SMTP authentication
 $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
 $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
 $mail->Port       = 465;                   // set the SMTP port
-echo "test4";
+
 $mail->Username   = "mikkelbra@gmail.com";  // GMAIL username
-$mail->Password   = "Mikkel199";            // GMAIL password
-echo "test5";
+$mail->Password   = "Mikkelg199";            // GMAIL password
+
 $mail->From       = "mikkelbra@gmail.com";
 $mail->FromName   = "webshopgenerator.dk";
-echo "test6";
 
 $mail->WordWrap   = 50; // set word wrap
-$mail->AddAddress("$email", "$navn");  // Add a recipient
+$mail->AddAddress($email, $navn);  // Add a recipient
 //$mail->AddAddress('ellen@example.com');               // Name is optional
 //$mail->AddReplyTo('info@example.com', 'Information');
 //$mail->AddCC('cc@example.com');
@@ -31,10 +30,10 @@ $mail->WordWrap = 50;                                 // Set word wrap to 50 cha
 //$mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->IsHTML(true);                                  // Set email format to HTML
-echo "test7";
-$mail->Subject = "$emne";
-$mail->Body    = "$tekst";
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+$mail->Subject = $emne;
+$mail->Body    = $htmltekst;
+//$mail->AltBody = $plantekst;
 
 if(!$mail->Send()) {
    echo 'Message could not be sent.3';
@@ -44,8 +43,5 @@ if(!$mail->Send()) {
 
 echo 'Message has been sent.';
 }
-echo "test8";
-?>
-
 
 

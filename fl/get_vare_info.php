@@ -10,11 +10,42 @@ function hent_varefarve(){
    // print_r($id_array);
    return $id_array;
 }
+
+function hent_type_beskrivelser(){
+   $id_array=get_type_beskrivelser();
+   // print_r($id_array);
+   return $id_array;
+}
+
+function hent_type_tekst($id){
+   $id_array=get_type_tekst($id);
+   // print_r($id_array);
+   return $id_array;
+}
+function hent_type_tekst2($id){
+   $id_array=get_type_tekst2($id);
+   // print_r($id_array);
+   return $id_array;
+}
+
+function hent_vare_navn_fra_id($id){
+   $id_array=get_vare_navn_fra_vare_id($id);
+   // print_r($id_array);
+   return $id_array;
+}
+
+function hent_id_type_fra_variant($id){
+   $id_array=get_id_type_fra_variant($id);
+   // print_r($id_array);
+   return $id_array;
+}
+
 function hent_stoerrelser(){
    $id_array=get_alle_stoerrelser();
    // print_r($id_array);
    return $id_array;
 }
+
 function hent_alle_grupper(){
    $id_array=get_grupper();
    // print_r($id_array);
