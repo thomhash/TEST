@@ -140,7 +140,7 @@ require 'login.php';
     }
 }
 
-function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse){
+function opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$aktiv,$id_type_beskrivelse){
         
 require 'login.php';
   
@@ -178,7 +178,7 @@ require 'login.php';
 }
 
 
-function opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal)
+function opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal,$variant_aktiv)
         
                 {
 require 'login.php';
@@ -187,7 +187,7 @@ require 'login.php';
         die("Connection failed: " . $db_server->connect_error);
     }
 
-    $sqlin = "INSERT INTO `variant` (`pris`, `f_id_type`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES ('$variant_pris', '$variant_type_id', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
+    $sqlin = "INSERT INTO `variant` (`pris`, `f_id_type`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`, `aktiv`) VALUES ('$variant_pris', '$variant_type_id', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal', '$variant_aktiv');";
 
     if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
