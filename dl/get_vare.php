@@ -98,7 +98,7 @@ function get_vare_info_kurv_d($id){
 function get_vare_info_d($id){
     require 'login.php';
 
-    $sql = "SELECT variant.id_variant, vare.navn, type.`type_vaerdi` , varefarve.`varefarve`, maerke.maerke_navn, variant.pris, variant.antal, variant.`vis` FROM `variant` INNER JOIN `type` INNER JOIN `vare` INNER JOIN `varefarve` INNER JOIN `maerke` ON type.`id_type` = variant.`f_id_type` AND variant.`f_id_vare`= vare.`id_vare` AND varefarve.`id_varefarve`=variant.`f_id_varefarve` AND vare.f_id_maerke=maerke.id_maerke Where variant.id_variant =$id";
+    $sql = "SELECT variant.id_variant, vare.navn, type.`type_vaerdi` , varefarve.`varefarve`, maerke.maerke_navn, variant.pris, variant.antal, variant.`vis`, variant.`aktiv` FROM `variant` INNER JOIN `type` INNER JOIN `vare` INNER JOIN `varefarve` INNER JOIN `maerke` ON type.`id_type` = variant.`f_id_type` AND variant.`f_id_vare`= vare.`id_vare` AND varefarve.`id_varefarve`=variant.`f_id_varefarve` AND vare.f_id_maerke=maerke.id_maerke Where variant.id_variant =$id";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
