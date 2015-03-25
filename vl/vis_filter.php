@@ -40,7 +40,7 @@
                                 foreach ($typer as $key => $value) {
                                     echo $typer[$key][0];
                                     if($last_key==$key){}
-                                    else{echo ",";}
+                                    else{echo ", ";}
     
                                 }?></legend>            
                          <?php  if(empty ($alle_stoerrelser)){echo "størrelser";}

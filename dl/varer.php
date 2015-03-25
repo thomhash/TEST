@@ -382,8 +382,6 @@ function get_typer_til_varegrupper($gruppe_id){
 }
 
 
-$typer1=  get_typer_til_varegrupper(2);
-print_r($typer1);
 
 
 
