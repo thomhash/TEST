@@ -28,7 +28,7 @@ session_start();
 <!--Opret nyt mærke -->
 <br>
 <hr>
-<h3> <a id="mærke">Opret nyt maerke</a></h3>
+<h3> <a id="mærke">Opret nyt mærke</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
     Maerke:<br>
@@ -196,7 +196,7 @@ Nuværende grupper:
 
 
 
-<h3><a id="billede">Uplaode billede</a></h3>
+<h3><a id="billede">Upload billede</a></h3>
 <form action="../fl/uploade_billede.php" method="post" enctype="multipart/form-data">
     Vælg billede:<br> 
     <input type="file" name="fileToUpload" id="fileToUpload"><br>

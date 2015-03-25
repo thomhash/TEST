@@ -36,7 +36,7 @@ function get_parametre($parameter){
 function get_all_parametre(){
     require 'login.php';
     
-     $sql = "SELECT `parameter`,`parameter_vaerdi`,`farve`
+     $sql = "SELECT `parameter`,`parameter_vaerdi`,`f_type_paramete`
             FROM `parameter`";
             
     $result= mysqli_query($db_server, $sql);       

@@ -1,15 +1,17 @@
 <?php
 
+
 function mobile_browser(){
-      
-     $aMobileUA = array(
+     
+    $aMobileUA = array(
         '/iphone/i' => 'iPhone', 
         '/ipod/i' => 'iPod', 
-        '/ipad/i' => 'iPad', 
         '/android/i' => 'Android', 
         '/blackberry/i' => 'BlackBerry', 
         '/webos/i' => 'Mobile'
     );
+ 
+    
 
     //Return true if Mobile User Agent is detected
     foreach($aMobileUA as $sMobileKey => $sMobileOS){
