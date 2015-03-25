@@ -47,7 +47,7 @@ function opret_ordre(){
  {
      opret_ordre();
      kurv_tom();
-   // header('Location:../vl/kassen_trin_4.php');
+   header('Location:../vl/kassen_trin_4.php');
  }
  else 
  {

@@ -96,7 +96,7 @@
 
     <div id="dropdown">        
         
-        <form method='post' action='../fl/tilfoj_kurv.php'>
+        <form method='post' action='../fl/tilfoj_kurv_bc.php'>
             <?php
             $type_beskrivelse=  hent_type_beskrivelse($id);
             echo $type_beskrivelse[0];
