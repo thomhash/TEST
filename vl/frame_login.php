@@ -12,16 +12,14 @@
 
 
 
-if (isset($_SESSION["logget_ind"])){
+if (isset($_SESSION["logget_ind_kunde"])){
         
-if ($_SESSION["logget_ind"] == "ja"){
+if ($_SESSION["logget_ind_kunde"] == "ja"){
    
 header("location:frame_kunde_menu.php");
 
 }
 }
-echo "hej hej";
-
 
 $opretbruger=0;
 $findes=0;

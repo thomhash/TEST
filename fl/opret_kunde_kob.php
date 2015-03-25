@@ -19,15 +19,15 @@ session_start();
     $same_mail=check_kunde_mail($mail);
     //print_r($same_mail);
     $er_bruger=check_kode($mail);
-    if (!empty($er_bruger) && $_SESSION["logget_ind"] != "ja") {
+    if (!empty($er_bruger) && $_SESSION["logget_ind_kunde"] != "ja") {
              
         header('Location:../vl/frame_login.php?kob=1');
          ob_flush();
     }
-    else if (!empty($same_mail) && $_SESSION["logget_ind"] == "ja") {
+    else if (!empty($same_mail) && $_SESSION["logget_ind_kunde"] == "ja") {
               
          ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-         echo "Mail findes så kunde rettes";
+         header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
          ob_flush();
     }
     else {

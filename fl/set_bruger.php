@@ -16,7 +16,7 @@ function set_bruger($mail)
         $rn++; 
 }
  
-   $_SESSION["logget_ind_bruger"] = "ja";
+   $_SESSION["logget_ind_kunde"] = "ja";
    $_SESSION["bruger_id"] = $id_kunde; 
     
 }

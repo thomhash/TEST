@@ -1,6 +1,6 @@
 <?php
 session_start();  
-$_SESSION["logget_ind"] = "nej";
+$_SESSION["logget_ind_kunde"] = "nej";
    $_SESSION["bruger_id"] = NULL; 
 header("location:../vl/frame_frontpage.php");
  //session_destroy(); 

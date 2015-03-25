@@ -12,8 +12,8 @@ $logget_ind = "nej";
 <html>
     <center> 
 <h1>Kundeoplysninger</h2>
-<?php   if (isset($_GET["logget_ind"])){
-        $logget_ind = $_SESSION["logget_ind"];
+<?php   if (isset($_GET["logget_ind_kunde"])){
+        $logget_ind = $_SESSION["logget_ind_kunde"];
 }
 
    If ($logget_ind != "ja") {    
@@ -30,7 +30,7 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
    }
 ?>
 <body>
-    <?php header('Content-type: text/html; charset=utf-8'); 
+    <?php 
     
     //$mailadr=$_GET["mail"];?>
     

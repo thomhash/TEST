@@ -9,10 +9,16 @@
 </head>
 <body>
     
-    
+    <?php 
+    $kob=0;
+    if (isset($_GET["kob"])){
+       $kob=$_GET["kob"];
+       echo $kob;
+    } ?>
 
 	<section class="loginform cf">
 		<form name="login" action="../fl/login_kunde_fl.php" onsubmit="return checkForm(this);">
+                    <input type="hidden" name="kob" value="<?php echo $kob?>">
 			<ul>
 				<li>
 					<label>E-mail</label>
