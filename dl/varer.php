@@ -361,6 +361,26 @@ function get_type_beskrivelse ($variant_id){
     
 }
 
+function get_typer_til_varegrupper($gruppe_id){
+    require 'login.php';
+  
+    $sql = "SELECT type_beskrivelse.`type_tekst`
+            FROM `type_beskrivelse` 
+            INNER JOIN `vare`
+            INNER JOIN `vare_har_gruppe`
+            ON  vare.`id_vare`=vare_har_gruppe.`f_id_vare` 
+            AND vare.`f_type_beskrivelse`=type_beskrivelse.`id_type_beskrivelse` 
+            WHERE vare_har_gruppe.`f_id_varegruppe`=$gruppe_id";
+            
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);    
+    mysqli_close($db_server);
+    
+    return $row;
+    
+    
+}
+
 
 
 

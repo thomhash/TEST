@@ -9,9 +9,9 @@ width: 85%;
 
      require_once 'parametre.php';
 ?>
-body{
+html,body{
 background-color: <?php echo baggrundsfarve();?>;
-height: 100%;
+height: 1400px;
 
 }
 #content
@@ -147,7 +147,7 @@ figure figcaption table{
 /* ligger tallene i bunden af siden */
 p.sider { 
     
- margin-top: 100%;
+ margin-top: 1010px;
              
         }
         
