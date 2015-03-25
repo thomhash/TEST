@@ -5,25 +5,23 @@ $logget_ind = "nej";
 ?>
 <head>
 	<title>Opret bruger</title>
-	<link rel="stylesheet" href="../login_user_normalize.css">
+	
 	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <html>
     <center> 
 <h1>Kundeoplysninger</h2>
-<?php   if (isset($_GET["logget_ind_kunde"])){
+<?php   if (isset($_SESSION["logget_ind_kunde"])){
         $logget_ind = $_SESSION["logget_ind_kunde"];
 }
 
    If ($logget_ind != "ja") {    
 ?>
-Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
-<form name="pris_form" action="" method="POST" class="loginform cf">
-    <input type="input" name="ny_pris" placeholder="yourname@email.com" value="">
-     
+<form name="pris_form" action="../vl/frame_login.php?kob=1" method="POST" class="loginform cf">
+    <b>Allerede bruger </b>
     <input type="hidden" name="rediger" value="pris_form"><br>
-    <input type="submit" name="submit" value="Hent" >
+    <input type="submit" name="submit" value="Log in" >
 </form>
 <hr>
 <?php
@@ -74,7 +72,7 @@ Hvis du har handlet her før kan vi hente dine oplysninger <br> indtast email:
        //  }
          
     ?>
-                    <br> <br> <b>Indtast kundeoplysninger</b>
+                    <b>Fortsæt uden bruger</b>
 			<ul>
 				<li>
 					<label >Fornavn</label>
