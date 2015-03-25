@@ -44,6 +44,7 @@ $same_mail=check_kunde_mail($mail);
 }
  
  function indtast_kundeoplysninger(){
+     ob_start();
      require '../dl/opret_kunde_dl.php';
      $fornavn = $_GET['fornavn'];
      $efternavn = $_GET['efternavn'];
@@ -61,8 +62,8 @@ $same_mail=check_kunde_mail($mail);
      $mail = $_GET['mailadr'];   
      
      set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-     //header('Location:../index.php');     
-     
+     header('Location:../vl/frame_login.php');     
+     ob_flush();
      
  }
 

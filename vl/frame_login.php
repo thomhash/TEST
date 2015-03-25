@@ -1,4 +1,6 @@
-<?php if(session_id() == '') {
+<?php 
+ ob_start();
+if(session_id() == '') {
     session_start();
 }?>
 <html>
@@ -15,10 +17,11 @@
 if (isset($_SESSION["logget_ind_kunde"])){
         
 if ($_SESSION["logget_ind_kunde"] == "ja"){
-   
+    
 header("location:frame_kunde_menu.php");
-
+ob_flush();
 }
+
 }
 
 $opretbruger=0;
@@ -76,10 +79,3 @@ $kundeoplysninger=$_GET["kundeoplysninger"];
 </body>  
 
 </html>
-<?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>

@@ -1,4 +1,4 @@
-
+<?php ob_start();?>
 <html>
 
 <head>
@@ -7,12 +7,6 @@
 <link rel="stylesheet" type="text/css" href="../login_user.css">
 </head>
 <body>
-<?php
-
-
-?>
- 
-
 
 <div id="top"> 
     

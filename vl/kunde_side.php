@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include '../fl/krav_kunde.php';
 ?>
 <br>

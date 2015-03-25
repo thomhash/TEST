@@ -5,16 +5,13 @@
     
 </head>
 <body>
-<?php
 
-
-
-?>
 <link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 
     
     <?php
+    
     include 'top.php';
     ?>
      <div>

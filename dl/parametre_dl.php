@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once 'login.php';
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -48,6 +49,7 @@ function get_all_parametre(){
     
 }
 function set_parametre($parameter, $vaerdi){
+    
     require 'login.php';
     
      $sql = "UPDATE parameter

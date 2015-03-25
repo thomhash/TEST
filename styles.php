@@ -9,11 +9,15 @@ width: 85%;
 
      require_once 'parametre.php';
 ?>
+html { height: 100%; }
+
 html,body{
 background-color: <?php echo baggrundsfarve();?>;
 height: 1400px;
 
+
 }
+
 #content
 {
 -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);

@@ -25,7 +25,7 @@
                 <input type="hidden" name="gruppe" value="<?php echo $gruppenr; ?>" checked/>
                 <input type="hidden" name="page" value="1" checked/>
                 <legend>Mærke</legend>
-                        <?php if(empty ($alle_maerker)){echo "ingen mærker";}
+                        <?php if(empty ($alle_maerker)){echo "ingen";}
                             else {foreach ($alle_maerker as $value) {
                             echo '<input type="checkbox" name="maerke[]" value="'.$value.'"';
                             if(!empty($maerke)&&$maerke!=0){
@@ -37,13 +37,16 @@
                                 $typer=  hent_typer_til_gruppe($gruppenr);
                                 $keys = array_keys($typer);
                                 $last_key = end($keys);
-                                foreach ($typer as $key => $value) {
+                                if(empty($type)){echo "Type";}
+                                else {foreach ($typer as $key => $value) {
                                     echo $typer[$key][0];
                                     if($last_key==$key){}
                                     else{echo ", ";}
     
-                                }?></legend>            
-                         <?php  if(empty ($alle_stoerrelser)){echo "størrelser";}
+                                    }
+                                
+                                    }?></legend>            
+                         <?php  if(empty ($alle_stoerrelser)){echo "ingen";}
                             else {foreach ($alle_stoerrelser as $value) {
                             echo '<input type="checkbox" name="stoerrelser[]" value="'.$value.'"'; 
                             if(!empty($stoerrelser)&&$stoerrelser!=0){
@@ -53,7 +56,7 @@
                             echo '/>'.$value;
                             }}?><br><br>
                 <legend>Farver</legend>            
-                         <?php if(empty ($alle_farver)){echo "ingen farver";}  
+                         <?php if(empty ($alle_farver)){echo "ingen";}  
                             else {foreach ($alle_farver as $value) {
                             echo '<input type="checkbox" name="farver[]" value="'.$value.'"';
                             if(!empty($farver)&&$farver!=0){

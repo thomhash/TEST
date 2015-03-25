@@ -1,8 +1,16 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+    
+}
+
+?>
+
 <div id="kurv">
 <?php
 require '../fl/get_vare.php';
 require '../fl/fragt_pris.php';
-session_start();
+
 $vare[0] = 0;
 if (isset($_SESSION["kurv"])) {
     $vare = $_SESSION["kurv"];
