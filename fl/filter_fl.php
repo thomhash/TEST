@@ -19,5 +19,14 @@ function hent_gruppe_farver($gruppenr){
 }
 
 
+function hent_typer_til_gruppe($gruppe_id){
+    $typer=  get_typer_til_varegrupper($gruppe_id);
+    
+    return $typer;
+}
+
+
+
+
 
 ?>

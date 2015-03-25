@@ -33,7 +33,16 @@
                                     if($value==$value2){ echo "checked";}
                             }} echo '/>'.$value;
                             }}?> <br><br>
-                <legend>Type</legend>            
+                            <legend><?php 
+                                $typer=  hent_typer_til_gruppe($gruppenr);
+                                $keys = array_keys($typer);
+                                $last_key = end($keys);
+                                foreach ($typer as $key => $value) {
+                                    echo $typer[$key][0];
+                                    if($last_key==$key){}
+                                    else{echo ",";}
+    
+                                }?></legend>            
                          <?php  if(empty ($alle_stoerrelser)){echo "størrelser";}
                             else {foreach ($alle_stoerrelser as $value) {
                             echo '<input type="checkbox" name="stoerrelser[]" value="'.$value.'"'; 
