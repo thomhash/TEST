@@ -7,6 +7,8 @@
 <body>
 <?php
 
+
+
  $gruppenr = $_GET['gruppe'];
    $side = $_GET['page'];
    

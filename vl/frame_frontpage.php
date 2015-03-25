@@ -8,6 +8,11 @@
 </head>
 <body>
 <?php
+$desktop=0;
+
+if (isset($_GET["desktop"])){
+$desktop=$_GET["desktop"];
+}
 
 
 ?>

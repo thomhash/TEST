@@ -69,7 +69,7 @@ function href($subarray, $id, $navn){
     
     if (empty($subarray)) {
         
-        echo "<li>" .'<a href="frame_viskatalog.php?page=1 & gruppe='.$id.'">'.$navn .'</a>' .'</li>';
+        echo "<li>" .'<a href="frame_viskatalog.php?page=1 & gruppe='.$id.'&desktop=1">'.$navn .'</a>' .'</li>';
     }
     else {
         echo "<li>" .'<a href="#" onClick="return false;">'.$navn .'</a>';

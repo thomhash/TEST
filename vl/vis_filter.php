@@ -33,7 +33,7 @@
                                     if($value==$value2){ echo "checked";}
                             }} echo '/>'.$value;
                             }}?> <br><br>
-                <legend>Størrelser</legend>            
+                <legend>Type</legend>            
                          <?php  if(empty ($alle_stoerrelser)){echo "størrelser";}
                             else {foreach ($alle_stoerrelser as $value) {
                             echo '<input type="checkbox" name="stoerrelser[]" value="'.$value.'"'; 

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <html>
 <head>
     
@@ -16,6 +12,7 @@
     
          $id = $_GET['id'];  
          $info_array= get_variant_info($id);
+         
          
     ?>  
      
@@ -100,7 +97,10 @@
     <div id="dropdown">        
         
         <form method='post' action='../fl/tilfoj_kurv.php'>
-          Størrelse:
+            <?php
+            $type_beskrivelse=  hent_type_beskrivelse($id);
+            echo $type_beskrivelse[0];
+            ?>
           <select id="Stoerrelser">
                 
                 

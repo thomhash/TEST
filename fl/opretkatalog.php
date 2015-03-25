@@ -111,6 +111,13 @@ function hent_farve_varianter($id_variant, $farve_id){
     }
 }
 
+function hent_type_beskrivelse($variant_id){
+    
+    $type_tekst=  get_type_beskrivelse($variant_id);
+    
+    return $type_tekst;
+}
+
 
 
 ?>

@@ -12,12 +12,12 @@ session_start();
 <a href="admin_menu.php">Menu</a><br>
 
  
-<h3> Mulighedder: </h3> 
+<h3> Muligheder: </h3> 
 <href>
     
     <a href="#mærke">Opret nyt mærke </a><br>
     <a href="#farve">Opret ny farve </a><br>
-    <a href="#størelse">Opret ny størelse </a><br>
+    <a href="#størelse">Opret ny størtelse </a><br>
     <a href="#gruppe">Opret ny gruppe </a><br>
     <a href="#billede">Opret nyt billede </a><br>
    <a href="#vare"> Opret ny vare</a> <br>
@@ -27,10 +27,10 @@ session_start();
 <!--Opret nyt mærke -->
 <br>
 <hr>
-<h3> <a id="mærke">Opret nyt maerke</a></h3>
+<h3> <a id="mærke">Opret nyt mærke</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
-    Maerke:<br>
+    Mærke:<br>
 
     <input type="text" name="maerke"><br>
     <input type="submit" value="Send">
@@ -73,15 +73,15 @@ foreach ($hent as list($a, $b)) {
 </form>
 
 <hr>
-<h3> <a id="størelse">Opret ny størelse</a></h3>
+<h3> <a id="størelse">Opret ny størrelse</a></h3>
 
 <form action="../fl/opret_maerke.php" method="POST">
-    Størelse:<br>
+    Størrelse:<br>
 
     <input type="text" name="stoerelse"><br>
     <input type="submit" value="Send">
 </form>
-Nuværende Størelser:
+Nuværende Størrelser:
 <form> 
     <select>
 <?php
@@ -170,7 +170,7 @@ foreach ($hent as list($a, $b)) {
 
 
 
-<h3><a id="billede">Uplaode billede</a></h3>
+<h3><a id="billede">Upload billede</a></h3>
 <form action="../fl/uploade_billede.php" method="post" enctype="multipart/form-data">
     Vælg billede:<br> 
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
@@ -231,7 +231,7 @@ foreach ($hent as list($a, $b)) {
             }
             ?>
         </select>
-        <br>Størelse<br>
+        <br>Størrelse<br>
         <select name="variant_stoerelse">
             <?php
             $hent = hent_stoerrelser();

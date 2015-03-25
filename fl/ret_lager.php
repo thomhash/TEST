@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require '../dl/ret_lager.php';
 require '../dl/get_lager.php';
 
@@ -6,11 +7,12 @@ require '../dl/get_lager.php';
    $antal = $_POST['antal'];
    $id = $_POST['id'];
    $antal_nu = get_lager_variant($id);
-   $antal_nu;
-   $ny_lager = $antal[0][0]+$antal_nu[0][0];
+  
+   $ny_lager = $antal+$antal_nu[0][0];
    edit_lager($ny_lager,$id);
-   echo $id;
-   echo $antal;
+   
+   header("Location:../vl/tjek_lager.php");
+   ob_flush();
   
 
 /* 
