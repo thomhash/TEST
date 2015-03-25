@@ -50,11 +50,13 @@ function hent_vare_katalog_filter($gruppenr, $side, $maerker, $stoerrelser, $far
     foreach ($id_array as $value){
         // Henter info om 1 vare og sætter ind i et 2 dimensionelt array med info om alle varer der skal vises på en given side
         $vare_info = get_info_catalog($value, $farver);
-            
+        if(!empty($vare_info)){            
         $vis_vare[$raekke_nr][0] = $vare_info[0][0];
         $vis_vare[$raekke_nr][1] = $vare_info[0][1];
         $vis_vare[$raekke_nr][2] = $vare_info[0][2];
         $vis_vare[$raekke_nr][3] = $vare_info[0][3];
+        
+        }
         
         $raekke_nr++;
 }
