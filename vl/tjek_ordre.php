@@ -16,7 +16,7 @@
     }
 
     $ordre = hent_ordre_ikke_begyndt();
-
+?> <div id="print"> <?php
     if ($type == 1) {
         $ordre = hent_ordre_ikke_begyndt();
         echo "Ikke påbegyndte ordre:";
@@ -119,8 +119,17 @@
             $rnr++;
         }
         ?>
+                <div>
     <script>
-        function myFunction() {
-            window.print();
+        function print() {
+            // window.print();
+             var prtContent = document.getElementById("print");
+var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write(prtContent.innerHTML);
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+WinPrint.close();
+
         }
     </script>

@@ -5,26 +5,30 @@ if(session_id() == '') {
 require '../fl/get_lager.php';
 
 $vare_antal_nu =0;
+if (isset($_POST['variant_id'])){
+    $vare_id = $_POST['variant_id'];
+}
+if (isset($_GET['variant_id'])){
+    $vare_id = $_GET['variant_id'];
+}
 
-
-if (isset($_GET['rediger_fra'])){
-    echo "test";
+if (isset($_POST['rediger_fra'])){
     if (($_POST['rediger_fra']) == "enkelt_vare")
     {
-        
+        tjek_lager($vare_id,$_POST['rediger']);
     }
-    else if (($_POST['rediger_fra']) == "kurv")
+    else if (($_POST['rediger_fra']) === "kurv")
     {
         if (($_POST['rediger'])=="slet")
         {
-            slet($_POST['variant_id']);
+            slet($_GET['variant_id']);
         }
         else{
+            echo "kommer her ind";  
             $tilfoj =($_POST['rediger']);
-            $vare_id = $_GET['variant_id'];
-            
             if($tilfoj<0){
-                $_SESSION["kurv"][$id_variant] = $tilfoj+$_SESSION["kurv"][$id_variant];
+                $_SESSION["kurv"][$vare_id] = $tilfoj+$_SESSION["kurv"][$vare_id];
+                header('Location:../vl/frame_indkoebskurv.php');
             }
             else if ($tilfoj>0)
             {
@@ -33,100 +37,29 @@ if (isset($_GET['rediger_fra'])){
             }
         }
     }
-    
 }
 
 function slet($id){
-    
+    echo "sletter";
+    $_SESSION["kurv"][$id] = 0;
+    header('Location:../vl/frame_indkoebskurv.php');
 }
-
-
-if (isset($_POST['variant_id'])){
-    $vare_id = $_POST['variant_id']; 
-   
-}
-
-if (isset($_POST['variant_antal'])){
-    $vare_antal_tilfoj = $_POST['variant_antal']; 
-  
-}
-
-if (isset($_POST['rediger'])){
-  $antal_tilfoj = $_POST['rediger'];
-    
-}
-
-
-if(isset($_SESSION['kurv'][$vare_id])){
-    $vare_antal_nu = $_SESSION["kurv"][$vare_id];
- }
-
-
-
-
-//tjek_lager($vare_id,$vare_antal_tilfoj+$vare_antal_nu);
 
 function tjek_lager($id_variant,$antal)
 {    ob_start();
     $lager_for_id = hent_lager_id($id_variant)[0];
     echo "lager";
     echo $lager_for_id[0];
-    if($lager_for_id[0] >= $antal){
-        $_SESSION["kurv"][$id_variant] = $antal;
-        //header('Location:../vl/frame_indkoebskurv.php');
+    echo $antal;
+    if($lager_for_id[0] >= $antal+$_SESSION["kurv"][$id_variant]){
+        $_SESSION["kurv"][$id_variant] = $antal+$_SESSION["kurv"][$id_variant];
+        header('Location:../vl/frame_indkoebskurv.php');
         ob_flush();
     }
     else
     {
        echo "test";
-        //header('Location:../vl/frame_indkoebskurv.php?lager=nej');
+        header('Location:../vl/frame_indkoebskurv.php?lager=nej');
         ob_flush();
-        ?> 
-
-
-
-<?php
     }
 }
-
-
-
-
-
-$antal_vare=0;
-
-$antal_vare_2 = array_sum($_SESSION["kurv"]); 
-
-foreach($_SESSION["kurv"] as $id=>$value){
-    $antal_vare += $value;
-    }
-
- 
-echo "Antal vare i kurven:"; 
- echo $antal_vare_2;  
-
-print_r($_SESSION["kurv"]);
-
- if ($_POST['rediger']=="Slet"){
-    $_SESSION["kurv"][$vare_id] = 0;
-    
-    }
-
-
-// header('Location:../vl/frame_indkoebskurv.php');
-ob_flush();
-die();
-//session_destroy();
-/* 
-foreach($_SESSION as $key => $value) {
-    echo  'Current session variable' . $key . ' is: ' . $value . '<br />';
-}
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
- 

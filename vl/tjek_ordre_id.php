@@ -1,17 +1,29 @@
 <?php
 
 require '../fl/get_ordre.php';
-require '../fl/get_kunde.php';
+require '../dl/get_kunde.php';
 $id = $_GET['id'];  
 $ordre = hent_ordre_information($id);
 
-//$kunde = hent_kunde($id);
 
-print_r($ordre);
-
-
-                    ?>
+$id_kunde =get_kunde_fra_ordre_id($id)[0];
+$info_kunde = get_kunde_info_id($id_kunde[0])[0];
+?>              
 <h1>Ordre oversigt</h2>
+
+<?php 
+   echo $info_kunde[0];
+   echo " ";
+   echo $info_kunde[1];
+   ?> <br> <?php
+    echo $info_kunde[2];
+    ?> <br> <?php
+    
+    echo $info_kunde[3];
+    ?> <br> <?php
+    echo $info_kunde[4];
+    ?> <br>
+    <br>
 <table style="width:100%" border="2">
                 <tr>
                     <td>Variant id</td>

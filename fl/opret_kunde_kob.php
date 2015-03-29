@@ -21,19 +21,27 @@ if(session_id() == '') {
     $same_mail=check_kunde_mail($mail);
     //print_r($same_mail);
     $er_bruger=check_kode($mail);
-    if (!empty($er_bruger) && $_SESSION["logget_ind_kunde"] != "ja") {
-             
-        header('Location:../vl/frame_login.php?kob=1');
+       
+    if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] != "ja") {
+     
+       header('Location:../vl/frame_login.php?kob=1');
          ob_flush();
     }
-    else if (!empty($same_mail) && $_SESSION["logget_ind_kunde"] == "ja") {
-              
+    else if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] == "ja") {
+         
          ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-         header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
+        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
          ob_flush();
     }
+     else if (!empty($same_mail[0]) && empty($er_bruger[0])) {
+          echo "retter kunde er ikke bruger";   
+         ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
+        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
+         ob_flush();
+    }
+    
     else {
-              
+           
      opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
     }
      
@@ -43,15 +51,14 @@ if(session_id() == '') {
      function opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){          
          echo "Opretter ny kunde";
          $id_kunde = opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-    header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
+         header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
       }
       
       
       
       
        function ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){      
-    
-              
-     $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-   header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
+        
+        $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
+        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
       }

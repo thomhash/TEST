@@ -1,8 +1,6 @@
 <?php
 require '../fl/get_kunde.php';
-if(session_id() == '') {
-    session_start();
-}
+session_start();
 $logget_ind = "nej";
 ?>
 <head>
@@ -13,22 +11,8 @@ $logget_ind = "nej";
 </head>
 <html>
     <center> 
-<h1>Kundeoplysninger</h2>
-<?php   if (isset($_SESSION["logget_ind_kunde"])){
-        $logget_ind = $_SESSION["logget_ind_kunde"];
-}
+<h1>Ret bruger</h2>
 
-   If ($logget_ind != "ja") {    
-?>
-<form name="pris_form" action="../vl/frame_login.php?kob=1" method="POST" class="loginform cf">
-    <b>Allerede bruger </b>
-    <input type="hidden" name="rediger" value="pris_form"><br>
-    <input type="submit" name="submit" value="Log in" >
-</form>
-<hr>
-<?php
-   }
-?>
 <body>
     <?php 
     
@@ -36,7 +20,7 @@ $logget_ind = "nej";
     
    
 	<section class="loginform cf">
-		<form name="login" action="../fl/opret_kunde_kob.php" onsubmit="return checkForm(this);">
+		<form name="login" action="../fl/ret_bruger.php" onsubmit="return checkForm(this);">
                     
                      <?php   
                      
@@ -74,7 +58,7 @@ $logget_ind = "nej";
        //  }
          
     ?>
-                    <b>Fortsæt uden bruger</b>
+                    <b>Ret bruger oplysninger</b>
 			<ul>
 				<li>
 					<label >Fornavn</label>
@@ -112,14 +96,11 @@ $logget_ind = "nej";
 					<input type="text" name="by" required value="<?php echo $by;?>">
                                         <br>
                                 </li>
-                                <br>
-                                <label for="nyhed">Tilmeld vores nyhedsbrev</label>
-					<input type="checkbox" name="nyhedsbrev" id="nyhed" value="0">
-                                        <br>
+                             
                                 
 				<li>
                                         <input type="hidden" name="kob" value="ja">
-                                    	<input type="submit" value="Næste">
+                                    	<input type="submit" value="Ret">
                                         
 				</li>
                                 <br>

@@ -104,7 +104,7 @@ Nuværende farver:
 
 <form action="../fl/opret_maerke.php" method="POST">
     Vare:<br>
-    <input type="hidden" name="type_rediger" value="type_variabel">
+    <input type="hidden" name="type_rediger" value="type_variabel" required>
     <select name="type_beskrivelse_id">
         <?php
         $hent = hent_type_beskrivelser();
@@ -127,7 +127,7 @@ Nuværende farver:
 
 <form action="../fl/opret_maerke.php" method="POST">
     Gruppe:<br>
-    <input type="hidden" name="type_rediger" value="gruppe">
+    <input type="hidden" name="type_rediger" value="gruppe" required>
     <input type="text" name="gruppe"><br>
 
     Overgruppe <br>
@@ -178,7 +178,7 @@ Nuværende grupper:
         ?>
     </select><br>
     Gruppe <br>
-    <select name="gruppe_til_vare">
+    <select name="gruppe_til_vare" >
         <option value="DET VIRKER">Ingen</option>
         <?php
         $hent = hent_alle_grupper();
@@ -212,11 +212,11 @@ Nuværende grupper:
     Vare navn:<br>
     <input type="text" name="vare_navn" required><br>
     Vare beskrivelse:<br>
-    <textarea name="vare_beskrivelse" cols="40" rows="5" ... ></textarea><br>
+    <textarea name="vare_beskrivelse" cols="40" rows="5" required></textarea><br>
     Prioritet:<br>
-    <input type="number" name="vare_prioritet"><br>
+    <input type="number" name="vare_prioritet" required><br>
     Mærke:<br>
-    <select name="maerke_til_vare">
+    <select name="maerke_til_vare" required>
         <?php
         $hent = hent_maerker();
         foreach ($hent as list($a, $b)) {
@@ -339,9 +339,9 @@ Nuværende grupper:
             ?>
         </select>
         <br>Pris:<br>
-        <input type="text" name="variant_pris"><br>
+        <input type="text" name="variant_pris" required><br>
         <br>Antal på lager:<br>
-        <input type="number" name="variant_antal"><br>
+        <input type="number" name="variant_antal" required><br>
 
         <input type="submit">
 

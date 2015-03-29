@@ -9,13 +9,37 @@ $id = $_GET['id'];
 <?php
 $vare_navn= get_vare_navn_f($id);
 $variant_info = get_vare_info_f($id);
+$vare_info = get_aktiv_vare_fra_vare_id($variant_info[0][9]);
 echo $vare_navn[0][0];
 ?>
 </h1>      
 <a href="tjek_lager.php">Lager </a><br>
 <a href="admin_menu.php">Menu</a><br>
 <br>
+<hr>
+Er vare aktiv i sortimanet:  <br>
+<?php 
+if ($vare_info[0][0] == 0)
+{
+    echo "Nej";
+}else
+{
+    echo "Ja";
+}
+; ?>
+<br>
+Skal vare være aktiv i sortimanet:  <br>
+<form action="../fl/ret_vare.php?id=<?php echo $id ?>" method="POST">
+    
+    <select name="aktiv_vare">
 
+            <option value="0">Nej</option>
+            <option value="1">ja</option>
+    </select>
+    
+    <input type="hidden" name="rediger" value="aktiv_vare"><br>
+    <input type="submit" name="submit">
+</form>
         <hr>
 </center></h2>
     Information: <br> 
