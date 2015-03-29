@@ -9,11 +9,15 @@ width: 85%;
 
      require_once 'parametre.php';
 ?>
+html { height: 100%; }
+
 html,body{
 background-color: <?php echo baggrundsfarve();?>;
 height: 1400px;
 
+
 }
+
 #content
 {
 -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
@@ -143,6 +147,21 @@ figure figcaption table{
     width: 100%;
     
 }
+
+#forside{
+margin-left:5%;
+margin-top:14%;
+
+}
+ #forside figure {
+ width: <?php echo bredde_billeder(); ?>px; 
+    margin: 10px;
+    float: left;
+}
+
+ #forside figure img {
+width: 100%; height: <?php echo hoejde_billeder(); ?>px;
+   }
 
 /* ligger tallene i bunden af siden */
 p.sider { 
@@ -283,3 +302,10 @@ align::top;
 font-size: 40px;
 }
 
+#slider a{
+    display: none;
+}
+#slider{
+
+margin-top:5%;
+}

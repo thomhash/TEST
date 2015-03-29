@@ -2,7 +2,9 @@
 require '../dl/get_kunde.php';
 //require '../fl/get_kunde.php';
 //require '../dl/get_kurv.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 
 
 function set_bruger($mail)

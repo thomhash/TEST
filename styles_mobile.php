@@ -6,9 +6,20 @@ width: 100%;
 
 }
 
+html{ height: 100%;
+margin:0;
+padding:0;
+}
 body{
 background-color: <?php echo baggrundsfarve();?>;
+height:100%;
+margin:0;
+padding:0;
+}
 
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 #icons
@@ -97,6 +108,7 @@ position: relative;
 
  #katalog figure img {
  height: <?php echo hoejde_billeder_mobile(); ?>px;
+ width: <?php echo bredde_billeder_mobile(); ?>px;
    // border: 1px solid red;
     //margin: 5px;
     //float: left;
@@ -114,7 +126,6 @@ figure figcaption table{
 
 /* ligger tallene i bunden af siden */
 p.sider { 
-    
  margin-top: 100%;
              
         }
@@ -244,8 +255,21 @@ align::top;
 font-size: 40px;
 }
 
+footer{
 
+  position:absolute;
+	bottom: 0px;
+	left:0px;
 
+}
+
+#slider a{
+    display: none;
+}
+#slider{
+
+margin-top:5%;
+}
 
 
 

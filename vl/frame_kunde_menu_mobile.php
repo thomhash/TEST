@@ -32,10 +32,9 @@
      
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'kunde_side.php';
         ?>    
         </div>
-        
     
          
          

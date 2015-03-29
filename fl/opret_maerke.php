@@ -38,7 +38,7 @@ if (($_POST['type_rediger']) == "opret_ny_vare") {
    $id_type_beskrivelse = $_POST['type_beskrivelse'];
    $vare_prioritet = $_POST['vare_prioritet'];
    $vare_gruppe = $_POST['gruppe_til_vare'];
-   $aktiv = $_POST['vare_aktiv'];
+   $aktiv=1;
    
    opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse);
 }
@@ -51,9 +51,8 @@ if (($_POST['type_rediger']) == "opret_ny_variant") {
    $variant_pris = $_POST['variant_pris'];
    $variant_vis = $_POST['variant_vis'];
    $variant_antal = $_POST['variant_antal'];
-   $variant_aktiv = $_POST['variant_aktiv'];
      
-   opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal,$variant_aktiv);
+   opret_variant($variant_vare,$variant_type_id,$variant_farve,$variant_billede,$variant_pris,$variant_vis,$variant_antal);
 }
 
 

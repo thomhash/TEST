@@ -32,10 +32,9 @@
      
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'kurv_oversigt.php';
         ?>    
         </div>
-        
     
          
          

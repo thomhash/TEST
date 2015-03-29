@@ -4,7 +4,7 @@
 
 <?php
 require '../dl/parametre_dl.php';
-ob_start();
+
 $all_parametre=  get_all_parametre();
 
 

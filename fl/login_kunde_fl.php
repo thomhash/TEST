@@ -23,7 +23,7 @@ else {
         set_bruger($mail);
         if ($kob==0)
         {
-        if(mobile_browser()==true){header('Location:../vl/frame_frontpage_mobile.php?');
+        if(mobile_browser()==true){header('Location:../vl/frame_kunde_menu_mobile.php?');
         ob_flush();}
         else{ header('Location:../vl/frame_kunde_menu.php');
         ob_flush();}}

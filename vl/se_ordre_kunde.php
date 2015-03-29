@@ -1,6 +1,8 @@
 <?php
 require '../fl/get_ordre.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 $ordre = hent_alle_ordre_fra_kunde_id($_SESSION["bruger_id"][0]);
 
  

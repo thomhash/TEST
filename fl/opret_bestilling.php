@@ -6,7 +6,9 @@ require '../dl/ret_lager.php';
 require '../dl/get_vare.php';
 //require '../vl/send_faktura.php';
 require '../PHPMailer_5.2.4/send_mail.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 $vare = $_SESSION["kurv"]; 
 
 

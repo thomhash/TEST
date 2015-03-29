@@ -24,7 +24,6 @@ require '../dl/get_vare.php';
    ret_aktiv_vare($id_vare[0][0],$aktiv_vare);
    }
  
-    
    if (strcmp($rediger,"prioritet") == 0)
    {
    $vare_prioritet = $_POST['vare_prioritet'];

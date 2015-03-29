@@ -1,6 +1,8 @@
 <?php
 require '../dl/login_tjek.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 
 $brugernavn = $_POST['brugernavn'];
 $kode = $_POST['kode'];

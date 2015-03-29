@@ -2,7 +2,10 @@
 <?php
 require '../fl/get_vare.php';
 require '../fl/fragt_pris.php';
-session_start();
+require_once '../fl/tjek_mobile_browser.php';
+if(session_id() == '') {
+    session_start();
+}
 $vare[0] = 0;
 if (isset($_SESSION["kurv"])) {
     $vare = $_SESSION["kurv"];
@@ -61,7 +64,9 @@ foreach ($info_array as $id => $antal) {
             $antal_total += $info_array[$raekkenr][1];
             ?>
                             <th> <?php
-                            echo '<a href="../vl/frame_visenkeltvare.php?id=' . $subarray[0][0] . '">';
+                            if(mobile_browser()){echo '<a href="../vl/frame_visenkeltvare_mobile.php?id=' . $subarray[0][0] . '">';}
+                            else {echo '<a href="../vl/frame_visenkeltvare.php?id=' . $subarray[0][0] . '">';}
+                           
                             echo '<img src="../billeder//' . $subarray[0][5] . '">';
 
                             echo    "<br>";
@@ -128,7 +133,7 @@ echo $total + hent_fragtpris($total);
 if ($antal_total > 0) {
     ?>
 
-    <a href="kassen_trin_1.php"> Gå til kassen </a>
+<a href="frame_kassen_trin_1<?php if(mobile_browser()){echo "_mobile";}?>.php"> Gå til kassen </a>
 
 <?php } ?>  
 <br><br>

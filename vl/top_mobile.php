@@ -20,7 +20,7 @@ require_once '../fl/tjek_mobile_browser.php';
    
 
            
-            <a href="kurv_oversigt.php">
+            <a href="frame_indkoebskurv_mobile.php">
                 <img id="big" src="../billeder/shoppingcart.png">
                 </a> 
             

@@ -3,7 +3,7 @@ require 'dl/parametre_dl.php';
 function baggrundsfarve()
     {   $id="Baggrundsfarve";
         $farve = get_parametre($id);
-    
+        
         return $farve[0][0];
     }
  function venstre_farve()

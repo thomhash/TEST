@@ -30,7 +30,9 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
     ?> <br>
 
 	 <?php require '../fl/get_vare.php';
-      session_start();
+      if(session_id() == '') {
+    session_start();
+}
 
       $vare = $_SESSION["kurv"];   
       $total =0;

@@ -21,27 +21,6 @@ function ret_beskrivelse($beskrivelse,$id)
     }
 }
 
-
-
-function ret_pris_d($pris,$id)
-{
-    require 'login.php';
-    $num = $id[0][0];
-// Check connection
-    if ($db_server->connect_error) {
-        die("Connection failed: " . $db_server->connect_error);
-    }
-    // echo $id[0][0];
-    $sqlin = "update variant set pris='$pris' where id_variant='$num'";
-
-    if ($db_server->query($sqlin) === TRUE) {
-        echo "New record created successfully";
-        
-    } else {
-        echo "Error: " . $sql . "<br>" . $db_server->error;
-    }
-}
-
 function ret_prioritet_d($prioritet,$id)
 {
     require 'login.php';
@@ -63,35 +42,16 @@ function ret_prioritet_d($prioritet,$id)
     }
 }
 
-function ret_aktiv_variant($id,$aktiv)
+function ret_pris_d($pris,$id)
 {
     require 'login.php';
-    
+    $num = $id[0][0];
 // Check connection
     if ($db_server->connect_error) {
         die("Connection failed: " . $db_server->connect_error);
     }
     // echo $id[0][0];
-    $sqlin = "update variant set aktiv='$aktiv' where id_variant='$id'";
-
-    if ($db_server->query($sqlin) === TRUE) {
-        echo "New record created successfully";
-        
-    } else {
-        echo "Error: " . $sql . "<br>" . $db_server->error;
-    }
-}
-
-function ret_aktiv_vare($id,$aktiv)
-{
-    require 'login.php';
-    
-// Check connection
-    if ($db_server->connect_error) {
-        die("Connection failed: " . $db_server->connect_error);
-    }
-    // echo $id[0][0];
-    $sqlin = "update vare set aktiv='$aktiv' where id_vare='$id'";
+    $sqlin = "update variant set pris='$pris' where id_variant='$num'";
 
     if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";
