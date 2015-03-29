@@ -96,7 +96,7 @@
 
     <div id="dropdown">        
         
-        <form method='post' action='../fl/tilfoj_kurv_bc.php'>
+        <form method='post' action='../fl/tilfoj_kurv.php'>
             <?php
             $type_beskrivelse=  hent_type_beskrivelse($id);
             echo $type_beskrivelse[0];
@@ -149,7 +149,7 @@
                             <td  align = "right" >
                             <p >
                                 Antal 
-                                <input type="number" name="variant_antal" value="1" min="1" max="<?php echo $info_array[0][4];?>" /> 
+                                <input type="number" name="rediger" value="1" min="1" max="<?php echo $info_array[0][4];?>" /> 
                             </p>
                            
                                  <?php 
@@ -163,6 +163,8 @@
                                 ?>
                            
                                 <p1>
+                                  
+                                    <input type="hidden" name="rediger_fra" value="enkelt_vare">   
                                 <input type="hidden" name="variant_id" value="<?php echo $id; ?>">   
                                 <input type="submit" name="koeb" value="Læg i kurv" id="koeb" /> 
                                 </p1>

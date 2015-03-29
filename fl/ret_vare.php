@@ -21,7 +21,7 @@ require '../dl/get_vare.php';
    {
    $aktiv_vare = $_POST['aktiv_vare'];
    $id_vare=get_vareid_fra_variant_d($id_variant); 
-   ret_aktiv_vare($id_vare,$aktiv_variant);
+   ret_aktiv_vare($id_vare[0][0],$aktiv_vare);
    }
  
     

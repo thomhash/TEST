@@ -8,7 +8,7 @@ function check_kunde_mail($mail) {
        
        $sql = "SELECT `id_kunde` 
            FROM `kunde` 
-           WHERE `email` = '$mail' AND `adgangskode`is not null
+           WHERE `email` = '$mail'
             LIMIT 1";
         
     $result= mysqli_query($db_server, $sql);       

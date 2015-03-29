@@ -38,7 +38,7 @@ function opret_ordre(){
 
     opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
  
-    send_mail_f("Faktura", email_tekst($kundeinfo), $kundeinfo[0][6], $kundeinfo[0][0]);  
+    send_mail_f("Faktura", email_tekst($kundeinfo,$id_ordre), $kundeinfo[0][6], $kundeinfo[0][0]);  
      // skal bruges -->     header('Location:../vl/kassen_trin_4.php');
      
  }
@@ -88,9 +88,32 @@ function opret_ordre(){
    
  }
 
- function email_tekst($kundeinfo){
+ function email_tekst($kundeinfo,$id_ordre){
      
-     $tekst = "Kære " .$kundeinfo[0][0]. "<br> Tak for din bestilling. Varen bliver sendt hurtigst muligt.<br>";
+
+     $tekst = "Kære " .$kundeinfo[0][0]. " " .$kundeinfo[0][1]."<br> Tak for din bestilling. "
+             . "Varen bliver sendt hurtigst muligt.<br><br>"
+    . "Til: "  
+    .$kundeinfo[0][0].
+   " "
+   .$kundeinfo[0][1].
+    "<br>"
+    .$kundeinfo[0][2].
+    "<br>"
+    
+    .$kundeinfo[0][3].
+    "<br>"
+    .$kundeinfo[0][4].
+    "<br><b>Du har bestilt følgende vare:"
+    . " ";
+    
+   
+  
+
+         
+             
+             
+          
      
      return $tekst;
  }

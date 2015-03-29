@@ -97,7 +97,6 @@ function get_kunde_fra_ordre_id($id){
 function get_vareinformation_fra_ordre_id_enkelt($id){
     require 'login.php';
       
-  
     $sql = "SELECT variant.id_variant, ordre_har_vare.antal, vare.navn, type.`type_vaerdi` , varefarve.`varefarve`, maerke.maerke_navn FROM `variant` INNER JOIN `type` INNER JOIN `vare` INNER JOIN `ordre_har_vare` INNER JOIN `varefarve` INNER JOIN `maerke` ON type.`id_type` = variant.`f_id_type` AND variant.`f_id_vare`= vare.`id_vare` AND varefarve.`id_varefarve`=variant.`f_id_varefarve` AND vare.f_id_maerke=maerke.id_maerke AND ordre_har_vare.`f_id_variant`= variant.`id_variant` WHERE ordre_har_vare.f_id_ordre ='$id'";
     
     $result= mysqli_query($db_server, $sql);       

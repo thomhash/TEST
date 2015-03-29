@@ -10,13 +10,13 @@ $mail = new PHPMailer;
 $mail->IsSMTP();
 $mail->SMTPAuth   = true;                  // enable SMTP authentication
 $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
-$mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+$mail->Host       = "send.one.com";      // sets GMAIL as the SMTP server
 $mail->Port       = 465;                   // set the SMTP port
 
-$mail->Username   = "mikkelbra@gmail.com";  // GMAIL username
-$mail->Password   = "Mikkelg199";            // GMAIL password
+$mail->Username   = "send_email@webshopgenerator.dk";  // GMAIL username
+$mail->Password   = "matador";            // GMAIL password
 
-$mail->From       = "mikkelbra@gmail.com";
+$mail->From       = "send_email@webshopgenerator.dk";
 $mail->FromName   = "webshopgenerator.dk";
 
 $mail->WordWrap   = 50; // set word wrap
