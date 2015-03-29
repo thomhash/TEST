@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 
 $id = 4;
 $id2 = 4;

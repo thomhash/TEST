@@ -1,4 +1,8 @@
-
+<?php 
+ ob_start();
+if(session_id() == '') {
+    session_start();
+}?>
 <html>
 
 <head>
@@ -7,6 +11,15 @@
 </head>
 <body>
 <?php
+if (isset($_SESSION["logget_ind_kunde"])){
+        
+if ($_SESSION["logget_ind_kunde"] == "ja"){
+    
+header("location:frame_kunde_menu_mobile.php");
+ob_flush();
+}
+
+}
 $opretbruger=0;
 $findes=0;
 $kundeoplysninger=0;

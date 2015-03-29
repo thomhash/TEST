@@ -29,7 +29,7 @@ function get_parametre($parameter){
     $row= mysqli_fetch_all($result);
     mysqli_close($db_server);
     
-    return $row; 
+    return $row;
     
     
 }
@@ -47,6 +47,7 @@ function get_all_parametre(){
     return $row; 
     
     
+    
 }
 function set_parametre($parameter, $vaerdi){
     
@@ -60,7 +61,9 @@ function set_parametre($parameter, $vaerdi){
     mysqli_close($db_server);
     
     header('Location:../vl/vis_parametre.php');
-     ob_flush();
+    
    
     
 }
+
+ob_flush(); ?>

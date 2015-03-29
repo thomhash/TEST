@@ -4,7 +4,9 @@
 </head> 
 <?php
 require '../fl/get_vare_info.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 // include '../fl/krav_admin.php';
 ?>
 <link rel="stylesheet" type="text/css" href="../styles.php">
@@ -20,7 +22,6 @@ session_start();
     <a href="#type_beskrivelse">Opret ny type beskrivelse</a><br>
     <a href="#type_variabel">Opret ny type variabel</a><br>
     <a href="#gruppe">Opret ny gruppe </a><br>
-    <a href="#forbind">Forbind vare med gruppe </a><br>
     <a href="#billede">Opret nyt billede </a><br>
     <a href="#vare"> Opret ny vare</a> <br>
     <a href="#variant">Opret ny variant </a><br>
@@ -224,14 +225,7 @@ Nuværende grupper:
             <?php
         }
         ?>
-    </select>    
-     <br>Aktiv:<br>
-        <select name="vare_aktiv">
-            <option value="1">Ja</option>
-            <option value="0">Nej</option>
-
-        </select>
-     <br>
+    </select><br>
     Gruppe:<br>
     <select name="gruppe_til_vare">
         <?php
@@ -254,6 +248,12 @@ Nuværende grupper:
         }
         ?>
     </select><br>
+
+
+
+
+
+
     <br>
     <input type="submit" value="Send">
 </form>
@@ -318,12 +318,7 @@ Nuværende grupper:
             }
             ?>
         </select>
-         <br>Aktiv:<br>
-        <select name="variant_aktiv">
-            <option value="1">Ja</option>
-            <option value="0">Nej</option>
-
-        </select>
+        
       
 
         <br>Vis:<br>

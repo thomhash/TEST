@@ -1,6 +1,8 @@
 <?php
 require '../fl/get_kunde.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 $logget_ind = "nej";
 ?>
 <head>

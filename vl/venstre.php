@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../login_user.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
    
 <a class="twitter-timeline"   data-chrome="nofooter noborders noscrollbar transparent" data-chrome="noscrollbar" data-chrome="nofooter transparent"  href="https://twitter.com/WebshopDTU" data-widget-id="576075873381646336">Tweets fra @WebshopDTU</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?

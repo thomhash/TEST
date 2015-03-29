@@ -57,9 +57,8 @@
         include 'vis_katalog.php';
         ?>    
         </div>
-   
+
     
-         
          
 </body>  
 

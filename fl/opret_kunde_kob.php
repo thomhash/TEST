@@ -1,6 +1,8 @@
 <?php
  require '../dl/opret_kunde_dl.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
  
  
      $fornavn = $_GET['fornavn'];

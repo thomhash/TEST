@@ -37,7 +37,7 @@
                                 $typer=  hent_typer_til_gruppe($gruppenr);
                                 $keys = array_keys($typer);
                                 $last_key = end($keys);
-                                if(empty($type)){echo "Type";}
+                                if(empty($typer)){echo "Type";}
                                 else {foreach ($typer as $key => $value) {
                                     echo $typer[$key][0];
                                     if($last_key==$key){}

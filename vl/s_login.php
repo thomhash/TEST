@@ -1,6 +1,8 @@
 <?php
 require '../fl/get_vare_info.php';
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 
 ?>
 <link rel="stylesheet" type="text/css" href="../styles.php">

@@ -102,35 +102,10 @@ skal vises i kataloget:
     <input type="submit" name="submit">
 </form>
 <hr>
-
-Er aktiv i sortimanet:  <br>
-<?php 
-if ($variant_info[0][8] == 0)
-{
-    echo "Nej";
-}else
-{
-    echo "Ja";
-}
-; ?>
-<br>
-Skal være aktiv i sortimanet:  <br>
-<form action="../fl/ret_vare.php?id=<?php echo $id ?>" method="POST">
-    
-    <select name="aktiv_variant">
-
-            <option value="0">Nej</option>
-            <option value="1">ja</option>
-    </select>
-    
-    <input type="hidden" name="rediger" value="aktiv_variant"><br>
-    <input type="submit" name="submit">
-</form>
-<hr>
 <br> 
 Billede:<br><br>
 Vælg nyt billede:
-<form action="../fl/uploade_billede.php" method="post" enctype="multipart/form-data">
+<formaction="../fl/uploade_billede.php" method="post" enctype="multipart/form-data">
     
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
     <input type="submit" value="Upload Image" name="submit">

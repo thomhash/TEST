@@ -1,5 +1,7 @@
 <?php ob_start();
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 require '../fl/get_lager.php';
 
 $vare_antal_nu =0;

@@ -35,7 +35,9 @@ echo $kunde_id[0];
    ?>
 
 	 <?php require '../fl/get_vare.php';
-      session_start();
+      if(session_id() == '') {
+    session_start();
+}
 
       $vare = $_SESSION["kurv"];   
       $total =0;

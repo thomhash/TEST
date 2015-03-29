@@ -2,7 +2,7 @@
 require '../dl/get_kunde.php';
 //require '../fl/get_kunde.php';
 //require '../dl/get_kurv.php';
-if (session_status() == '') {
+if(session_id() == '') {
     session_start();
 }
 

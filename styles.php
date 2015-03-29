@@ -148,6 +148,21 @@ figure figcaption table{
     
 }
 
+#forside{
+margin-left:5%;
+margin-top:14%;
+
+}
+ #forside figure {
+ width: <?php echo bredde_billeder(); ?>px; 
+    margin: 10px;
+    float: left;
+}
+
+ #forside figure img {
+width: 100%; height: <?php echo hoejde_billeder(); ?>px;
+   }
+
 /* ligger tallene i bunden af siden */
 p.sider { 
     
@@ -287,3 +302,10 @@ align::top;
 font-size: 40px;
 }
 
+#slider a{
+    display: none;
+}
+#slider{
+
+margin-top:5%;
+}

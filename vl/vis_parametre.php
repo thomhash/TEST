@@ -1,11 +1,8 @@
-
-
 <h1>Tilpas layout: </h1>
 <a href="admin_menu.php">Menu</a><br>
 <br>
 
 <?php
-
 require '../dl/parametre_dl.php';
 
 $all_parametre=  get_all_parametre();

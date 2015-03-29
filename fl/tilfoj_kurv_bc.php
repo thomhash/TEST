@@ -1,6 +1,9 @@
 <?php ob_start();
-session_start();
+if(session_id() == '') {
+    session_start();
+}
 require '../fl/get_lager.php';
+require_once 'tjek_mobile_browser.php';
 
 $vare_antal_nu =0;
 
@@ -33,14 +36,23 @@ function tjek_lager($id_variant,$antal)
     echo $lager_for_id[0];
     if($lager_for_id[0] >= $antal){
         $_SESSION["kurv"][$id_variant] = $antal;
-        header('Location:../vl/frame_indkoebskurv.php');
+        if(mobile_browser()==true){header('Location:../vl/frame_indkoebskurv_mobile.php');
         ob_flush();
+        }
+        else{header('Location:../vl/frame_indkoebskurv.php');
+        ob_flush();
+        }
     }
     else
     {
-       echo "test";
-        header('Location:../vl/frame_indkoebskurv.php?lager=nej');
-        ob_flush();
+      
+       if(mobile_browser()==true){header('Location:../vl/frame_indkoebskurv_mobile.php?lager=nej');
+       ob_flush();
+       } 
+       else {header('Location:../vl/frame_indkoebskurv.php?lager=nej'); 
+       ob_flush();
+       }
+        
         ?> 
 
 

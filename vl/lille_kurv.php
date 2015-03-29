@@ -1,5 +1,7 @@
  <?php require '../fl/get_vare.php';
-      session_start();
+      if(session_id() == '') {
+    session_start();
+}
 if (isset($_SESSION["kurv"])){
 
 

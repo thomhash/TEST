@@ -1,47 +1,41 @@
+
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+   <link rel="stylesheet" type="text/css" href="../styles_mobile.php"> 
 </head>
 <body>
 <?php
 
 
-
 ?>
-<link rel="stylesheet" type="text/css" href="../styles.php">
 
-<div id="top"> 
+
+    <div id="top"> 
     
     <?php
-    include 'top.php';
+    include 'top_mobile.php';
     ?>
-     <div>
+     </div>
   
-<div id="content">
-    <div id="overskrift">
-       <?php
-        include 'overskrift.php';
-        ?>
-        </div>
+
+   
+    
     <div id="menu">
        <?php
-        include 'vis_menu.php';
+        include 'vis_menu_mobile.php';
         ?>
         </div>
+    
    
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
+     
     <div id="indhold">
         <?php
         include 'kurv_oversigt.php';
         ?>    
         </div>
-    </div>
+    
          
          
 </body>  

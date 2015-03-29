@@ -8,7 +8,8 @@ function mobile_browser(){
         '/ipod/i' => 'iPod', 
         '/android/i' => 'Android', 
         '/blackberry/i' => 'BlackBerry', 
-        '/webos/i' => 'Mobile'
+        '/webos/i' => 'Mobile', 
+        '/Nokia/i' => 'Nokia'
     );
  
     

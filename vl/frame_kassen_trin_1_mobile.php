@@ -32,10 +32,9 @@
      
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'kassen_trin_1.php';
         ?>    
         </div>
-        
     
          
          

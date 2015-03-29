@@ -11,11 +11,11 @@
 
 ?>
 <link rel="stylesheet" type="text/css" href="../styles_mobile.php">
-
+<div id="main_wrapper">
 <div id="top"> 
     
     <?php
-    include 'top_mobile.php';
+   include 'top_mobile.php';
     ?>
      </div>
   
@@ -34,16 +34,11 @@
         include 'vis_enkelt_vare.php';
         ?>    
         </div>
-   
-         
+        
+    
+
+</div>     
          
 </body>  
 
 </html>
-<?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>

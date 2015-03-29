@@ -1,16 +1,13 @@
-#container_menu, nav, ul, li, a  {margin: 0; padding: 0;}
 <?php
     header("Content-type: text/css; charset: UTF-8");
     require '../parametre.php';
+    require_once '../fl/tjek_mobile_browser.php';
 ?>
+#container_menu, nav, ul, li, a  {margin: 0; padding: 0;}
 #menu {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 a {text-decoration: none;}
 #container_menu {
-    //width: 50%;   
-    //max-width: 900px;
-   // bottom: 0;
-    width: 100%;
-    //border: 2px solid orangered;
+width: 100%;
     
 }
 .toggleMenu {
@@ -19,14 +16,13 @@ a {text-decoration: none;}
     padding: 10px 15px;
     width: 40px;
     color: #fff;
-    
+      <?php if(mobile_browser()){echo "position: relative; margin-top:  -20px;";}
+          ?>
 }
 .nav {
     list-style: none;
      *zoom: 1;
      background: <?php echo farve_hovedgruppe(); ?>;
-     
-     
 }
 .nav:before,
 .nav:after {
@@ -49,7 +45,7 @@ a {text-decoration: none;}
 }
 .nav > li {
     float: left;
-    border-top: 1px solid <?php echo kant_farve_hovedgruppe();?>;//#104336;
+    border-top: 1px solid <?php echo kant_farve_hovedgruppe();?>;
 }
 .nav > li > .parent {
     background-image: url("../billeder/downArrow.png");

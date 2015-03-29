@@ -8,23 +8,7 @@ require '../dl/get_vare.php';
  $id_variant = $_GET['id'];
  
  echo $id_variant; 
-    
-    if (strcmp($rediger,"aktiv_variant") == 0)
-   {
-   $aktiv_variant = $_POST['aktiv_variant'];
-   
-   
-   ret_aktiv_variant($id_variant,$aktiv_variant);
-   }
-   
-    if (strcmp($rediger,"aktiv_vare") == 0)
-   {
-   $aktiv_vare = $_POST['aktiv_vare'];
-   $id_vare=get_vareid_fra_variant_d($id_variant); 
-   ret_aktiv_vare($id_vare,$aktiv_variant);
-   }
  
-    
    if (strcmp($rediger,"prioritet") == 0)
    {
    $vare_prioritet = $_POST['vare_prioritet'];

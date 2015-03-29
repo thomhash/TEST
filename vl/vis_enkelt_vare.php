@@ -1,13 +1,13 @@
-<html>
+
 <head>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
-
-<body> 
+ 
  <div id="enkelt">
     <?php require '../fl/opretkatalog.php';
+ require_once '../fl/tjek_mobile_browser.php';
           require 'tekst.php';
     
          $id = $_GET['id'];  
@@ -42,7 +42,12 @@
                         echo '</div>';
                           
                         echo '<div class="image">';
-                        echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                        if(mobile_browser()){
+                            echo '<a href="frame_visenkeltvare_mobile.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                        }
+                        else{                        
+                            echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                        }
                         echo    '<img src="../billeder//' .$farve_varianter[$billede_nr][1] .'">';
                         echo '</a>';
                         
@@ -55,7 +60,12 @@
                       }
                        
                       else{
-                         echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                         if(mobile_browser()){
+                         echo '<a href="frame_visenkeltvare_mobile.php?id=' .$farve_varianter[$billede_nr][0]  .'">';    
+                         } 
+                         else {
+                             echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
+                         }
                          echo    '<img src="../billeder//' .$farve_varianter[$billede_nr][1] .'">';
                          echo '</a>';
                      
@@ -119,8 +129,12 @@
                             $raekke_nr++;
                         }
                         else {
-                                
-                            echo '<option value="' .'frame_visenkeltvare.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
+                            if(mobile_browser()){
+                              echo '<option value="' .'frame_visenkeltvare_mobile.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>';   
+                            }    
+                            else {
+                                echo '<option value="' .'frame_visenkeltvare.php?id=' .$size[$raekke_nr][1] .'">' .$size[$raekke_nr][0] .'</option>'; 
+                            }
                              $raekke_nr++;
                               }
                              
@@ -187,16 +201,4 @@
     
     
     <script src="javascript_enkeltvare.js"></script>
-</body>
 
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-</html>

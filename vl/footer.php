@@ -1,10 +1,7 @@
 <footer>
-    <pre>
+    
          <a href="frame_frontpage.php?desktop=1">Desktop version</a></li>   <a href="om_os.php">Om os</a></li>
-    </pre>
-</ul>  
-    
-    
+       
 </footer>
 
 
