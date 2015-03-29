@@ -149,8 +149,12 @@ figure figcaption table{
 }
 
 #forside{
-margin-left:5%;
-margin-top:14%;
+margin-left:200px;
+margin-right:200px;
+margin-top:14;
+height:500px;
+width: 660px;
+border: 5px solid orange;
 
 }
  #forside figure {
@@ -305,7 +309,9 @@ font-size: 40px;
 #slider a{
     display: none;
 }
-#slider{
+slider{
+
 
 margin-top:5%;
 }
+

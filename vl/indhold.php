@@ -12,7 +12,7 @@
     var count = 2;
 
     function bannerRotator() {
-        $('#slider a').delay(3300).eq(index).fadeOut(function() { 
+        $('#slider a').delay(4300).eq(index).fadeOut(function() { 
             if (index === count){
                 index = -1;
             }
