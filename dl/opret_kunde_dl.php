@@ -1,7 +1,4 @@
 <?php
-
-
-
 function check_kunde_mail($mail) { 
 
        require 'login.php';
@@ -19,7 +16,7 @@ function check_kunde_mail($mail) {
      return $row;
 
     }
- function check_kode($mail) { 
+function check_kode($mail) { 
 
      
       require 'login.php';
@@ -85,7 +82,7 @@ function opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by,
     require 'login.php';
     
         
-    $sqlin = "INSERT INTO `webshop`.`kunde` (`id_kunde`, `fornavn`, `adresse`, `bynavn`, `efternavn`, `email`, `post_nr`, `telefonnummer`, `nyhed`) VALUES (NULL, '$fornavn', '$adresse', '$by', '$efternavn', '$mail', '$postnr', '$tlf', '$nyhed')";
+    $sqlin = "INSERT INTO `kunde` (`id_kunde`, `fornavn`, `adresse`, `bynavn`, `efternavn`, `email`, `post_nr`, `telefonnummer`, `nyhed`) VALUES (NULL, '$fornavn', '$adresse', '$by', '$efternavn', '$mail', '$postnr', '$tlf', '$nyhed')";
             
 
     if ($db_server->query($sqlin) === TRUE) {

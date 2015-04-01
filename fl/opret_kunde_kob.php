@@ -1,10 +1,9 @@
 <?php
- require '../dl/opret_kunde_dl.php';
-if(session_id() == '') {
-    session_start();
+if(session_id() == ''){
+session_start();
 }
- 
- 
+ require '../dl/opret_kunde_dl.php';
+ ob_start();
      $fornavn = $_GET['fornavn'];
      $efternavn = $_GET['efternavn'];
      $tlf = $_GET['tlf'];
@@ -17,14 +16,11 @@ if(session_id() == '') {
         if (isset($_GET["nyhedsbrev"])){
         $nyhed=$_GET["nyhedsbrev"];
         }
-        
     $same_mail=check_kunde_mail($mail);
     //print_r($same_mail);
     $er_bruger=check_kode($mail);
-       
     if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] != "ja") {
-     
-       header('Location:../vl/frame_login.php?kob=1');
+         header('Location:../vl/frame_login.php?kob=1');
          ob_flush();
     }
     else if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] == "ja") {
@@ -41,24 +37,16 @@ if(session_id() == '') {
     }
     
     else {
-           
-     opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
+    opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
     }
-     
-    
-    
-    
-     function opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){          
+    function opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){          
          echo "Opretter ny kunde";
          $id_kunde = opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
          header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
-      }
-      
-      
-      
-      
-       function ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){      
-        
+         ob_flush();
+    }
+        function ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){      
         $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
         header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
+        ob_flush();
       }

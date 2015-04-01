@@ -152,11 +152,12 @@ require 'login.php';
     $sqlin = "INSERT INTO `vare` (`id_vare`, `f_id_maerke`, `beskrivelse`, `navn`, `prioritet`,`aktiv`,`f_type_beskrivelse`) VALUES (NULL, '$maerke_til_vare', '$vare_beskrivelse', '$vare_navn', '$vare_prioritet','$aktiv','$id_type_beskrivelse');";
 
     if ($db_server->query($sqlin) === TRUE) {
+         $last_id = $db_server->insert_id; 
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $db_server->error;
     }
-     
+     return $last_id;
 }
 
 function tilfoj_gruppe($id_vare,$id_gruppe){
@@ -187,7 +188,7 @@ require 'login.php';
         die("Connection failed: " . $db_server->connect_error);
     }
 
-    $sqlin = "INSERT INTO `variant` (`pris`, `f_id_type`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`) VALUES ('$variant_pris', '$variant_type_id', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal');";
+        $sqlin = "INSERT INTO `variant` (`pris`, `f_id_type`, `f_id_varefarve`, `f_id_billede`, `f_id_vare`,`vis`, `antal`, `aktiv`) VALUES ('$variant_pris', '$variant_type_id', '$variant_farve', '$variant_billede', '$variant_vare', '$variant_vis', '$variant_antal', 1);";
 
     if ($db_server->query($sqlin) === TRUE) {
         echo "New record created successfully";

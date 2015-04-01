@@ -63,7 +63,7 @@ require 'login.php';
 function opret_faktura($id_ordre,$fornavn,$efternavn,$adresse,$post_nr, $bynavn,$telefon,$dato) { {
     
 require 'login.php';
-     
+    
 // Check connection
         if ($db_server->connect_error) {
             die("Connection failed: " . $db_server>connect_error);

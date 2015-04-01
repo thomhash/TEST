@@ -1,5 +1,6 @@
 <?php
-require '../dl/set_vare.php';
+//require '../dl/set_vare.php';
+require '../fl/gruppe_tjek.php';
 
 if (($_POST['type_rediger']) == "maerke") {
     $marke = $_POST['maerke'];
@@ -40,7 +41,8 @@ if (($_POST['type_rediger']) == "opret_ny_vare") {
    $vare_gruppe = $_POST['gruppe_til_vare'];
    $aktiv=1;
    
-   opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse);
+   $vare_id = opret_vare($vare_navn,$vare_beskrivelse,$maerke_til_vare,$vare_prioritet,$vare_gruppe,$aktiv,$id_type_beskrivelse);
+   forbind_grupper($vare_id,$vare_gruppe);
 }
 
 if (($_POST['type_rediger']) == "opret_ny_variant") {

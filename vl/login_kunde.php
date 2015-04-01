@@ -58,6 +58,13 @@
                    alert("Fejl: Forkert kode!");
                </script>';
             }
+            
+    if (isset($_GET["krav"])){
+        if ($_GET["krav"] == "1"){
+         echo' <script language="javascript" type="text/javascript">
+                   alert("Fejl: Siden kræver login!");
+        </script>';}
+            }
     ?>
 </body>
 </html>

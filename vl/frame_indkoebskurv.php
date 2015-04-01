@@ -1,3 +1,8 @@
+<?php
+if(session_id() == '') {
+    session_start();
+}
+?>
 <html>
 
 <head>
@@ -5,11 +10,6 @@
     
 </head>
 <body>
-<?php
-
-
-
-?>
 <link rel="stylesheet" type="text/css" href="../styles.php">
 
 <div id="top"> 

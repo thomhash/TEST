@@ -1,7 +1,7 @@
 <?php
 require_once('PHPMailerAutoload.php');
 //require "PHPMailerAutoload.php";
-
+send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
 //send_mail($emne, $tekst, $email, $navn);
 function send_mail_f($emne, $htmltekst, $email, $navn){
 

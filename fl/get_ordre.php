@@ -35,6 +35,12 @@ function hent_alle_ordre_fra_kunde_id($id){
    return $id_array;
 }
 
+function hent_alle_ordre_fra_ordre_id($id){
+   $id_array=get_ordre_info_id($id);
+   // print_r($id_array);
+   return $id_array;
+}
+
 
 /* 
  * To change this license header, choose License Headers in Project Properties.

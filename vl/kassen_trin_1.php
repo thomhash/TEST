@@ -1,8 +1,8 @@
 <?php
-require '../fl/get_kunde.php';
 if(session_id() == '') {
     session_start();
 }
+require '../fl/get_kunde.php';
 $logget_ind = "nej";
 ?>
 <head>
@@ -13,12 +13,11 @@ $logget_ind = "nej";
 </head>
 <html>
     <center> 
-<h1>Kundeoplysninger</h2>
+<h1>Kundeoplysninger test</h2>
 <?php   if (isset($_SESSION["logget_ind_kunde"])){
         $logget_ind = $_SESSION["logget_ind_kunde"];
 }
-
-   If ($logget_ind != "ja") {    
+If ($logget_ind != "ja") {    
 ?>
 <form name="pris_form" action="../vl/frame_login.php?kob=1" method="POST" class="loginform cf">
     <b>Allerede bruger </b>
@@ -27,23 +26,15 @@ $logget_ind = "nej";
 </form>
 <hr>
 <?php
-   }
+}
 ?>
 <body>
-    <?php 
-    
-    //$mailadr=$_GET["mail"];?>
-    
-   
-	<section class="loginform cf">
+<section class="loginform cf">
 		<form name="login" action="../fl/opret_kunde_kob.php" onsubmit="return checkForm(this);">
                     
                      <?php   
-                     
-                     
  // Hvis er sat til 1 er bruger lige blevet oprettet
- 
-    if (isset($_GET["oprettet"])){
+     if (isset($_GET["oprettet"])){
         $findes=$_GET["oprettet"];
         $mail =$_GET["mail"];
          echo "Tillykke med din nye bruger!";
@@ -56,8 +47,7 @@ $logget_ind = "nej";
         $adresse = NULL;
         $post_nr = NULL;
         $by = NULL;;
-         
-          // if (isset($_SESSION["bruger_id"])){
+        // if (isset($_SESSION["bruger_id"])){
          if (isset($_SESSION["bruger_id"])){
          $id_kunde =$_SESSION["bruger_id"][0];    
         $kunde=  hent_kunde($id_kunde)[0];
@@ -69,11 +59,7 @@ $logget_ind = "nej";
         $post_nr = $kunde[3];
         $by = $kunde[4];
          }
-     
-         
-       //  }
-         
-    ?>
+?>
                     <b>Fortsæt uden bruger</b>
 			<ul>
 				<li>
@@ -94,7 +80,7 @@ $logget_ind = "nej";
                                 
                                  <li>
 					<label >Email</label>
-                                        <input type="email" name="email" required value="<?php echo $email;?>">
+                                        <input <?php if(isset($_SESSION["logget_ind_kunde"])){if ($_SESSION["logget_ind_kunde"]=="ja"){?>readonly="readonly" placeholder="Kan ikke skiftes når du er logget på" <?php } } ?> type="email" name="email" required value="<?php echo $email;?>">
                                         <br>
 				</li>
 				<li>
@@ -123,12 +109,7 @@ $logget_ind = "nej";
                                         
 				</li>
                                 <br>
-                               
-                               
-					
-                                
-                                
-			</ul>
+        		</ul>
 		</form>
 	</section>
     
