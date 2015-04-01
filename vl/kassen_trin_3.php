@@ -1,4 +1,7 @@
 <?php
+if(session_id() == '') {
+session_start();
+}
 require '../fl/get_kunde.php';
 require '../fl/fragt_pris.php';
 $mail =$_GET["email"]; 
@@ -14,9 +17,9 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
     <body>
         <h1> <b>Godkend ordre</h1>
 
-        <h2> Kunde: </h2>
-   <?php
-   $info_kunde = hent_kunde($kunde_id[0])[0];
+        <h2> Kunde: </h2><?php
+        ob_start();
+$info_kunde = hent_kunde($kunde_id[0])[0];
    echo $info_kunde[0];
    echo " ";
    echo $info_kunde[1];
@@ -30,9 +33,7 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
     ?> <br>
 
 	 <?php require '../fl/get_vare.php';
-      if(session_id() == '') {
-    session_start();
-}
+  
 
       $vare = $_SESSION["kurv"];   
       $total =0;

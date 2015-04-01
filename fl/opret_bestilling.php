@@ -1,16 +1,18 @@
 <?php
+if(session_id() == '') {
+    session_start();
+}
 require '../dl/opret_ordre.php';
 require '../dl/get_kunde.php';
 require '../dl/get_lager.php';
 require '../dl/ret_lager.php';
 require '../dl/get_vare.php';
+require '../dl/get_bestillinger.php';
+require '../dl/get_virksomhed_dl.php';
 //require '../vl/send_faktura.php';
 require '../PHPMailer_5.2.4/send_mail.php';
-if(session_id() == '') {
-    session_start();
-}
+ob_start();
 $vare = $_SESSION["kurv"]; 
-
 
 function opret_ordre(){
   $mail =$_GET["email"]; 
@@ -41,19 +43,21 @@ function opret_ordre(){
     opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
  
     send_mail_f("Faktura", email_tekst($kundeinfo,$id_ordre), $kundeinfo[0][6], $kundeinfo[0][0]);  
-     // skal bruges -->     header('Location:../vl/kassen_trin_4.php');
-     
+     header('Location:../vl/kassen_trin_4.php');
+     ob_flush();
  }
  
  if (tjek_lager($vare) == true)
  {
      opret_ordre();
      kurv_tom();
-   header('Location:../vl/kassen_trin_4.php');
+     header('Location:../vl/kassen_trin_4.php');
+     ob_flush();
  }
  else 
  {
      header('Location:../vl/kassen_trin_3.php?');
+     ob_flush();
  }
 
  function tjek_lager($vare)
@@ -91,31 +95,27 @@ function opret_ordre(){
  }
 
  function email_tekst($kundeinfo,$id_ordre){
-     
+    $vare = get_vareinformation_fra_ordre_id($id_ordre);
+    $virksomhed = get_virksomhed_dinformation();
 
      $tekst = "Kære " .$kundeinfo[0][0]. " " .$kundeinfo[0][1]."<br> Tak for din bestilling. "
              . "Varen bliver sendt hurtigst muligt.<br><br>"
-    . "Til: "  
+    . "Til: <br>"  
     .$kundeinfo[0][0].
    " "
    .$kundeinfo[0][1].
     "<br>"
     .$kundeinfo[0][2].
     "<br>"
-    
-    .$kundeinfo[0][3].
+        .$kundeinfo[0][3].
     "<br>"
     .$kundeinfo[0][4].
-    "<br><b>Du har bestilt følgende vare:"
-    . " ";
-    
-   
-  
-
+    "<br><br>Du har bestilt følgende vare:"
+    . "<br>";
+    foreach ($vare as $key => $value) {
+         $tekst.="<br>".$vare[$key][1]." stk. ".$vare[$key][2]."  ".$vare[$key][3]." Pris:".$vare[$key][6]. " kr.";
          
-             
-             
-          
-     
+        }
+    $tekst.="<br><br> Med venlig hilsen " .$virksomhed[0][1];    
      return $tekst;
  }
