@@ -1,12 +1,13 @@
+<?php if(session_id() == '') {
+    session_start();
+}?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 
 </head> 
 <?php
 require '../fl/get_vare_info.php';
-if(session_id() == '') {
-    session_start();
-}
+
 // include '../fl/krav_admin.php';
 ?>
 <link rel="stylesheet" type="text/css" href="../styles.php">
@@ -356,10 +357,3 @@ Nuværende grupper:
             window.location.href = this.children[this.selectedIndex].getAttribute('href');
         }
     </script>
-    <?php
-    /*
-     * To change this license header, choose License Headers in Project Properties.
-     * To change this template file, choose Tools | Templates
-     * and open the template in the editor.
-     */
-    ?>

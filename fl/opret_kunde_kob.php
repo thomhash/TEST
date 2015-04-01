@@ -3,6 +3,7 @@ if(session_id() == ''){
 session_start();
 }
  require '../dl/opret_kunde_dl.php';
+ require_once 'tjek_mobile_browser.php';
  ob_start();
      $fornavn = $_GET['fornavn'];
      $efternavn = $_GET['efternavn'];
@@ -20,20 +21,26 @@ session_start();
     //print_r($same_mail);
     $er_bruger=check_kode($mail);
     if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] != "ja") {
-         header('Location:../vl/frame_login.php?kob=1');
-         ob_flush();
+         if(mobile_browser()){header('Location:../vl/frame_login_mobile.php?kob=1');
+         ob_flush();}
+         else{header('Location:../vl/frame_login.php?kob=1');
+         ob_flush();}
+         
     }
     else if (!empty($er_bruger[0]) && $_SESSION["logget_ind_kunde"] == "ja") {
          
          ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
-         ob_flush();
+         if(mobile_browser()){header('Location:../vl/frame_kassen_trin_2_mobile.php?mail='.$mail);          
+         ob_flush();}
+         else {header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
+         ob_flush();}
     }
      else if (!empty($same_mail[0]) && empty($er_bruger[0])) {
-          echo "retter kunde er ikke bruger";   
-         ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
-         ob_flush();
+          ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
+          if(mobile_browser()){header('Location:../vl/frame_kassen_trin_2_mobile.php?mail='.$mail);          
+         ob_flush();}
+          else {header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);          
+          ob_flush();}
     }
     
     else {
@@ -42,11 +49,15 @@ session_start();
     function opret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){          
          echo "Opretter ny kunde";
          $id_kunde = opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-         header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
-         ob_flush();
+         if(mobile_browser()){header('Location:../vl/frame_kassen_trin_2_mobile.php?mail='.$mail);
+         ob_flush();}
+         else {header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
+         ob_flush();}
     }
         function ret_kunde($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){      
         $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
-        header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
-        ob_flush();
+        if(mobile_browser()){header('Location:../vl/frame_kassen_trin_2_mobile.php?mail='.$mail);
+        ob_flush();}
+        else {header('Location:../vl/frame_kassen_trin_2.php?mail='.$mail);
+        ob_flush();}
       }

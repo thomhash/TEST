@@ -24,7 +24,8 @@
 function PHPMailerAutoload($classname)
 {
     //Can't use __DIR__ as it's only in PHP 5.3+
-    $filename = dirname(__FILE__).DIRECTORY_SEPARATOR.'class.'.strtolower($classname).'.php';
+    $filename = "http://webshopgenerator.dk/PHPMailer_5.2.4/".'class.'.strtolower($classname).'.php';
+    echo "Stien er: " .$filename ." her slutter den";
     if (is_readable($filename)) {
         require $filename;
     }

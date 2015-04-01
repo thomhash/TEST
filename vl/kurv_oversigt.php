@@ -3,9 +3,7 @@
 require '../fl/get_vare.php';
 require '../fl/fragt_pris.php';
 require_once '../fl/tjek_mobile_browser.php';
-if(session_id() == '') {
-    session_start();
-}
+
 $vare[0] = 0;
 if (isset($_SESSION["kurv"])) {
     $vare = $_SESSION["kurv"];

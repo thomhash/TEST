@@ -31,7 +31,7 @@ else {
             
             if(mobile_browser()==false){header('Location:../vl/frame_kassen_trin_1.php?');
         ob_flush();}
-        else{ header('Location:../vl/frame_kassen_trin_1.php?');
+        else{ header('Location:../vl/frame_kassen_trin_1_mobile.php?');
         ob_flush();}
             
         }

@@ -2,6 +2,7 @@
 if(session_id() == '') {
 session_start();
 }
+ob_start();
 require '../fl/get_kunde.php';
 require '../fl/fragt_pris.php';
 $mail =$_GET["email"]; 
@@ -9,7 +10,7 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
 ?>
 <head>
 	
-	<link rel="stylesheet" href="../login_user_normalize.css">
+	
 	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
@@ -18,7 +19,7 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
         <h1> <b>Godkend ordre</h1>
 
         <h2> Kunde: </h2><?php
-        ob_start();
+        
 $info_kunde = hent_kunde($kunde_id[0])[0];
    echo $info_kunde[0];
    echo " ";
@@ -86,7 +87,7 @@ $info_kunde = hent_kunde($kunde_id[0])[0];
          <th> <?php 
          
         
-             echo '<img src="../billeder//' .$subarray[0][5] .'">'; 
+             echo '<img src="../billeder//' .$subarray[0][5] .'"><br>'; 
                 
          
          echo $subarray[0][1]; 

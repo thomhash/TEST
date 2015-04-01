@@ -172,7 +172,7 @@ width: 100%;
 
 
 #dropdown{
-
+margin-top:50px;
 width: 100%;
 //border: 1px solid orange;
 float:left;
@@ -251,11 +251,16 @@ width: 25%;
     top: 0px;
 }
 
+#controls img{
+width:25px;
+height:25px;
+}
+
 .next {
     left: 50%;
 }
 .prev {
-    left: 30%;
+    left: 20%;
 }
 
 

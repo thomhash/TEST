@@ -2,6 +2,7 @@
 if(session_id() == '') {
     session_start();
 }
+require_once '../fl/tjek_mobile_browser.php';
 require '../fl/get_kunde.php';
 $logget_ind = "nej";
 ?>
@@ -19,7 +20,7 @@ $logget_ind = "nej";
 }
 If ($logget_ind != "ja") {    
 ?>
-<form name="pris_form" action="../vl/frame_login.php?kob=1" method="POST" class="loginform cf">
+<form name="pris_form" action="../vl/frame_login<?php if(mobile_browser()){echo "_mobile";}?>.php?kob=1" method="POST" class="loginform cf">
     <b>Allerede bruger </b>
     <input type="hidden" name="rediger" value="pris_form"><br>
     <input type="submit" name="submit" value="Log in" >

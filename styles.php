@@ -278,12 +278,16 @@ width: 25%;
     cursor: pointer;
     top: 0px;
 }
+#controls img{
+width:25px;
+height:25px;
+}
 
 .next {
     left: 50%;
 }
 .prev {
-    left: 30%;
+    left: 20%;
 }
 
 #search input{

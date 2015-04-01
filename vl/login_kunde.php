@@ -13,7 +13,7 @@
     $kob=0;
     if (isset($_GET["kob"])){
        $kob=$_GET["kob"];
-       echo $kob;
+       
     } ?>
 
 	<section class="loginform cf">

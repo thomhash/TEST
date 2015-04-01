@@ -34,7 +34,7 @@
      
     <div id="indhold">
         <?php
-        include 'kurv_oversigt.php';
+        include 'kassen_trin_3.php';
         ?>    
         </div>
     
@@ -43,3 +43,10 @@
 </body>  
 
 </html>
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>

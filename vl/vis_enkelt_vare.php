@@ -36,26 +36,35 @@
                
                  <?php 
                  $billede_nr=0;
+                 
                   if (!empty($farve_varianter)) {
                  foreach ($farve_varianter as $key => $value) {
+                    
                       if ($billede_nr>0 && $billede_nr % 4 ==0){
+                        echo '<div id="controls">';
+                       
+                       echo     '<img src="../billeder/arrow_right.png" class="next" alt="Next"/>'; 
+                       echo     '<img src="../billeder/arrow_left.png" class="prev" alt="Previous"/>'; 
+                       echo  '</div>';
                         echo '</div>';
                           
                         echo '<div class="image">';
+                        
                         if(mobile_browser()){
                             echo '<a href="frame_visenkeltvare_mobile.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
                         }
                         else{                        
                             echo '<a href="frame_visenkeltvare.php?id=' .$farve_varianter[$billede_nr][0]  .'">';
                         }
+                        
                         echo    '<img src="../billeder//' .$farve_varianter[$billede_nr][1] .'">';
                         echo '</a>';
-                        
-                       echo '<div id="controls">';
-                       echo     '<img src="http://annhowardesign.com/images/arrowright.jpg" class="next" alt="Next"/>'; 
-                       echo     '<img src="http://annhowardesign.com/images/arrowleft.jpg" class="prev" alt="Previous"/>'; 
+                         echo '<div id="controls">';
+                       
+                       echo     '<img src="../billeder/arrow_right.png" class="next" alt="Next"/>'; 
+                       echo     '<img src="../billeder/arrow_left.png" class="prev" alt="Previous"/>'; 
                        echo  '</div>';
-                        
+                       
                            $billede_nr++;
                       }
                        
@@ -101,7 +110,6 @@
         
         
    </div> 
-        
         
 
     <div id="dropdown">        

@@ -380,9 +380,4 @@ function get_typer_til_varegrupper($gruppe_id){
     
     
 }
-
-
-
-
-
 ?>
