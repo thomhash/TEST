@@ -1,23 +1,28 @@
 <?php
-require_once('PHPMailerAutoload.php');
+require('PHPMailerAutoload.php');
+//require 'class.phpmailer.php';
 //require "PHPMailerAutoload.php";
-send_mail_f("test", "saddsa", "klsh98@hotmail.com", "mikkel");
+send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
 //send_mail($emne, $tekst, $email, $navn);
 function send_mail_f($emne, $htmltekst, $email, $navn){
-
+echo "Ny 5 ";
 $mail = new PHPMailer;
 
-$mail->IsSMTP();
-$mail->SMTPAuth   = true;                  // enable SMTP authentication
-$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
-$mail->Host       = "send.one.com";      // sets GMAIL as the SMTP server
-$mail->Port       = 465;                   // set the SMTP port
 
-$mail->Username   = "send_email@webshopgenerator.dk";  // GMAIL username
-$mail->Password   = "matador";            // GMAIL password
+$mail->IsSMTP();
+$mail->SMTPAuth   = false;                  // enable SMTP authentication
+//$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+$mail->Host       = "mailout.one.com";      // sets GMAIL as the SMTP server
+$mail->Port       = 25;                   // set the SMTP port
+
+$mail->Username   = "";  // GMAIL username
+$mail->Password   = "";  
 
 $mail->From       = "send_email@webshopgenerator.dk";
-$mail->FromName   = "webshopgenerator.dk";
+$mail->FromName   = "webshopgenerator.dk";                               // TCP port to connect to
+
+$mail->From = 'send_email@webshopgenerator.dk';
+$mail->FromName = 'Mailer';
 
 $mail->WordWrap   = 50; // set word wrap
 $mail->AddAddress($email, $navn);  // Add a recipient
