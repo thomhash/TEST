@@ -114,7 +114,7 @@ function get_vareid_filter ($gruppe_nr, $sidetal, $maerker, $typer, $farver, $pr
 
 
 // Hent oplysninger til katalog i variant, ud fra vare-id (kun vis=1)
-function get_info_catalog ($vare_id, $farver){
+function get_info_catalog ($vare_id, $farver, $pris_min, $pris_max){
     require 'login.php';
     $sql_where="";
     $raekke_nr=1;
@@ -133,7 +133,7 @@ function get_info_catalog ($vare_id, $farver){
             INNER JOIN `billede`
             INNER JOIN `varefarve`  
             ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` 
-            WHERE variant.`aktiv`=1 AND `id_vare` = $vare_id $sql_where";
+            WHERE variant.`aktiv`=1 AND  variant.`pris`>=$pris_min AND variant.`pris`<=$pris_max AND vare.`aktiv`=1 AND `id_vare` = $vare_id $sql_where";
     
     
     $result= mysqli_query($db_server, $sql);       
@@ -183,7 +183,7 @@ function get_variant ($variant_id){
             INNER JOIN `billede`
             ON vare.`id_vare` = variant.`f_id_vare` AND type.`id_type`=variant.`f_id_type` 
             AND varefarve.`id_varefarve`= variant.`f_id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` 
-            WHERE `id_variant`= $variant_id ";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND `id_variant`= $variant_id ";
     
     
     $result= mysqli_query($db_server, $sql);       
@@ -208,7 +208,7 @@ function get_stoerrelser($vare_id, $farve){
             INNER JOIN `variant` 
             INNER JOIN `varefarve` 
             ON type.`id_type` = variant.`f_id_type` AND variant.`f_id_vare`= vare.`id_vare` AND varefarve.`id_varefarve`=variant.`f_id_varefarve`
-            WHERE vare.`id_vare`= $vare_id AND varefarve.`id_varefarve`= $farve";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND vare.`id_vare`= $vare_id AND varefarve.`id_varefarve`= $farve";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -225,7 +225,7 @@ function get_vare_id($variant_id){
             `vare`
             INNER JOIN `variant` 
             ON variant.`f_id_vare` = vare.`id_vare`
-            WHERE variant.`id_variant`= $variant_id";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND variant.`id_variant`= $variant_id";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -245,7 +245,7 @@ function get_farver($vare_id, $farve_id){
             INNER JOIN `varefarve` 
             
             ON variant.`f_id_vare` = vare.`id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` 
-            WHERE vare.`id_vare`= $vare_id 
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND vare.`id_vare`= $vare_id 
             AND varefarve.`id_varefarve`!=$farve_id ";
     
     $result= mysqli_query($db_server, $sql);       
@@ -265,7 +265,7 @@ function get_farver_billeder($vare_id, $farve_id){
             INNER JOIN `varefarve` 
             
             ON variant.`f_id_billede` = billede.`id_billede` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` 
-            WHERE variant.`f_id_vare`= $vare_id AND variant.`f_id_varefarve`=$farve_id LIMIT 1";
+            WHERE variant.`aktiv`=1 AND variant.`f_id_vare`= $vare_id AND variant.`f_id_varefarve`=$farve_id LIMIT 1";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -283,7 +283,7 @@ function get_gruppe_maerker ($gruppenr){
             INNER JOIN `vare` 
             INNER JOIN `vare_har_gruppe`
             ON maerke.`id_maerke` = vare.`f_id_maerke` AND vare.`id_vare`=vare_har_gruppe.`f_id_vare` 
-            WHERE vare_har_gruppe.`f_id_varegruppe`= $gruppenr
+            WHERE vare.`aktiv`=1 AND vare_har_gruppe.`f_id_varegruppe`= $gruppenr
             ORDER BY `maerke_navn`";
             
     $result= mysqli_query($db_server, $sql);       
@@ -306,7 +306,7 @@ function get_gruppe_stoerrelser ($gruppenr){
             INNER JOIN `vare_har_gruppe`
             ON type.`id_type` = variant.`f_id_type`AND vare.`id_vare`=variant.`f_id_vare` 
             AND vare.`id_vare`=vare_har_gruppe.`f_id_vare` 
-            WHERE vare_har_gruppe.`f_id_varegruppe`= $gruppenr";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND vare_har_gruppe.`f_id_varegruppe`= $gruppenr";
             
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -328,7 +328,7 @@ function get_gruppe_farver ($gruppenr){
             INNER JOIN `vare_har_gruppe`
             ON varefarve.`id_varefarve` = variant.`f_id_varefarve`AND vare.`id_vare`=variant.`f_id_vare` 
             AND vare.`id_vare`=vare_har_gruppe.`f_id_vare` 
-            WHERE vare_har_gruppe.`f_id_varegruppe`= $gruppenr";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND vare_har_gruppe.`f_id_varegruppe`= $gruppenr";
             
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -349,7 +349,7 @@ function get_type_beskrivelse ($variant_id){
             INNER JOIN `type_beskrivelse`
             ON  vare.`id_vare`=variant.`f_id_vare` 
             AND vare.`f_type_beskrivelse`=type_beskrivelse.`id_type_beskrivelse` 
-            WHERE variant.`id_variant`=$variant_id";
+            WHERE variant.`aktiv`=1 AND vare.`aktiv`=1 AND variant.`id_variant`=$variant_id";
             
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -370,7 +370,7 @@ function get_typer_til_varegrupper($gruppe_id){
             INNER JOIN `vare_har_gruppe`
             ON  vare.`id_vare`=vare_har_gruppe.`f_id_vare` 
             AND vare.`f_type_beskrivelse`=type_beskrivelse.`id_type_beskrivelse` 
-            WHERE vare_har_gruppe.`f_id_varegruppe`=$gruppe_id";
+            WHERE vare.`aktiv`=1 AND vare_har_gruppe.`f_id_varegruppe`=$gruppe_id";
             
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);    

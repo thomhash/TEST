@@ -45,7 +45,9 @@ width: 100%;
 }
 .nav > li {
     float: left;
-    border-top: 1px solid <?php echo kant_farve_hovedgruppe();?>;
+    border-top:  <?php if(mobile_browser()){ echo "1px solid " .kant_farve_hovedgruppe() .";";}
+    else{echo "none;";}
+    ?>;
 }
 .nav > li > .parent {
     background-image: url("../billeder/downArrow.png");

@@ -8,7 +8,7 @@ function check_kunde_mail($mail) {
        
        $sql = "SELECT `id_kunde` 
            FROM `kunde` 
-           WHERE `email` = '$mail'
+           WHERE `email` = '$mail' AND (`adgangskode` is not NULL OR `adgangskode`!='')
             LIMIT 1";
         
     $result= mysqli_query($db_server, $sql);       
@@ -19,6 +19,24 @@ function check_kunde_mail($mail) {
      return $row;
 
     }
+    function check_allerede_kunde_mail($mail) { 
+
+       require 'login.php';
+       
+       $sql = "SELECT `id_kunde` 
+           FROM `kunde` 
+           WHERE `email` = '$mail' 
+            LIMIT 1";
+        
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+    
+     mysqli_close($db_server);
+     
+     return $row;
+
+    }
+    
  function check_kode($mail) { 
 
      
@@ -44,6 +62,23 @@ function set_kunde($mail , $hash_kode){
         
     $sqlin = "INSERT INTO `kunde` (email, adgangskode)
                            VALUES ('$mail', '$hash_kode')";
+
+    if ($db_server->query($sqlin) === TRUE) {
+        //echo "New record created successfully";
+    } else {
+        echo "Error: " . "<br>" . $db_server->error;
+    }
+    
+    mysqli_close($db_server);
+    
+}
+
+function set_tidligere_kunde($mail , $hash_kode){
+    require 'login.php';
+        
+    $sqlin =   "Update `kunde`
+                SET `adgangskode`= '$hash_kode'
+                WHERE `email`='$mail'";
 
     if ($db_server->query($sqlin) === TRUE) {
         //echo "New record created successfully";

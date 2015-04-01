@@ -3,6 +3,7 @@ if(session_id() == '') {
     session_start();
 }
 require '../fl/get_lager.php';
+require_once 'tjek_mobile_browser.php';
 
 $vare_antal_nu =0;
 if (isset($_POST['variant_id'])){
@@ -28,7 +29,14 @@ if (isset($_POST['rediger_fra'])){
             $tilfoj =($_POST['rediger']);
             if($tilfoj<0){
                 $_SESSION["kurv"][$vare_id] = $tilfoj+$_SESSION["kurv"][$vare_id];
+                if(mobile_browser()){
+                    header('Location:../vl/frame_indkoebskurv_mobile.php');
+                ob_flush();
+                }
+                else {
                 header('Location:../vl/frame_indkoebskurv.php');
+                ob_flush();
+                }
             }
             else if ($tilfoj>0)
             {
@@ -42,7 +50,13 @@ if (isset($_POST['rediger_fra'])){
 function slet($id){
     echo "sletter";
     $_SESSION["kurv"][$id] = 0;
-    header('Location:../vl/frame_indkoebskurv.php');
+    if(mobile_browser()){ 
+        header('Location:../vl/frame_indkoebskurv_mobile.php');
+        ob_flush();
+    }
+    else {header('Location:../vl/frame_indkoebskurv.php');
+    ob_flush();
+    }
 }
 
 function tjek_lager($id_variant,$antal)
@@ -53,13 +67,27 @@ function tjek_lager($id_variant,$antal)
     echo $antal;
     if($lager_for_id[0] >= $antal+$_SESSION["kurv"][$id_variant]){
         $_SESSION["kurv"][$id_variant] = $antal+$_SESSION["kurv"][$id_variant];
+        if(mobile_browser()){
+           header('Location:../vl/frame_indkoebskurv_mobile.php');
+        ob_flush(); 
+            
+        }
+        else{
         header('Location:../vl/frame_indkoebskurv.php');
         ob_flush();
+        
+        }
     }
     else
-    {
-       echo "test";
+    {   if(mobile_browser()){
+        header('Location:../vl/frame_indkoebskurv_mobile.php?lager=nej');
+        ob_flush();
+        
+    }
+        else{
         header('Location:../vl/frame_indkoebskurv.php?lager=nej');
         ob_flush();
+        
+        }
     }
 }

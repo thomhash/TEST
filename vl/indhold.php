@@ -64,10 +64,10 @@ foreach ($info as $key => $value) {
     
 
 echo "<figure>";
-         if($desktop==1){echo '<a href="frame_visenkeltvare.php?id=' .$info[$key][4] .'&desktop='.$desktop.'">' ;}
-           else{ if(mobile_browser()==true){ echo '<a href="frame_visenkeltvare_mobile.php?id=' .$info[$key][4] .'">' ;   }
+       
+            if(mobile_browser()==true){ echo '<a href="frame_visenkeltvare_mobile.php?id=' .$info[$key][4] .'">' ;   }
                 else {echo '<a href="frame_visenkeltvare.php?id=' .$info[$key][4] .'">' ;}
-                }
+                
              echo '<img src="../billeder//' .$info[$key][3] .'">'; 
                 echo '</a>';
            echo "<figcaption>

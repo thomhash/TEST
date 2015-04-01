@@ -113,8 +113,23 @@ position: relative;
     //margin: 5px;
     //float: left;
 }
+#forside{
+margin-left:auto;
+margin-right:auto;
+height:90%;
+width: 95%;
+}
 
 
+#forside figure {
+ width: <?php echo bredde_billeder_mobile(); ?>px; 
+    margin: 10px;
+    float: left;
+}
+
+ #forside figure img {
+width: 100%; height: <?php echo hoejde_billeder_mobile(); ?>px;
+   }
 
 
 
@@ -269,6 +284,11 @@ footer{
 #slider{
 
 margin-top:5%;
+}
+
+#slider img{
+
+width:90%;
 }
 
 

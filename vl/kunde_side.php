@@ -1,6 +1,7 @@
 <?php
 ob_start();
 include '../fl/krav_kunde.php';
+
 require_once '../fl/tjek_mobile_browser.php';
 ?>
 <br>

@@ -25,7 +25,11 @@ $same_mail=check_kunde_mail($mail);
      $options = ['cost' => 12,];
   // Kodet bliver hashet og indsat i db sammen med mail   
      $hash_kode=password_hash($kode, PASSWORD_DEFAULT);
-     set_kunde($mail, $hash_kode);
+     if(!empty(check_allerede_kunde_mail($mail))){
+         set_tidligere_kunde($mail, $hash_kode);
+     }
+     else{set_kunde($mail, $hash_kode);}
+     
      if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?kundeoplysninger=1 & mail=' .$mail);
      ob_flush();}
      else{header('Location:../vl/frame_login.php?kundeoplysninger=1 & mail=' .$mail);

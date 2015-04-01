@@ -1,6 +1,12 @@
 <?php
+ob_start();
 require '../dl/set_vare.php';
+$parametre=0;
 //require 'ftp.php';
+if (isset($_POST["parametre"])){
+    $parametre=$_POST["parametre"];
+        }
+        echo $parametre;
 $target_dir ="../billeder/";
 //$target_dir = "C:/Users/Mikkel/Documents/NetBeansProjects/TEST/billeder";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -39,11 +45,19 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        opret_billede(basename( $_FILES["fileToUpload"]["name"]));
+        
+        if($parametre!=0){ }
+        else {opret_billede(basename( $_FILES["fileToUpload"]["name"]));}
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-//ftp_close($conn_id);
+
+if($parametre!=0){
+    header('Location:../vl/vis_parametre.php');
+        ob_flush();
+}
+else{header('Location:../vl/opret_vare.php');
+        ob_flush(); }
 ?>
