@@ -77,8 +77,8 @@ $logget_ind = "nej";
 				</li>
                                 
                                  <li>
-					<label >Email</label>
-                                        <input type="email" name="email" required value="<?php echo $email;?>">
+					<label >Email (Kan ikke rettes)</label>
+                                        <input  <?php if(isset($_SESSION["logget_ind_kunde"])){if ($_SESSION["logget_ind_kunde"]=="ja"){?>readonly="readonly"<?php } } ?> type="email" name="email" required value="<?php echo $email;?>">
                                         <br>
 				</li>
 				<li>

@@ -80,7 +80,7 @@ If ($logget_ind != "ja") {
                                 
                                  <li>
 					<label >Email</label>
-                                        <input <?php if(isset($_SESSION["logget_ind_kunde"])){if ($_SESSION["logget_ind_kunde"]=="ja"){?>readonly="readonly" placeholder="Kan ikke skiftes når du er logget på" <?php } } ?> type="email" name="email" required value="<?php echo $email;?>">
+                                        <input <?php if(isset($_SESSION["logget_ind_kunde"])){if ($_SESSION["logget_ind_kunde"]=="ja"){?>readonly="readonly"<?php } } ?> type="email" name="email" required value="<?php echo $email;?>">
                                         <br>
 				</li>
 				<li>
