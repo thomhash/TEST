@@ -2,9 +2,12 @@
 
 require 'PHPMailerAutoload.php';
 
+send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
+
+function send_mail_f($emne, $htmltekst, $email, $navn){
 $mail = new PHPMailer;
 
- $mail->SMTPDebug = 3;                               // Enable verbose debug output
+// $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->IsSMTP();
 $mail->SMTPAuth   = false;                  // enable SMTP authentication
@@ -20,15 +23,15 @@ $mail->FromName   = "webshopgenerator.dk";                               // TCP 
 
 $mail->From = 'send_email@webshopgenerator.dk';
 $mail->FromName = 'Mailer';
-$mail->addAddress('mikkelbra@gmail.com', 'Mikkel');     // Add a recipient
+$mail->addAddress($email, $navn);     // Add a recipient
 
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->Subject = $emne;
+$mail->Body    = $htmltekst;
+//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
     echo 'Message could not be sent. 3';
@@ -36,7 +39,7 @@ if(!$mail->send()) {
 } else {
     echo 'Message has been sent';
 }
-
+}
 
 
 

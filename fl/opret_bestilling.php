@@ -10,7 +10,7 @@ require '../dl/get_vare.php';
 require '../dl/get_bestillinger.php';
 require '../dl/get_virksomhed_dl.php';
 //require '../vl/send_faktura.php';
-require '../PHPMailer_5.2.4/send_mail.php';
+require '../PHPMailer-master/send_mail.php';
 ob_start();
 $vare = $_SESSION["kurv"]; 
 
