@@ -1,7 +1,5 @@
 <?php
-if(session_id() == '') {
-session_start();
-}
+
 ob_start();
 require '../fl/get_kunde.php';
 require '../fl/fragt_pris.php';
@@ -15,6 +13,7 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <html>
+    <div id="kurv">
     <body>
         <h1> <b>Godkend ordre</h1>
 
@@ -127,7 +126,7 @@ Total:
 echo $total+hent_fragtpris($total); 
 
 ?>
-
+    </div>
 <br>
 
      <form action="../fl/opret_bestilling.php">

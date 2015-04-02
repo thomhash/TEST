@@ -1,6 +1,7 @@
-<?php
+<?php session_start();
+ ob_start();
  require '../dl/opret_kunde_dl.php';
-session_start();
+
  
  
      $fornavn = $_GET['fornavn'];
@@ -32,4 +33,5 @@ session_start();
         
         $id_kunde = set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed);
         header('Location:../vl/frame_kunde_menu.php');
+        ob_flush();
       }

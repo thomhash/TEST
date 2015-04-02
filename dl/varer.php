@@ -114,25 +114,40 @@ function get_vareid_filter ($gruppe_nr, $sidetal, $maerker, $typer, $farver, $pr
 
 
 // Hent oplysninger til katalog i variant, ud fra vare-id (kun vis=1)
-function get_info_catalog ($vare_id, $farver, $pris_min, $pris_max){
+function get_info_catalog ($vare_id, $farver, $pris_min, $pris_max, $stoerrelser){
     require 'login.php';
     $sql_where="";
     $raekke_nr=1;
-    if($farver!=0){
+    if($farver!=0 OR $stoerrelser!=0){
+        if($farver!=0){
         $sql_where.=" AND( varefarve.`varefarve`= ".'"' .$farver[0].'"';
             foreach ($farver as $key => $value) {
                 if($key==0){ }
                 else{ $sql_where.=" OR varefarve.`varefarve`= ".'"' .$farver[$key] .'"';}
                 }
-                $sql_where.=')';
+        $sql_where.=')';}
+        if($stoerrelser!=0){
+            $sql_where.=" AND( type.`type_vaerdi`= ".'"' .$stoerrelser[0].'"';
+            foreach ($stoerrelser as $key1 => $value) {
+                if($key1==0){ }
+                else{ $sql_where.=" OR varefarve.`varefarve`= ".'"' .$stoerrelser[$key1] .'"';}
+                }
+        $sql_where.=')';
+            }
         }
-    else { $sql_where="AND variant.`vis`=1";}    
+    else { if($pris_min!="0" OR $pris_max!="999999"){
+        $sql_where="";
+           }
+           else{
+                $sql_where="AND variant.`vis`=1";} 
+        }
     $sql = "SELECT vare.`navn` , variant.`pris` , billede.`url`, variant.`id_variant`
             FROM `variant` 
             INNER JOIN `vare` 
             INNER JOIN `billede`
             INNER JOIN `varefarve`  
-            ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` 
+            INNER JOIN `type`
+            ON vare.`id_vare` = variant.`f_id_vare` AND variant.`f_id_varefarve`=varefarve.`id_varefarve` AND variant.`f_id_billede`=billede.`id_billede` AND variant.`f_id_type`=type.`id_type`
             WHERE variant.`aktiv`=1 AND  variant.`pris`>=$pris_min AND variant.`pris`<=$pris_max AND vare.`aktiv`=1 AND `id_vare` = $vare_id $sql_where";
     
     

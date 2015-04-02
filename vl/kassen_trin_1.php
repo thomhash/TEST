@@ -101,7 +101,7 @@ If ($logget_ind != "ja") {
                                 </li>
                                 <br>
                                 <label for="nyhed">Tilmeld vores nyhedsbrev</label>
-					<input type="checkbox" name="nyhedsbrev" id="nyhed" value="0">
+					<input type="checkbox" name="nyhedsbrev" id="nyhed" value="1" checked>
                                         <br>
                                 
 				<li>
