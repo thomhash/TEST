@@ -272,7 +272,7 @@ height: <?php echo hoejde_billeder_mobile(); ?>px;
 
 #soeg{
 align::top;
-font-size: 40px;
+font-size: 24px;
 }
 
 footer{
@@ -297,9 +297,9 @@ width:90%;
 }
 
 
-
-
-
-
-
-
+#kurv img {
+    margin-left: 1%;
+ 
+    width: 30%;
+    height: auto;
+}

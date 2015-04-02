@@ -21,7 +21,7 @@ $total = 0;
 $antal_total = 0;
 $fragt = 50;
 ?>
-<br>
+
 <?php
 $rnr = 0;
 foreach ($vare as $id => $antal) {
@@ -30,11 +30,8 @@ foreach ($vare as $id => $antal) {
     $rnr++;
 }
 ?>
-<br><br>
 
-<header>
-    <link rel="stylesheet" type="text/css" href="../kurv_style.css">
-</header>
+
 <html>
     <body>
         <h1>Din indkøbskurv:</h1>

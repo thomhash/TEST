@@ -13,7 +13,7 @@ html { height: 100%; }
 
 html,body{
 background-color: <?php echo baggrundsfarve();?>;
-height: 1400px;
+min-height: 1400px;
 
 
 }
@@ -29,7 +29,8 @@ margin-top: 0px;
 margin-left: auto;
 margin-right: auto;
 border: none; // 5px solid red;
-height: 1300px;
+min-height: 1300px;
+
 width: 1000px;
 min-width: 75%;
 
@@ -78,7 +79,7 @@ background-color: <?php echo venstre_farve();?>;
 width: 25%;
 float: left;
 
-height: 1061px;
+min-height: 1062px;
 
 }
 #venstre .loginform{
@@ -106,7 +107,7 @@ background-color: <?php echo indhold_farve();?>;
 width: 75%;
 
 float: right;
-height: 1061px;
+min-height: 1062px;
 
 }
 
@@ -307,7 +308,7 @@ height: <?php echo hoejde_billeder(); ?>px;
 
 #soeg{
 align::top;
-font-size: 40px;
+font-size: 30px;
 }
 
 #slider a{
@@ -319,3 +320,9 @@ font-size: 40px;
 margin-top:5%;
 }
 
+#kurv img {
+    margin-left: 1%;
+ 
+    width: 30%;
+    height: auto;
+}
