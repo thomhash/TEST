@@ -17,7 +17,7 @@ print_r($ordre);
                     <td>Variant id</td>
                     <td>Antal</td> 
                     <td>Navn</td>
-                    <td>størrelse</td> 
+                    <td>Variant</td> 
                     <td>Farve</td>
                     <td>Mærke</td>
                 </tr>

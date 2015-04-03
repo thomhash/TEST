@@ -2,11 +2,11 @@
 
 require 'PHPMailerAutoload.php';
 
-send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
+//send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
 
 function send_mail_f($emne, $htmltekst, $email, $navn){
 $mail = new PHPMailer;
-
+$er_sendt =false; 
 // $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->IsSMTP();
@@ -34,11 +34,15 @@ $mail->Body    = $htmltekst;
 //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
+    $er_sendt = true;
     echo 'Message could not be sent. 3';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
+    
 } else {
+    $er_sendt = false;
     echo 'Message has been sent';
 }
+return $er_sendt;
 }
 
 

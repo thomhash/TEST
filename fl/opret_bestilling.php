@@ -16,7 +16,8 @@ $vare = $_SESSION["kurv"];
 
 function opret_ordre(){
   $mail =$_GET["email"]; 
-  
+  $total_pris =$_GET["total_pris"]; 
+  $fragt_pris =$_GET["fragt_pris"]; 
   
   $id_ordre = opret_ordre_d($mail,date("Y m d H:i"));
   $vare = $_SESSION["kurv"]; 
@@ -41,10 +42,13 @@ function opret_ordre(){
     
 
     opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
- 
-    send_mail_f("Faktura", email_tekst($kundeinfo,$id_ordre), $kundeinfo[0][6], $kundeinfo[0][0]);  
-     header('Location:../vl/kassen_trin_4.php');
+    //opret_faktura_2($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"),$total_pris,$fragt_pris);
+    send_mail_f("Faktura", email_tekst($kundeinfo,$id_ordre,$total_pris,$fragt_pris), $kundeinfo[0][6], $kundeinfo[0][0]);  
+     
+    header('Location:../vl/kassen_trin_4.php');
      ob_flush();
+     
+     
  }
  
  if (tjek_lager($vare) == true)
@@ -94,7 +98,8 @@ function opret_ordre(){
    
  }
 
- function email_tekst($kundeinfo,$id_ordre){
+ function email_tekst($kundeinfo,$id_ordre,$total_pris,$fragt_pris){
+    
     $vare = get_vareinformation_fra_ordre_id($id_ordre);
     $virksomhed = get_virksomhed_dinformation();
 
@@ -113,9 +118,11 @@ function opret_ordre(){
     "<br><br>Du har bestilt følgende vare:"
     . "<br>";
     foreach ($vare as $key => $value) {
-         $tekst.="<br>".$vare[$key][1]." stk. ".$vare[$key][2]."  ".$vare[$key][3]." Pris:".$vare[$key][6]. " kr.";
+         $tekst.="<br>".$vare[$key][1]." stk. \t".$vare[$key][2]."  ".$vare[$key][3]."\t Pris: ".$vare[$key][6]. " kr.";
          
         }
-    $tekst.="<br><br> Med venlig hilsen " .$virksomhed[0][1];    
+    $tekst.="<br>Fragt pris: \t\t\t" .$fragt_pris. "kr. <br>";  
+    $tekst.="Total: \t\t\t" .$total_pris. "kr. <br><br>";    
+    $tekst.="<br>Med venlig hilsen " .$virksomhed[0][1];    
      return $tekst;
  }

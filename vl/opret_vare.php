@@ -15,7 +15,7 @@ require '../fl/get_vare_info.php';
 <a href="admin_menu.php">Menu</a><br>
 
 
-<h3> Mulighedder: </h3> 
+<h3> Muligheder: </h3> 
 <href>
 
     <a href="#mærke">Opret nyt mærke </a><br>
