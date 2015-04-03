@@ -326,3 +326,31 @@ margin-top:5%;
     width: 30%;
     height: auto;
 }
+#MyGmaps{
+display:inline-block;
+float:left;
+margin-left:5px;
+margin-top:5px;
+width:45%;
+height:250px;
+border:1px solid #CECECE;
+}
+#virkomhedsinfo{
+display:inline-block;
+float:left;
+font-size: 26px;
+margin-left:10px;
+margin-top:20px;
+height:230px;
+width:52%;
+}
+
+#omos{
+margin-top:25px;
+margin-left:10px;
+margin-right:10px;
+float:left;
+font-size:22px;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}

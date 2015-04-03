@@ -4,7 +4,7 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
    <link rel="stylesheet" type="text/css" href="../styles_mobile.php"> 
 </head>
-<body>
+<body onload="LoadGmaps()" onunload="GUnload()">
 <?php
 
 
@@ -31,7 +31,7 @@
      
     <div id="indhold">
         <?php
-        include 'indhold.php';
+        include 'om_os.php';
         ?>    
         </div>
         

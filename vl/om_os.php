@@ -1,7 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Google Maps || Powered By MapsEasy.com Maps Generator</title>
+
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -44,10 +41,27 @@
 			});
 	}
 </script>
-</head>
-<body onload="LoadGmaps()" onunload="GUnload()">
+
+
 <!-- Maps DIV : you can move the code below to where you want the maps to be displayed -->
-<div id="MyGmaps" style="width:400px;height:250px;border:1px solid #CECECE;"></div>
+<div id="MyGmaps"></div>
 <!-- End of Maps DIV -->
-</body>
-</html>
+<div id="virkomhedsinfo">
+    <?php
+    require_once '../fl/om_os_fl.php';
+    $info=  hent_virksomhedsinfo();
+    echo "<b>Firma:  </b>&nbsp;".$info[0][1]."<br>";
+    echo "<b>Telefon: </b>" .$info[0][3]."<br>";
+    echo "<b>E-mail: </b>&nbsp;" .$info[0][5]."<br>";
+    echo "<b>CVR-nr: </b>" .$info[0][4]."<br>";
+    echo "<b>Adresse: </b>" .$info[0][9]."<br>";
+    
+    ?>
+</div>
+<br><br><br>
+<div id="omos">
+    <?php 
+    echo $info[0][6];
+    ?>
+    
+</div>

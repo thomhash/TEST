@@ -7,9 +7,6 @@ $ordre = hent_ordre_information($id);
 
 //$kunde = hent_kunde($id);
 
-print_r($ordre);
-
-
                     ?>
 <h1>Ordre oversigt</h2>
 <table style="width:100%" border="2">
