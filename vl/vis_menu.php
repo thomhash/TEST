@@ -25,6 +25,7 @@
 <?php
 
 require '../fl/opret_menu.php';
+require_once '../fl/tjek_mobile_browser.php';
 $main_raekkenr = 0;
 $grupper = hent_grupper();
 
@@ -89,8 +90,11 @@ function href($subarray, $id, $navn){
 
 
 ?>
-    
-        <li><a href="om_os.php">Om os</a></li>
+        
+        <li><a href="frame_omos.php">Om os</a></li>
+        <?php
+        if(mobile_browser()){ echo '<li><a href="frame_frontpage_mobile.php">Mobile version</a></li>';}
+        ?>
         </ul>
 </div>
 

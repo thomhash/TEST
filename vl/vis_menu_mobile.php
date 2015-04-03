@@ -91,7 +91,8 @@ function href($subarray, $id, $navn){
 
 
 ?>
-
+    <li><a href="frame_omos_mobile.php">Om os</a></li>
+    <li>   <a href="frame_frontpage.php?desktop=1">Desktop version</a></li>
         </ul>
 </div>
 

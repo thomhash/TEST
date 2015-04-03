@@ -95,7 +95,13 @@ position: relative;
 
 }
 
-
+#katalog{
+margin-left:auto;
+margin-right:auto;
+border: 1px solid red;
+max-width:99%;  
+height: 100%;
+}
 
 
  #katalog figure {
@@ -117,7 +123,13 @@ position: relative;
 margin-left:auto;
 margin-right:auto;
 height:90%;
-width: 95%;
+width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width:450px;
+  max-width:94%;
+  
+  border: 1px solid red;
 }
 
 
@@ -302,4 +314,34 @@ width:90%;
  
     width: 30%;
     height: auto;
+}
+
+#MyGmaps{
+display:inline-block;
+float:left;
+margin-top:5px;
+margin-right:2%;
+margin-left:2%;
+width:95%;
+height:250px;
+border:1px solid #CECECE;
+}
+#virkomhedsinfo{
+display:inline-block;
+float:left;
+font-size: 26px;
+margin-left:5%;
+margin-top:20px;
+height:230px;
+width:100%;
+}
+
+#omos{
+margin-top:15px;
+margin-left:10px;
+margin-right:10px;
+float:left;
+font-size:24px;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
