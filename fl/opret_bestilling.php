@@ -103,7 +103,7 @@ function opret_ordre(){
     $vare = get_vareinformation_fra_ordre_id($id_ordre);
     $virksomhed = get_virksomhed_dinformation();
 
-     $tekst = "Kære " .$kundeinfo[0][0]. " " .$kundeinfo[0][1]."<br> Tak for din bestilling. "
+     $tekst = "Kære " .$kundeinfo[0][0]. " " .$kundeinfo[0][1]."<br><br> Tak for din bestilling. "
              . "Varen bliver sendt hurtigst muligt.<br><br>"
     . "Til: <br>"  
     .$kundeinfo[0][0].
@@ -121,7 +121,7 @@ function opret_ordre(){
          $tekst.="<br>".$vare[$key][1]." stk. \t".$vare[$key][2]."  ".$vare[$key][3]."\t Pris: ".$vare[$key][6]. " kr.";
          
         }
-    $tekst.="<br>Fragt pris: \t\t\t" .$fragt_pris. "kr. <br>";  
+    $tekst.="<br><br>Fragt pris: \t\t\t" .$fragt_pris. "kr. <br>";  
     $tekst.="Total: \t\t\t" .$total_pris. "kr. <br><br>";    
     $tekst.="<br>Med venlig hilsen " .$virksomhed[0][1];    
      return $tekst;

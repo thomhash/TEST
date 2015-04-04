@@ -17,14 +17,14 @@ require '../dl/get_vare.php';
    ret_aktiv_variant($id_variant,$aktiv_variant);
    }
    
-    if (strcmp($rediger,"aktiv_vare") == 0)
+   else if (strcmp($rediger,"aktiv_vare") == 0)
    {
    $aktiv_vare = $_POST['aktiv_vare'];
    $id_vare=get_vareid_fra_variant_d($id_variant); 
    ret_aktiv_vare($id_vare[0][0],$aktiv_vare);
    }
  
-   if (strcmp($rediger,"prioritet") == 0)
+   else if (strcmp($rediger,"prioritet") == 0)
    {
    $vare_prioritet = $_POST['vare_prioritet'];
    
@@ -32,14 +32,15 @@ require '../dl/get_vare.php';
    ret_prioritet_d($vare_prioritet,$id_vare);
    }
    
-   if (strcmp($rediger,"pris_form") == 0)
+   else if (strcmp($rediger,"pris_form") == 0)
    {
    $vare_prioritet = $_POST['ny_pris'];
    
   // $id_vare=get_vareid_fra_variant_d($id_variant);
    ret_pris_d($vare_prioritet,$id_variant);
+   header('Location:../vl/retvare.php?id='.$id_variant.'&ret=ok');
    }
-     if (strcmp($rediger,"vis_variant") == 0)
+   else if (strcmp($rediger,"vis_variant") == 0)
    {
    $variant_vis = $_POST['vis_variant'];
    echo "den kommer her ind!:";
