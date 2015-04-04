@@ -25,10 +25,3 @@ function get_lager(){
     mysqli_close($db_server);
     return $resultat;
  }
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
