@@ -14,33 +14,7 @@ else{
     //echo "Forbindelsen er god";
 }
 
-//Hent vareid's udfra gruppeid og hvilken side man er på (array)
-function get_vareid ($gruppe_nr, $sidetal){
 
-    require 'login.php';
-    $id_per_side_start=0;
-    $id_per_side_slut = antal_vare_per_sider();
-    
-    
-    if($sidetal>1){        
-        $id_per_side_start = ($sidetal-1) * \antal_vare_per_sider();
-        
-    }    
-
-    $sql = "SELECT  id_vare 
-    FROM 
-    `gruppe`  AS `gruppe` INNER JOIN 
-    `vare_har_gruppe` AS X INNER JOIN 
-    `vare`  AS V  
-    ON `id_varegruppe` = X.`f_id_varegruppe` AND X.`f_id_vare` = V.`id_vare` 
-    WHERE `id_varegruppe` = $gruppe_nr ORDER BY `prioritet` LIMIT $id_per_side_start , $id_per_side_slut ";
-        
-    $result= mysqli_query($db_server, $sql);       
-    $row= mysqli_fetch_all($result);
-    $ids= array_column($row,0);
-     mysqli_close($db_server);
-     return $ids;
-}
 function get_vareid_filter ($gruppe_nr, $sidetal, $maerker, $typer, $farver, $pris_min, $pris_max){
 
     require 'login.php';
