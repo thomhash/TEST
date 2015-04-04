@@ -14,7 +14,7 @@ $ordre = hent_ordre_information($id);
                     <td>Variant id</td>
                     <td>Antal</td> 
                     <td>Navn</td>
-                    <td>størrelse</td> 
+                    <td>Variant</td> 
                     <td>Farve</td>
                     <td>Mærke</td>
                 </tr>

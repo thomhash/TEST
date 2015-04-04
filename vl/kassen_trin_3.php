@@ -131,9 +131,11 @@ echo $total+hent_fragtpris($total);
 
      <form action="../fl/opret_bestilling.php">
     <a href="betingelser.html">Læs forretningsbetingelserne </a><br><br>
-    <input type="checkbox" required="true" name="test" value="Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne"> 
+    <input type="checkbox" required="true" name="test" value="acepter"> 
     Jeg bestiller hermed ovenstående og bekræfter, at jeg har læst og accepterer forretningsbetingelserne
     <br><br>
+    <input type="hidden" name="total_pris" value = "<?php echo $total+hent_fragtpris($total);?>">
+    <input type="hidden" name="fragt_pris" value = "<?php echo hent_fragtpris($total);?>">
     <input type="hidden" name="email" value = "<?php echo $kunde_id[0];?>">
     
 <input type="submit" value="Godkend">

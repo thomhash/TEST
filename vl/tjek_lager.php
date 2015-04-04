@@ -15,10 +15,10 @@ require '../fl/get_lager.php';
      <tr>
     
     <th>Navn</th>
-    <th>størrelse</th>
-    <th>varefarve</th>
-    <th>mærke</th>
+    <th>Variant</th>
     <th>Varefarve</th>
+    <th>Mærke</th>
+    <th>Pris</th>
     <th>På lager</th>
     <th>Ændre lager</th>
       

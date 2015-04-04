@@ -25,10 +25,10 @@ $knr = 0;
             
                 ?> <tr> 
                     <td>
-                        <a href="tjek_ordre_id_kunde.php?id=<?php echo $ordre[$rnr][0]; ?>"> <?php echo ($ordre[$rnr][0]); ?> </a>
+                        <a href="tjek_ordre_id_kunde.php?id=<?php echo $ordre[$rnr][0]; ?>"> <?php echo ($ordre[$rnr][4]); ?> </a>
                     </td>
                     <td>
-                        <?php echo ($ordre[$rnr][1]); ?>
+                        <?php if(($ordre[$rnr][2]) != NULL){echo "Behandlet og afsendt";}else if (($ordre[$rnr][4]) != NULL){echo "Pakning begyndt";}else "Ordre modtaget"; ?>
                     </td>
                    
                 </tr> 

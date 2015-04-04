@@ -4,7 +4,7 @@
 <br>
 <button onclick="print()">Print siden</button>
 <center>
-    <h4> <a href="tjek_ordre.php?type=1">Ikke påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=2"> påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=3"> Behandlede ordre</a></h4>
+    <h4> <a href="tjek_ordre.php?type=1">Ikke påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=2"> Påbegyndte ordre</a>   -   <a href="tjek_ordre.php?type=3"> Behandlede ordre</a></h4>
 </center>
 <strong>
     <?php
@@ -22,7 +22,7 @@
         echo "Ikke påbegyndte ordre:";
     } else if ($type == 2) {
         $ordre = hent_ordre_begyndt();
-        echo "påbegyndte ordre:";
+        echo "Påbegyndte ordre:";
     } else if ($type == 3) {
         $ordre = hent_ordre_afsluttet();
         echo "Behandlede ordre:";

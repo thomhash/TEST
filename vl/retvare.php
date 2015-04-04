@@ -3,7 +3,21 @@ require '../fl/get_vare.php';
 //require '../fl/ret_vare_beskrivelse.php';
 
 $id = $_GET['id'];
- 
+ if (isset($_GET['ret'])){
+     $ret = $_GET['ret'];
+     
+     if ($ret == "ok")
+     {
+        echo' <script language="javascript" type="text/javascript">
+                   alert("Redigering er gennemført!");
+               </script>';
+     }
+     else{
+         echo' <script language="javascript" type="text/javascript">
+                   alert("OBS: Fejl i redigering");
+               </script>';
+     }
+ }
  
 ?><h1>
 <?php
@@ -126,6 +140,33 @@ skal vises i kataloget:
     <input type="submit" name="submit">
 </form>
 <hr>
+
+Er aktiv i sortimanet:  <br>
+<?php 
+if ($variant_info[0][8] == 0)
+{
+    echo "Nej";
+}else
+{
+    echo "Ja";
+}
+; ?>
+<br>
+Skal være aktiv i sortimanet:  <br>
+<form action="../fl/ret_vare.php?id=<?php echo $id ?>" method="POST">
+    
+    <select name="aktiv_variant">
+
+            <option value="0">Nej</option>
+            <option value="1">ja</option>
+    </select>
+    
+    <input type="hidden" name="rediger" value="aktiv_variant"><br>
+    <input type="submit" name="submit">
+</form>
+<hr>
+<br> 
+
 <br> 
 Billede:<br><br>
 Vælg nyt billede:
@@ -146,4 +187,13 @@ Vælg nyt billede:
         return false;
     }
 }
+
+
+function rettelse_ok() {
+    alert("rettelse ok..");
+}
+function rettelse_ikke_ok() {
+    alert("rettelse ikke ok..");
+}
+</script>
 </script>

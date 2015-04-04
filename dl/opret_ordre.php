@@ -78,4 +78,22 @@ require 'login.php';
         }
     }
 }
+function opret_faktura_2($id_ordre,$fornavn,$efternavn,$adresse,$post_nr, $bynavn,$telefon,$dato,$fragt_pris,$total_pris) { {
+    
+require 'login.php';
+    
+// Check connection
+        if ($db_server->connect_error) {
+            die("Connection failed: " . $db_server>connect_error);
+        }
+       
+        $sqlin = "INSERT INTO `faktura` (`id_faktura`, `dato`, `f_id_ordre_f`, `fornavn`, `efternavn`, `adresse`, `bynavn`, `post_nr`, `telefon`, `fragt_pris`, `total_pris`) VALUES (NULL, '$dato', '$id_ordre', '$fornavn', '$efternavn', '$adresse', '$bynavn', '$post_nr', '$telefon', '$fragt_pris', '$total_pris');";
+
+        if ($db_server->query($sqlin) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $db_server->error;
+        }
+    }
+}
 

@@ -8,8 +8,7 @@ if(session_id() == '') {
 
 
 function set_bruger($mail)
-{
-    
+{    
     $id_kunde = get_kunde_id_fra_mail($mail)[0];
     $kurv = get_kurv_fra_id($id_kunde[0]);
     $rn = 0;
@@ -17,7 +16,6 @@ function set_bruger($mail)
         $_SESSION["kurv"][$kurv[$rn][0]] = $kurv[$rn][1];
         $rn++; 
 }
- 
    $_SESSION["logget_ind_kunde"] = "ja";
    $_SESSION["bruger_id"] = $id_kunde; 
     
