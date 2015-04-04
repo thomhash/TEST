@@ -10,8 +10,8 @@ function get_ordre_ikke_begyndt(){
      
     mysqli_close($db_server);
     return $row;
-     
-}
+  }
+
 
 function get_ordre_begyndt(){
     require 'login.php';

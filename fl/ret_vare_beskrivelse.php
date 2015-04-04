@@ -8,9 +8,7 @@ echo "det er smart ret vare beskrivelse";
    echo $varebeskrivelse;
    
    $id_variant = $_GET['id'];
-  // echo $id_variant;
    $id_vare=get_vareid_fra_variant_d($id_variant);
-   
    ret_beskrivelse($varebeskrivelse,$id_vare);
   
   
