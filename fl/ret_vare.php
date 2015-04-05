@@ -3,7 +3,7 @@
 
 require '../dl/ret_vare.php';
 require '../dl/get_vare.php';
-
+ob_start();
  $rediger= $_POST['rediger'];
  $id_variant = $_GET['id'];
  
@@ -12,9 +12,9 @@ require '../dl/get_vare.php';
     if (strcmp($rediger,"aktiv_variant") == 0)
    {
    $aktiv_variant = $_POST['aktiv_variant'];
-   
-   
-   ret_aktiv_variant($id_variant,$aktiv_variant);
+   $ok = ret_aktiv_variant($id_variant,$aktiv_variant);
+   header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   ob_flush();
    }
    
    else if (strcmp($rediger,"aktiv_vare") == 0)
@@ -22,6 +22,8 @@ require '../dl/get_vare.php';
    $aktiv_vare = $_POST['aktiv_vare'];
    $id_vare=get_vareid_fra_variant_d($id_variant); 
    ret_aktiv_vare($id_vare[0][0],$aktiv_vare);
+    header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   ob_flush();
    }
  
    else if (strcmp($rediger,"prioritet") == 0)
@@ -30,6 +32,8 @@ require '../dl/get_vare.php';
    
    $id_vare=get_vareid_fra_variant_d($id_variant);
    ret_prioritet_d($vare_prioritet,$id_vare);
+    header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   ob_flush();
    }
    
    else if (strcmp($rediger,"pris_form") == 0)
@@ -37,17 +41,20 @@ require '../dl/get_vare.php';
    $vare_prioritet = $_POST['ny_pris'];
    
   // $id_vare=get_vareid_fra_variant_d($id_variant);
-   ret_pris_d($vare_prioritet,$id_variant);
-   header('Location:../vl/retvare.php?id='.$id_variant.'&ret=ok');
+   $ok = ret_pris_d($vare_prioritet,$id_variant);
+   header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   ob_flush();
    }
    else if (strcmp($rediger,"vis_variant") == 0)
    {
    $variant_vis = $_POST['vis_variant'];
-   echo "den kommer her ind!:";
+   
    echo $variant_vis[0][0];
    ret_vis_rediger_id_vare_d(1,get_id_vare_fra_variant($variant_vis[0][0]));
   // $id_vare=get_vareid_fra_variant_d($id_variant);
    ret_vis_d($variant_vis[0][0],$id_variant);
+    header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   ob_flush();
    }
    
   

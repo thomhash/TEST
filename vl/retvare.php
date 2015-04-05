@@ -6,7 +6,7 @@ $id = $_GET['id'];
  if (isset($_GET['ret'])){
      $ret = $_GET['ret'];
      
-     if ($ret == "ok")
+     if ($ret == "1")
      {
         echo' <script language="javascript" type="text/javascript">
                    alert("Redigering er gennemført!");

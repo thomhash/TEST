@@ -22,8 +22,18 @@ function hent_ordre_information($id){
    // print_r($id_array);
    return $id_array;
 }
+function hent_ordre_information_kunde($id){
+   $id_array=get_vareinformation_fra_ordre_id_kunde($id);
+   // print_r($id_array);
+   return $id_array;
+}
 
 function hent_enkelt_id_ordre_information($id){
+   $id_array=get_vareinformation_fra_ordre_id_enkelt($id);
+   // print_r($id_array);
+   return $id_array;
+}
+function hent_enkelt_id_ordre_information_kunde($id){
    $id_array=get_vareinformation_fra_ordre_id_enkelt($id);
    // print_r($id_array);
    return $id_array;

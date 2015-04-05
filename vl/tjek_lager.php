@@ -11,8 +11,8 @@ require '../fl/get_lager.php';
 <h1>Se lagerstatus: </h1>
 <a href="admin_menu.php">Menu</a><br>
 <br>
-<table border="1">
-     <tr>
+<table id="kurv" border="1">
+     <tr class="ordre">
     
     <th>Navn</th>
     <th>Variant</th>
@@ -28,7 +28,7 @@ require '../fl/get_lager.php';
 $hent = hent_lager();
 foreach ($hent as list($a, $b, $c, $d, $e, $f, $g)) {
     
-    ?><tr><th>
+    ?><tr class="variant"><th>
         <?php echo '<a href="retvare.php?id='.$a.'">' ;
                 echo "".$b."<a>" ?>
                 
@@ -64,3 +64,29 @@ foreach ($hent as list($a, $b, $c, $d, $e, $f, $g)) {
 }
 </script>
 
+ 
+<style>
+#kurv {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    
+    border-collapse: collapse;
+}
+
+
+
+#kurv th {
+
+    background-color: #D1D1D8;
+   
+}
+
+#kurv tr.ordre td {
+    
+    background-color: #BCBCC2;
+}
+#kurv tr.variant td {
+    
+    background-color: #BCBCC2;
+}
+
+</style>

@@ -4,7 +4,7 @@ require 'PHPMailerAutoload.php';
 
 //send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel");
 
-function send_mail_f($emne, $htmltekst, $email, $navn){
+    function send_email($emne, $htmltekst, $email, $navn){
 $mail = new PHPMailer;
 $er_sendt =false; 
 // $mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -22,7 +22,7 @@ $mail->From       = "send_email@webshopgenerator.dk";
 $mail->FromName   = "webshopgenerator.dk";                               // TCP port to connect to
 
 $mail->From = 'send_email@webshopgenerator.dk';
-$mail->FromName = 'Mailer';
+$mail->FromName = 'webshopgenerator.dk';
 $mail->addAddress($email, $navn);     // Add a recipient
 
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments

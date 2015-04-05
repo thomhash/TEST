@@ -9,6 +9,7 @@ require '../dl/ret_lager.php';
 require '../dl/get_vare.php';
 require '../dl/get_bestillinger.php';
 require '../dl/get_virksomhed_dl.php';
+require '../fl/get_dato.php';
 //require '../vl/send_faktura.php';
 require '../PHPMailer-master/send_mail.php';
 ob_start();
@@ -19,7 +20,7 @@ function opret_ordre(){
   $total_pris =$_GET["total_pris"]; 
   $fragt_pris =$_GET["fragt_pris"]; 
   
-  $id_ordre = opret_ordre_d($mail,date("Y m d H:i"));
+  $id_ordre = opret_ordre_d($mail,get_dato());
   $vare = $_SESSION["kurv"]; 
   
   foreach($vare as $id=>$antal){
@@ -43,7 +44,7 @@ function opret_ordre(){
 
     opret_faktura($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"));   
     //opret_faktura_2($id_ordre,$kundeinfo[0][0],$kundeinfo[0][1],$kundeinfo[0][2],$kundeinfo[0][3],$kundeinfo[0][4],$kundeinfo[0][5],date("Y m d H:i"),$total_pris,$fragt_pris);
-    send_mail_f("Faktura", email_tekst($kundeinfo,$id_ordre,$total_pris,$fragt_pris), $kundeinfo[0][6], $kundeinfo[0][0]);  
+    send_email("Faktura", email_tekst($kundeinfo,$id_ordre,$total_pris,$fragt_pris), $kundeinfo[0][6], $kundeinfo[0][0]);  
      
     header('Location:../vl/kassen_trin_4.php');
      ob_flush();
@@ -60,31 +61,48 @@ function opret_ordre(){
  }
  else 
  {
-     header('Location:../vl/kassen_trin_3.php?');
+     header('Location:../vl/frame_indkoebskurv.php');
      ob_flush();
  }
 
  function tjek_lager($vare)
  {
+     $ok_lager = true;
      $ok = true;
      $test;
         
      foreach($vare as $id=>$antal){
-     $lager=get_lager_variant($id);
-     echo "lager"+print_r($lager)+"id:"+print_r($id)+"antal:"+print_r($antal);
-     if ($lager<$antal)
+     $lager=get_lager_variant($id)[0];
+     echo "lager";
+     print_r($lager);
+     echo "id:";
+     print_r($id);
+     echo "antal:";
+     print_r($antal);
+     if ($lager[0]<$antal)
      {
+         $ok_lager=false;
+         echo "er IKKE på lager"; 
         $test[$id] = false;
+        if($lager[0]>0){
+        $_SESSION["kurv"][$id] = $lager[0];
+        echo $lager[0];
+        echo "det er noget på lager";
+        }
+        else{
+            $_SESSION["kurv"][$id] = 0;
+            echo "det er IKKE noget på lager";
+        }
      }
      else{
      $test[$id] = true;
-             
+         echo "er på lager";    
      }
      echo "test:";
      print_r($test);
      }
    
-     return $test;
+     return $ok_lager;
  }
  
  function ret_lager($antal,$id){

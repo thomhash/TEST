@@ -3,7 +3,7 @@
 function get_kunde_info_id($id){
     require 'login.php';
    
-    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email from kunde where id_kunde = $id";
+    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email, from kunde where id_kunde = $id";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);

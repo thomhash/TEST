@@ -33,13 +33,24 @@
     $knr = 0;
     ?>
 </strong>
-<table style="width:100%" border="2">
+<table style="width:100%" id="kurv">
     <?php
     foreach ($ordre as $rn) {
         ?>
-        <tr>
+        <tr class="ordre">
             <td>
-                <?php
+                <a href="tjek_ordre_id.php?id=<?php echo $ordre[$rnr][0]; ?>"> Se ordre</a>  - 
+               <?php echo $ordre[$rnr][3]; ?>
+            </td>
+            <td>Ordre id</td>
+            <td>Kunde</td> 
+        </tr>
+    <?php
+    foreach ($ordre[$rnr] as $rn) {
+        if ($knr == 0) {
+            ?> <tr> 
+                    <td>
+                      <?php
                 if ($type == 1) {
                     ?> 
 
@@ -64,17 +75,7 @@
                  else{
                      echo "Ordre er afsluttet";
                  }
-                ?> 
-            </td>
-            <td>Ordre id</td>
-            <td>Kunde</td> 
-        </tr>
-    <?php
-    foreach ($ordre[$rnr] as $rn) {
-        if ($knr == 0) {
-            ?> <tr> 
-                    <td>
-                        <a href="tjek_ordre_id.php?id=<?php echo $ordre[$rnr][0]; ?>"> Se ordre </a>
+                ?>    
                     </td>
                     <td>
             <?php echo ($ordre[$rnr][0]); ?>
@@ -88,13 +89,14 @@
 
         if ($knr == 0) {
             ?>
-                <tr>
+                <tr class="variant">
                     <td>Variant id</td>
                     <td>Antal</td> 
                     <td>Navn</td>
                     <td>Variant</td> 
                     <td>Farve</td>
                     <td>Mærke</td>
+                    <td>Pris</td>
                 </tr>
             <?php
             $ind_rnr = 0;
@@ -133,3 +135,33 @@ WinPrint.close();
 
         }
     </script>
+    
+<style>
+#kurv {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#kurv td, #kurv th {
+    font-size: 1em;
+    border: 1px solid #D1D1D8;
+    padding: 3px 7px 2px
+}
+
+#kurv th {
+
+    background-color: #D1D1D8;
+   
+}
+
+#kurv tr.ordre td {
+    
+    background-color: #BCBCC2;
+}
+
+#kurv tr.variant td {
+   
+    background-color: #E8E8F0;
+}
+</style>

@@ -17,18 +17,18 @@ $knr = 0;
         ?>
         <tr>
            
-            <td>Dato</td>
-            <td>Kunde</td> 
+            <td>Dato bestilt:</td>
+            <td>Status:</td> 
         </tr>
         <?php
         foreach ($ordre as $rn) {
             
                 ?> <tr> 
                     <td>
-                        <a href="tjek_ordre_id_kunde.php?id=<?php echo $ordre[$rnr][0]; ?>"> <?php echo ($ordre[$rnr][4]); ?> </a>
+                        <a href="frame_kunde_vis_enkel_ordre.php?id=<?php echo $ordre[$rnr][0]; ?>"> <?php echo ($ordre[$rnr][3]); ?> </a>
                     </td>
                     <td>
-                        <?php if(($ordre[$rnr][2]) != NULL){echo "Behandlet og afsendt";}else if (($ordre[$rnr][4]) != NULL){echo "Pakning begyndt";}else "Ordre modtaget"; ?>
+                        <?php if(($ordre[$rnr][2]) != NULL){echo "Behandlet og afsendt";}else if (($ordre[$rnr][4]) != NULL){echo "Pakning begyndt";}else { echo "Ordre modtaget"; }?>
                     </td>
                    
                 </tr> 

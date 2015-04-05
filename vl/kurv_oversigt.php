@@ -35,7 +35,7 @@ foreach ($vare as $id => $antal) {
 <html>
     <body>
         <h1>Din indkøbskurv:</h1>
-        <table border="1">
+        <table id="kurv">
             <tr>
 
                 <th>Produkt</th>
@@ -47,7 +47,7 @@ foreach ($vare as $id => $antal) {
                 <th>Juster</th>
 
             </tr>
-            <tr>    
+            <tr class="alt">    
 <?php 
 $raekkenr = 0;
 foreach ($info_array as $id => $antal) {
@@ -94,15 +94,11 @@ foreach ($info_array as $id => $antal) {
                             <input hidden="" name="rediger" value="slet" > 
                             <input type="submit" value="Slet"> 
                         </form>
-                        
-                        
-
-
-                        </form>     
+                          
                     </th>
 
                 </tr>
-
+               
             <?php
         }
         $raekkenr ++;
@@ -141,6 +137,34 @@ if ($antal_total > 0) {
         .f {
             float: right;
         }
-    </style>
+      
+
+#kurv {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#kurv td, #kurv th {
+    font-size: 1em;
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+#kurv th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+#kurv tr.alt td{
+    
+    background-color: gray;
+}
+</style>            
+      
 </head>
 </html>
