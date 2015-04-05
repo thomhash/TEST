@@ -19,7 +19,7 @@
 				</li>
                                                                 
 				<li>
-					<input type="submit" value="Login">
+					<input type="submit" value="Tilmeld">
 				</li>
 			</ul>
 		</form>
