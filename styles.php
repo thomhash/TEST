@@ -350,7 +350,7 @@ margin-top:25px;
 margin-left:10px;
 margin-right:10px;
 float:left;
-font-size:22px;
+font-size:20px;
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }

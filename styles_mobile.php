@@ -329,10 +329,10 @@ border:1px solid #CECECE;
 #virkomhedsinfo{
 display:inline-block;
 float:left;
-font-size: 26px;
+font-size: 20px;
 margin-left:5%;
 margin-top:20px;
-height:230px;
+height:130px;
 width:100%;
 }
 
@@ -341,7 +341,7 @@ margin-top:15px;
 margin-left:10px;
 margin-right:10px;
 float:left;
-font-size:24px;
+font-size:18px;
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
