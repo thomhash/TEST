@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel
 require '../fl/get_kunde.php';
 session_start();
 $logget_ind = "nej";
@@ -14,12 +15,7 @@ $logget_ind = "nej";
 <h1>Ret bruger</h2>
 
 <body>
-    <?php 
-    
-    //$mailadr=$_GET["mail"];?>
-    
-   
-	<section class="loginform cf">
+ 	<section class="loginform cf">
 		<form name="login" action="../fl/ret_bruger.php" onsubmit="return checkForm(this);">
                     
                      <?php   
@@ -54,9 +50,6 @@ $logget_ind = "nej";
         $by = $kunde[4];
          }
      
-         
-       //  }
-         
     ?>
                     <b>Ret bruger oplysninger</b>
 			<ul>

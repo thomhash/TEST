@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require '../dl/get_virksomhed_dl.php';
 function hent_fragt_pris(){
    $id_array=get_ordre_ikke_begyndt();

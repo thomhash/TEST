@@ -1,4 +1,6 @@
-<?php ob_start();
+<?php 
+// Lavet af Mikkel 
+ob_start();
  require_once 'tjek_mobile_browser.php';
 if(session_id() == '') {
     session_start();

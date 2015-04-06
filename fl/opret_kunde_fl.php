@@ -1,5 +1,6 @@
 <?php
 ob_start();
+
 require_once 'tjek_mobile_browser.php';
 
 if (isset($_POST["email"])){

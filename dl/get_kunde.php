@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 function get_kunde_info_id($id){
     require 'login.php';
    

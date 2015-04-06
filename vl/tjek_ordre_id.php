@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel
 require '../fl/get_ordre.php';
 require '../dl/get_kunde.php';
 $id = $_GET['id'];  

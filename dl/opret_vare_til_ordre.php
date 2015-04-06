@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 function opret_vare_til_ordre($id_ordre,$id_variant,$antal) { {
 require 'login.php';
      

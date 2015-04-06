@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 function opret_ordre0($id_kunde,$afsendt,$tidbestilt) { {
 require 'login.php';
 $last_id =0;     

@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 ob_start();
 include '../fl/krav_kunde.php';
 

@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require '../dl/kurv.php';
 function slet_kurv_kunde($id_kunde){
    $id_array= slet_kurv_kunde_dl($id_kunde);

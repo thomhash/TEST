@@ -1,11 +1,8 @@
 <?php
-
-
-
+// Lavet af Mikkel 
 function get_varebeskrivelse_d($id){
     require 'login.php';
-      
-  
+       
     $sql = "Select vare.beskrivelse from vare inner join variant On variant.f_id_vare = vare.id_vare where variant.id_variant =$id";
     
     $result= mysqli_query($db_server, $sql);       

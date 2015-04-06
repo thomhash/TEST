@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel
 require '../dl/opret_kunde_dl.php';
 require '../dl/get_kunde.php';
 

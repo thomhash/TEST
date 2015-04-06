@@ -1,5 +1,5 @@
-<div id="kurv">
 <?php
+// Lavet af Mikkel 
 require '../fl/get_vare.php';
 require '../fl/fragt_pris.php';
 require_once '../fl/tjek_mobile_browser.php';
@@ -15,25 +15,19 @@ if (isset($_GET["lager"])) {
         echo '<script type="text/javascript">alert("Der er ikke nok på lager")</script>';
 }
 
-
-//$info_array =0;
 $total = 0;
 $antal_total = 0;
 $fragt = 50;
-?>
-
-<?php
 $rnr = 0;
+// For hver vare_id der er i sessions kurven henter den informationerne ned on indsætter i et nyt array.  
 foreach ($vare as $id => $antal) {
     $info_array[$rnr][0] = get_vare_info_kurv($id);
     $info_array[$rnr][1] = $antal;
     $rnr++;
 }
 ?>
+<div id="kurv">
 
-
-<html>
-    <body>
         <h1>Din indkøbskurv:</h1>
         <table id="kurv">
             <tr>
@@ -50,9 +44,11 @@ foreach ($vare as $id => $antal) {
             <tr class="alt">    
 <?php 
 $raekkenr = 0;
+// Det nye info array køres igennem og hver array inde i array laves til et nyt $subarray som indeholder varinformationer.
 foreach ($info_array as $id => $antal) {
     $subarray = $info_array[$raekkenr][0];
-
+    
+    // arrayet med de enkelt vare informationer køres igennem
     foreach ($subarray as $id2) {
         if ($info_array[$raekkenr][1] > 0) {
             $total += $info_array[$raekkenr][1] * $subarray[0][4];
@@ -166,5 +162,4 @@ if ($antal_total > 0) {
 }
 </style>            
       
-</head>
-</html>
+

@@ -1,3 +1,6 @@
+<?php 
+// Lavet af Mikkel
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 <h1>Ordre oversigt: </h1>
 <a href="admin_menu.php">Menu</a><br>

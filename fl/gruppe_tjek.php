@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require '../dl/set_vare.php';
 require '../dl/gruppe_tjek.php';
 

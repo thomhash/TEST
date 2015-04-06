@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 function start_ordre($id,$dato)
 {
     require 'login.php';

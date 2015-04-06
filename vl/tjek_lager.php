@@ -1,12 +1,6 @@
 <?php
+// Lavet af Mikkel
 require '../fl/get_lager.php';
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 ?>
 <h1>Se lagerstatus: </h1>
 <a href="admin_menu.php">Menu</a><br>

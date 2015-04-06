@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 if (session_id() == '') {
     session_start();
 }
@@ -52,6 +53,7 @@ $logget_ind = "nej";
                     $post_nr = NULL;
                     $by = NULL;
                     ;
+                    // Hvis en bruger er logget på hentes kundeinformationerne så frmen er udfyldt 
                     if (isset($_SESSION["bruger_id"])) {
                         $id_kunde = $_SESSION["bruger_id"];
                         $kunde = hent_kunde($id_kunde)[0];

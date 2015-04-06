@@ -1,6 +1,5 @@
-
-
 <?php
+// Lavet af Mikkel hentet fra 
 $target_dir = "C:/Users/Mikkel/Documents/NetBeansProjects/TEST/billeder";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;

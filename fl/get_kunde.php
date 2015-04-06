@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require '../dl/get_kunde.php';
 function hent_kunde($id){
    $id_array=get_kunde_info_id($id);

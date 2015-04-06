@@ -2,6 +2,8 @@
 if(session_id() == '') {
     session_start();
 }
+// Lavet af Mikkel 
+
 require '../fl/get_lager.php';
 require '../dl/kurv.php';
 require_once 'tjek_mobile_browser.php';

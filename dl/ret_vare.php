@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 require 'login.php';
 function ret_beskrivelse($beskrivelse,$id)
 {

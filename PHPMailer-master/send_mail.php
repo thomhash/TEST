@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require 'PHPMailerAutoload.php';
 
 //send_mail_f("test", "saddsa", "mikkelbra@gmail.com", "mikkel"); 

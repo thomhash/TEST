@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 if(session_id() == ''){
 session_start();
 }

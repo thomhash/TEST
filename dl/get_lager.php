@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 require '../dl/varer.php';
 function get_lager(){
     

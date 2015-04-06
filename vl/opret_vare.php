@@ -1,6 +1,8 @@
 <?php if(session_id() == '') {
     session_start();
-}?>
+}
+// Lavet af Mikkel
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
 

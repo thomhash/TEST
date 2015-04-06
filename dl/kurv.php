@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 function fyld_kurv_dl($f_id_variant,$f_id_kunde,$antal) { {
 require 'login.php';
      

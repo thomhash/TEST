@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 function get_ordre_info_id($id){
     require 'login.php';
    

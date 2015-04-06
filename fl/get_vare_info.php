@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel 
 require '../dl/get_vare_info.php';
 function hent_maerker(){
    $id_array=get_maerker();

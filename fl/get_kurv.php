@@ -1,4 +1,6 @@
- <?php require '../fl/get_vare.php';
+ <?php 
+ // Lavet af Mikkel 
+ require '../fl/get_vare.php';
       if(session_id() == '') {
     session_start();
 }

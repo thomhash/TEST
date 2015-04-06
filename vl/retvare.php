@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel
 require '../fl/get_vare.php';
 //require '../fl/ret_vare_beskrivelse.php';
 

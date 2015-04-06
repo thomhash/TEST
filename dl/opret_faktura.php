@@ -1,6 +1,5 @@
 <?php
-
-
+// Lavet af Mikkel 
 function opret_fakturak($id_kunde,$afsendt,$f_id_ordre_f,$f_id_medarbejder,$f_id_virksomhed) { {
 require 'login.php';
      

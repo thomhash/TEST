@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel 
 require '../dl/get_bestillinger.php';
 function hent_ordre_ikke_begyndt(){
    $id_array=get_ordre_ikke_begyndt();

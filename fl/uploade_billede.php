@@ -1,5 +1,6 @@
 <?php
 ob_start();
+// Lavet af Mikkel 
 require '../dl/set_vare.php';
 $parametre=0;
 //require 'ftp.php';

@@ -1,5 +1,6 @@
 <?php
 ob_start();
+// Lavet af Mikkel 
 if (isset($_SESSION["logget_ind_kunde"])) {
     if ($_SESSION["logget_ind_kunde"] != "ja") {
         header("location:frame_login.php?krav=1");

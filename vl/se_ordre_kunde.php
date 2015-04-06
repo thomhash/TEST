@@ -1,4 +1,5 @@
 <?php
+// Lavet af Mikkel
 require '../fl/get_ordre.php';
 if(session_id() == '') {
     session_start();

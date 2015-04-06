@@ -1,6 +1,5 @@
 <?php
-
-
+// Lavet af Mikkel 
 require '../dl/get_virksomhed_dl.php';
 
 function hent_fragtpris($total){
