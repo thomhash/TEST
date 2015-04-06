@@ -1,9 +1,6 @@
 <?php
-// Lavet af Thomas
+// Lavet af Thomas og Mikkel
 function check_kunde_mail($mail) { 
-
-// Lavet af Mikkel 
-function check_kunde_mail($mail) {
 
     require 'login.php';
 

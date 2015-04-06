@@ -10,9 +10,7 @@ $logget_ind = "nej";
 <head>
     <title>Opret bruger</title>
 
-    <link rel="stylesheet" href="../login_user.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
+    </head>
 <html>
     <center> 
         <h1>Kundeoplysninger</h1>

@@ -1,7 +1,6 @@
 <?php 
 // Lavet af Thomas
 ?> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
     <div id="katalog">
     
@@ -9,8 +8,7 @@
     <?php
     require '../fl/opretkatalog.php';
     require_once '../fl/tjek_mobile_browser.php';
-    require 'tekst.php';
-   
+      
     $desktop=0;
     if (isset($_GET["desktop"])){
     $desktop=$_GET["desktop"];
@@ -39,7 +37,7 @@
                               echo $info_vare[$raekke_nr][0];
                               echo '</td>
                                     <td align = "right">';
-                                        echo \pris() .$info_vare[$raekke_nr][1];
+                                        echo "Pris: " .$info_vare[$raekke_nr][1];
                              echo  "</td>
                         </tr>
                     </table>
