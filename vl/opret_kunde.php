@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php ob_start(); 
+// Lavet af Thomas
+?>
 	<title>Opret bruger</title>
 	
 	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body> 
-    <?php ob_start(); ?>
-    
-    
-   
+ 
 	<section class="loginform cf">
 		<form name="login" action="../fl/opret_kunde_fl.php" method="POST" onsubmit="return checkForm(this);">
 			<ul>
@@ -50,5 +45,3 @@
                </script>';
             }
     ?>
-</body>
-</html>

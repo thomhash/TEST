@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 //$db_hostname = 'webshopgenerator.dk.mysql';
 //$db_database = 'webshopgenerato';
 //$db_username = 'webshopgenerato';

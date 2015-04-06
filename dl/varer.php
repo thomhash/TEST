@@ -1,17 +1,14 @@
 <?php
-
+// Lavet af Thomas
 require_once 'login.php';
 require_once '../parametre.php';
-//$db_server = new mysqli($db_hostname, $db_username, $db_password);
-//$db_server->connect($db_hostname, $db_username, $db_password, $db_database);
-//mysqli_close($db_server);
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
 else{
-    //echo "Forbindelsen er god";
+    
 }
 
 

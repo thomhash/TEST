@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 require '../dl/menu.php';
 
 function hent_grupper()
@@ -83,7 +84,4 @@ if(count($undergrupper) > 0){
 
     return $hovede_grupper;
 }
-
-
-
 ?>

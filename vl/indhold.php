@@ -1,4 +1,7 @@
-<?php require_once '../fl/hent_forside.php';
+<?php 
+// Lavet af Thomas
+// Fungerer som forside
+ require_once '../fl/hent_forside.php';
  require_once '../fl/tjek_mobile_browser.php';
 ?>
 
@@ -85,7 +88,4 @@ echo "<figure>";
             </figure>";
 }
 ?>
-    
-    
-    
-</div>
+    </div>

@@ -1,9 +1,10 @@
-
-<head>
+<?php
+// Lavet af Thomas
+?>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-</head>
+
  
  <div id="enkelt">
     <?php require '../fl/opretkatalog.php';
@@ -12,8 +13,6 @@
     
          $id = $_GET['id'];  
          $info_array= get_variant_info($id);
-         
-         
     ?>  
      
    <div id="billeder"> 
@@ -86,29 +85,9 @@
                       }
                   }
                  echo '</div>';
-                 
-                 
-                  
                  ?>
-            
-                 
-                 
-        </div>
-           
-           
-           
-           
-    </div>
-         
-         
-         
-         
-         
-            
-     
-        
-        
-        
+            </div>
+         </div>
    </div> 
         
 
@@ -126,7 +105,7 @@
           
                 $size= hent_stoerrelser($id, $info_array[0][6]); 
                 $raekke_nr=0;
-                 // Laver en drop down list med alle størrelser der er samme model og har samme farve
+                 // Laver en drop down list med alle typer der er samme model og har samme farve
                     foreach ($size as $value){
                       // if statement der sætter den vare man er inde på som selected 
                         if($size[$raekke_nr][0]== $info_array[0][5]){
@@ -145,10 +124,7 @@
                             }
                              $raekke_nr++;
                               }
-                             
-                             
-                             
-                        }
+                       }
                 ?>
             </select>
         
@@ -165,7 +141,7 @@
                         <tr>
                             <td>  
                                 <p1>
-                                <?php echo "<br>" .pris() .$info_array[0][2] ;   ?>
+                                <?php echo "<br>" ."Pris: " .$info_array[0][2] ;   ?>
                                 <p1> 
                             </td>
                             <td  align = "right" >
@@ -197,17 +173,7 @@
         </form>
          
     </div>  
-        
-     
-        
-    
-        
-    
-        
-        
-        
-        
-    </div>
+ </div>
     
     
     <script src="javascript_enkeltvare.js"></script>

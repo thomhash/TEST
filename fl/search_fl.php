@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 require '../dl/search_dl.php';
 function hent_soeg($tekst, $sidetal){
     $result=[];
@@ -27,8 +28,4 @@ function hent_soeg_sider($tekst){
     return $sider;
     
 }
-
-
-
-
 ?>

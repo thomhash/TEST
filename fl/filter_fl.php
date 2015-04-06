@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 require_once '../dl/varer.php';
 function hent_gruppe_maerker($gruppenr){
     $maerker=  get_gruppe_maerker($gruppenr);
@@ -24,9 +25,4 @@ function hent_typer_til_gruppe($gruppe_id){
     
     return $typer;
 }
-
-
-
-
-
 ?>

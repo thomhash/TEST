@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-
-<body>
+<?php 
+// Lavet af Thomas
+?> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
     <div id="katalog">
     
@@ -19,13 +15,7 @@
     if (isset($_GET["desktop"])){
     $desktop=$_GET["desktop"];
         }
-     
-    //variable sendt fra hovedsiden
-   //$gruppenr = $_GET['gruppe'];
-   //$side = $_GET['page'];
-    
-   
-   //$info_vare= hent_vare_katalog($gruppenr, $side);
+
    $info_vare= hent_vare_katalog_filter($gruppenr, $side, $maerke, $stoerrelser, $farver, $pris_min, $pris_max);
      if(empty($info_vare)){
        echo "<br>" ."Der er ingen varer";
@@ -84,7 +74,7 @@ echo '<br>'
                 else{echo '<a href="frame_viskatalog.php?page=' .$x .'& gruppe=' .$gruppenr .'& pris_min=' .$pris_min .'& pris_max=' .$pris_max .'&' .http_build_query($filter_variable) .'">' .$x .'</a>';}
                 }
           }  
-          //echo  $x;
+         
           echo "&nbsp;";
  
 }  echo '</p>'; 
@@ -93,11 +83,4 @@ echo '<br>'
 }
 
 ?>
-   
-        
- 
-    
-    </div>
-</body>
-
-</html>
+   </div>

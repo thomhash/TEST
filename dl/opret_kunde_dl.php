@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 function check_kunde_mail($mail) { 
 
        require 'login.php';
@@ -160,9 +161,7 @@ function set_kundeoplysninger($fornavn, $efternavn, $tlf, $adresse, $postnr, $by
 }
 
 function opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by, $mail, $nyhed){
-    
-   // echo $fornavn .$efternavn .$tlf .$adresse .$postnr .$by .$mail;
-    
+  
     require 'login.php';
     
         
@@ -179,7 +178,4 @@ function opret_kunde_ved_kob($fornavn, $efternavn, $tlf, $adresse, $postnr, $by,
     mysqli_close($db_server);
     return $last_id;  
 }
-
-
-
 ?>

@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dropdowns</title>
+<?php 
+// Lavet af Thomas
+?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css_menu.php">
       
-</head>
-<body>
+
 <div class="container_menu">
 	
 <a class="toggleMenu" href="#">Menu</a>
 <ul class="nav">
 	
-	
-	
-
-
-
-
-
-
-
-
 <?php
 
 require '../fl/opret_menu.php';
@@ -30,7 +18,7 @@ $main_raekkenr = 0;
 $grupper = hent_grupper();
 
 
-
+// Hovedgrupper køres igennem
 foreach ($grupper as $value) {    
        href($grupper[$main_raekkenr][2],$grupper[$main_raekkenr][0], $grupper[$main_raekkenr][1]);
         if (!empty($grupper[$main_raekkenr][2])) {
@@ -45,7 +33,7 @@ foreach ($grupper as $value) {
     $main_raekkenr++;
 }
 
-
+// Første undergruppe køres igennem
 function vis_undergruppe1($undergruppe_1){
      $raekkenr =0;
      
@@ -63,7 +51,7 @@ function vis_undergruppe1($undergruppe_1){
     $raekkenr++;
     }         
 }
-
+// Anden undergruppe køres igennem
 function vis_undergruppe2($undergruppe_2)
 { $raekkenr=0;
     foreach ($undergruppe_2 as $value) {
@@ -73,7 +61,8 @@ function vis_undergruppe2($undergruppe_2)
     }
 }
 
-
+// Funktione der tjekker om en given gruppe har undergrupper knyttet til sig. Hvis den ikke har indsættes et
+// link til gruppen. Hvis den har undergrupper indsættes et link der intet gør
 function href($subarray, $id, $navn){
     
     
@@ -93,6 +82,7 @@ function href($subarray, $id, $navn){
         
         <li><a href="frame_omos.php">Om os</a></li>
         <?php
+        // Hvis der benyttes en mobil browser indsættes link til obile version i menuen
         if(mobile_browser()){ echo '<li><a href="frame_frontpage_mobile.php">Mobile version</a></li>';}
         ?>
         </ul>
@@ -100,6 +90,3 @@ function href($subarray, $id, $navn){
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="javascript_menu.js"></script>
-</body>
-</html>
-

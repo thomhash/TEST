@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Thomas
 require_once 'login.php';
 
 function get_soeg($tekst, $sidetal){
@@ -59,8 +59,4 @@ function get_soeg_side_antal($tekst){
      return $result;
 
 }
-
-
-
 ?>
-

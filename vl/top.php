@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 require_once '../fl/tjek_mobile_browser.php';
 
 ?>
@@ -9,7 +10,7 @@ require_once '../fl/tjek_mobile_browser.php';
     <input type='hidden' name='side' value="1">   
     <input  class='header-search-box' type='search' id='search-string' name='search-string' placeholder="Søg på vare">
    
-<img src='    http://findicons.com/files/icons/974/glyphish/18/magnifying_glass.png' class='magnifying-glass' />           
+<img src='http://findicons.com/files/icons/974/glyphish/18/magnifying_glass.png' class='magnifying-glass' />           
     <a href="frame_indkoebskurv.php">
                 <img id="big" src="../billeder/shoppingcart.png">
                 </a> 
