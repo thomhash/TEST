@@ -35,12 +35,12 @@ $mail->Body    = $htmltekst;
 
 if(!$mail->send()) {
     $er_sendt = true;
-    echo 'Message could not be sent. 3';
+    //echo 'Message could not be sent. 3';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
     
 } else {
     $er_sendt = false;
-    echo 'Message has been sent';
+    //echo 'Message has been sent';
 }
 return $er_sendt;
 }

@@ -3,7 +3,7 @@
 function get_kunde_info_id($id){
     require 'login.php';
    
-    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email, from kunde where id_kunde = $id";
+    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email from kunde where id_kunde = $id[0]";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -38,3 +38,23 @@ function get_kurv_fra_id($id){
     return $row;
      
 }
+function get_kunde_nyhed_id($mail,$id){
+    require 'login.php';
+   
+    $sql = "SELECT id_kunde FROM `kunde` WHERE id_kunde = '$id' AND email='$mail'";
+    
+    $result= mysqli_query($db_server, $sql);       
+    $row= mysqli_fetch_all($result);
+        
+    mysqli_close($db_server);
+    return $row;
+     
+}
+
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+

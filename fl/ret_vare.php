@@ -22,7 +22,7 @@ ob_start();
    $aktiv_vare = $_POST['aktiv_vare'];
    $id_vare=get_vareid_fra_variant_d($id_variant); 
    ret_aktiv_vare($id_vare[0][0],$aktiv_vare);
-    header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
+   header('Location:../vl/retvare.php?id='.$id_variant.'&ret='.$ok.'');
    ob_flush();
    }
  
