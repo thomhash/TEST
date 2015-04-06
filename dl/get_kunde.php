@@ -2,8 +2,8 @@
 // Lavet af Mikkel 
 function get_kunde_info_id($id){
     require 'login.php';
-   
-    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email from kunde where id_kunde = $id[0]";
+    //rette id fra id[0]
+    $sql = "Select fornavn, efternavn, adresse, post_nr, bynavn, telefonnummer, email from kunde where id_kunde = $id";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -20,9 +20,9 @@ function get_kunde_id_fra_mail($email){
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
-        
+    $id =$row[0][0];    
     mysqli_close($db_server);
-    return $row;
+    return $id;
      
 }
 

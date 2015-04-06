@@ -96,9 +96,9 @@ function get_kunde_fra_ordre_id($id) {
 
     $result = mysqli_query($db_server, $sql);
     $row = mysqli_fetch_all($result);
-
+    $id_kunde =$row[0][0];
     mysqli_close($db_server);
-    return $row;
+    return $id_kunde;
 }
 
 function get_vareinformation_fra_ordre_id_enkelt($id) {

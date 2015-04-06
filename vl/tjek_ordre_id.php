@@ -6,22 +6,22 @@ $id = $_GET['id'];
 $ordre = hent_ordre_information($id);
 
 
-$id_kunde =get_kunde_fra_ordre_id($id)[0];
-$info_kunde = get_kunde_info_id($id_kunde[0])[0];
+$id_kunde =get_kunde_fra_ordre_id($id);
+$info_kunde = get_kunde_info_id($id_kunde);
 ?>              
 <h1>Ordre oversigt</h2>
 
 <?php 
-   echo $info_kunde[0];
+   echo $info_kunde[0][0];
    echo " ";
-   echo $info_kunde[1];
+   echo $info_kunde[0][1];
    ?> <br> <?php
-    echo $info_kunde[2];
+    echo $info_kunde[0][2];
     ?> <br> <?php
     
-    echo $info_kunde[3];
+    echo $info_kunde[0][3];
     ?> <br> <?php
-    echo $info_kunde[4];
+    echo $info_kunde[0][4];
     ?> <br>
     <br>
 <table style="width:100%" border="2">

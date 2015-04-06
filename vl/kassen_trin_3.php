@@ -5,7 +5,7 @@ ob_start();
 require '../fl/get_kunde.php';
 require '../fl/fragt_pris.php';
 $mail = $_GET["email"];
-$kunde_id = get_kunde_id_fra_mail($mail)[0];
+$kunde_id = get_kunde_id_fra_mail($mail);
 
 ?>
 
@@ -14,16 +14,16 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
             <h1> <b>Godkend ordre</h1>
             <h2> Kunde: </h2><?php
             // viser kunde inforamtion 
-            $info_kunde = hent_kunde($kunde_id[0])[0];
-            echo $info_kunde[0];
+            $info_kunde = hent_kunde($kunde_id);
+            echo $info_kunde[0][0];
             echo " ";
-            echo $info_kunde[1];
+            echo $info_kunde[0][1];
             ?> <br> <?php
-            echo $info_kunde[2];
+            echo $info_kunde[0][2];
             ?> <br> <?php
-            echo $info_kunde[3];
+            echo $info_kunde[0][3];
             ?> <br> <?php
-            echo $info_kunde[4];
+            echo $info_kunde[0][4];
             ?> <br>
 
             <?php
@@ -107,7 +107,7 @@ echo $total + hent_fragtpris($total);
         <br><br>
         <input type="hidden" name="total_pris" value = "<?php echo $total + hent_fragtpris($total); ?>">
         <input type="hidden" name="fragt_pris" value = "<?php echo hent_fragtpris($total); ?>">
-        <input type="hidden" name="email" value = "<?php echo $kunde_id[0]; ?>">
+        <input type="hidden" name="email" value = "<?php echo $kunde_id; ?>">
 
         <input type="submit" value="Godkend">
     </form>
