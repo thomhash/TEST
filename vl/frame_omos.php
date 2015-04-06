@@ -5,6 +5,8 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../styles.php"> 
 <link rel="stylesheet" type="text/css" href="../login_user.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="css_menu.php">
 </head>
 <body  onload="LoadGmaps()" onunload="GUnload()">
 <?php
@@ -51,10 +53,3 @@ $desktop=0;
 </body>  
 
 </html>
-<?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>

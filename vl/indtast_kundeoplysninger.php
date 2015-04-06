@@ -3,7 +3,7 @@
 ?>
 	<title>Indtast oplysninger</title>
 	
-	<link rel="stylesheet" href="../login_user.css">
+	
 
     <?php  
     require_once '../fl/tjek_mobile_browser.php';

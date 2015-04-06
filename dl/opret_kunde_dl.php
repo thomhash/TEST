@@ -1,7 +1,8 @@
 <?php
-// Lavet af Thomas og Mikkel 
+// Lavet af Thomas og Mikkel
 function check_kunde_mail($mail) { 
- require 'login.php';
+
+    require 'login.php';
 
     $sql = "SELECT `id_kunde` 
            FROM `kunde` 

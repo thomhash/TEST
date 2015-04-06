@@ -9,7 +9,7 @@
  <div id="enkelt">
     <?php require '../fl/opretkatalog.php';
  require_once '../fl/tjek_mobile_browser.php';
-          require 'tekst.php';
+       
     
          $id = $_GET['id'];  
          $info_array= get_variant_info($id);

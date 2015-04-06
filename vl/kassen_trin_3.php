@@ -8,11 +8,7 @@ $mail = $_GET["email"];
 $kunde_id = get_kunde_id_fra_mail($mail)[0];
 
 ?>
-<head>
-    <link rel="stylesheet" href="../login_user.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<html>
+
     <div id="kurv">
         <body>
             <h1> <b>Godkend ordre</h1>
@@ -47,11 +43,9 @@ $kunde_id = get_kunde_id_fra_mail($mail)[0];
             ?>
             <br><br>
 
-            <header>
-                <link rel="stylesheet" type="text/css" href="../kurv_style.css">
-            </header>
-        <html>
-            <body>
+            
+               
+            
                 <table border="1">
                     <tr>
                         <th>Produkt</th>

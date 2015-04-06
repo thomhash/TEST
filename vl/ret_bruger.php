@@ -5,7 +5,7 @@ session_start();
 $logget_ind = "nej";
 ?>
 <head>
-	<title>Opret bruger</title>
+	<title>Ret bruger</title>
 	
 	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>

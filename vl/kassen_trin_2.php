@@ -7,8 +7,6 @@ require_once '../fl/tjek_mobile_browser.php';
 $kunde_id = get_kunde_id_fra_mail($mail);
 ?>
 
-    <link rel="stylesheet" href="../login_user.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <h1>Levering </h2>
     <form action="../vl/frame_kassen_trin_3<?php if (mobile_browser()) {
