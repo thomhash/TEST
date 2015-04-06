@@ -38,14 +38,14 @@ function opret_ordre() {
     opret_faktura_2($id_ordre, $kundeinfo[0][0], $kundeinfo[0][1], $kundeinfo[0][2], $kundeinfo[0][3], $kundeinfo[0][4], $kundeinfo[0][5], date("Y m d H:i"), $total_pris, $fragt_pris);
     send_email("Faktura", email_tekst($kundeinfo, $id_ordre, $total_pris, $fragt_pris), $kundeinfo[0][6], $kundeinfo[0][0]);
 
-    header('Location:../vl/kassen_trin_4.php');
+    //header('Location:../vl/kassen_trin_4.php');
     ob_flush();
 }
 
 if (tjek_lager($vare) == true) {
     opret_ordre();
     kurv_tom();
-    header('Location:../vl/kassen_trin_4.php');
+    //header('Location:../vl/kassen_trin_4.php');
     ob_flush();
 } else {
     header('Location:../vl/frame_indkoebskurv.php');

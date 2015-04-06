@@ -6,6 +6,7 @@ require '../fl/get_kunde.php';
 require '../fl/fragt_pris.php';
 $mail = $_GET["email"];
 $kunde_id = get_kunde_id_fra_mail($mail)[0];
+
 ?>
 <head>
     <link rel="stylesheet" href="../login_user.css">
