@@ -10,11 +10,12 @@
 
 <section class="loginform cf" align="center">
     <legend>Tilmeld vores nyhedsbrev</legend>
-		<form name="login" action="../fl/login_kunde_fl.php" onsubmit="return checkForm(this);">
+    <form name="login" action="../fl/tilmeld_nyhed.php" onsubmit="return checkForm(this);">
 			<ul>
 				<li>
 					<label>E-mail</label>
-                                        <input type="email" name="mail_nyhedsbrev" placeholder="yourname@email.com" autofocus="autofocus" required>
+                                        <input type="hidden" name="nyhed" value="1">
+                                        <input type="email" name="email" placeholder="yourname@email.com" autofocus="autofocus" required>
                                         <br>
 				</li>
                                                                 

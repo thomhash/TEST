@@ -108,6 +108,28 @@ function ret_aktiv_variant($id,$aktiv)
     return $ok;
 }
 
+function ret_aktiv_vare($id,$aktiv)
+{
+    require 'login.php';
+    $ok =0;
+
+    if ($db_server->connect_error) {
+        die("Connection failed: " . $db_server->connect_error);
+    }
+   
+    $sqlin = "update vare set aktiv='$aktiv' where id_vare='$id'";
+
+    if ($db_server->query($sqlin) === TRUE) {
+        $ok =1;
+        echo "New record created successfully";
+        
+    } else {
+        $ok =0;
+        echo "Error: " . $sql . "<br>" . $db_server->error;
+    }
+    return $ok;
+}
+
 function ret_vis_d($vis,$id)
 {
     require 'login.php';
