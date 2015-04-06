@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php
+// Lavet af Thomas
+?>
 	<title>Indtast oplysninger</title>
 	
 	<link rel="stylesheet" href="../login_user.css">
-        
-</head>
-<body>
+
     <?php  
     require_once '../fl/tjek_mobile_browser.php';
     $mailadr=$_GET["mail"];?>
@@ -86,5 +84,3 @@
 	</section>
     
 <script type="text/javascript" src="opretbruger.js"></script>
-</body>
-</html>

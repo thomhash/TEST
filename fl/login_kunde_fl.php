@@ -1,5 +1,6 @@
 <?php
 ob_start();
+// Lavet af Thomas
 require '../dl/login_tjek.php';
 require '../fl/set_bruger.php';
 require_once 'tjek_mobile_browser.php';

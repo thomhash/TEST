@@ -1,5 +1,5 @@
-
-<?php
+<?php 
+// Lavet af Thomas
 require '../fl/search_fl.php';
 require_once '../fl/tjek_mobile_browser.php';
 $tekst = $_GET['search-string'];
@@ -18,6 +18,7 @@ if(mobile_browser()){
 
 <div id="soeg">
     <?php
+//Viser billeder af varen hvis der findes varer der indeholde søgetekst    
 if(!empty($varer)){    
 foreach ($varer as $key => $value) {
         echo '<a href="'.$katalog.'?id=' .$varer[$key][0] .'">' ;
@@ -27,8 +28,6 @@ foreach ($varer as $key => $value) {
                 echo '</a>';
                 echo '<HR>';
     
-    
-    
     }
 }
 else{echo  "Ingen resultater"; }    
@@ -36,6 +35,7 @@ else{echo  "Ingen resultater"; }
 </div>
 
 <?php 
+// Hvis der er flere resultater end ønsket kommer der sidetal i bunden. Fl-laget bestemmer hvor mange varer der er per side.
 $sider= hent_soeg_sider($tekst);
 if($sider>1){
     
@@ -51,15 +51,10 @@ echo '<br>'
               if(mobile_browser()==true){echo '<a href="frame_viskatalog_mobile.php?side=' .$x .'& search-string=' .$tekst .'">' .$x .'</a>';}
                 else{echo '<a href="frame_vis_soegeresultater.php?side=' .$x .'& search-string=' .$tekst .'">' .$x .'</a>';}
           }  
-          //echo  $x;
+          
           echo "&nbsp;";
  
 }  echo '</p>'; 
        
 
-}
-
-
-
-
-?>
+}?>

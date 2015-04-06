@@ -1,16 +1,6 @@
-<html>
-<head>
-        
-</head>    
-<body>
-    <?php
-    
+<?php
+// Lavet af Thomas
     require '../fl/filter_fl.php';
-    //$gruppenr = $_GET['gruppe'];
-    //$gruppenr=6;
-    //$side = $_GET['page'];
-    // Tjekker om man har valgt en kategori. Hvis $gruppenr=0 vises alle maerker som har tilknyttet en vare, som er i en gruppe
-   
     
     $alle_maerker=  hent_gruppe_maerker($gruppenr);
     $alle_stoerrelser=  hent_gruppe_stoerrelser($gruppenr);
@@ -18,6 +8,7 @@
     
     ?>
     <br>
+    <?php // Form hvor man kan indsætte de ønskede kriterier.?>
 <form name='maerker' action="frame_viskatalog.php">
         <fieldset>
                   
@@ -46,7 +37,8 @@
                                     }
                                 
                                     }?></legend>            
-                         <?php  if(empty ($alle_stoerrelser)){echo "ingen";}
+                         <?php 
+                            if(empty ($alle_stoerrelser)){echo "ingen";}
                             else {foreach ($alle_stoerrelser as $value) {
                             echo '<input type="checkbox" name="stoerrelser[]" value="'.$value.'"'; 
                             if(!empty($stoerrelser)&&$stoerrelser!=0){
@@ -57,12 +49,12 @@
                             }}?><br><br>
                 <legend>Farver</legend>            
                          <?php if(empty ($alle_farver)){echo "ingen";}  
-                            else {foreach ($alle_farver as $value) {
-                            echo '<input type="checkbox" name="farver[]" value="'.$value.'"';
-                            if(!empty($farver)&&$farver!=0){
-                                foreach ($farver as $value4) {
-                                    if($value==$value4){ echo "checked";}
-                            }}        
+                                else {foreach ($alle_farver as $value) {
+                                echo '<input type="checkbox" name="farver[]" value="'.$value.'"';
+                                if(!empty($farver)&&$farver!=0){
+                                    foreach ($farver as $value4) {
+                                         if($value==$value4){ echo "checked";}
+                            }}            
                             echo '/>'.$value;
                             }}?><br><br>
                 <legend>Pris </legend>
@@ -72,10 +64,3 @@
                        <br><br><br><input type="submit" value="Søg" />
         </fieldset>
 </form>
-    
-        
-<?php
-
-?>
-</body>
-</html>

@@ -1,4 +1,4 @@
-
+// Hentet fra nettet af Thomas. Vi kan ikke huske hvorfra da det er lang tid siden.
 var ww = document.body.clientWidth;
 
 $(document).ready(function() {
@@ -21,6 +21,7 @@ $(window).bind('resize orientationchange', function() {
 	adjustMenu();
 });
 
+// Viser menuen som collapsible panel hvis skærmbredden er mindre end 768 px.
 var adjustMenu = function() {
 	if (ww < 768) {
 		$(".toggleMenu").css("display", "inline-block");

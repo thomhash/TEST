@@ -1,9 +1,5 @@
 <?php
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Lavet af Thomas
 require_once '../fl/tjek_mobile_browser.php';
 ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -16,10 +12,6 @@ require_once '../fl/tjek_mobile_browser.php';
 </div>
 <div id="icons" align="right" >
     
-    
-   
-
-           
             <a href="frame_indkoebskurv_mobile.php">
                 <img id="big" src="../billeder/shoppingcart.png">
                 </a> 
@@ -38,14 +30,3 @@ require_once '../fl/tjek_mobile_browser.php';
 
 </form>
 <script src="search.js"></script>
-
- 
-
-
-
- <?php //include 'lille_kurv.php'; ?>
-
-
-
-
-

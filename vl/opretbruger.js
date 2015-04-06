@@ -1,5 +1,6 @@
-
-  function checkForm(form)
+// Lavet af Thomas. Bruges til at validere input ved brugeroprettelse
+  
+    function checkForm(form)
   {
     
     re = /^\w+$/;

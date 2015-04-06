@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Thomas
 function get_over_grupper(){
 require 'login.php';
 
@@ -35,4 +35,3 @@ function get_undergrupper(){
     
 }
 ?>
-

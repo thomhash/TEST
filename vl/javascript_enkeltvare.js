@@ -1,3 +1,5 @@
+// Lavet af Thomas
+// Viser pile som fungere til at bladre imellem variant farver
 $(document).on('click', '.prev', function() {
     var active = $('.active');    
     // remove active tag
@@ -23,7 +25,7 @@ $(document).on('click', '.next', function() {
     console.log($('.image').first());
 });
 
-
+// Funktion som submitter det man vælger i dropdown menuen uden at man behøver at trykke submit
 document.getElementById("Stoerrelser").addEventListener('change', function () {
     window.location = this.value;
 }, false); 

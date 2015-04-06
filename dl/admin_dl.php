@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Thomas
 function get_nyheds_mails(){
  require 'login.php';
  

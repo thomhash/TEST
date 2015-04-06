@@ -1,3 +1,4 @@
+// Script til at folde tekstfelt ud man kan bruge til at søge. Fundet på nettet. Thomas
 $(function() {
     var mglass = $('.magnifying-glass');
     var form = $('.header-search-box');

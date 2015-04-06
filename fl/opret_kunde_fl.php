@@ -1,6 +1,6 @@
 <?php
 ob_start();
-
+// Lavet af Thomas
 require_once 'tjek_mobile_browser.php';
 
 if (isset($_POST["email"])){
@@ -31,9 +31,9 @@ $same_mail=check_kunde_mail($mail);
      }
      else{set_kunde($mail, $hash_kode);}
      
-     if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?kundeoplysninger=1 & mail=' .$mail);
+     if(mobile_browser()==true){header('Location:../vl/frame_login_mobile.php?kundeoplysninger=1 & mail=' .$mail.' & oprettet=1');
      ob_flush();}
-     else{header('Location:../vl/frame_login.php?kundeoplysninger=1 & mail=' .$mail);
+     else{header('Location:../vl/frame_login.php?kundeoplysninger=1 & mail=' .$mail .'& oprettet=1');
      ob_flush();}
      
  }
@@ -73,4 +73,3 @@ $same_mail=check_kunde_mail($mail);
  }
 
 ?>
-

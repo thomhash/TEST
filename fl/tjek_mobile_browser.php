@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Thomas
 
 function mobile_browser(){
      
@@ -23,4 +23,4 @@ function mobile_browser(){
     }
    
     return false;
-}
+}?>

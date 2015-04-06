@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php
+// Lavet af Thomas
+?>
 	<title>Login Kunde</title>
 	
 	<link rel="stylesheet" href="../login_user.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <?php require_once '../fl/tjek_mobile_browser.php'; ?>
-</head>
-<body>
+
     
     <?php 
     $kob=0;
@@ -66,5 +65,3 @@
         </script>';}
             }
     ?>
-</body>
-</html>

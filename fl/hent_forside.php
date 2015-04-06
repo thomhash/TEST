@@ -1,4 +1,5 @@
 <?php
+// Lavet af Thomas
 require_once '../dl/varer.php';
 require_once '../parametre.php';
 

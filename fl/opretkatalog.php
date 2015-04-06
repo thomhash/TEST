@@ -1,13 +1,6 @@
 <?php
-
+// Lavet af Thomas
 require_once '../dl/varer.php';
-//Test variable
-//$gruppenr = 2;
-//$side =1;
-
-
-
-
 
 //funktion der henter varer(array,)der skal vises ud fra et gruppe nr samt hvilkent side man er på
 function hent_vare_katalog($gruppenr, $side){
@@ -118,8 +111,4 @@ function hent_type_beskrivelse($variant_id){
     $type_tekst=  get_type_beskrivelse($variant_id);
     
     return $type_tekst;
-}
-
-
-
-?>
+}?>

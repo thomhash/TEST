@@ -1,4 +1,7 @@
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<?php
+// Lavet af Thomas
+?>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <h1>Tilpas layout: </h1>
 <a href="admin_menu.php">Menu</a><br>
 <br>
@@ -8,7 +11,7 @@ require '../dl/parametre_dl.php';
 
 $all_parametre=  get_all_parametre();
 
-
+// Henter alle parametre fra dl-laget. Switch-case alt anhængigt om om det er et billede, en farve eller tekst 
 foreach ($all_parametre as $key => $value) {
    
     switch($all_parametre[$key][2]){
