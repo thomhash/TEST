@@ -325,11 +325,51 @@ font-size: 20px;
 margin-top:5%;
 }
 
+.f {
+    float: right;
+}
+      
+
+#kurv {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#kurv td, #kurv th {
+    font-size: 1em;
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+#kurv th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: <?php echo farve_hovedgruppe();?>;
+    color: #ffffff;
+}
+
+
 #kurv img {
     margin-left: 1%;
     height: 7%;
     width: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
 }
+.alt A:visited{
+     color: white;   
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.alt A:link{
+     color: white;  
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+} 
+
+
+
 #MyGmaps{
 display:inline-block;
 float:left;
@@ -358,4 +398,5 @@ font-size:20px;
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
+
 
