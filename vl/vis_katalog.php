@@ -50,7 +50,6 @@
 
    
 // Lav link til de næste sider hvis sidetallet er højere end 1
-
 $sider= \hent_antal_sider($gruppenr, $maerke, $stoerrelser, $farver, $pris_min, $pris_max);
 if($sider>1){
     $filter_variable = array('maerke'=>$maerke, 'stoerrelser'=>$stoerrelser, 'farver'=> $farver);
@@ -80,5 +79,7 @@ echo '<br>'
 
 }
 
+
 ?>
    </div>
+

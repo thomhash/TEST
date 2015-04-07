@@ -101,7 +101,7 @@ function get_info_catalog ($vare_id, $farver, $pris_min, $pris_max, $stoerrelser
             $sql_where.=" AND( type.`type_vaerdi`= ".'"' .$stoerrelser[0].'"';
             foreach ($stoerrelser as $key1 => $value) {
                 if($key1==0){ }
-                else{ $sql_where.=" OR varefarve.`varefarve`= ".'"' .$stoerrelser[$key1] .'"';}
+                else{ $sql_where.=" OR type.`type_vaerdi`= ".'"' .$stoerrelser[$key1] .'"';}
                 }
         $sql_where.=')';
             }
@@ -350,7 +350,7 @@ function get_type_beskrivelse ($variant_id){
 function get_typer_til_varegrupper($gruppe_id){
     require 'login.php';
   
-    $sql = "SELECT type_beskrivelse.`type_tekst`
+    $sql = "SELECT DISTINCT type_beskrivelse.`type_tekst`
             FROM `type_beskrivelse` 
             INNER JOIN `vare`
             INNER JOIN `vare_har_gruppe`

@@ -37,7 +37,7 @@
      if (isset($_GET["pris_max"])&&$_GET["pris_max"]!=""){
          $pris_max=$_GET["pris_max"];
      }
-
+     
 ?>
 
 
@@ -59,17 +59,18 @@
         include 'vis_menu.php';
         ?>
         </div>
+   <div id="indhold">
+        <?php
+        include 'vis_katalog.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'vis_filter.php';
         ?>
         </div>
      
-    <div id="indhold">
-        <?php
-        include 'vis_katalog.php';
-        ?>    
-        </div>
+    
    
     </div>
          

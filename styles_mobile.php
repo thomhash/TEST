@@ -98,7 +98,6 @@ position: relative;
 #katalog{
 margin-left:auto;
 margin-right:auto;
-border: 1px solid red;
 max-width:99%;  
 height: 100%;
 }
@@ -129,7 +128,6 @@ width: -webkit-max-content;
   max-width:450px;
   max-width:94%;
   
-  border: 1px solid red;
 }
 
 
@@ -153,9 +151,10 @@ figure figcaption table{
 
 /* ligger tallene i bunden af siden */
 p.sider { 
- margin-top: 100%;
-             
+ position:relative;   
+ margin-top: 0px;
         }
+        
         
         
         
@@ -307,7 +306,11 @@ margin-top:5%;
 
 width:90%;
 }
+#kurv{
+font-size: 12px;
+width:100%;
 
+}
 
 #kurv img {
     margin-left: 1%;

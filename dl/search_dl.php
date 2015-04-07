@@ -4,10 +4,10 @@ require_once 'login.php';
 
 function get_soeg($tekst, $sidetal){
 $id_per_side_start=0;
-$id_antal = 10; 
+$id_antal = 4; 
 
 if($sidetal>1){        
-        $id_per_side_start = ($sidetal-1) * 10;
+        $id_per_side_start = ($sidetal-1) * 4;
     }
     
  require 'login.php';

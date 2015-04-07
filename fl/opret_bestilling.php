@@ -11,6 +11,7 @@ require '../dl/get_vare.php';
 require '../dl/get_bestillinger.php';
 require '../dl/get_virksomhed_dl.php';
 require '../fl/get_dato.php';
+require_once 'tjek_mobile_browser.php';
 //require '../vl/send_faktura.php';
 require '../PHPMailer-master/send_mail.php';
 ob_start();
@@ -48,8 +49,11 @@ if (tjek_lager($vare) == true) {
     header('Location:../vl/kassen_trin_4.php');
     ob_flush();
 } else {
-    header('Location:../vl/frame_indkoebskurv.php');
+    if(mobile_browser()){ header('Location:../vl/frame_indkoebskurv_mobile.php');
     ob_flush();
+    }
+    else {header('Location:../vl/frame_indkoebskurv.php');
+    ob_flush();}
 }
 
 function tjek_lager($vare) {
