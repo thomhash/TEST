@@ -1,5 +1,4 @@
 <?php
-
 // Lavet af Mikkel 
 
 require '../fl/gruppe_tjek.php';

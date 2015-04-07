@@ -1,6 +1,6 @@
 <?php
 ob_start();
-// Lavet af Mikkel 
+// implemeteret af Mikkel. Hentet fra nettet.   
 require '../dl/set_vare.php';
 $parametre=0;
 //require 'ftp.php';
