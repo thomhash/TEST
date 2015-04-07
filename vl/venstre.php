@@ -29,7 +29,7 @@
 				<li>
 					<input type="submit" value="Tilmeld">
 				</li>
-                                <input type="submit" value="Tilmeld">
+                                
 			</ul>
 		</form>
             
