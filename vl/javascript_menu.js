@@ -1,3 +1,4 @@
+
 // Hentet fra nettet af Thomas. Vi kan ikke huske hvorfra da det er lang tid siden.
 var ww = document.body.clientWidth;
 

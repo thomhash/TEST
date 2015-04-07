@@ -1,5 +1,5 @@
 <?php
-require '../parametre.php';
+require_once '../parametre.php';
 ?>
 <div id="overskrift_img">
 <a href="frame_frontpage.php?desktop=1">

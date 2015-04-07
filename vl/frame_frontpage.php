@@ -26,7 +26,7 @@ $desktop=$_GET["desktop"];
     <?php
     include 'top.php';
     ?>
-     <div>
+     </div>
   
 <div id="content">
     <div id="overskrift">
@@ -39,17 +39,17 @@ $desktop=$_GET["desktop"];
         include 'vis_menu.php';
         ?>
         </div>
-   
+   <div id="indhold">
+        <?php
+        include 'indhold.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'venstre.php';
         ?>
         </div> 
-    <div id="indhold">
-        <?php
-        include 'indhold.php';
-        ?>    
-        </div>
+    
     </div>
          
          
