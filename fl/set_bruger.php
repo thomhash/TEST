@@ -1,5 +1,4 @@
 <?php
-
 // Lavet af Mikkel 
 //Sætter de nødvendige informationer om kunden efter login
 require '../dl/get_kunde.php';

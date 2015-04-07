@@ -4,8 +4,8 @@ require '../fl/get_vare.php';
 //require '../fl/ret_vare_beskrivelse.php';
 
 $id = $_GET['id'];
- if (isset($_GET['ret'])){
-     $ret = $_GET['ret'];
+ if (isset($_GET['ret_ok'])){
+     $ret = $_GET['ret_ok'];
      
      if ($ret == "1")
      {

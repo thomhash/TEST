@@ -105,14 +105,13 @@ function gem_kurv(){
         
        $vare = $_SESSION["kurv"];
        $id_kunde = $_SESSION["bruger_id"];
-       slet_kurv_kunde_dl($id_kunde[0]);
+       slet_kurv_kunde_dl($id_kunde);
         foreach($vare as $id=>$antal){
             echo "DEN VIL GEMME KRV ";
             
         if ($antal>0){
-          fyld_kurv_dl($id, $id_kunde[0], $antal);   
-      
-      
+          fyld_kurv_dl($id, $id_kunde, $antal);   
+           
       }
    
      }

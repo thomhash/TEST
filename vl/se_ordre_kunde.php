@@ -2,10 +2,7 @@
 // Lavet af Mikkel
 require '../fl/get_ordre.php';
 
-$ordre = hent_alle_ordre_fra_kunde_id($_SESSION["bruger_id"][0]);
-
- 
-//echo $_SESSION["bruger_id"][0];
+$ordre = hent_alle_ordre_fra_kunde_id($_SESSION["bruger_id"]);
 $rnr = 0;
 $knr = 0;
 ?>

@@ -39,15 +39,15 @@ $logget_ind = "nej";
          
           // if (isset($_SESSION["bruger_id"])){
          if (isset($_SESSION["bruger_id"])){
-         $id_kunde =$_SESSION["bruger_id"][0];    
-        $kunde=  hent_kunde($id_kunde)[0];
-        $fornavn = $kunde[0];
-        $efternavn = $kunde[1];
-        $telefonnummer = $kunde[5];
-        $email = $kunde[6];
-        $adresse = $kunde[2];
-        $post_nr = $kunde[3];
-        $by = $kunde[4];
+         $id_kunde =$_SESSION["bruger_id"];    
+        $kunde=  hent_kunde($id_kunde);
+        $fornavn = $kunde[0][0];
+        $efternavn = $kunde[0][1];
+        $telefonnummer = $kunde[0][5];
+        $email = $kunde[0][6];
+        $adresse = $kunde[0][2];
+        $post_nr = $kunde[0][3];
+        $by = $kunde[0][4];
          }
      
     ?>

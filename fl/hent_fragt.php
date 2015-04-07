@@ -1,5 +1,5 @@
 <?php
-
+// Lavet af Mikkel
 require '../dl/get_lager.php';
 function hent_fragt(){
    $fragt=get_fragt();
