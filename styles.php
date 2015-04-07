@@ -31,8 +31,8 @@ margin-right: auto;
 border: none; // 5px solid red;
 min-height: 1300px;
 
-width: 1000px;
-min-width: 75%;
+width: 1200px;
+min-width: 50%;
 
 }
 
@@ -111,13 +111,17 @@ min-height: 1062px;
 
 }
 
+#katalog{
+height: 1044px;
+position:relative;
+width:100%;
 
+}
 
 
  #katalog figure {
  width: <?php echo bredde_billeder(); ?>px; 
-    margin: 10px;
-   
+    margin:10px;
     float: left;
 }
 
@@ -170,9 +174,10 @@ width: 100%; height: <?php echo hoejde_billeder(); ?>px;
 
 /* ligger tallene i bunden af siden */
 p.sider { 
-    
- margin-top: 1010px;
-             
+ position: absolute;
+    bottom: 5px;
+    margin-left:50%;
+    margin-right:50%;
         }
         
         
@@ -308,7 +313,7 @@ height: <?php echo hoejde_billeder(); ?>px;
 
 #soeg{
 align::top;
-font-size: 30px;
+font-size: 20px;
 }
 
 #slider a{
@@ -353,3 +358,4 @@ font-size:20px;
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
+

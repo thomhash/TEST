@@ -43,12 +43,12 @@ echo '<br>'
       .'<p class="sider" align="center">';  
       for ($x = 1; $x <= $sider; $x++) {
           
-          if($x==$sider){
-              if(mobile_browser()==true){echo '<a href="frame_viskatalog_mobile.php?side=' .$x .'& search-string=' .$tekst .'"><b>' .$x .'</b></a>';}
+          if($x==$sidetal){
+              if(mobile_browser()==true){echo '<a href="frame_vis_soegeresultater_mobile.php?side=' .$x .'& search-string=' .$tekst .'"><b>' .$x .'</b></a>';}
                  else{echo '<a href="frame_vis_soegeresultater.php?side=' .$x .'& search-string=' .$tekst .'"><b>' .$x .'</b></a>';}
           }
           else{
-              if(mobile_browser()==true){echo '<a href="frame_viskatalog_mobile.php?side=' .$x .'& search-string=' .$tekst .'">' .$x .'</a>';}
+              if(mobile_browser()==true){echo '<a href="frame_vis_soegeresultater_mobile.php?side=' .$x .'& search-string=' .$tekst .'">' .$x .'</a>';}
                 else{echo '<a href="frame_vis_soegeresultater.php?side=' .$x .'& search-string=' .$tekst .'">' .$x .'</a>';}
           }  
           

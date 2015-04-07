@@ -47,8 +47,8 @@ foreach ($ids as $key => $value) {
 
 
 <div id="slider" align="center">
-        <a href="#">
-            <img src="../billeder/fruit_banner.jpg"/>
+        <a href="frame_viskatalog.php?page=1&gruppe=8">
+            <img src="../billeder/bukser.jpg"/>
         </a>
         <a href="#">
             <img src="../billeder/computers_banner.jpg"/>

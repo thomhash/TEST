@@ -23,7 +23,7 @@ function hent_soeg_sider($tekst) {
     $antal_sider = get_soeg_side_antal($tekst);
 
     $number = mysqli_num_rows($antal_sider);
-    $sider = ceil($number / 10);
+    $sider = ceil($number / 4);
 
     return $sider;
 }

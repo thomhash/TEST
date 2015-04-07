@@ -1,5 +1,7 @@
 <?php
 // Lavet af Thomas
+
+
 require_once '../fl/tjek_mobile_browser.php';
 
 ?>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" type="text/css" href="css_menu.php">
 <link rel="stylesheet" type="text/css" href="../styles.php">
-<link rel="stylesheet" href="../login_user.css">
+
     
 </head>
 <body>
