@@ -4,22 +4,7 @@ require '../fl/get_vare.php';
 //require '../fl/ret_vare_beskrivelse.php';
 
 $id = $_GET['id'];
- if (isset($_GET['ret_ok'])){
-     $ret = $_GET['ret_ok'];
-     
-     if ($ret == "1")
-     {
-        echo' <script language="javascript" type="text/javascript">
-                   alert("Redigering er gennemført!");
-               </script>';
-     }
-     else{
-         echo' <script language="javascript" type="text/javascript">
-                   alert("OBS: Fejl i redigering");
-               </script>';
-     }
- }
- 
+
 ?><h1>
 <?php
 $vare_navn= get_vare_navn_f($id);

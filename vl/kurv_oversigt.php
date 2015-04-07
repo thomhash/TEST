@@ -11,8 +11,8 @@ if (isset($_SESSION["kurv"])) {
 }
 if (isset($_GET["lager"])) {
     $lager = $_GET["lager"];
-    if ($lager = 1)
-        echo '<script type="text/javascript">alert("Der er ikke nok på lager")</script>';
+    if ($lager =="0")
+        echo '<script type="text/javascript">alert("Du har prøvet at købe en eller flere vare, som ikke er på lager mere. De vare er fjernet fra din kurv.")</script>';
 }
 
 $total = 0;

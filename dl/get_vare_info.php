@@ -134,8 +134,7 @@ function get_grupper_til_vare(){
  function get_vare(){
     require 'login.php';
   
-    $sql = "SELECT id_vare, navn, f_type_beskrivelse
-            FROM `vare`";
+    $sql = "SELECT id_vare, navn, f_type_beskrivelse FROM `vare` ORDER BY navn";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);
@@ -148,8 +147,7 @@ function get_grupper_til_vare(){
  function get_billede(){
     require 'login.php';
   
-    $sql = "SELECT id_billede, url
-            FROM `billede`";
+    $sql = "SELECT id_billede, url FROM `billede` ORDER BY url";
     
     $result= mysqli_query($db_server, $sql);       
     $row= mysqli_fetch_all($result);

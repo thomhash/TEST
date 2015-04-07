@@ -322,9 +322,8 @@ margin-top:5%;
 
 #kurv img {
     margin-left: 1%;
- 
-    width: 30%;
-    height: auto;
+    height: 7%;
+    width: auto;
 }
 #MyGmaps{
 display:inline-block;

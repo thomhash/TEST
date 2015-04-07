@@ -48,7 +48,7 @@ if (tjek_lager($vare) == true) {
     header('Location:../vl/kassen_trin_4.php');
     ob_flush();
 } else {
-    header('Location:../vl/frame_indkoebskurv.php');
+    header('Location:../vl/frame_indkoebskurv.php?lager=0');
     ob_flush();
 }
 
