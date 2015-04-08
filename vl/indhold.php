@@ -47,7 +47,7 @@ foreach ($ids as $key => $value) {
 
 
 <div id="slider" align="center">
-        <a href="frame_viskatalog.php?page=1&gruppe=8">
+    <a href="frame_viskatalog<?php if(mobile_browser()){echo "_mobile";}?>.php?page=1&gruppe=8">
             <img src="../billeder/bukser.jpg"/>
         </a>
         <a href="#">

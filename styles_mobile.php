@@ -1,6 +1,8 @@
 #container
 {<?php
+// Lavet af Thomas
      require_once 'parametre.php';
+    
 ?>
 width: 100%;
 
@@ -100,6 +102,7 @@ margin-left:auto;
 margin-right:auto;
 max-width:99%;  
 height: 100%;
+
 }
 
 
@@ -151,8 +154,7 @@ figure figcaption table{
 
 /* ligger tallene i bunden af siden */
 p.sider { 
- position:relative;   
- margin-top: 0px;
+
         }
         
         
@@ -311,13 +313,36 @@ font-size: 12px;
 width:100%;
 
 }
+#kurv td, #kurv th {
+    font-size: 1em;
+    border: 1px solid black;
+    padding: 3px 7px 2px 7px;
+}
+
+#kurv th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: <?php echo farve_hovedgruppe();?>;
+    color: #ffffff;
+}
 
 #kurv img {
     margin-left: 1%;
- 
-    width: 30%;
+    width: 90%;
     height: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
 }
+.alt A:visited{
+     color: white;   
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.alt A:link{
+     color: white;  
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+} 
 
 #MyGmaps{
 display:inline-block;
