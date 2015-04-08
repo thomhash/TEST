@@ -344,7 +344,7 @@ margin-top:5%;
 
 #kurv td, #kurv th {
     font-size: 1em;
-    border: 1px solid #98bf21;
+    border: 1px solid <?php echo indhold_farve();?>;
     padding: 3px 7px 2px 7px;
 }
 
