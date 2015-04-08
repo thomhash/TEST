@@ -1,11 +1,12 @@
 <?php
+ob_start();
 // Lavet af Mikkel 
-
 require '../fl/gruppe_tjek.php';
 
 if (($_POST['type_rediger']) == "maerke") {
     $marke = $_POST['maerke'];
     opret_maerke($marke);
+   
 }
 if (($_POST['type_rediger']) == "farve") {
     $farve = $_POST['farve'];
@@ -54,27 +55,8 @@ if (($_POST['type_rediger']) == "opret_ny_variant") {
     $variant_pris = $_POST['variant_pris'];
     $variant_vis = $_POST['variant_vis'];
     $variant_antal = $_POST['variant_antal'];
-
     opret_variant($variant_vare, $variant_type_id, $variant_farve, $variant_billede, $variant_pris, $variant_vis, $variant_antal);
 }
-
-
-
-// $stoerelse = $_POST['stoerelse'];
-
-// $varenavn = $_POST['gruppe'];
-
-// $varenavn = $_POST['varenavn'];
-
-// $gruppe = $_POST['gruppe'];
-
-
-
-
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ header('Location:../vl/opret_vare.php');
+ ob_flush();
 
