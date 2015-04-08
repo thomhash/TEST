@@ -32,17 +32,17 @@
         include 'vis_menu.php';
         ?>
         </div>
-   
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
     <div id="indhold">
         <?php
         include 'vis_enkelt_vare.php';
         ?>    
         </div>
+    <div id="venstre">
+     <?php
+        include 'venstre.php';
+        ?>
+        </div> 
+    
     </div>
          
          

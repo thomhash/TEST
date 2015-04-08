@@ -32,17 +32,17 @@ if(session_id() == '') {
         include 'vis_menu.php';
         ?>
         </div>
-   
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
     <div id="indhold">
         <?php
         include 'kurv_oversigt.php';
         ?>    
         </div>
+    <div id="venstre">
+     <?php
+        include 'venstre.php';
+        ?>
+        </div> 
+   
     </div>
          
          

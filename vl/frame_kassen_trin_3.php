@@ -32,17 +32,17 @@ session_start();
         include 'vis_menu.php';
         ?>
         </div>
-   
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
     <div id="indhold">
         <?php
         include 'kassen_trin_3.php';
         ?>    
         </div>
+    <div id="venstre">
+     <?php
+        include 'venstre.php';
+        ?>
+        </div> 
+    
     </div>
          
          

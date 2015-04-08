@@ -179,6 +179,10 @@ p.sider {
     margin-left:50%;
     margin-right:50%;
         }
+p.talsider { 
+ position:relative;   
+ margin-top: 0px;
+        }
         
         
         
@@ -190,7 +194,9 @@ width: 35%; //height: 50px;
     float: left;
     
 }
-
+#enkelt  {
+margin-left:10px;
+}
 #enkelt p {
 font-size: 16px;
 
@@ -306,7 +312,6 @@ height:40px;
 
 
 #soeg img{
-
 width: <?php echo bredde_billeder(); ?>px; 
 height: <?php echo hoejde_billeder(); ?>px;
    }
@@ -314,6 +319,7 @@ height: <?php echo hoejde_billeder(); ?>px;
 #soeg{
 align::top;
 font-size: 20px;
+margin-left:15px;
 }
 
 #slider a{
@@ -354,7 +360,7 @@ margin-top:5%;
 
 #kurv img {
     margin-left: 1%;
-    height: 7%;
+    height: 14%;
     width: auto;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;

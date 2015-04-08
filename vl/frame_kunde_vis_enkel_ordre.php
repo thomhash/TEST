@@ -39,17 +39,17 @@ $desktop=$_GET["desktop"];
         include 'vis_menu.php';
         ?>
         </div>
-   
+   <div id="indhold">
+        <?php
+        include 'tjek_ordre_id_kunde.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'venstre.php';
         ?>
         </div> 
-    <div id="indhold">
-        <?php
-        include 'tjek_ordre_id_kunde.php';
-        ?>    
-        </div>
+    
     </div>
          
          

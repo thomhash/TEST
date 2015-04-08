@@ -41,17 +41,17 @@ $desktop=$_GET["desktop"];
         include 'vis_menu.php';
         ?>
         </div>
-   
+   <div id="indhold">
+        <?php
+        include 'se_ordre_kunde.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'venstre.php';
         ?>
         </div> 
-    <div id="indhold">
-        <?php
-        include 'se_ordre_kunde.php';
-        ?>    
-        </div>
+    
     </div>
          
          

@@ -28,17 +28,17 @@
         include 'vis_menu.php';
         ?>
         </div>
-   
+   <div id="indhold">
+        <?php
+        include 'kunde_side.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'venstre.php';
         ?>
         </div> 
-    <div id="indhold">
-        <?php
-        include 'kunde_side.php';
-        ?>    
-        </div>
+    
     </div>
          
          

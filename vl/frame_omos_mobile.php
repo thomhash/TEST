@@ -3,8 +3,13 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
    <link rel="stylesheet" type="text/css" href="../styles_mobile.php"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="css_menu.php">
+   
 </head>
 <body onload="LoadGmaps()" onunload="GUnload()">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+   <script type="text/javascript" src="javascript_menu.js"></script>
 <?php
 
 

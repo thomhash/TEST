@@ -36,17 +36,17 @@ $desktop=0;
         include 'vis_menu.php';
         ?>
         </div>
-   
+   <div id="indhold">
+        <?php
+        include 'om_os.php';
+        ?>    
+        </div>
     <div id="venstre">
      <?php
         include 'venstre.php';
         ?>
         </div> 
-    <div id="indhold">
-        <?php
-        include 'om_os.php';
-        ?>    
-        </div>
+    
     </div>
          
          

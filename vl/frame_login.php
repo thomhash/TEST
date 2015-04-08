@@ -63,19 +63,19 @@ $kundeoplysninger=$_GET["kundeoplysninger"];
         include 'vis_menu.php';
         ?>
         </div>
-   
-    <div id="venstre">
-     <?php
-        include 'venstre.php';
-        ?>
-        </div> 
-    <div id="indhold">
+     <div id="indhold">
         <?php
         if($kundeoplysninger==1){ include 'indtast_kundeoplysninger.php'; }
             else {if($opretbruger==1 || $findes==1){include 'opret_kunde.php';}
                      else {include 'login_kunde.php';}}
         ?>    
         </div>
+    <div id="venstre">
+     <?php
+        include 'venstre.php';
+        ?>
+        </div> 
+   
     </div>
          
          

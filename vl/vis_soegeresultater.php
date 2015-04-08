@@ -40,7 +40,7 @@ $sider= hent_soeg_sider($tekst);
 if($sider>1){
     
 echo '<br>' 
-      .'<p class="sider" align="center">';  
+      .'<p class="talsider" align="center">';  
       for ($x = 1; $x <= $sider; $x++) {
           
           if($x==$sidetal){

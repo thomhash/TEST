@@ -276,7 +276,7 @@ height:25px;
 
 
 #soeg img{
-
+margin-left:15px;
 width: <?php echo bredde_billeder_mobile() ?>px; 
 height: <?php echo hoejde_billeder_mobile(); ?>px;
    }
@@ -336,7 +336,7 @@ font-size: 20px;
 margin-left:5%;
 margin-top:20px;
 height:130px;
-width:100%;
+width:95%;
 }
 
 #omos{
